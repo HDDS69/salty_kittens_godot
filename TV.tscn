@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmvro43qmydke"]
+
+[ext_resource type="Texture2D" uid="uid://crm0f0xpnkejn" path="res://текстуры/TV.png" id="1_wxi4x"]
+[ext_resource type="Script" path="res://TV.gd" id="1_ye00f"]
+[ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://ui/Untitled 06-12-2024 11-00-24.png" id="3_gmtlm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdlkc"]
+size = Vector2(99, 81)
+
+[sub_resource type="Animation" id="Animation_nyu1g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_k2xlx"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.621, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0o8vn"]
+_data = {
+"RESET": SubResource("Animation_nyu1g"),
+"show": SubResource("Animation_k2xlx")
+}
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_ye00f")
+metadata/_edit_horizontal_guides_ = [-340.0]
+
+[node name="Tv" type="Sprite2D" parent="."]
+position = Vector2(36, -20)
+scale = Vector2(0.214844, 0.210938)
+texture = ExtResource("1_wxi4x")
+offset = Vector2(-13.9639, 9.48146)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(40, -24)
+shape = SubResource("RectangleShape2D_gdlkc")
+
+[node name="ui" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(41, -100)
+scale = Vector2(0.726562, 0.726562)
+texture = ExtResource("3_gmtlm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -8.0
+offset_top = -108.0
+offset_right = 139.0
+offset_bottom = -68.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+scroll_active = false
+visible_characters_behavior = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../RichTextLabel")
+libraries = {
+"": SubResource("AnimationLibrary_0o8vn")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

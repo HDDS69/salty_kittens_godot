@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://3jyuid1mhowh"]
+
+[ext_resource type="Script" path="res://stone.gd" id="1_cw1v1"]
+[ext_resource type="Texture2D" uid="uid://cw2rkeftfyt2v" path="res://текстуры/Untitled 01-09-2024 10-06-05.png" id="1_ed23n"]
+[ext_resource type="PackedScene" uid="uid://biolsc1m46omi" path="res://stone_1.tscn" id="2_tlw13"]
+[ext_resource type="Texture2D" uid="uid://d22sxtqxknkb" path="res://ui/ui_hit.png" id="4_muwl5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2rqk"]
+size = Vector2(25, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbn7w"]
+atlas = ExtResource("1_ed23n")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j0e5a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbn7w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(20, -30)
+script = ExtResource("1_cw1v1")
+stone = ExtResource("2_tlw13")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 23)
+shape = SubResource("RectangleShape2D_q2rqk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+position = Vector2(0.999998, -6)
+scale = Vector2(1.625, 1.625)
+sprite_frames = SubResource("SpriteFrames_j0e5a")
+
+[node name="ui" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-7, -31)
+scale = Vector2(1.03906, 1.03906)
+texture = ExtResource("4_muwl5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

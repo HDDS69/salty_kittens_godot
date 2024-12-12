@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbsdguel865kq"]
+
+[ext_resource type="Script" path="res://box.gd" id="1_phbp0"]
+[ext_resource type="Texture2D" uid="uid://c7nshux4e51se" path="res://текстуры/box.png" id="2_yu04v"]
+[ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://ui/Untitled 06-12-2024 11-00-24.png" id="3_k7t82"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2vkov"]
+size = Vector2(42, 40)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uh52w"]
+polygon = PackedVector2Array(-23, -19, -13, -19, -13, -16, -10, -16, -10, -13, 1, -13, 1, -10, 6, -10, 6, -13, 9, -13, 9, -16, 12, -16, 11, -20, 19, -19, 19, 21, -22, 20)
+
+[node name="box" type="Area2D"]
+position = Vector2(23, -21)
+script = ExtResource("1_phbp0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -3)
+shape = SubResource("RectangleShape2D_2vkov")
+
+[node name="Box" type="Sprite2D" parent="."]
+position = Vector2(-2, -4)
+scale = Vector2(1.3125, 1.53125)
+texture = ExtResource("2_yu04v")
+
+[node name="ui" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(21, -59)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_k7t82")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_uh52w")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

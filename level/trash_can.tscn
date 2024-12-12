@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyhtbn77nlgvq"]
+
+[ext_resource type="Texture2D" uid="uid://c70ftmjrmoke5" path="res://текстуры/Untitled 01-17-2024 09-38-27.png" id="1_lo87r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2okpf"]
+size = Vector2(28, 37.5)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(14, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -19.25)
+shape = SubResource("RectangleShape2D_2okpf")
+disabled = true
+
+[node name="Untitled01-17-202409-38-27" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, -19)
+scale = Vector2(2.0625, 2.375)
+texture = ExtResource("1_lo87r")

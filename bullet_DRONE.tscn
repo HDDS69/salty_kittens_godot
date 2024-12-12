@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bys2fq87tspfr"]
+
+[ext_resource type="Script" path="res://bulletWHITE.gd" id="1_2tygr"]
+[ext_resource type="Texture2D" uid="uid://bvdfft1k3xnh" path="res://текстуры/bulletwhite.png" id="2_l37s7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_phki7"]
+size = Vector2(20, 6)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="bullet" type="Area2D" parent="."]
+script = ExtResource("1_2tygr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bullet"]
+position = Vector2(8, -3)
+shape = SubResource("RectangleShape2D_phki7")
+
+[node name="Bulletwhite" type="Sprite2D" parent="bullet"]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(14, 2)
+scale = Vector2(3.20313, 2.62586)
+texture = ExtResource("2_l37s7")
+
+[connection signal="body_entered" from="bullet" to="bullet" method="_on_body_entered"]

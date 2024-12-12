@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://biolsc1m46omi"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5p6wu"]
+[ext_resource type="Texture2D" uid="uid://cw2rkeftfyt2v" path="res://текстуры/Untitled 01-09-2024 10-06-05.png" id="2_k0iwk"]
+[ext_resource type="Texture2D" uid="uid://ccyx2gm0donm5" path="res://текстуры/partical.png" id="2_y23td"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uej7r"]
+size = Vector2(24, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_todhj"]
+atlas = ExtResource("2_y23td")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gejd3"]
+atlas = ExtResource("2_y23td")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdia1"]
+atlas = ExtResource("2_y23td")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dms2x"]
+atlas = ExtResource("2_k0iwk")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_evc4d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_todhj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gejd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdia1")
+}],
+"loop": false,
+"name": &"death",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dms2x")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="stone_1" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_5p6wu")
+
+[node name="stone2" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 2.5)
+shape = SubResource("RectangleShape2D_uej7r")
+disabled = true
+
+[node name="Timer" type="Timer" parent="stone2"]
+process_callback = 0
+wait_time = 2.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2, -4)
+scale = Vector2(1.65625, 1.75)
+sprite_frames = SubResource("SpriteFrames_evc4d")
+animation = &"death"
+autoplay = "default"
+frame = 1
+frame_progress = 0.929665
+
+[node name="stone_1" type="Area2D" parent="."]
+
+[node name="stone2" type="CollisionShape2D" parent="stone_1"]
+position = Vector2(-2, 2.5)
+shape = SubResource("RectangleShape2D_uej7r")
+
+[node name="Timer" type="Timer" parent="stone_1/stone2"]
+process_callback = 0
+wait_time = 2.0
+
+[connection signal="timeout" from="stone2/Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="stone_1" to="." method="_on_stone_1_body_entered"]
+[connection signal="timeout" from="stone_1/stone2/Timer" to="." method="_on_timer_timeout"]
