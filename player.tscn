@@ -1,4 +1,4 @@
-[gd_scene load_steps=153 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=156 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8m1ne"]
 [ext_resource type="Texture2D" uid="uid://t57kw0wqc4jq" path="res://текстуры/stand/stand0.png" id="1_gbacm"]
@@ -88,6 +88,9 @@
 [ext_resource type="Texture2D" uid="uid://dcbii2qt2h07a" path="res://текстуры/mobile_control/boom_buttom2.png" id="79_ukxdx"]
 [ext_resource type="Script" path="res://joystick/joystick.gd" id="81_1mwr7"]
 [ext_resource type="Texture2D" uid="uid://dlx03pgoywkfw" path="res://joystick/texture/5f394193cd6b2173f7a82981.png" id="81_nc8c3"]
+[ext_resource type="Script" path="res://joystick/jousuck/addons/virtual_joystick/virtual_joystick.gd" id="82_qvknn"]
+[ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://joystick/jousuck/addons/virtual_joystick/textures/joystick_base_outline.png" id="83_xsgbm"]
+[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://joystick/jousuck/addons/virtual_joystick/textures/joystick_tip_arrows.png" id="84_djclt"]
 [ext_resource type="Script" path="res://ui/pause.gd" id="89_iraf3"]
 [ext_resource type="Texture2D" uid="uid://b2duhhcvfouem" path="res://текстуры/heart.png" id="90_87nqs"]
 [ext_resource type="Texture2D" uid="uid://no41veu2k2hv" path="res://текстуры/Untitled 12-08-2023 06-02-571.png" id="91_fpvj6"]
@@ -850,7 +853,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 
 [node name="mobile controller" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="mobile controller"]
 anchors_preset = 6
@@ -866,7 +868,8 @@ grow_horizontal = 0
 grow_vertical = 2
 
 [node name="joystick" type="Area2D" parent="mobile controller/MarginContainer"]
-position = Vector2(94, 385)
+visible = false
+position = Vector2(98, 385)
 scale = Vector2(0.639998, 0.64)
 script = ExtResource("81_1mwr7")
 
@@ -965,6 +968,53 @@ texture_normal = ExtResource("78_y4fi5")
 texture_pressed = ExtResource("79_ukxdx")
 shape = SubResource("RectangleShape2D_cebvf")
 action = "boom"
+
+[node name="Virtual Joystick" type="Control" parent="mobile controller"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 756.0
+offset_top = -473.0
+offset_right = 1102.0
+offset_bottom = -128.0
+grow_vertical = 0
+script = ExtResource("82_qvknn")
+
+[node name="Base" type="TextureRect" parent="mobile controller/Virtual Joystick"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -135.5
+offset_right = 137.0
+offset_bottom = 137.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+mouse_force_pass_scroll_events = false
+texture = ExtResource("83_xsgbm")
+stretch_mode = 5
+
+[node name="Tip" type="TextureRect" parent="mobile controller/Virtual Joystick/Base"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("84_djclt")
+stretch_mode = 5
 
 [node name="Timer_invulnerability" type="Timer" parent="."]
 wait_time = 2.0
