@@ -17,9 +17,12 @@ func _input(event):
 			small.position = Vector2(0,0)
 			touched = false
 func _process(delta):
-	if touched:
-		small.global_position = get_global_mouse_position()
-		small.position = big.position + (small.position - big.position).limit_length(max_distance)
+	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	if input_direction != Vector2.ZERO:  # Проверка, движется ли игрок
+		var target_rotation = input_direction.angle()  # Получаем угол для вращения
+		$"../../../blaster".rotation = target_rotation  # Поворачиваем игрока в сторону движения
+		
+	
 
 func get_velo():
 	var joy_velo = Vector2(0,0)
