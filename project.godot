@@ -11,10 +11,11 @@ config_version=5
 [application]
 
 config/name="saltykitens"
+config/version="0.0.2"
 run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
-boot_splash/show_image=false
+boot_splash/image="res://текстуры/start/Sprite-0001.png"
 config/icon="res://icon.svg"
 
 [autoload]

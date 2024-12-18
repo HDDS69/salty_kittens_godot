@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=158 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8m1ne"]
 [ext_resource type="Texture2D" uid="uid://t57kw0wqc4jq" path="res://текстуры/stand/stand0.png" id="1_gbacm"]
@@ -94,6 +94,7 @@
 [ext_resource type="Script" path="res://ui/pause.gd" id="89_iraf3"]
 [ext_resource type="Texture2D" uid="uid://b2duhhcvfouem" path="res://текстуры/heart.png" id="90_87nqs"]
 [ext_resource type="Texture2D" uid="uid://no41veu2k2hv" path="res://текстуры/Untitled 12-08-2023 06-02-571.png" id="91_fpvj6"]
+[ext_resource type="Script" path="res://label11.gd" id="95_d17l8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yaqnp"]
 radius = 25.0
@@ -808,6 +809,8 @@ func _process(delta):
 		anim.play(\"3\")
 "
 
+[sub_resource type="LabelSettings" id="LabelSettings_uf1d1"]
+
 [node name="player" type="CharacterBody2D"]
 show_behind_parent = true
 top_level = true
@@ -853,6 +856,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 
 [node name="mobile controller" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="mobile controller"]
 anchors_preset = 6
@@ -860,8 +864,8 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -265.0
-offset_top = -311.0
+offset_left = -269.0
+offset_top = -322.0
 offset_right = 3.0
 offset_bottom = 324.0
 grow_horizontal = 0
@@ -971,14 +975,17 @@ action = "boom"
 
 [node name="Virtual Joystick" type="Control" parent="mobile controller"]
 layout_mode = 3
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 756.0
-offset_top = -473.0
-offset_right = 1102.0
-offset_bottom = -128.0
-grow_vertical = 0
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -161.0
+offset_right = -93.0
+offset_bottom = 148.0
+grow_horizontal = 0
+grow_vertical = 2
 script = ExtResource("82_qvknn")
 
 [node name="Base" type="TextureRect" parent="mobile controller/Virtual Joystick"]
@@ -1204,6 +1211,14 @@ offset_right = 203.0
 offset_bottom = 90.0
 theme_override_font_sizes/font_size = 25
 text = "salt :"
+
+[node name="fps" type="Label" parent="CanvasLayer"]
+offset_left = 552.0
+offset_top = 40.0
+offset_right = 634.0
+offset_bottom = 100.0
+label_settings = SubResource("LabelSettings_uf1d1")
+script = ExtResource("95_d17l8")
 
 [node name="music" type="Node" parent="."]
 

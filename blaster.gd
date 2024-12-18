@@ -21,6 +21,7 @@ func _process(delta):
 		recoil_x = -1000
 	var pos = $"../mobile controller/MarginContainer/joystick".get_velo() * 10000
 	#look_at(pos)
+	#законментировать для мобильной версии
 	look_at(get_global_mouse_position())
 func shoot():
 	#$"..".recharge = false

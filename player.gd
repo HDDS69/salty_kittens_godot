@@ -57,13 +57,6 @@ func _process(delta: float) -> void:
 		actiom = true
 	else:
 		actiom = false
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		if JUMP_VELOCITY <= -450 and JUMP_VELOCITY >= -500 :
-			JUMP_VELOCITY -= 10
-		anim.play("jump")
-		$music/jump.play()
 	action = false
 	if Input.is_action_just_pressed("ui_focus_next") and salty_platform == false:
 		action = true
@@ -79,7 +72,7 @@ func _process(delta: float) -> void:
 		$blaster.visible = true
 	if alive == true:
 		if sleep_anim :
-			velocity.y += 100000
+			velocity.y += 10
 			one = self.position.x
 			two = self.position.y
 			$CollisionShape2D/AnimatedSprite2D.flip_h = false
@@ -88,6 +81,13 @@ func _process(delta: float) -> void:
 			self.position.x = one
 			self.position.y = two
 		else:
+			# Handle jump.
+			if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+				velocity.y = JUMP_VELOCITY
+				if JUMP_VELOCITY <= -450 and JUMP_VELOCITY >= -500 :
+					JUMP_VELOCITY -= 10
+					anim.play("jump")
+					$music/jump.play()
 			#if Input.is_action_just_pressed("recharge") and blaster and salt >= 9:
 			#	$blaster/blaster.play("recharge")
 			#	salt -=9

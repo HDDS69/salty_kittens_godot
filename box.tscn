@@ -25,8 +25,8 @@ texture = ExtResource("2_yu04v")
 
 [node name="ui" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(21, -59)
-scale = Vector2(0.5, 0.5)
+position = Vector2(-2, -59)
+scale = Vector2(0.78125, 0.78125)
 texture = ExtResource("3_k7t82")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
