@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://ui/Untitled 06-12-2024 11-00-24.png" id="3_gmtlm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdlkc"]
-size = Vector2(99, 81)
+size = Vector2(90, 69)
 
 [sub_resource type="Animation" id="Animation_nyu1g"]
 length = 0.001
@@ -48,13 +48,13 @@ script = ExtResource("1_ye00f")
 metadata/_edit_horizontal_guides_ = [-340.0]
 
 [node name="Tv" type="Sprite2D" parent="."]
-position = Vector2(36, -20)
-scale = Vector2(0.214844, 0.210938)
+position = Vector2(34, -28)
+scale = Vector2(0.167969, 0.164915)
 texture = ExtResource("1_wxi4x")
 offset = Vector2(-13.9639, 9.48146)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(40, -24)
+position = Vector2(37, -24.5)
 shape = SubResource("RectangleShape2D_gdlkc")
 
 [node name="ui" type="Sprite2D" parent="."]

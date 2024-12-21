@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://dul7duh4vkmp7" path="res://текстуры/level/BAR.png" id="35_iunsv"]
 [ext_resource type="Texture2D" uid="uid://3erpt850yorg" path="res://текстуры/level/house.png" id="35_lnap2"]
 [ext_resource type="Texture2D" uid="uid://dlywsc3n8ax3b" path="res://текстуры/bg/33.png" id="35_o2v5r"]
-[ext_resource type="Script" path="res://la1el.gd" id="36_3h74u"]
 [ext_resource type="Script" path="res://1.gd" id="36_c27wk"]
 [ext_resource type="Texture2D" uid="uid://ryhciba00ttg" path="res://текстуры/bg/34.png" id="36_hcpty"]
 [ext_resource type="Texture2D" uid="uid://b6baq1asqhgdt" path="res://текстуры/bg/35.png" id="37_floxf"]
@@ -20,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://clu55dowosb3e" path="res://текстуры/bg/36.png" id="38_04f8i"]
 [ext_resource type="Texture2D" uid="uid://d3uu7vux5c1ue" path="res://текстуры/Untitled 12-11-2023 09-42-001.png" id="38_xpheq"]
 [ext_resource type="Texture2D" uid="uid://dnn8bflaqyv6v" path="res://текстуры/bg/37.png" id="39_38y4e"]
+[ext_resource type="PackedScene" uid="uid://cy4dfmjr88k02" path="res://mob.tscn" id="39_axyxg"]
 [ext_resource type="Texture2D" uid="uid://bk3uvutdbs2dy" path="res://текстуры/level/pngkey.com-white-circle-png-transparent-1709387.png" id="39_oi8n1"]
 [ext_resource type="Texture2D" uid="uid://dulg04vrml0c0" path="res://текстуры/bg/38.png" id="40_05ry7"]
 [ext_resource type="Texture2D" uid="uid://clyeydanr7vlt" path="res://текстуры/material/Lovepik_com-400382896-stage-light-effect.png" id="40_dba6a"]
@@ -157,7 +157,7 @@ tile_set = ExtResource("58_wekh7")
 occluder = SubResource("OccluderPolygon2D_c2ld0")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayer"]
-tile_map_data = PackedByteArray("AACw/yAAHwAAAAMAAACw/yEAHwAAAAQAAACw/yIAHwAAAAUAAACw/yMAHwAAAAYAAACw/yQAHwAAAAcAAACx/yAAHwABAAMAAACx/yEAHwABAAQAAACx/yIAHwABAAUAAACx/yMAHwABAAYAAACx/yQAHwABAAcAAACy/yAAHwACAAMAAACy/yEAHwACAAQAAACy/yIAHwACAAUAAACy/yMAHwACAAYAAACy/yQAHwACAAcAAACz/yAAHwADAAMAAACz/yEAHwADAAQAAACz/yIAHwADAAUAAACz/yMAHwADAAYAAACz/yQAHwADAAcAAAC0/yAAHwAEAAMAAAC0/yEAHwAEAAQAAAC0/yIAHwAEAAUAAAC0/yMAHwAEAAYAAAC0/yQAHwAEAAcAAAC1/yAAHwAFAAMAAAC1/yEAHwAFAAQAAAC1/yIAHwAFAAUAAAC1/yMAHwAFAAYAAAC1/yQAHwAFAAcAAAC2/yAAHwAGAAMAAAC2/yEAHwAGAAQAAAC2/yIAHwAGAAUAAAC2/yMAHwAGAAYAAAC2/yQAHwAGAAcAAAC3/yAAHwAHAAMAAAC3/yEAHwAHAAQAAAC3/yIAHwAHAAUAAAC3/yMAHwAHAAYAAAC3/yQAHwAHAAcAAAC4/yAAHwAIAAMAAAC4/yEAHwAIAAQAAAC4/yIAHwAIAAUAAAC4/yMAHwAIAAYAAAC4/yQAHwAIAAcAAAC5/yEAHwAJAAQAAAC5/yIAHwAJAAUAAAC5/yMAHwAJAAYAAAC5/yQAHwAJAAcAAAC6/yEAHwAKAAQAAAC6/yIAHwAKAAUAAAC6/yMAHwAKAAYAAAC6/yQAHwAKAAcAAAC7/yAAHwALAAMAAAC7/yEAHwAAAAQAABC7/yIAHwAAAAUAABC7/yMAHwAAAAYAABC7/yQAHwAAAAcAABA=")
+tile_map_data = PackedByteArray("AACw/yAAHwAAAAMAAACw/yEAHwAAAAQAAACw/yIAHwAAAAUAAACw/yMAHwAAAAYAAACw/yQAHwAAAAcAAACx/yAAHwABAAMAAACx/yEAHwABAAQAAACx/yIAHwABAAUAAACx/yMAHwABAAYAAACx/yQAHwABAAcAAACy/yAAHwACAAMAAACy/yEAHwACAAQAAACy/yIAHwACAAUAAACy/yMAHwACAAYAAACy/yQAHwACAAcAAACz/yAAHwADAAMAAACz/yEAHwADAAQAAACz/yIAHwADAAUAAACz/yMAHwADAAYAAACz/yQAHwADAAcAAAC0/yAAHwAEAAMAAAC0/yEAHwAEAAQAAAC0/yIAHwAEAAUAAAC0/yMAHwAEAAYAAAC0/yQAHwAEAAcAAAC1/yAAHwAFAAMAAAC1/yEAHwAFAAQAAAC1/yIAHwAFAAUAAAC1/yMAHwAFAAYAAAC1/yQAHwAFAAcAAAC2/yAAHwAGAAMAAAC2/yEAHwAGAAQAAAC2/yIAHwAGAAUAAAC2/yMAHwAGAAYAAAC2/yQAHwAGAAcAAAC3/yAAHwAHAAMAAAC3/yEAHwAHAAQAAAC3/yIAHwAHAAUAAAC3/yMAHwAHAAYAAAC3/yQAHwAHAAcAAAC4/yAAHwAIAAMAAAC4/yEAHwAIAAQAAAC4/yIAHwAIAAUAAAC4/yMAHwAIAAYAAAC4/yQAHwAIAAcAAAC5/yEAHwAJAAQAAAC5/yIAHwAJAAUAAAC5/yMAHwAJAAYAAAC5/yQAHwAJAAcAAAC6/yEAHwAKAAQAAAC6/yIAHwAKAAUAAAC6/yMAHwAKAAYAAAC6/yQAHwAKAAcAAAC7/yAAHwALAAMAAAC7/yEAHwAAAAQAABC7/yIAHwAAAAUAABC7/yMAHwAAAAYAABC7/yQAHwAAAAcAABDH/yIAIAABAAEAAADH/yMAIAABAAIAAADH/yQAIAABAAMAAADI/yIAIAACAAEAAADI/yQAIAACAAMAAADJ/yIAIAADAAEAAADJ/yQAIAADAAMAAADK/yIAIAAEAAEAAADK/yQAIAAEAAMAAADL/yIAIAAFAAEAAADL/yQAIAAFAAMAAADM/yIAIAAGAAEAAADM/yMAIAAGAAIAAADM/yQAIAAGAAMAAAC8/yMAGgAAAAIAAAC8/yQAGgAAAAMAAAC9/yMAGgABAAIAAAC9/yQAGgABAAMAAAC+/yMAGgACAAIAAAC+/yQAGgACAAMAAAC//yMAGgADAAIAAAC//yQAGgADAAMAAADI/yMAIAACAAIAAADJ/yMAIAADAAIAAADK/yMAIAAEAAIAAADL/yMAIAAFAAIAAACy/xwAGAAAAAAAAACy/x0AGAAAAAEAAACy/x4AGAAAAAIAAACy/x8AGAAAAAMAAACz/xwAGAABAAAAAACz/x0AGAABAAEAAACz/x4AGAABAAIAAACz/x8AGAABAAMAAAC0/xwAGAACAAAAAAC0/x0AGAACAAEAAAC0/x4AGAACAAIAAAC0/x8AGAACAAMAAAC1/xwAGAADAAAAAAC1/x0AGAADAAEAAAC1/x4AGAADAAIAAAC1/x8AGAADAAMAAAC+/x0AIQAAAAIAAAC//xsAIQABAAAAAAC//xwAIQABAAEAAAC//x0AIQABAAIAAADA/xsAIQACAAAAAADA/xwAIQACAAEAAADA/x0AIQACAAIAAADB/x0AIQADAAIAAADG/yMAIgAAAAAAAADG/yQAIgAAAAEAAADF/yMAJAAAAAAAAADF/yQAJAAAAAEAAADE/yMAJAAAAAAAAADE/yQAJAAAAAEAAADC/yQAJAAAAAAAAGDD/yQAJAAAAAEAAGDN/yQAJAAAAAAAAGDO/yQAJAAAAAEAAGDE/yIAJAAAAAAAAGDF/yIAJAAAAAEAAGA=")
 tile_set = ExtResource("58_wekh7")
 
 [node name="loots" type="Node2D" parent="."]
@@ -190,7 +190,7 @@ occluder = SubResource("OccluderPolygon2D_xe3fp")
 position = Vector2(493, 629)
 
 [node name="Area2D2" parent="." instance=ExtResource("72_jtves")]
-position = Vector2(-870, 641)
+position = Vector2(-869, 626)
 
 [node name="bgg" type="Node2D" parent="."]
 z_index = -10
@@ -227,7 +227,7 @@ position = Vector2(-25, 650)
 position = Vector2(-14, 601)
 
 [node name="player" parent="." instance=ExtResource("1_5u35f")]
-position = Vector2(-1197, 579)
+position = Vector2(-1187, 537)
 
 [node name="education" type="Node" parent="."]
 
@@ -365,7 +365,7 @@ tab_size = 1
 position = Vector2(83.8125, 69)
 shape = SubResource("RectangleShape2D_2ywit")
 
-[node name="light" type="Node" parent="."]
+[node name="light" type="Node2D" parent="."]
 
 [node name="PointLight2D" type="PointLight2D" parent="light"]
 position = Vector2(587, 485)
@@ -377,56 +377,65 @@ texture = ExtResource("39_oi8n1")
 [node name="PointLight2D6" type="PointLight2D" parent="light"]
 position = Vector2(1047, 683)
 scale = Vector2(0.158114, 0.379687)
-color = Color(1, 1, 1, 0.270588)
+color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
 texture = ExtResource("40_dba6a")
 
 [node name="PointLight2D7" type="PointLight2D" parent="light"]
 position = Vector2(1285, 655)
 scale = Vector2(0.145114, 0.322329)
-color = Color(1, 1, 1, 0.270588)
+color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
 texture = ExtResource("40_dba6a")
 
 [node name="PointLight2D17" type="PointLight2D" parent="light"]
 position = Vector2(1746, 655)
 scale = Vector2(0.145114, 0.322329)
-color = Color(1, 1, 1, 0.270588)
+color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
 texture = ExtResource("40_dba6a")
 
 [node name="PointLight2D18" type="PointLight2D" parent="light"]
 position = Vector2(2040, 655)
 scale = Vector2(0.145114, 0.322329)
-color = Color(1, 1, 1, 0.270588)
+color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
 texture = ExtResource("40_dba6a")
 
 [node name="PointLight2D19" type="PointLight2D" parent="light"]
 position = Vector2(2527, 655)
 scale = Vector2(0.145114, 0.322329)
-color = Color(1, 1, 1, 0.270588)
+color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
 texture = ExtResource("40_dba6a")
 
 [node name="PointLight2D8" type="PointLight2D" parent="light"]
 position = Vector2(854, 649)
 scale = Vector2(0.134228, 0.322329)
-color = Color(1, 1, 1, 0.270588)
+color = Color(1, 1, 0.509804, 0.494118)
+energy = 1.61
+shadow_enabled = true
+texture = ExtResource("40_dba6a")
+
+[node name="PointLight2D20" type="PointLight2D" parent="light"]
+position = Vector2(-983, 686)
+scale = Vector2(0.303557, 0.307739)
+color = Color(1, 1, 0.513726, 0.270588)
+energy = 0.7
 shadow_enabled = true
 texture = ExtResource("40_dba6a")
 
 [node name="PointLight2D9" type="PointLight2D" parent="light"]
 position = Vector2(406, 637)
 scale = Vector2(0.134228, 0.322329)
-color = Color(1, 1, 1, 0.270588)
+color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
 texture = ExtResource("40_dba6a")
 
 [node name="PointLight2D10" type="PointLight2D" parent="light"]
 position = Vector2(227, 644)
 scale = Vector2(0.132114, 0.320686)
-color = Color(1, 1, 1, 0.270588)
+color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
 texture = ExtResource("40_dba6a")
 
@@ -495,15 +504,9 @@ energy = 0.84
 shadow_enabled = true
 texture = ExtResource("39_oi8n1")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 80.0
-offset_top = 19.0
-offset_right = 120.0
-offset_bottom = 42.0
-script = ExtResource("36_3h74u")
-metadata/_edit_use_anchors_ = true
+[node name="mob" parent="." node_paths=PackedStringArray("player") instance=ExtResource("39_axyxg")]
+position = Vector2(1373, 432)
+player = NodePath("../player")
 
 [connection signal="timeout" from="loots/Timer" to="loots/Timer" method="_on_timeout"]
 [connection signal="timeout" from="salty_platform_timer/Timer1" to="salty_platform_timer" method="_on_timer_1_timeout"]

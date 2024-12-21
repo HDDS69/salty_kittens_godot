@@ -96,9 +96,8 @@
 [ext_resource type="Texture2D" uid="uid://no41veu2k2hv" path="res://текстуры/Untitled 12-08-2023 06-02-571.png" id="91_fpvj6"]
 [ext_resource type="Script" path="res://label11.gd" id="95_d17l8"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yaqnp"]
-radius = 25.0
-height = 59.57
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bv2w"]
+size = Vector2(49, 45)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s5npq"]
 atlas = ExtResource("47_1jtis")
@@ -814,15 +813,16 @@ func _process(delta):
 [node name="player" type="CharacterBody2D"]
 show_behind_parent = true
 top_level = true
+collision_mask = 16
 script = ExtResource("1_8m1ne")
 granade = ExtResource("2_l4htu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(44, 50)
-shape = SubResource("CapsuleShape2D_yaqnp")
+position = Vector2(43, 54)
+shape = SubResource("RectangleShape2D_0bv2w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(-5, -19)
+position = Vector2(-6, -24)
 sprite_frames = SubResource("SpriteFrames_gnm27")
 animation = &"hit"
 autoplay = "hidel"
@@ -840,17 +840,18 @@ animation = &"hit"
 autoplay = "xex"
 
 [node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
-position = Vector2(-44, -169)
+position = Vector2(-43.5, -175.5)
+scale = Vector2(22.798, 0.913744)
 process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="recharge" type="RichTextLabel" parent="CollisionShape2D"]
-offset_left = -57.0
-offset_top = -65.0
-offset_right = 69.0
-offset_bottom = -30.0
+offset_left = -56.5
+offset_top = -71.5
+offset_right = 69.5
+offset_bottom = -36.5
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
@@ -1191,6 +1192,11 @@ layout_mode = 2
 action_mode = 0
 text = "полный экран"
 
+[node name="light" type="Button" parent="CanvasLayer/setting/Panel/VBoxContainer"]
+layout_mode = 2
+action_mode = 0
+text = "включить / выключить освещение"
+
 [node name="quit_setting" type="Button" parent="CanvasLayer/setting/Panel/VBoxContainer"]
 layout_mode = 2
 action_mode = 0
@@ -1213,10 +1219,10 @@ theme_override_font_sizes/font_size = 25
 text = "salt :"
 
 [node name="fps" type="Label" parent="CanvasLayer"]
-offset_left = 552.0
-offset_top = 40.0
-offset_right = 634.0
-offset_bottom = 100.0
+offset_left = 105.0
+offset_top = 69.0
+offset_right = 187.0
+offset_bottom = 129.0
 label_settings = SubResource("LabelSettings_uf1d1")
 script = ExtResource("95_d17l8")
 
@@ -1237,4 +1243,5 @@ stream = ExtResource("68_qmmh8")
 [connection signal="pressed" from="CanvasLayer/pause/Panel/VBoxContainer/quit" to="CanvasLayer/pause" method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/controll" to="CanvasLayer/pause" method="_on_controll_pressed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/full screen" to="CanvasLayer/pause" method="_on_full_screen_pressed"]
+[connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/light" to="." method="_on_light_pressed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/quit_setting" to="CanvasLayer/pause" method="_on_quit_setting_pressed"]

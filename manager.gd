@@ -9,3 +9,7 @@ func _process(delta):
 		playerTmp.position = Vector2(1,400)
 		add_child(playerTmp)
 		death = false
+	if SavePoint.light == false :
+		$"../light".visible = false
+	else :
+		$"../light".visible = true

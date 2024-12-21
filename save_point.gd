@@ -2,6 +2,7 @@ extends Node
 #глобальная переменная она позже будет сохранятся сдесь и загружатся куда надо
 var mobile_control = false
 var fullscreen = false
+var light = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

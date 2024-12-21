@@ -1,5 +1,5 @@
 extends Control
-
+var setting = false
 var fullscreen = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,9 +8,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
-		get_tree().paused = true
-		self.visible = true
+	if setting:
+		pass
+	else :
+		if Input.is_action_just_pressed("ui_cancel"):
+			get_tree().paused = !get_tree().paused
+			self.visible = !self.visible
 	#if visible_controller == true:
 	#	$"../../mobile controller".show()
 	#else:
@@ -20,6 +23,7 @@ func _on_resume_pressed() -> void:
 	self.hide
 	get_tree().paused = false
 	self.visible = false
+	setting = false
 
 #кнопка при которой происходит раскрытие на весь экран
 func _on_full_screen_pressed() -> void:
@@ -32,10 +36,14 @@ func _on_full_screen_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	$"../setting".visible = true
+	$".".visible = false
+	setting = true
 
 
 func _on_quit_setting_pressed() -> void:
 	$"../setting".visible = false
+	$".".visible = true
+	setting = false
 
 
 func _on_controll_pressed() -> void:

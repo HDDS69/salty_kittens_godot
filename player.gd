@@ -29,22 +29,6 @@ var recharge = true
 var count = 3
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("ui_hit_player0") or hit:
-		if blaster and count > 0:
-			$blaster.shoot()
-		else:
-			if is_on_floor():  # Проверяем, находится ли игрок на земле
-				hit = true
-				one = self.position.x
-				two = self.position.y
-				anim.play("hit")
-				await anim.animation_finished 
-				hit = false
-				self.position.x = one
-				self.position.y = two
-			else:
-				hit = false  # Сбрасываем состояние hit, если игрок в воздухе
-				
 	invulnerability_timer_start()
 	if velocity.y > 0:
 		land = true
@@ -81,6 +65,21 @@ func _process(delta: float) -> void:
 			self.position.x = one
 			self.position.y = two
 		else:
+			if Input.is_action_just_pressed("ui_hit_player0") or hit:
+				if blaster and count > 0:
+					$blaster.shoot()
+				else:
+					if is_on_floor():  # Проверяем, находится ли игрок на земле
+						hit = true
+						one = self.position.x
+						two = self.position.y
+						anim.play("hit")
+						await anim.animation_finished 
+						hit = false
+						self.position.x = one
+						self.position.y = two
+					else:
+						hit = false  # Сбрасываем состояние hit, если игрок в воздухе
 			# Handle jump.
 			if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 				velocity.y = JUMP_VELOCITY
@@ -184,3 +183,7 @@ func boom():
 func _on_timer_timeout():
 	count = 3
 	$CollisionShape2D/recharge.text = ""
+
+
+func _on_light_pressed() -> void:
+	SavePoint.light = !SavePoint.light

@@ -6,37 +6,20 @@ var chace = false
 var speed = 100
 var hit_ft = false
 var Death = false
+@onready var nav := $NavigationAgent2D
 @export var bullet : PackedScene
+@export var player : Node2D
 func _physics_process(delta):
+	var direction = to_local(nav.get_next_path_position()).normalized()
 	# Add the gravity.
-	var player = $"../../player"
+	var player = $"../player"
 	if hit_ft and player.hit :
 		death()
-	#if not is_on_floor():
-	#	velocity.y += gravity * delta
-	var direction = (player.position - self.position).normalized()
-	if chace == true:
-		$Timer.start()
-		velocity.x = direction.x * speed
-	if chace == true:
-		$Timer.start()
-		velocity.y = direction.y * speed
-	else:
-		velocity.x = 0
-	$Area2D.look_at(player.position)
+	velocity.y = speed * direction.y
+	velocity.x = speed * direction.x
 	move_and_slide()
-
-func _on_detector_body_entered(body):
-	if body.name == "player":
-		chace = true
-		
-
-
-func _on_detector_body_exited(body):
-	if body.name == "player":
-		chace = false
-
-
+	
+	
 func _on_death_body_entered(body):
 	if body.name == "player":
 		pass
@@ -67,3 +50,7 @@ func _on_death_2_area_shape_entered(area_rid, area, area_shape_index, local_shap
 
 func _on_timer_timeout():
 	shoot()
+
+
+func _on_timerway_timeout() -> void:
+	nav.target_position = player.global_position
