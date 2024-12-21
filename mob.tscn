@@ -70,7 +70,8 @@ size = Vector2(100, 53)
 size = Vector2(37, 11)
 
 [node name="mob" type="CharacterBody2D"]
-collision_mask = 0
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_1crrg")
 bullet = ExtResource("2_r605y")
 
@@ -118,7 +119,7 @@ position = Vector2(28, 0)
 wait_time = 2.0
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-navigation_layers = 18
+navigation_layers = 24
 debug_enabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
