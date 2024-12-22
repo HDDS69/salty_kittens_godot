@@ -813,7 +813,6 @@ func _process(delta):
 [node name="player" type="CharacterBody2D"]
 show_behind_parent = true
 top_level = true
-collision_mask = 6
 script = ExtResource("1_8m1ne")
 granade = ExtResource("2_l4htu")
 

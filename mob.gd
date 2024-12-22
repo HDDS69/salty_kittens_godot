@@ -10,7 +10,7 @@ var Death = false
 @export var bullet : PackedScene
 @export var player : Node2D
 func _physics_process(delta):
-	var direction = to_local(nav.get_next_path_position()).normalized()
+	var direction = to_local(player.global_position).normalized()
 	# Add the gravity.
 	var player = $"../player"
 	if hit_ft and player.hit :
@@ -50,7 +50,3 @@ func _on_death_2_area_shape_entered(area_rid, area, area_shape_index, local_shap
 
 func _on_timer_timeout():
 	shoot()
-
-
-func _on_timerway_timeout() -> void:
-	nav.target_position = player.global_position
