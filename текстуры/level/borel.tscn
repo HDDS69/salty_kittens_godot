@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwe8uyi30jkan"]
+[gd_scene load_steps=17 format=3 uid="uid://dwe8uyi30jkan"]
 
 [ext_resource type="Script" path="res://текстуры/level/borel.gd" id="1_r87uk"]
 [ext_resource type="Texture2D" uid="uid://cup0dh8c1ipjv" path="res://текстуры/level/borel.png" id="2_1cwlo"]
@@ -82,6 +82,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jaouy"]
+polygon = PackedVector2Array(-10.0158, -16.2323, -8.76386, -16.2323, -8.76386, -17.4347, -6.88589, -17.4347, -6.88589, -18.0359, -3.75594, -18.0359, -3.75594, -19.2383, 11.8938, -19.2383, 11.8938, -18.0359, 15.0238, -18.0359, 15.0238, -16.8335, 16.9017, -16.8335, 16.9017, -16.2323, 18.1537, -16.2323, 18.1537, 9.61914, 16.9017, 9.61914, 16.9017, 10.8215, -6.88589, 10.8215, -6.88589, 10.2203, -9.38985, 10.2203, -9.38985, 9.01795, -10.0158, 9.01795)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 scale = Vector2(1.59747, 1.66335)
 script = ExtResource("1_r87uk")
@@ -108,5 +111,8 @@ position = Vector2(4, -4)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_d68ky")
 animation = &"boom"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_jaouy")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

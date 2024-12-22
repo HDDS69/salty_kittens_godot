@@ -24,8 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://cy4dfmjr88k02" path="res://mob.tscn" id="39_axyxg"]
 [ext_resource type="Texture2D" uid="uid://bk3uvutdbs2dy" path="res://текстуры/level/pngkey.com-white-circle-png-transparent-1709387.png" id="39_oi8n1"]
 [ext_resource type="Texture2D" uid="uid://dulg04vrml0c0" path="res://текстуры/bg/38.png" id="40_05ry7"]
-[ext_resource type="Texture2D" uid="uid://clyeydanr7vlt" path="res://текстуры/material/Lovepik_com-400382896-stage-light-effect.png" id="40_dba6a"]
 [ext_resource type="Texture2D" uid="uid://c8fkck5qifxbm" path="res://текстуры/bg/40.png" id="41_occcm"]
+[ext_resource type="Texture2D" uid="uid://cdi52hph0caun" path="res://текстуры/level/light1.png" id="41_pxflf"]
 [ext_resource type="Texture2D" uid="uid://cyxxisjgi3s1m" path="res://текстуры/bg/39.png" id="42_tnbdi"]
 [ext_resource type="Texture2D" uid="uid://dhpb0g4ajc7e6" path="res://текстуры/bg/41.png" id="43_aqc7d"]
 [ext_resource type="Texture2D" uid="uid://dgw2d5eiyviby" path="res://текстуры/bg/42.png" id="44_as1q7"]
@@ -388,6 +388,27 @@ metadata/_edit_use_anchors_ = true
 
 [node name="light" type="Node2D" parent="."]
 
+[node name="PointLight2D20" type="PointLight2D" parent="light"]
+position = Vector2(-986, 601)
+scale = Vector2(0.592632, 0.475085)
+color = Color(1, 1, 0.513726, 0.270588)
+shadow_enabled = true
+texture = ExtResource("41_pxflf")
+
+[node name="PointLight2D21" type="PointLight2D" parent="light"]
+position = Vector2(-332, 582.689)
+scale = Vector2(1.03794, 0.627428)
+energy = 0.54
+shadow_enabled = true
+texture = ExtResource("41_pxflf")
+
+[node name="PointLight2D22" type="PointLight2D" parent="light"]
+position = Vector2(-95, 581.189)
+scale = Vector2(1.03794, 0.61571)
+energy = 0.54
+shadow_enabled = true
+texture = ExtResource("41_pxflf")
+
 [node name="PointLight2D" type="PointLight2D" parent="light"]
 position = Vector2(587, 485)
 scale = Vector2(1.30491, 0.831872)
@@ -396,69 +417,61 @@ shadow_enabled = true
 texture = ExtResource("39_oi8n1")
 
 [node name="PointLight2D6" type="PointLight2D" parent="light"]
-position = Vector2(1047, 683)
-scale = Vector2(0.158114, 0.379687)
+position = Vector2(1046, 581.35)
+scale = Vector2(0.395463, 0.60664)
 color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
-texture = ExtResource("40_dba6a")
+texture = ExtResource("41_pxflf")
 
 [node name="PointLight2D7" type="PointLight2D" parent="light"]
-position = Vector2(1285, 655)
-scale = Vector2(0.145114, 0.322329)
+position = Vector2(1285, 598)
+scale = Vector2(0.420213, 0.743196)
 color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
-texture = ExtResource("40_dba6a")
+texture = ExtResource("41_pxflf")
 
 [node name="PointLight2D17" type="PointLight2D" parent="light"]
-position = Vector2(1746, 655)
-scale = Vector2(0.145114, 0.322329)
+position = Vector2(1750, 581.185)
+scale = Vector2(0.431932, 0.615738)
 color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
-texture = ExtResource("40_dba6a")
+texture = ExtResource("41_pxflf")
 
 [node name="PointLight2D18" type="PointLight2D" parent="light"]
-position = Vector2(2040, 655)
-scale = Vector2(0.145114, 0.322329)
+position = Vector2(2037, 582.435)
+scale = Vector2(0.365526, 0.605973)
 color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
-texture = ExtResource("40_dba6a")
+texture = ExtResource("41_pxflf")
 
 [node name="PointLight2D19" type="PointLight2D" parent="light"]
-position = Vector2(2527, 655)
-scale = Vector2(0.145114, 0.322329)
+position = Vector2(2532, 581.5)
+scale = Vector2(0.398437, 0.621094)
 color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
-texture = ExtResource("40_dba6a")
+texture = ExtResource("41_pxflf")
 
 [node name="PointLight2D8" type="PointLight2D" parent="light"]
-position = Vector2(854, 649)
-scale = Vector2(0.134228, 0.322329)
+position = Vector2(853, 582)
+scale = Vector2(0.41477, 0.598664)
 color = Color(1, 1, 0.509804, 0.494118)
 energy = 1.61
 shadow_enabled = true
-texture = ExtResource("40_dba6a")
-
-[node name="PointLight2D20" type="PointLight2D" parent="light"]
-position = Vector2(-983, 686)
-scale = Vector2(0.303557, 0.307739)
-color = Color(1, 1, 0.513726, 0.270588)
-energy = 0.7
-shadow_enabled = true
-texture = ExtResource("40_dba6a")
+texture = ExtResource("41_pxflf")
 
 [node name="PointLight2D9" type="PointLight2D" parent="light"]
-position = Vector2(406, 637)
-scale = Vector2(0.134228, 0.322329)
+position = Vector2(407, 583)
+scale = Vector2(0.430395, 0.731477)
 color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
-texture = ExtResource("40_dba6a")
+texture = ExtResource("41_pxflf")
 
 [node name="PointLight2D10" type="PointLight2D" parent="light"]
-position = Vector2(227, 644)
-scale = Vector2(0.132114, 0.320686)
+position = Vector2(230, 584)
+scale = Vector2(0.380685, 0.752047)
 color = Color(1, 1, 0.509804, 0.494118)
 shadow_enabled = true
-texture = ExtResource("40_dba6a")
+texture = ExtResource("41_pxflf")
 
 [node name="PointLight2D2" type="PointLight2D" parent="light"]
 position = Vector2(1092, 363)
