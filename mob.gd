@@ -4,7 +4,7 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var chace = false
 var shoot_timer = false
-var speed = 100
+var speed = 1000
 var hit_ft = false
 var Death = false
 @onready var nav := $NavigationAgent2D
@@ -17,8 +17,9 @@ func _physics_process(delta):
 		death()
 	if chace :
 		var direction = to_local(player.global_position).normalized()
+		#velocity.y = speed * direction.y 
 		position.y = player.position.y - 200
-		velocity.x = speed * direction.x
+		velocity.x = speed * direction.x *delta
 	if shoot_timer :
 		$Timer.start()
 		shoot_timer = false
