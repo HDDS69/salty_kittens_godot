@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://edx064hnqy0p"]
+[gd_scene load_steps=46 format=4 uid="uid://edx064hnqy0p"]
 
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://player.tscn" id="1_5u35f"]
 [ext_resource type="Script" path="res://manager.gd" id="1_h74ei"]
@@ -13,10 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://dlywsc3n8ax3b" path="res://текстуры/bg/33.png" id="35_o2v5r"]
 [ext_resource type="Script" path="res://1.gd" id="36_c27wk"]
 [ext_resource type="Texture2D" uid="uid://ryhciba00ttg" path="res://текстуры/bg/34.png" id="36_hcpty"]
+[ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://ui/Untitled 06-12-2024 11-00-24.png" id="37_010or"]
 [ext_resource type="Texture2D" uid="uid://b6baq1asqhgdt" path="res://текстуры/bg/35.png" id="37_floxf"]
 [ext_resource type="Texture2D" uid="uid://bkwwv3soe5dco" path="res://текстуры/level/house2.png" id="37_himvu"]
 [ext_resource type="PackedScene" uid="uid://dwe8uyi30jkan" path="res://текстуры/level/borel.tscn" id="37_pp35r"]
 [ext_resource type="Texture2D" uid="uid://clu55dowosb3e" path="res://текстуры/bg/36.png" id="38_04f8i"]
+[ext_resource type="Texture2D" uid="uid://d22sxtqxknkb" path="res://ui/ui_hit.png" id="38_c25bn"]
 [ext_resource type="Texture2D" uid="uid://d3uu7vux5c1ue" path="res://текстуры/Untitled 12-11-2023 09-42-001.png" id="38_xpheq"]
 [ext_resource type="Texture2D" uid="uid://dnn8bflaqyv6v" path="res://текстуры/bg/37.png" id="39_38y4e"]
 [ext_resource type="PackedScene" uid="uid://cy4dfmjr88k02" path="res://mob.tscn" id="39_axyxg"]
@@ -157,7 +159,7 @@ tile_set = ExtResource("58_wekh7")
 occluder = SubResource("OccluderPolygon2D_c2ld0")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayer"]
-tile_map_data = PackedByteArray("AACw/yAAHwAAAAMAAACw/yEAHwAAAAQAAACw/yIAHwAAAAUAAACw/yMAHwAAAAYAAACw/yQAHwAAAAcAAACx/yAAHwABAAMAAACx/yEAHwABAAQAAACx/yIAHwABAAUAAACx/yMAHwABAAYAAACx/yQAHwABAAcAAACy/yAAHwACAAMAAACy/yEAHwACAAQAAACy/yIAHwACAAUAAACy/yMAHwACAAYAAACy/yQAHwACAAcAAACz/yAAHwADAAMAAACz/yEAHwADAAQAAACz/yIAHwADAAUAAACz/yMAHwADAAYAAACz/yQAHwADAAcAAAC0/yAAHwAEAAMAAAC0/yEAHwAEAAQAAAC0/yIAHwAEAAUAAAC0/yMAHwAEAAYAAAC0/yQAHwAEAAcAAAC1/yAAHwAFAAMAAAC1/yEAHwAFAAQAAAC1/yIAHwAFAAUAAAC1/yMAHwAFAAYAAAC1/yQAHwAFAAcAAAC2/yAAHwAGAAMAAAC2/yEAHwAGAAQAAAC2/yIAHwAGAAUAAAC2/yMAHwAGAAYAAAC2/yQAHwAGAAcAAAC3/yAAHwAHAAMAAAC3/yEAHwAHAAQAAAC3/yIAHwAHAAUAAAC3/yMAHwAHAAYAAAC3/yQAHwAHAAcAAAC4/yAAHwAIAAMAAAC4/yEAHwAIAAQAAAC4/yIAHwAIAAUAAAC4/yMAHwAIAAYAAAC4/yQAHwAIAAcAAAC5/yEAHwAJAAQAAAC5/yIAHwAJAAUAAAC5/yMAHwAJAAYAAAC5/yQAHwAJAAcAAAC6/yEAHwAKAAQAAAC6/yIAHwAKAAUAAAC6/yMAHwAKAAYAAAC6/yQAHwAKAAcAAAC7/yAAHwALAAMAAAC7/yEAHwAAAAQAABC7/yIAHwAAAAUAABC7/yMAHwAAAAYAABC7/yQAHwAAAAcAABDH/yIAIAABAAEAAADH/yMAIAABAAIAAADH/yQAIAABAAMAAADI/yIAIAACAAEAAADI/yQAIAACAAMAAADJ/yIAIAADAAEAAADJ/yQAIAADAAMAAADK/yIAIAAEAAEAAADK/yQAIAAEAAMAAADL/yIAIAAFAAEAAADL/yQAIAAFAAMAAADM/yIAIAAGAAEAAADM/yMAIAAGAAIAAADM/yQAIAAGAAMAAAC8/yMAGgAAAAIAAAC8/yQAGgAAAAMAAAC9/yMAGgABAAIAAAC9/yQAGgABAAMAAAC+/yMAGgACAAIAAAC+/yQAGgACAAMAAAC//yMAGgADAAIAAAC//yQAGgADAAMAAADI/yMAIAACAAIAAADJ/yMAIAADAAIAAADK/yMAIAAEAAIAAADL/yMAIAAFAAIAAACy/xwAGAAAAAAAAACy/x0AGAAAAAEAAACy/x4AGAAAAAIAAACy/x8AGAAAAAMAAACz/xwAGAABAAAAAACz/x0AGAABAAEAAACz/x4AGAABAAIAAACz/x8AGAABAAMAAAC0/xwAGAACAAAAAAC0/x0AGAACAAEAAAC0/x4AGAACAAIAAAC0/x8AGAACAAMAAAC1/xwAGAADAAAAAAC1/x0AGAADAAEAAAC1/x4AGAADAAIAAAC1/x8AGAADAAMAAAC+/x0AIQAAAAIAAAC//xsAIQABAAAAAAC//xwAIQABAAEAAAC//x0AIQABAAIAAADA/xsAIQACAAAAAADA/xwAIQACAAEAAADA/x0AIQACAAIAAADB/x0AIQADAAIAAADG/yMAIgAAAAAAAADG/yQAIgAAAAEAAADF/yMAJAAAAAAAAADF/yQAJAAAAAEAAADE/yMAJAAAAAAAAADE/yQAJAAAAAEAAADC/yQAJAAAAAAAAGDD/yQAJAAAAAEAAGDN/yQAJAAAAAAAAGDO/yQAJAAAAAEAAGDE/yIAJAAAAAAAAGDF/yIAJAAAAAEAAGA=")
+tile_map_data = PackedByteArray("AACw/yAAHwAAAAMAAACw/yEAHwAAAAQAAACw/yIAHwAAAAUAAACw/yMAHwAAAAYAAACw/yQAHwAAAAcAAACx/yAAHwABAAMAAACx/yEAHwABAAQAAACx/yIAHwABAAUAAACx/yMAHwABAAYAAACx/yQAHwABAAcAAACy/yAAHwACAAMAAACy/yEAHwACAAQAAACy/yIAHwACAAUAAACy/yMAHwACAAYAAACy/yQAHwACAAcAAACz/yAAHwADAAMAAACz/yEAHwADAAQAAACz/yIAHwADAAUAAACz/yMAHwADAAYAAACz/yQAHwADAAcAAAC0/yAAHwAEAAMAAAC0/yEAHwAEAAQAAAC0/yIAHwAEAAUAAAC0/yMAHwAEAAYAAAC0/yQAHwAEAAcAAAC1/yAAHwAFAAMAAAC1/yEAHwAFAAQAAAC1/yIAHwAFAAUAAAC1/yMAHwAFAAYAAAC1/yQAHwAFAAcAAAC2/yAAHwAGAAMAAAC2/yEAHwAGAAQAAAC2/yIAHwAGAAUAAAC2/yMAHwAGAAYAAAC2/yQAHwAGAAcAAAC3/yAAHwAHAAMAAAC3/yEAHwAHAAQAAAC3/yIAHwAHAAUAAAC3/yMAHwAHAAYAAAC3/yQAHwAHAAcAAAC4/yAAHwAIAAMAAAC4/yEAHwAIAAQAAAC4/yIAHwAIAAUAAAC4/yMAHwAIAAYAAAC4/yQAHwAIAAcAAAC5/yEAHwAJAAQAAAC5/yIAHwAJAAUAAAC5/yMAHwAJAAYAAAC5/yQAHwAJAAcAAAC6/yEAHwAKAAQAAAC6/yIAHwAKAAUAAAC6/yMAHwAKAAYAAAC6/yQAHwAKAAcAAAC7/yAAHwALAAMAAAC7/yEAHwAAAAQAABC7/yIAHwAAAAUAABC7/yMAHwAAAAYAABC7/yQAHwAAAAcAABDH/yIAIAABAAEAAADH/yMAIAABAAIAAADH/yQAIAABAAMAAADI/yIAIAACAAEAAADI/yQAIAACAAMAAADJ/yIAIAADAAEAAADJ/yQAIAADAAMAAADK/yIAIAAEAAEAAADK/yQAIAAEAAMAAADL/yIAIAAFAAEAAADL/yQAIAAFAAMAAADM/yIAIAAGAAEAAADM/yMAIAAGAAIAAADM/yQAIAAGAAMAAAC8/yMAGgAAAAIAAAC8/yQAGgAAAAMAAAC9/yMAGgABAAIAAAC9/yQAGgABAAMAAAC+/yMAGgACAAIAAAC+/yQAGgACAAMAAAC//yMAGgADAAIAAAC//yQAGgADAAMAAADI/yMAIAACAAIAAADJ/yMAIAADAAIAAADK/yMAIAAEAAIAAADL/yMAIAAFAAIAAACy/xwAGAAAAAAAAACy/x0AGAAAAAEAAACy/x4AGAAAAAIAAACy/x8AGAAAAAMAAACz/xwAGAABAAAAAACz/x0AGAABAAEAAACz/x4AGAABAAIAAACz/x8AGAABAAMAAAC0/xwAGAACAAAAAAC0/x0AGAACAAEAAAC0/x4AGAACAAIAAAC0/x8AGAACAAMAAAC1/xwAGAADAAAAAAC1/x0AGAADAAEAAAC1/x4AGAADAAIAAAC1/x8AGAADAAMAAAC+/x0AIQAAAAIAAAC//xsAIQABAAAAAAC//xwAIQABAAEAAAC//x0AIQABAAIAAADA/xsAIQACAAAAAADA/xwAIQACAAEAAADA/x0AIQACAAIAAADB/x0AIQADAAIAAADG/yMAIgAAAAAAAADG/yQAIgAAAAEAAADF/yMAJAAAAAAAAADF/yQAJAAAAAEAAADE/yMAJAAAAAAAAADE/yQAJAAAAAEAAADC/yQAJAAAAAAAAGDD/yQAJAAAAAEAAGDN/yQAJAAAAAAAAGDO/yQAJAAAAAEAAGDE/yIAJAAAAAAAAGDF/yIAJAAAAAEAAGDa/yMAJAAAAAAAAADa/yQAJAAAAAEAAADb/yQAJAAAAAAAAGDc/yQAJAAAAAEAAGDb/yIAIgAAAAAAAADb/yMAIgAAAAEAAADd/yUAHAACAAAAAEDj/yUAHAACAAMAAEDk/yUAHAACAAMAAEDd/yQAHAABAAAAAEDe/yUAHAACAAEAAEDe/yQAHAABAAEAAEDf/yUAHAACAAIAAEDf/yQAHAABAAIAAEDg/yUAHAACAAAAAEDg/yQAHAABAAAAAEDh/yUAHAACAAEAAEDh/yQAHAABAAEAAEDi/yUAHAACAAIAAEDi/yQAHAABAAIAAEDj/yQADAAAAAEAAADl/yEAHAABAAAAABDl/yIAHAABAAEAABDl/yMADAAAAAAAAADl/yQADAAAAAEAAADk/yEAHAACAAAAABDk/yIAHAACAAEAABDk/yMADAABAAAAAADk/yQADAABAAEAAADm/yMADAABAAAAAADm/yQADAABAAEAAADj/yMADAAAAAAAAADo/yQACgAAAAAAAQD4/yQACgAAAAAAAQDs/yQACAACAAAAAADr/yQACAADAAAAAAD0ACEAAQAAAAAAAAD0ACIAAQAAAAEAAAD0ACMAAQAAAAIAAAD0ACQAAQAAAAMAAAD1ACEAAQABAAAAAAD1ACIAAQABAAEAAAD1ACMAAQABAAIAAAD1ACQAAQABAAMAAAD2ACEAAQACAAAAAAD2ACIAAQACAAEAAAD2ACMAAQACAAIAAAD2ACQAAQACAAMAAAD3ACEAAQADAAAAAAD3ACIAAQADAAEAAAD3ACMAAQADAAIAAAD3ACQAAQADAAMAAAA=")
 tile_set = ExtResource("58_wekh7")
 
 [node name="loots" type="Node2D" parent="."]
@@ -234,12 +236,12 @@ position = Vector2(-1187, 537)
 [node name="1" type="RichTextLabel" parent="education"]
 visible = false
 offset_left = -208.0
-offset_top = 512.0
+offset_top = 504.0
 offset_right = -30.0
 offset_bottom = 650.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[wave amp=50] что бы разбить бочки или другие препятствия используется дробовик или гранаты ."
+text = "[tornado amp=50] что бы разбить бочки или другие препятствия используется дробовик или гранаты ."
 tab_size = 1
 script = ExtResource("36_c27wk")
 
@@ -279,10 +281,18 @@ offset_right = 336.0
 offset_bottom = 639.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[wave amp=30 ] вы можете взимодействовать с некоторым предметами над ними будет соотвестующий значок "
+text = "[wave amp = 30][fade start=0 length=150 ] вы можете взимодействовать с некоторым предметами над ними будет соотвестующий значок"
 tab_size = 1
 
 [node name="a3" type="Area2D" parent="education/3"]
+
+[node name="Untitled06-12-202411-00-24" type="Sprite2D" parent="education/3/a3"]
+position = Vector2(107, 128)
+texture = ExtResource("37_010or")
+
+[node name="UiHit" type="Sprite2D" parent="education/3/a3"]
+position = Vector2(145, 128)
+texture = ExtResource("38_c25bn")
 
 [node name="3" type="CollisionShape2D" parent="education/3/a3"]
 position = Vector2(90.5, 69)
@@ -295,12 +305,11 @@ offset_right = 719.0
 offset_bottom = 735.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[wave amp=30 ] УДАРЬ ПО МНЕ ЛЕВОЙ КНОПКОЙ МЫШИ"
+text = " УДАРЬ ПО МНЕ ЛЕВОЙ КНОПКОЙ МЫШИ"
 tab_size = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="5" type="RichTextLabel" parent="education"]
-visible = false
 offset_left = 1494.0
 offset_top = 519.0
 offset_right = 1668.0
@@ -308,7 +317,7 @@ offset_bottom = 659.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[wave amp=30 ] предлагаю вздремнуть 
-нажми E что бы поспать "
+нажми[rainbow] E[/rainbow] что бы поспать "
 tab_size = 1
 
 [node name="а5" type="Area2D" parent="education/5"]
@@ -356,7 +365,7 @@ offset_right = 2718.0
 offset_bottom = 680.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[wave amp=30 ] обучение ВСЁ , ливай отсюда"
+text = "[wave amp=30 ][fade start=0 length=30] обучение ВСЁ , ливай отсюда"
 tab_size = 1
 
 [node name="а8" type="Area2D" parent="education/8"]
