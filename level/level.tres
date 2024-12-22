@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=68 format=3 uid="uid://dfu05fuyf4vuy"]
+[gd_resource type="TileSet" load_steps=70 format=3 uid="uid://dfu05fuyf4vuy"]
 
 [ext_resource type="Texture2D" uid="uid://bu3otia4my213" path="res://текстуры/bg_doroga.png" id="1_a2fpb"]
 [ext_resource type="Texture2D" uid="uid://c54kn4wujjovx" path="res://текстуры/cube.png" id="2_yrgmu"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://cwisg1luq6ftq" path="res://текстуры/level/lampa.png" id="26_iwgpx"]
 [ext_resource type="Texture2D" uid="uid://c8aw0ubn3w46c" path="res://текстуры/level/beer.png" id="27_i773w"]
 [ext_resource type="Texture2D" uid="uid://c0as31ryhvpw3" path="res://текстуры/level/0beer.png" id="28_kt06f"]
+[ext_resource type="Texture2D" uid="uid://bp58d3o2e7r01" path="res://текстуры/lampa.png" id="31_caipv"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mfxh5"]
 
@@ -6905,6 +6906,13 @@ texture = ExtResource("5_pk8wl")
 texture = ExtResource("6_fw2lc")
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxtrv"]
+texture = ExtResource("31_caipv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_worel"]
 texture = ExtResource("8_5m21l")
 0:0/0 = 0
@@ -6990,3 +6998,4 @@ sources/32 = SubResource("TileSetAtlasSource_pa1jm")
 sources/33 = SubResource("TileSetAtlasSource_vgv73")
 sources/34 = SubResource("TileSetAtlasSource_k8fah")
 sources/36 = SubResource("TileSetAtlasSource_4ah0v")
+sources/6 = SubResource("TileSetAtlasSource_nxtrv")
