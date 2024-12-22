@@ -120,7 +120,7 @@ texture = ExtResource("3_p8wik")
 position = Vector2(28, 0)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.5
+wait_time = 2.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(7.5, 116.5)

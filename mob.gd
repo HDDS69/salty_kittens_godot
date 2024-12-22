@@ -7,6 +7,7 @@ var shoot_timer = false
 var speed = 1000
 var hit_ft = false
 var Death = false
+var helth = 3
 @onready var nav := $NavigationAgent2D
 @export var bullet : PackedScene
 @export var player : Node2D
@@ -20,7 +21,7 @@ func _physics_process(delta):
 		#velocity.y = speed * direction.y 
 		position.y = player.position.y - 200
 		velocity.x = speed * direction.x 
-	if shoot_timer :
+	if shoot_timer and chace:
 		$Timer.start()
 		shoot_timer = false
 	move_and_slide()
@@ -46,7 +47,9 @@ func shoot():
 #функция смерти
 func death():
 	#await anim.Animation.finished дождаться окончании анимации
-	queue_free()
+	helth -=1
+	if helth <= 0 :
+		queue_free()
 
 
 func _on_death_2_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):

@@ -821,10 +821,12 @@ position = Vector2(43, 54)
 shape = SubResource("RectangleShape2D_0bv2w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(-6, -24)
+position = Vector2(-5, -25)
 sprite_frames = SubResource("SpriteFrames_gnm27")
-animation = &"hit"
+animation = &"run"
 autoplay = "hidel"
+frame = 24
+frame_progress = 0.556012
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape2D/AnimatedSprite2D"]
 root_node = NodePath("../../..")
