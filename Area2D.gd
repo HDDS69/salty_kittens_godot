@@ -9,4 +9,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#print($"..".player.position)
-	look_at(($"..".player.position))
+	var pos = $"..".player.position
+	pos.x +=30
+	look_at(pos)

@@ -1,6 +1,6 @@
 extends Area2D
 
-var SPEED = 25
+var SPEED = 15
 var whitelist = [
 	'mob',
 	'mob2',

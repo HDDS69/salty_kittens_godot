@@ -19,7 +19,7 @@ func _physics_process(delta):
 		var direction = to_local(player.global_position).normalized()
 		#velocity.y = speed * direction.y 
 		position.y = player.position.y - 200
-		velocity.x = speed * direction.x *delta
+		velocity.x = speed * direction.x 
 	if shoot_timer :
 		$Timer.start()
 		shoot_timer = false
