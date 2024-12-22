@@ -26,5 +26,5 @@ func _on_body_entered(body):
 	#queue_free()
 	if body.name == 'player':
 		body.health -=1
-	if body.name == 'TileMap':
+	if body.name == 'TileMapLayer':
 		queue_free()

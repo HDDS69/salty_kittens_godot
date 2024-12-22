@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cy4dfmjr88k02"]
+[gd_scene load_steps=20 format=3 uid="uid://cy4dfmjr88k02"]
 
 [ext_resource type="Script" path="res://mob.gd" id="1_1crrg"]
 [ext_resource type="Texture2D" uid="uid://bqojnv0r6ifw2" path="res://текстуры/drone.png" id="2_5limf"]
@@ -69,6 +69,12 @@ size = Vector2(100, 53)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w2fci"]
 size = Vector2(37, 11)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qeeuu"]
+radius = 7.35284
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fwt2c"]
+radius = 139.09
+
 [node name="mob" type="CharacterBody2D"]
 script = ExtResource("1_1crrg")
 bullet = ExtResource("2_r605y")
@@ -114,7 +120,7 @@ texture = ExtResource("3_p8wik")
 position = Vector2(28, 0)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.5
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(7.5, 116.5)
@@ -128,8 +134,25 @@ scale = Vector2(0.0625, 0.071048)
 color = Color(0.172549, 1, 1, 1)
 texture = ExtResource("6_j1om4")
 
+[node name="way" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="way"]
+position = Vector2(59, 128)
+scale = Vector2(49.5507, 20.3846)
+shape = SubResource("CircleShape2D_qeeuu")
+
+[node name="shoot" type="Area2D" parent="."]
+position = Vector2(50, 127)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shoot"]
+shape = SubResource("CircleShape2D_fwt2c")
+
 [connection signal="area_entered" from="death" to="." method="_on_death_area_entered"]
 [connection signal="body_entered" from="death" to="." method="_on_death_body_entered"]
 [connection signal="area_shape_entered" from="death2" to="." method="_on_death_2_area_shape_entered"]
 [connection signal="body_entered" from="death2" to="." method="_on_death_2_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="way" to="." method="_on_way_body_entered"]
+[connection signal="body_exited" from="way" to="." method="_on_way_body_exited"]
+[connection signal="body_entered" from="shoot" to="." method="_on_shoot_body_entered"]
+[connection signal="body_exited" from="shoot" to="." method="_on_shoot_body_exited"]
