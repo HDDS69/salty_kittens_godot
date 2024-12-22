@@ -147,6 +147,21 @@ position = Vector2(50, 127)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shoot"]
 shape = SubResource("CircleShape2D_fwt2c")
 
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = 8.0
+offset_top = 73.0
+offset_right = 52.0
+offset_bottom = 100.0
+max_value = 3.0
+
+[node name="Label" type="Label" parent="ProgressBar"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 4.0
+offset_right = 85.0
+offset_bottom = 27.0
+text = "HP"
+
 [connection signal="area_entered" from="death" to="." method="_on_death_area_entered"]
 [connection signal="body_entered" from="death" to="." method="_on_death_body_entered"]
 [connection signal="area_shape_entered" from="death2" to="." method="_on_death_2_area_shape_entered"]

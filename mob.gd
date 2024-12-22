@@ -13,6 +13,7 @@ var helth = 3
 @export var player : Node2D
 
 func _physics_process(delta):
+	$ProgressBar.value = helth
 	# Add the gravity.
 	if hit_ft and player.hit :
 		death()

@@ -365,6 +365,17 @@ tab_size = 1
 position = Vector2(83.8125, 69)
 shape = SubResource("RectangleShape2D_2ywit")
 
+[node name="9" type="RichTextLabel" parent="education"]
+offset_left = 859.0
+offset_top = 543.0
+offset_right = 1064.0
+offset_bottom = 683.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "[wave amp=30 ]ВО ВРЕМЯ ИГРЫ ВАМ МОГУТ ПОЯВЛЯТЬСЯ  РАЗЛИЧНЫЕ ВРАГИ -  НАПРИМЕР ДРОНЫ ."
+tab_size = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="light" type="Node2D" parent="."]
 
 [node name="PointLight2D" type="PointLight2D" parent="light"]
