@@ -858,7 +858,6 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 
 [node name="mobile controller" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="mobile controller"]
 anchors_preset = 6
@@ -936,7 +935,7 @@ shape = SubResource("RectangleShape2D_cebvf")
 action = "ui_left_player"
 
 [node name="eat_salt" type="TouchScreenButton" parent="mobile controller/MarginContainer2"]
-position = Vector2(48, 26)
+position = Vector2(18, 79)
 scale = Vector2(0.749132, 0.717117)
 texture_normal = ExtResource("68_6rhxx")
 texture_pressed = ExtResource("69_aic7l")
@@ -1135,15 +1134,15 @@ grow_vertical = 2
 
 [node name="resume" type="Button" parent="CanvasLayer/pause/Panel/VBoxContainer"]
 layout_mode = 2
-text = "resume"
+text = "вернуться"
 
 [node name="settings" type="Button" parent="CanvasLayer/pause/Panel/VBoxContainer"]
 layout_mode = 2
-text = "settings"
+text = "настройки"
 
 [node name="quit" type="Button" parent="CanvasLayer/pause/Panel/VBoxContainer"]
 layout_mode = 2
-text = "quit
+text = "выход из игры
 "
 
 [node name="Label" type="Label" parent="CanvasLayer/pause/Panel"]
@@ -1157,7 +1156,7 @@ offset_right = 108.0
 offset_bottom = 55.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 25
-text = "          pause"
+text = "           пауза"
 vertical_alignment = 1
 
 [node name="setting" type="Control" parent="CanvasLayer"]

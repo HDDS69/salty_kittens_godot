@@ -343,7 +343,7 @@ offset_right = 3676.63
 offset_bottom = 688.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[wave amp=30 ]а дальше нельзя потому что разраб 
+text = "[wave amp=30 ]а дальше [/wave] [shake]нельзя потому что[/shake][rainbow] разраб 
 ленивая задница"
 tab_size = 1
 metadata/_edit_use_anchors_ = true
@@ -372,7 +372,7 @@ offset_right = 1064.0
 offset_bottom = 683.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
-text = "[wave amp=30 ]ВО ВРЕМЯ ИГРЫ ВАМ МОГУТ ПОЯВЛЯТЬСЯ  РАЗЛИЧНЫЕ ВРАГИ -  НАПРИМЕР ДРОНЫ ."
+text = "[shake amp=30 ]ВО ВРЕМЯ ИГРЫ ВАМ МОГУТ ПОПАДАТЬСЯ РАЗЛИЧНЫЕ ВРАГИ -  НАПРИМЕР ДРОНЫ ."
 tab_size = 1
 metadata/_edit_use_anchors_ = true
 
