@@ -64,10 +64,10 @@ scale = Vector2(0.726562, 0.726562)
 texture = ExtResource("3_gmtlm")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -8.0
-offset_top = -108.0
-offset_right = 139.0
-offset_bottom = -68.0
+offset_left = -14.0
+offset_top = -111.0
+offset_right = 133.0
+offset_bottom = -64.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 scroll_active = false
