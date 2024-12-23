@@ -803,7 +803,6 @@ autoplay = "xex"
 [node name="Camera2D" type="Camera2D" parent="player/CollisionShape2D"]
 position = Vector2(-43.5, -175.5)
 scale = Vector2(22.798, 0.913744)
-enabled = false
 process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
