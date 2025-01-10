@@ -1,14 +1,39 @@
-[gd_scene load_steps=20 format=3 uid="uid://cy4dfmjr88k02"]
+[gd_scene load_steps=27 format=3 uid="uid://cy4dfmjr88k02"]
 
 [ext_resource type="Script" path="res://mob.gd" id="1_1crrg"]
 [ext_resource type="Texture2D" uid="uid://bqojnv0r6ifw2" path="res://текстуры/drone.png" id="2_5limf"]
 [ext_resource type="PackedScene" uid="uid://bys2fq87tspfr" path="res://bullet_DRONE.tscn" id="2_r605y"]
+[ext_resource type="Texture2D" uid="uid://d0lgxfixkk1xj" path="res://текстуры/dronebreak.png" id="3_ld6pw"]
 [ext_resource type="Script" path="res://Area2D.gd" id="3_ndglu"]
 [ext_resource type="Texture2D" uid="uid://cvnyc5d1bfy3d" path="res://текстуры/Untitled 07-22-2024 10-16-07.png" id="3_p8wik"]
 [ext_resource type="Texture2D" uid="uid://bk3uvutdbs2dy" path="res://текстуры/level/pngkey.com-white-circle-png-transparent-1709387.png" id="6_j1om4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ci2au"]
 size = Vector2(101, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxt3n"]
+atlas = ExtResource("3_ld6pw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eosf2"]
+atlas = ExtResource("3_ld6pw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t50k"]
+atlas = ExtResource("3_ld6pw")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lykcn"]
+atlas = ExtResource("3_ld6pw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehxup"]
+atlas = ExtResource("3_ld6pw")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64v7a"]
+atlas = ExtResource("3_ld6pw")
+region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0wg7"]
 atlas = ExtResource("2_5limf")
@@ -36,6 +61,29 @@ region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0c3h4"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxt3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eosf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t50k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lykcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehxup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64v7a")
+}],
+"loop": false,
+"name": &"death",
+"speed": 7.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d0wg7")
@@ -87,6 +135,7 @@ shape = SubResource("RectangleShape2D_ci2au")
 position = Vector2(47, 111)
 scale = Vector2(4.17188, 4.17188)
 sprite_frames = SubResource("SpriteFrames_0c3h4")
+animation = &"death"
 autoplay = "default"
 
 [node name="death" type="Area2D" parent="."]

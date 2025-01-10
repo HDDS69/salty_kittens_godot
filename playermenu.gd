@@ -21,3 +21,7 @@ func _physics_process(delta: float) -> void:
 	elif velocity.x > 0:
 				$CollisionShape2D/AnimatedSprite2D.flip_h = false
 	move_and_slide()
+
+
+func _on_timer_timeout() -> void:
+	$CollisionShape2D/AnimatedSprite2D.play("hit")

@@ -97,7 +97,7 @@
 [ext_resource type="Script" path="res://label11.gd" id="95_d17l8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bv2w"]
-size = Vector2(49, 45)
+size = Vector2(49, 45.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s5npq"]
 atlas = ExtResource("47_1jtis")
@@ -817,16 +817,14 @@ script = ExtResource("1_8m1ne")
 granade = ExtResource("2_l4htu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(43, 54)
+position = Vector2(43, 53.75)
 shape = SubResource("RectangleShape2D_0bv2w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 position = Vector2(-5, -25)
 sprite_frames = SubResource("SpriteFrames_gnm27")
-animation = &"run"
+animation = &"jump"
 autoplay = "hidel"
-frame = 24
-frame_progress = 0.556012
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape2D/AnimatedSprite2D"]
 root_node = NodePath("../../..")

@@ -59,6 +59,7 @@ shape = SubResource("RectangleShape2D_gdlkc")
 
 [node name="ui" type="Sprite2D" parent="."]
 visible = false
+modulate = Color(0, 0, 0, 1)
 position = Vector2(41, -100)
 scale = Vector2(0.726562, 0.726562)
 texture = ExtResource("3_gmtlm")

@@ -47,9 +47,11 @@ func shoot():
 	shoot_timer = true
 #функция смерти
 func death():
-	#await anim.Animation.finished дождаться окончании анимации
 	helth -=1
-	if helth <= 0 :
+	if helth <= 0 and Death == false:
+		Death = true
+		$AnimatedSprite2D.play("death")
+		await $AnimatedSprite2D.animation_finished #дождаться окончании анимации
 		queue_free()
 
 
