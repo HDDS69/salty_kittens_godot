@@ -135,7 +135,6 @@ shape = SubResource("RectangleShape2D_ci2au")
 position = Vector2(47, 111)
 scale = Vector2(4.17188, 4.17188)
 sprite_frames = SubResource("SpriteFrames_0c3h4")
-animation = &"death"
 autoplay = "default"
 
 [node name="death" type="Area2D" parent="."]
@@ -170,6 +169,7 @@ position = Vector2(28, 0)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(7.5, 116.5)
@@ -192,6 +192,7 @@ shape = SubResource("CircleShape2D_qeeuu")
 
 [node name="shoot" type="Area2D" parent="."]
 position = Vector2(50, 127)
+scale = Vector2(1, 1.08)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shoot"]
 shape = SubResource("CircleShape2D_fwt2c")
@@ -211,6 +212,9 @@ offset_right = 85.0
 offset_bottom = 27.0
 text = "HP"
 
+[node name="recharge" type="Timer" parent="."]
+wait_time = 6.0
+
 [connection signal="area_entered" from="death" to="." method="_on_death_area_entered"]
 [connection signal="body_entered" from="death" to="." method="_on_death_body_entered"]
 [connection signal="area_shape_entered" from="death2" to="." method="_on_death_2_area_shape_entered"]
@@ -220,3 +224,4 @@ text = "HP"
 [connection signal="body_exited" from="way" to="." method="_on_way_body_exited"]
 [connection signal="body_entered" from="shoot" to="." method="_on_shoot_body_entered"]
 [connection signal="body_exited" from="shoot" to="." method="_on_shoot_body_exited"]
+[connection signal="timeout" from="recharge" to="." method="_on_recharge_timeout"]

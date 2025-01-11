@@ -229,7 +229,7 @@ position = Vector2(-25, 650)
 position = Vector2(-14, 601)
 
 [node name="player" parent="." instance=ExtResource("1_5u35f")]
-position = Vector2(-1187, 537)
+position = Vector2(719, 357)
 
 [node name="education" type="Node" parent="."]
 
@@ -541,6 +541,14 @@ texture = ExtResource("39_oi8n1")
 [node name="mob" parent="." node_paths=PackedStringArray("player") instance=ExtResource("39_axyxg")]
 position = Vector2(1373, 432)
 player = NodePath("../player")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -1244.0
+offset_top = 451.0
+offset_right = -493.0
+offset_bottom = 474.0
+scale = Vector2(0.764513, 0.958377)
+text = "ЕГОР ЧТО БЫ ВЗЯТЬ ДРОБАШЬ НАДО НАЖАТЬ НА КНОПОЧКА 2 НА ТВОЁМ ВСРАТОМ МАКБУКЕ"
 
 [connection signal="timeout" from="loots/Timer" to="loots/Timer" method="_on_timeout"]
 [connection signal="timeout" from="salty_platform_timer/Timer1" to="salty_platform_timer" method="_on_timer_1_timeout"]
