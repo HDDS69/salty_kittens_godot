@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cn78231br5yqe"]
+[gd_scene load_steps=21 format=3 uid="uid://cn78231br5yqe"]
 
 [ext_resource type="Script" path="res://boom.gd" id="1_r0rwm"]
 [ext_resource type="Texture2D" uid="uid://da4sj7mxbec58" path="res://текстуры/boom.png" id="2_61aer"]
@@ -112,6 +112,9 @@ animations = [{
 "speed": 25.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uj5gk"]
+polygon = PackedVector2Array(-4, -9, -1, -9, -1, -7, 1, -7, 1, -9, 3, -9, 3, -5, 6, -5, 6, -3, 8, -3, 8, 5, 6, 5, 6, 7, 3, 7, 3, 10, -4, 10, -4, 7, -6, 7, -6, 5, -9, 5, -9, -2, -6, -2, -6, -5, -4, -5)
+
 [node name="boom" type="CharacterBody2D"]
 script = ExtResource("1_r0rwm")
 metadata/_edit_horizontal_guides_ = [-11.0]
@@ -144,6 +147,9 @@ texture = ExtResource("2_61aer")
 position = Vector2(0, 1)
 scale = Vector2(2.38281, 2.38281)
 sprite_frames = SubResource("SpriteFrames_urc4p")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_uj5gk")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

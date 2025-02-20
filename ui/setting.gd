@@ -27,6 +27,7 @@ func _on_quit_setting_pressed():
 
 func _on_full_screen_pressed():
 	fullscreen = !fullscreen
+	$"../click".play()
 	if fullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:

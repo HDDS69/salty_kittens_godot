@@ -61,3 +61,8 @@ func _on_area_2d_3_body_entered(body):
 
 func _on_area_2d_3_body_exited(body):
 	entered_quite = false
+	
+func spawn():
+	var dup = $player.duplicate()
+	dup.position = $player.position + Vector2(50, 0)
+	self.get_parent().add_child(dup)

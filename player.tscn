@@ -1,4 +1,4 @@
-[gd_scene load_steps=158 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=159 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8m1ne"]
 [ext_resource type="Texture2D" uid="uid://t57kw0wqc4jq" path="res://текстуры/stand/stand0.png" id="1_gbacm"]
@@ -810,6 +810,9 @@ func _process(delta):
 
 [sub_resource type="LabelSettings" id="LabelSettings_uf1d1"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_evup4"]
+polygon = PackedVector2Array(23, 70, 62, 70, 62, 68, 23, 68)
+
 [node name="player" type="CharacterBody2D"]
 show_behind_parent = true
 top_level = true
@@ -823,7 +826,7 @@ shape = SubResource("RectangleShape2D_0bv2w")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 position = Vector2(-5, -25)
 sprite_frames = SubResource("SpriteFrames_gnm27")
-animation = &"jump"
+animation = &"hit"
 autoplay = "hidel"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape2D/AnimatedSprite2D"]
@@ -1232,6 +1235,9 @@ stream = ExtResource("67_v58pc")
 
 [node name="land" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource("68_qmmh8")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_evup4")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="Timer_invulnerability" to="." method="_on_timer_invulnerability_timeout"]
