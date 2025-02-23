@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://edx064hnqy0p"]
+[gd_scene load_steps=51 format=4 uid="uid://edx064hnqy0p"]
 
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://player.tscn" id="1_5u35f"]
 [ext_resource type="Script" path="res://manager.gd" id="1_h74ei"]
@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://dgw2d5eiyviby" path="res://текстуры/bg/42.png" id="44_as1q7"]
 [ext_resource type="Texture2D" uid="uid://bcul2ywrbt3sr" path="res://текстуры/bg/43.png" id="45_7q4rl"]
 [ext_resource type="Texture2D" uid="uid://c3eaytqasr3xn" path="res://текстуры/bg/44.png" id="46_24akx"]
+[ext_resource type="PackedScene" uid="uid://cq5huuu6lo0hl" path="res://trigger.tscn" id="46_x0838"]
 [ext_resource type="Texture2D" uid="uid://cxbpmy6ohiox4" path="res://текстуры/bg/45.png" id="47_rn18y"]
 [ext_resource type="Texture2D" uid="uid://cuuxmcyh0t0jf" path="res://текстуры/bg/46.png" id="48_o318s"]
 [ext_resource type="Texture2D" uid="uid://du0v6udlbn6t1" path="res://текстуры/bg/47.png" id="49_rgl0s"]
@@ -667,6 +668,20 @@ player = NodePath("../player")
 position = Vector2(1517, 409)
 player = NodePath("../player")
 
+[node name="Area2D3" parent="." instance=ExtResource("46_x0838")]
+position = Vector2(5342, 579)
+scale = Vector2(-6.92679, 7.9074)
+
+[node name="Label" type="Label" parent="Area2D3"]
+visible = false
+offset_left = 16.1691
+offset_top = -5.81733
+offset_right = 225.169
+offset_bottom = 17.1827
+scale = Vector2(-0.15284, 0.137179)
+text = "сори но демка кончилась.
+увидимся позже"
+
 [connection signal="timeout" from="loots/Timer" to="loots/Timer" method="_on_timeout"]
 [connection signal="timeout" from="salty_platform_timer/Timer1" to="salty_platform_timer" method="_on_timer_1_timeout"]
 [connection signal="body_entered" from="education/1/Area2D" to="education/1" method="_on_area_2d_body_entered"]
@@ -681,3 +696,4 @@ player = NodePath("../player")
 [connection signal="body_exited" from="education/6/а6" to="education/1" method="_on_а_6_body_exited"]
 [connection signal="body_entered" from="education/8/а8" to="education/1" method="_on_а_8_body_entered"]
 [connection signal="body_exited" from="education/8/а8" to="education/1" method="_on_а_8_body_exited"]
+[connection signal="input_event" from="Area2D3" to="manager" method="_on_area_2d_3_input_event"]
