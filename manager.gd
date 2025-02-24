@@ -13,13 +13,3 @@ func _process(delta):
 		$"../light".visible = false
 	else :
 		$"../light".visible = true
-
-
-func _on_area_2d_3_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventAction:
-		print(1) #тут не работает
-		if event.action == "ui_action_button" and event.pressed:
-			$"../Area2D3/Label".visible = true
-	if event is InputEventAction:
-		if event.is_action_pressed("ui_action_button"):
-			print(11)

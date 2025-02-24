@@ -1,4 +1,4 @@
-[gd_scene load_steps=159 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=161 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_8m1ne"]
 [ext_resource type="Texture2D" uid="uid://t57kw0wqc4jq" path="res://текстуры/stand/stand0.png" id="1_gbacm"]
@@ -93,6 +93,7 @@
 [ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://joystick/jousuck/addons/virtual_joystick/textures/joystick_tip_arrows.png" id="84_djclt"]
 [ext_resource type="Script" path="res://ui/pause.gd" id="89_iraf3"]
 [ext_resource type="Texture2D" uid="uid://b2duhhcvfouem" path="res://текстуры/heart.png" id="90_87nqs"]
+[ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://текстуры/font/upheaval-pro/Upheaval/UpheavalPro.ttf" id="91_d1y0c"]
 [ext_resource type="Texture2D" uid="uid://no41veu2k2hv" path="res://текстуры/Untitled 12-08-2023 06-02-571.png" id="91_fpvj6"]
 [ext_resource type="Script" path="res://label11.gd" id="95_d17l8"]
 
@@ -808,6 +809,10 @@ func _process(delta):
 		anim.play(\"3\")
 "
 
+[sub_resource type="LabelSettings" id="LabelSettings_v3gx4"]
+font = ExtResource("91_d1y0c")
+font_size = 56
+
 [sub_resource type="LabelSettings" id="LabelSettings_uf1d1"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_evup4"]
@@ -1136,14 +1141,17 @@ grow_vertical = 2
 
 [node name="resume" type="Button" parent="CanvasLayer/pause/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("91_d1y0c")
 text = "вернуться"
 
 [node name="settings" type="Button" parent="CanvasLayer/pause/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("91_d1y0c")
 text = "настройки"
 
 [node name="quit" type="Button" parent="CanvasLayer/pause/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("91_d1y0c")
 text = "выход из игры
 "
 
@@ -1157,6 +1165,7 @@ offset_top = -22.0
 offset_right = 108.0
 offset_bottom = 55.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 25
 text = "           пауза"
 vertical_alignment = 1
@@ -1186,21 +1195,25 @@ offset_bottom = 444.0
 
 [node name="controll" type="Button" parent="CanvasLayer/setting/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("91_d1y0c")
 action_mode = 0
 text = "показать управление"
 
 [node name="full screen" type="Button" parent="CanvasLayer/setting/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("91_d1y0c")
 action_mode = 0
 text = "полный экран"
 
 [node name="light" type="Button" parent="CanvasLayer/setting/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("91_d1y0c")
 action_mode = 0
 text = "включить / выключить освещение"
 
 [node name="quit_setting" type="Button" parent="CanvasLayer/setting/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("91_d1y0c")
 action_mode = 0
 text = "выйти"
 
@@ -1213,12 +1226,13 @@ autoplay = "hp"
 script = SubResource("GDScript_sk34d")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 102.0
-offset_top = 32.0
-offset_right = 203.0
-offset_bottom = 90.0
+offset_left = 94.0
+offset_top = 39.0
+offset_right = 251.0
+offset_bottom = 73.0
 theme_override_font_sizes/font_size = 25
 text = "salt :"
+label_settings = SubResource("LabelSettings_v3gx4")
 
 [node name="fps" type="Label" parent="CanvasLayer"]
 offset_left = 105.0
