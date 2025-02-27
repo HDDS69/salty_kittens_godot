@@ -113,6 +113,7 @@ func _process(delta: float) -> void:
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 				if land == true and velocity.y == 0:
+					anim1.play("land")
 					anim.play("land")
 					$music/land.play()
 					await anim.animation_finished
@@ -134,8 +135,7 @@ func _process(delta: float) -> void:
 func death():
 	if health == 0 :
 		alive = false
-		anim1.play("death")
-		anim.play("no")
+		anim.play("death")
 		await anim.animation_finished
 		death1 = true   
 		alive = true

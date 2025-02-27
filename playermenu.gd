@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
-var add = 99
+var yes = true
 const SPEED = 4500.0
 const JUMP_VELOCITY = -400.0
-
+var clone = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -30,4 +30,27 @@ func _on_timer_timeout() -> void:
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			$"..".spawn()
+			$Icon.visible = !$Icon.visible
+			$CollisionShape2D/AnimatedSprite2D/Angry.visible = false
+			$Heart.visible = false
+			if clone == false :
+				if $"..".yes :
+					$"..".add += 1
+					$"../Label".text = str($"..".add)
+				else :
+					$"../Label".text = "сломанная фигня"
+				if $"..".add == 666 :
+					$"..".yes = false
+					for i in range(50):
+						var dup = self.duplicate()
+						dup.clone = true
+						dup.position = self.position + Vector2(50, 0)
+						$"..".get_parent().add_child(dup)
+		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
+			$Icon.visible = false
+			$CollisionShape2D/AnimatedSprite2D/Angry.visible = false
+			$Heart.visible = !$Heart.visible
+		elif event.button_index == MOUSE_BUTTON_MIDDLE and event.pressed:
+			$Icon.visible = false
+			$CollisionShape2D/AnimatedSprite2D/Angry.visible = !$CollisionShape2D/AnimatedSprite2D/Angry.visible 
+			$Heart.visible = false

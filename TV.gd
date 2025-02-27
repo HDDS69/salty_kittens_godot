@@ -7,7 +7,7 @@ var entered = false
 
 func _process(delta):
 	if entered == true and $"../player".actiom == true:
-		$RichTextLabel.text = 'принеси [wave amp=50]пивы[/wave] из бара'
+		$RichTextLabel.text = 'братишка , можешь донести меня до бара ? очень уж хочется [wave]пива  '
 		$AnimationPlayer.play("show")
 		$ui.hide()
 

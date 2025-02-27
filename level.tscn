@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://edx064hnqy0p"]
+[gd_scene load_steps=52 format=4 uid="uid://edx064hnqy0p"]
 
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://player.tscn" id="1_5u35f"]
 [ext_resource type="Script" path="res://manager.gd" id="1_h74ei"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://cyxxisjgi3s1m" path="res://текстуры/bg/39.png" id="42_tnbdi"]
 [ext_resource type="Texture2D" uid="uid://c6p7ts3qm2s71" path="res://текстуры/level/HOUSE4.png" id="43_6arbw"]
 [ext_resource type="Texture2D" uid="uid://dhpb0g4ajc7e6" path="res://текстуры/bg/41.png" id="43_aqc7d"]
+[ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://текстуры/font/upheaval-pro/Upheaval/UpheavalPro.ttf" id="43_kdsqi"]
 [ext_resource type="Texture2D" uid="uid://dgw2d5eiyviby" path="res://текстуры/bg/42.png" id="44_as1q7"]
 [ext_resource type="Texture2D" uid="uid://bcul2ywrbt3sr" path="res://текстуры/bg/43.png" id="45_7q4rl"]
 [ext_resource type="Texture2D" uid="uid://c3eaytqasr3xn" path="res://текстуры/bg/44.png" id="46_24akx"]
@@ -422,11 +423,12 @@ tab_size = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="education"]
-offset_left = -1244.0
-offset_top = 451.0
-offset_right = -493.0
-offset_bottom = 474.0
+offset_left = -1243.0
+offset_top = 469.0
+offset_right = -492.0
+offset_bottom = 479.0
 scale = Vector2(0.764513, 0.958377)
+theme_override_fonts/font = ExtResource("43_kdsqi")
 text = "ЕГОР ЧТО БЫ ВЗЯТЬ ДРОБАШЬ НАДО НАЖАТЬ НА КНОПОЧКА 2 НА ТВОЁМ ВСРАТОМ МАКБУКЕ"
 
 [node name="light" type="Node2D" parent="."]

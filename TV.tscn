@@ -10,6 +10,7 @@ size = Vector2(90, 69)
 
 [sub_resource type="Animation" id="Animation_nyu1g"]
 length = 0.001
+step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -81,6 +82,7 @@ root_node = NodePath("../RichTextLabel")
 libraries = {
 "": SubResource("AnimationLibrary_0o8vn")
 }
+speed_scale = 0.132
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

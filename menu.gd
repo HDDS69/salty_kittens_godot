@@ -4,6 +4,8 @@ var fly = false
 var entered_play
 var entered_setting
 var entered_quite
+var add = 0
+var yes = true
 #@onready var node = get_node("res://manager.gd")
 #@onready var controller = node.visible_controller
 func _process(delta):

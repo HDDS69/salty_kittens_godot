@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=4 uid="uid://cx8epnvjemxxp"]
+[gd_scene load_steps=124 format=4 uid="uid://cx8epnvjemxxp"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_hi436"]
 [ext_resource type="PackedScene" uid="uid://dqjofyfd21oan" path="res://bg.tscn" id="2_uxt0t"]
@@ -70,7 +70,12 @@
 [ext_resource type="Texture2D" uid="uid://biwm8xmwe3jqt" path="res://текстуры/death/12.png" id="68_gqqpx"]
 [ext_resource type="Texture2D" uid="uid://db038p08u8sbl" path="res://текстуры/death/13.png" id="69_c8hs1"]
 [ext_resource type="Texture2D" uid="uid://dxkayfsvsgt6q" path="res://текстуры/death/14.png" id="70_0fkhs"]
+[ext_resource type="Texture2D" uid="uid://dq80cs04ll2cg" path="res://текстуры/доп контент/angry.png" id="72_qgs18"]
+[ext_resource type="Texture2D" uid="uid://bghwr16kfkygl" path="res://текстуры/доп контент/icon.png" id="73_g741s"]
+[ext_resource type="Texture2D" uid="uid://b86vp80iuefb6" path="res://текстуры/доп контент/heart.png" id="74_48v53"]
 [ext_resource type="AudioStream" uid="uid://exxkuwrk8jbk" path="res://текстуры/sound/fly.mp3" id="75_1ylwy"]
+[ext_resource type="Texture2D" uid="uid://c8ies5j07ilfo" path="res://текстуры/доп контент/cat.png" id="75_fb88d"]
+[ext_resource type="AudioStream" uid="uid://ccs3wwa30uair" path="res://sound/Project_2.mp3" id="76_60gfu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o6oqp"]
 size = Vector2(385.5, 120)
@@ -688,6 +693,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42huy"]
 size = Vector2(50, 44)
 
+[sub_resource type="LabelSettings" id="LabelSettings_yi6bf"]
+font_size = 25
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
 [node name="menu" type="Node2D"]
 position = Vector2(-1, 3)
 script = ExtResource("1_hi436")
@@ -804,6 +814,12 @@ sprite_frames = SubResource("SpriteFrames_6pvwi")
 animation = &"hit"
 autoplay = "xex"
 
+[node name="Angry" type="Sprite2D" parent="player/CollisionShape2D/AnimatedSprite2D"]
+visible = false
+position = Vector2(16, 35)
+scale = Vector2(2, 2)
+texture = ExtResource("72_qgs18")
+
 [node name="Timer" type="Timer" parent="player"]
 wait_time = 5.0
 autostart = true
@@ -814,11 +830,75 @@ autostart = true
 position = Vector2(42, 54)
 shape = SubResource("RectangleShape2D_42huy")
 
+[node name="Icon" type="Sprite2D" parent="player"]
+visible = false
+position = Vector2(45, 6)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("73_g741s")
+
+[node name="Heart" type="Sprite2D" parent="player"]
+visible = false
+modulate = Color(1, 0.137255, 0.0745098, 1)
+position = Vector2(17, -8)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("74_48v53")
+
+[node name="Heart2" type="Sprite2D" parent="player/Heart"]
+modulate = Color(1, 0, 0.396078, 0.639216)
+position = Vector2(13.2571, -3.65714)
+rotation = 0.160327
+texture = ExtResource("74_48v53")
+
+[node name="Heart3" type="Sprite2D" parent="player/Heart"]
+modulate = Color(1, 1, 0.239216, 0.486275)
+position = Vector2(26.9714, 2.28571)
+rotation = -0.196109
+texture = ExtResource("74_48v53")
+
+[node name="Heart4" type="Sprite2D" parent="player/Heart"]
+position = Vector2(21.9429, -5.94286)
+rotation = 0.106168
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("74_48v53")
+
+[node name="Heart5" type="Sprite2D" parent="player/Heart"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(4.57143, -9.14286)
+rotation = 0.106168
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("74_48v53")
+
 [node name="Label" type="Label" parent="."]
 offset_left = 319.0
 offset_top = 482.0
 offset_right = 359.0
 offset_bottom = 505.0
+theme_override_fonts/font = ExtResource("4_pfncu")
+label_settings = SubResource("LabelSettings_yi6bf")
+
+[node name="Cat" type="Sprite2D" parent="."]
+position = Vector2(951, 221)
+rotation = 0.112594
+scale = Vector2(3.80155, 3.80155)
+texture = ExtResource("75_fb88d")
+
+[node name="Label2" type="Label" parent="Cat"]
+offset_left = -49.3336
+offset_top = 6.24856
+offset_right = 52.6664
+offset_bottom = 41.2486
+rotation = 0.00377296
+theme_override_fonts/font = ExtResource("4_pfncu")
+text = "SALTY 
+KITTENS"
+label_settings = SubResource("LabelSettings_yi6bf")
+
+[node name="sound_menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("76_60gfu")
+volume_db = -20.613
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="body_entered" from="play/Area2D" to="." method="_on_area_2d_body_entered"]
