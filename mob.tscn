@@ -169,7 +169,6 @@ position = Vector2(28, 0)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
-one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(7.5, 116.5)
@@ -213,7 +212,8 @@ offset_bottom = 27.0
 text = "HP"
 
 [node name="recharge" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 3.0
+one_shot = true
 
 [connection signal="area_entered" from="death" to="." method="_on_death_area_entered"]
 [connection signal="body_entered" from="death" to="." method="_on_death_body_entered"]

@@ -661,14 +661,6 @@ texture = ExtResource("41_pxflf")
 position = Vector2(1373, 432)
 player = NodePath("../player")
 
-[node name="mob2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("39_axyxg")]
-position = Vector2(1246, 413)
-player = NodePath("../player")
-
-[node name="mob3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("39_axyxg")]
-position = Vector2(1517, 409)
-player = NodePath("../player")
-
 [node name="Area2D3" parent="." instance=ExtResource("46_x0838")]
 position = Vector2(5342, 579)
 scale = Vector2(7.35325, 8.0274)

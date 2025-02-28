@@ -168,9 +168,6 @@ func sleep(x,y):
 	x_cord = x
 	y_cord = y
 
-func _physics_process(delta):
-	pass
-	
 func _on_timer_invulnerability_timeout():
 	invulnerability = false
 func boom():

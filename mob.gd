@@ -8,34 +8,32 @@ var speed = 1000
 var hit_ft = false
 var Death = false
 var helth = 3
-var count = 1
+var count = 4
 var recharge = false
-@onready var nav := $NavigationAgent2D
+
 @export var bullet : PackedScene
 @export var player : Node2D
 
 func _physics_process(delta):
-	print(chace)
 	$ProgressBar.value = helth
-	# Add the gravity.
+	
 	if hit_ft and player.hit :
 		death()
-		
+	
 	if count <= 0 :
 		recharge = true
-	elif count == 0 and recharge :
+	if count <= 0 and recharge:
+		$AnimatedSprite2D.self_modulate = "#ff0000"
 		$recharge.start()
-		#$AnimatedSprite2D.self_modulate == "#ff0000"
-	else:	
+	else:
 		if chace :
 			var direction = to_local(player.global_position).normalized()
 			position.y = player.position.y - 200
 			velocity.x = speed * direction.x 
+			move_and_slide()
 		if shoot_timer and chace:
 			$Timer.start()
 			shoot_timer = false
-
-	move_and_slide()
 	
 	
 func _on_death_body_entered(body):
@@ -48,14 +46,13 @@ func _on_death_2_body_entered(body):
 			body.invulnerability = true
 			body.invulnerability_start = true
 			body.health -= 1
-			#death()
-
 func shoot():
 	count -= 1
-	var b = bullet.instantiate()
-	get_tree().root.add_child(b)
-	b.transform = $Area2D/Marker2D.global_transform
-	shoot_timer = true
+	if count > 0 :
+		var b = bullet.instantiate()
+		get_tree().root.add_child(b)
+		b.transform = $Area2D/Marker2D.global_transform
+		shoot_timer = true
 #функция смерти
 func death():
 	helth -=1
@@ -97,6 +94,5 @@ func _on_shoot_body_exited(body: Node2D) -> void:
 
 
 func _on_recharge_timeout() -> void:
-	count = 1
-	recharge = false
-	#$AnimatedSprite2D.self_modulate == "#ffffff"
+	count = 4
+	$AnimatedSprite2D.self_modulate = "#ffffff"

@@ -785,7 +785,7 @@ func _process(delta):
 
 [sub_resource type="LabelSettings" id="LabelSettings_v3gx4"]
 font = ExtResource("91_d1y0c")
-font_size = 56
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_uf1d1"]
 
@@ -1211,10 +1211,10 @@ text = "salt :"
 label_settings = SubResource("LabelSettings_v3gx4")
 
 [node name="fps" type="Label" parent="CanvasLayer"]
-offset_left = 105.0
-offset_top = 69.0
-offset_right = 187.0
-offset_bottom = 129.0
+offset_left = 94.0
+offset_top = 61.0
+offset_right = 176.0
+offset_bottom = 121.0
 label_settings = SubResource("LabelSettings_uf1d1")
 script = ExtResource("95_d17l8")
 
