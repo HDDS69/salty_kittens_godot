@@ -1,6 +1,6 @@
 [gd_scene load_steps=167 format=3 uid="uid://c27fe3qnrj4ms"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_8m1ne"]
+[ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://player.gd" id="1_8m1ne"]
 [ext_resource type="Texture2D" uid="uid://t57kw0wqc4jq" path="res://текстуры/stand/stand0.png" id="1_gbacm"]
 [ext_resource type="Texture2D" uid="uid://4601rhsbxkah" path="res://текстуры/stand/stand1.png" id="2_7ncr1"]
 [ext_resource type="PackedScene" uid="uid://cn78231br5yqe" path="res://boom.tscn" id="2_l4htu"]
@@ -80,7 +80,7 @@
 [ext_resource type="AudioStream" uid="uid://c3x81i1us0cwj" path="res://текстуры/sound/land.mp3" id="68_qmmh8"]
 [ext_resource type="Texture2D" uid="uid://pwjw83wv0mnq" path="res://текстуры/land/pix4.png" id="68_tqp67"]
 [ext_resource type="Texture2D" uid="uid://dcoxuhyba6ieb" path="res://текстуры/mobile_control/salt1.png" id="69_aic7l"]
-[ext_resource type="Script" path="res://blaster.gd" id="69_fr3kn"]
+[ext_resource type="Script" uid="uid://cr8jo7ea12fkm" path="res://blaster.gd" id="69_fr3kn"]
 [ext_resource type="Texture2D" uid="uid://b76se51gqdco5" path="res://текстуры/mobile_control/hit0.png" id="70_h76ni"]
 [ext_resource type="Texture2D" uid="uid://nmnmja5any4s" path="res://текстуры/mobile_control/hit1.png" id="71_w2dpe"]
 [ext_resource type="Texture2D" uid="uid://d4mhpxxx3vwwg" path="res://ui/Untitled 03-13-2024 10-01-452.png" id="72_ql4mh"]
@@ -92,16 +92,16 @@
 [ext_resource type="Texture2D" uid="uid://dqpw2xfhxh2fw" path="res://текстуры/mobile_control/button1.png" id="77_tucw7"]
 [ext_resource type="Texture2D" uid="uid://coo0ph10foodc" path="res://текстуры/mobile_control/boom_buttom1.png" id="78_y4fi5"]
 [ext_resource type="Texture2D" uid="uid://dcbii2qt2h07a" path="res://текстуры/mobile_control/boom_buttom2.png" id="79_ukxdx"]
-[ext_resource type="Script" path="res://joystick/joystick.gd" id="81_1mwr7"]
+[ext_resource type="Script" uid="uid://ddpebavxlo2i7" path="res://joystick/joystick.gd" id="81_1mwr7"]
 [ext_resource type="Texture2D" uid="uid://dlx03pgoywkfw" path="res://joystick/texture/5f394193cd6b2173f7a82981.png" id="81_nc8c3"]
-[ext_resource type="Script" path="res://joystick/jousuck/addons/virtual_joystick/virtual_joystick.gd" id="82_qvknn"]
+[ext_resource type="Script" uid="uid://cqvwiesvk3vct" path="res://joystick/jousuck/addons/virtual_joystick/virtual_joystick.gd" id="82_qvknn"]
 [ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://joystick/jousuck/addons/virtual_joystick/textures/joystick_base_outline.png" id="83_xsgbm"]
 [ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://joystick/jousuck/addons/virtual_joystick/textures/joystick_tip_arrows.png" id="84_djclt"]
-[ext_resource type="Script" path="res://ui/pause.gd" id="89_iraf3"]
+[ext_resource type="Script" uid="uid://bx8idcymi81ep" path="res://ui/pause.gd" id="89_iraf3"]
 [ext_resource type="Texture2D" uid="uid://b2duhhcvfouem" path="res://текстуры/heart.png" id="90_87nqs"]
 [ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://текстуры/font/upheaval-pro/Upheaval/UpheavalPro.ttf" id="91_d1y0c"]
 [ext_resource type="Texture2D" uid="uid://no41veu2k2hv" path="res://текстуры/Untitled 12-08-2023 06-02-571.png" id="91_fpvj6"]
-[ext_resource type="Script" path="res://label11.gd" id="95_d17l8"]
+[ext_resource type="Script" uid="uid://dktx14jgtok82" path="res://label11.gd" id="95_d17l8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bv2w"]
 size = Vector2(49, 45.5)
@@ -591,7 +591,7 @@ animations = [{
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3mffk"]
 _data = {
-"hit": SubResource("Animation_exwbt")
+&"hit": SubResource("Animation_exwbt")
 }
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6pvwi"]
@@ -811,7 +811,7 @@ autoplay = "hidel"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CollisionShape2D/AnimatedSprite2D"]
 root_node = NodePath("../../..")
 libraries = {
-"": SubResource("AnimationLibrary_3mffk")
+&"": SubResource("AnimationLibrary_3mffk")
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D/AnimatedSprite2D"]

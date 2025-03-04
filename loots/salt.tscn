@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c8jsbiqw2orbe"]
 
-[ext_resource type="Script" path="res://loots/salt.gd" id="1_g5k3l"]
+[ext_resource type="Script" uid="uid://b3iro31d1u4gw" path="res://loots/salt.gd" id="1_g5k3l"]
 [ext_resource type="Texture2D" uid="uid://b7s458k1v42bu" path="res://текстуры/salt.png" id="2_mp645"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_62dl0"]

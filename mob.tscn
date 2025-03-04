@@ -1,10 +1,10 @@
 [gd_scene load_steps=27 format=3 uid="uid://cy4dfmjr88k02"]
 
-[ext_resource type="Script" path="res://mob.gd" id="1_1crrg"]
+[ext_resource type="Script" uid="uid://bx06e1uo1sk64" path="res://mob.gd" id="1_1crrg"]
 [ext_resource type="Texture2D" uid="uid://bqojnv0r6ifw2" path="res://текстуры/drone.png" id="2_5limf"]
 [ext_resource type="PackedScene" uid="uid://bys2fq87tspfr" path="res://bullet_DRONE.tscn" id="2_r605y"]
 [ext_resource type="Texture2D" uid="uid://d0lgxfixkk1xj" path="res://текстуры/dronebreak.png" id="3_ld6pw"]
-[ext_resource type="Script" path="res://Area2D.gd" id="3_ndglu"]
+[ext_resource type="Script" uid="uid://bxvg7idt33k2n" path="res://Area2D.gd" id="3_ndglu"]
 [ext_resource type="Texture2D" uid="uid://cvnyc5d1bfy3d" path="res://текстуры/Untitled 07-22-2024 10-16-07.png" id="3_p8wik"]
 [ext_resource type="Texture2D" uid="uid://bk3uvutdbs2dy" path="res://текстуры/level/pngkey.com-white-circle-png-transparent-1709387.png" id="6_j1om4"]
 

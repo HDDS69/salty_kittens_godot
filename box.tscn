@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbsdguel865kq"]
 
-[ext_resource type="Script" path="res://box.gd" id="1_phbp0"]
+[ext_resource type="Script" uid="uid://dxgu2wq3kjwxi" path="res://box.gd" id="1_phbp0"]
 [ext_resource type="Texture2D" uid="uid://c7nshux4e51se" path="res://текстуры/box.png" id="2_yu04v"]
 [ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://ui/Untitled 06-12-2024 11-00-24.png" id="3_k7t82"]
 

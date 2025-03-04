@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://wba1s21cpm1b"]
 
-[ext_resource type="Script" path="res://lamp.gd" id="1_bp0xq"]
+[ext_resource type="Script" uid="uid://dik5n43jcy43t" path="res://lamp.gd" id="1_bp0xq"]
 [ext_resource type="Texture2D" uid="uid://l3y3pb0at2us" path="res://текстуры/lamp.png" id="1_tvkcd"]
 [ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://ui/Untitled 06-12-2024 11-00-24.png" id="2_q78lm"]
-[ext_resource type="Script" path="res://salty_platform.gd" id="4_h8r7l"]
+[ext_resource type="Script" uid="uid://bxv0jpseijka5" path="res://salty_platform.gd" id="4_h8r7l"]
 [ext_resource type="Texture2D" uid="uid://dovpehtr0xjku" path="res://текстуры/Untitled 01-18-2024 09-50-31.png" id="5_51cgt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t0kd0"]

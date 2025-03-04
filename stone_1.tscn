@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://biolsc1m46omi"]
 
-[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5p6wu"]
+[ext_resource type="Script" uid="uid://b4w7ri57ns0k3" path="res://CharacterBody2D.gd" id="1_5p6wu"]
 [ext_resource type="Texture2D" uid="uid://cw2rkeftfyt2v" path="res://текстуры/Untitled 01-09-2024 10-06-05.png" id="2_k0iwk"]
 [ext_resource type="Texture2D" uid="uid://ccyx2gm0donm5" path="res://текстуры/partical.png" id="2_y23td"]
 

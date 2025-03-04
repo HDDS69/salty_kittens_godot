@@ -1,13 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://di33echt7hdsm"]
 
-[ext_resource type="Script" path="res://joystick.gd" id="1_nv4v6"]
-[ext_resource type="Texture2D" uid="uid://dlx03pgoywkfw" path="res://texture/5f394193cd6b2173f7a82981.png" id="2_7vm64"]
+[ext_resource type="Texture2D" uid="uid://dlx03pgoywkfw" path="res://joystick/texture/5f394193cd6b2173f7a82981.png" id="2_7vm64"]
+
+[sub_resource type="Resource" id="Resource_e7m0p"]
+metadata/__load_path__ = "res://joystick.gd"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_awmoh"]
 radius = 106.042
 
 [node name="joystick" type="Area2D"]
-script = ExtResource("1_nv4v6")
+script = SubResource("Resource_e7m0p")
 
 [node name="big" type="Sprite2D" parent="."]
 position = Vector2(2, 2)
