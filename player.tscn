@@ -1128,7 +1128,7 @@ text = "настройки"
 [node name="quit" type="Button" parent="CanvasLayer/pause/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("91_d1y0c")
-text = "выход из игры
+text = "выход в главное меню
 "
 
 [node name="Label" type="Label" parent="CanvasLayer/pause/Panel"]

@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-var yes = true
 const SPEED = 4500.0
 const JUMP_VELOCITY = -400.0
 var clone = false
@@ -36,9 +35,9 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			if clone == false :
 				if $"..".yes :
 					$"..".add += 1
-					$"../Label".text = str($"..".add)
+					$"../bg/count_clicker".text = str($"..".add)
 				else :
-					$"../Label".text = "сломанная фигня"
+					$"../bg/count_clicker".text = "сломанная фигня"
 				if $"..".add == 666 :
 					$"..".yes = false
 					for i in range(50):

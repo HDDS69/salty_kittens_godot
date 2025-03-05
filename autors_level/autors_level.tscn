@@ -1,11 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://dfahvtxyhs3ks"]
+[gd_scene load_steps=6 format=4 uid="uid://blv5krx4egejb"]
 
-[ext_resource type="Texture2D" uid="uid://c54kn4wujjovx" path="res://текстуры/cube.png" id="1_p35f2"]
-[ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://player.tscn" id="2_0sy8s"]
-[ext_resource type="PackedScene" uid="uid://c8jsbiqw2orbe" path="res://loots/salt.tscn" id="3_ftegs"]
+[ext_resource type="Texture2D" uid="uid://c54kn4wujjovx" path="res://текстуры/cube.png" id="1_fr3fn"]
+[ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://player.tscn" id="2_gq2vc"]
+[ext_resource type="PackedScene" uid="uid://c8jsbiqw2orbe" path="res://loots/salt.tscn" id="3_srgmf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uj7hs"]
-texture = ExtResource("1_p35f2")
+texture = ExtResource("1_fr3fn")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
 1:0/0 = 0
@@ -49,11 +49,11 @@ sources/0 = SubResource("TileSetAtlasSource_uj7hs")
 tile_map_data = PackedByteArray("AAAaAP//AAAAAAAAAAAaAAAAAAAAAAEAAAAaAAEAAAAAAAIAAAAaAAIAAAAAAAMAAAAbAP//AAABAAAAAAAbAAAAAAABAAEAAAAbAAEAAAABAAIAAAAbAAIAAAABAAMAAAAcAP//AAACAAAAAAAcAAAAAAACAAEAAAAcAAEAAAACAAIAAAAcAAIAAAACAAMAAAAdAP//AAADAAAAAAAdAAAAAAADAAEAAAAdAAEAAAADAAIAAAAdAAIAAAADAAMAAAA=")
 tile_set = SubResource("TileSet_36m2h")
 
-[node name="player" parent="." instance=ExtResource("2_0sy8s")]
+[node name="player" parent="." instance=ExtResource("2_gq2vc")]
 position = Vector2(411, -207)
 
-[node name="salt" parent="." instance=ExtResource("3_ftegs")]
+[node name="salt" parent="." instance=ExtResource("3_srgmf")]
 position = Vector2(742, -76)
 
-[node name="salt2" parent="." instance=ExtResource("3_ftegs")]
+[node name="salt2" parent="." instance=ExtResource("3_srgmf")]
 position = Vector2(807, -50)
