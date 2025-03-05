@@ -169,6 +169,7 @@ position = Vector2(28, 0)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(7.5, 116.5)

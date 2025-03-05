@@ -10,28 +10,36 @@ var Death = false
 var helth = 3
 var count = 4
 var recharge = false
+var stupidvar = true
 
 @export var bullet : PackedScene
 @export var player : Node2D
 
 func _physics_process(delta):
 	$ProgressBar.value = helth
-	
 	if hit_ft and player.hit :
 		death()
 	
-	if count <= 0 :
+	if count <= 0 and stupidvar :
 		recharge = true
+		stupidvar = false
+		
 	if count <= 0 and recharge:
+		recharge = false
 		$AnimatedSprite2D.self_modulate = "#ff0000"
 		$recharge.start()
-	else:
-		if chace :
+	if chace and stupidvar:
 			var direction = to_local(player.global_position).normalized()
 			position.y = player.position.y - 200
 			velocity.x = speed * direction.x 
+			if velocity.x < 0:
+				$AnimatedSprite2D.rotation = -0.1
+			elif velocity.x > 0:
+				$AnimatedSprite2D.rotation = 0.1
+			else :
+				$AnimatedSprite2D.rotation = 0
 			move_and_slide()
-		if shoot_timer and chace:
+	if shoot_timer and chace:
 			$Timer.start()
 			shoot_timer = false
 	
@@ -96,3 +104,4 @@ func _on_shoot_body_exited(body: Node2D) -> void:
 func _on_recharge_timeout() -> void:
 	count = 4
 	$AnimatedSprite2D.self_modulate = "#ffffff"
+	stupidvar = true
