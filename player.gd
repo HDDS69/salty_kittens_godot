@@ -180,7 +180,7 @@ func boom():
 func _on_timer_timeout():
 	count = 3
 	$CollisionShape2D/recharge.text = ""
-
-
+	
+	
 func _on_light_pressed() -> void:
 	SavePoint.light = !SavePoint.light
