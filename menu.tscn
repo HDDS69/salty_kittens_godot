@@ -736,9 +736,7 @@ offset_bottom = 377.0
 scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = ExtResource("4_pfncu")
 theme_override_font_sizes/font_size = 50
-text = "ЕГОЛЬХ
-
-мак говно"
+text = "титры"
 metadata/_edit_use_anchors_ = true
 
 [node name="quite" type="Button" parent="buttons_group"]
