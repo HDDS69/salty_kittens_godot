@@ -79,7 +79,7 @@ func _process(delta: float) -> void:
 						self.position.x = one
 						self.position.y = two
 					else:
-						hit = false  # Сбрасываем состояние hit, если игрок в воздухе
+						hit = false 
 			# Handle jump.
 			if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 				velocity.y = JUMP_VELOCITY
@@ -87,22 +87,12 @@ func _process(delta: float) -> void:
 					JUMP_VELOCITY -= 10
 					anim.play("jump")
 					$music/jump.play()
-			#if Input.is_action_just_pressed("recharge") and blaster and salt >= 9:
-			#	$blaster/blaster.play("recharge")
-			#	salt -=9
-			#	await $blaster/blaster.animation_finished
-			#	recharge = true
-			#	count = 3
-			#if recharge == false :
-			#	$Timer.start()
-			#	recharge = true
 			if count == 0:
 				$Timer.start()
 				count = -1000
 				$CollisionShape2D/recharge.text = "[wave = 30]перезарядка..."
 			if Input.is_action_just_pressed("boom"):
 				boom()
-				#$hit.set_deferred("monitorable", false)
 			direction = Input.get_axis("ui_left_player", "ui_right_player")
 			if direction:
 				velocity.x = direction * SPEED
@@ -152,13 +142,8 @@ func attack():
 					hit = true
 					one = self.position.x
 					two = self.position.y
-					#$hit.set_deferred("monitorable", true)
 					anim.play("hit")
-					#await anim.animation_finished 
-					#hit = false
-					#self.position.x = one
-					#self.position.y = two
-		
+
 func invulnerability_timer_start():
 	if invulnerability_start == true:
 		invulnerability_start = false
@@ -170,6 +155,7 @@ func sleep(x,y):
 
 func _on_timer_invulnerability_timeout():
 	invulnerability = false
+	
 func boom():
 	var g = granade.instantiate()
 	get_tree().root.add_child(g)

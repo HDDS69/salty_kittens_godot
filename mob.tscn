@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cy4dfmjr88k02"]
+[gd_scene load_steps=26 format=3 uid="uid://cy4dfmjr88k02"]
 
 [ext_resource type="Script" uid="uid://bx06e1uo1sk64" path="res://mob.gd" id="1_1crrg"]
 [ext_resource type="Texture2D" uid="uid://bqojnv0r6ifw2" path="res://текстуры/drone.png" id="2_5limf"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://d0lgxfixkk1xj" path="res://текстуры/dronebreak.png" id="3_ld6pw"]
 [ext_resource type="Script" uid="uid://bxvg7idt33k2n" path="res://Area2D.gd" id="3_ndglu"]
 [ext_resource type="Texture2D" uid="uid://cvnyc5d1bfy3d" path="res://текстуры/Untitled 07-22-2024 10-16-07.png" id="3_p8wik"]
-[ext_resource type="Texture2D" uid="uid://bk3uvutdbs2dy" path="res://текстуры/level/pngkey.com-white-circle-png-transparent-1709387.png" id="6_j1om4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ci2au"]
 size = Vector2(101, 48)
@@ -170,18 +169,6 @@ position = Vector2(28, 0)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(7.5, 116.5)
-scale = Vector2(0.0625, 0.0728242)
-color = Color(0.101961, 1, 1, 1)
-texture = ExtResource("6_j1om4")
-
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-position = Vector2(90, 114)
-scale = Vector2(0.0625, 0.071048)
-color = Color(0.172549, 1, 1, 1)
-texture = ExtResource("6_j1om4")
 
 [node name="way" type="Area2D" parent="."]
 
