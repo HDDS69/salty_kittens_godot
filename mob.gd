@@ -8,7 +8,7 @@ var speed = 1000
 var hit_ft = false
 var Death = false
 var helth = 3
-var count = 4
+var count = 3
 var recharge = false
 var stupidvar = true
 
@@ -55,8 +55,8 @@ func _on_death_2_body_entered(body):
 			body.invulnerability_start = true
 			body.health -= 1
 func shoot():
-	count -= 1
-	if count > 0 :
+	if count > 0 and chace :
+		count -= 1
 		var b = bullet.instantiate()
 		get_tree().root.add_child(b)
 		b.transform = $Area2D/Marker2D.global_transform

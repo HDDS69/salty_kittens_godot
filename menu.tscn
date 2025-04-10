@@ -771,6 +771,7 @@ theme_override_fonts/font = ExtResource("4_pfncu")
 text = "SALTY 
 KITTENS"
 label_settings = SubResource("LabelSettings_yi6bf")
+metadata/_edit_use_anchors_ = true
 
 [node name="count_clicker" type="Label" parent="bg"]
 offset_left = 318.0

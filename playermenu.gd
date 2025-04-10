@@ -53,3 +53,6 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			$Icon.visible = false
 			$CollisionShape2D/AnimatedSprite2D/Angry.visible = !$CollisionShape2D/AnimatedSprite2D/Angry.visible 
 			$Heart.visible = false
+
+func death():
+	queue_free()

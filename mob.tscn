@@ -168,7 +168,6 @@ position = Vector2(28, 0)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
-one_shot = true
 
 [node name="way" type="Area2D" parent="."]
 
