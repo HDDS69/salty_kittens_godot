@@ -73,8 +73,8 @@
 [ext_resource type="Texture2D" uid="uid://dq80cs04ll2cg" path="res://текстуры/доп контент/angry.png" id="72_qgs18"]
 [ext_resource type="Texture2D" uid="uid://bghwr16kfkygl" path="res://текстуры/доп контент/icon.png" id="73_g741s"]
 [ext_resource type="Texture2D" uid="uid://b86vp80iuefb6" path="res://текстуры/доп контент/heart.png" id="74_48v53"]
+[ext_resource type="AudioStream" uid="uid://dy6dh05mbecnf" path="res://sound/amogus-bass-boost.mp3" id="74_sowed"]
 [ext_resource type="Texture2D" uid="uid://c8ies5j07ilfo" path="res://текстуры/доп контент/cat.png" id="75_fb88d"]
-[ext_resource type="AudioStream" uid="uid://ccs3wwa30uair" path="res://sound/Project_2.mp3" id="76_60gfu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yi6bf"]
 font_size = 25
@@ -868,7 +868,7 @@ texture = ExtResource("74_48v53")
 stream = ExtResource("4_oq66f")
 
 [node name="sound_menu" type="AudioStreamPlayer" parent="sound"]
-stream = ExtResource("76_60gfu")
+stream = ExtResource("74_sowed")
 volume_db = -20.613
 autoplay = true
 parameters/looping = true
