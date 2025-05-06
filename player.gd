@@ -9,7 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var granade : PackedScene
 var health = 3
 @onready var anim = $CollisionShape2D/AnimatedSprite2D
-@onready var anim1 = $CollisionShape2D/AnimatedSprite2D/AnimatedSprite2D
+@onready var anim1 = $CollisionShape2D/effect
 var salt = 0
 var alive = true
 var death1 = false
@@ -27,8 +27,12 @@ var sleep_anim = false
 var blaster = false
 var recharge = true
 var count = 3
-
+var animTV = false
 func _process(delta: float) -> void:
+	if animTV == true:
+		$CollisionShape2D/TV.visible = true
+		$CollisionShape2D/AnimatedSprite2D.visible = false
+		anim = $CollisionShape2D/TV
 	invulnerability_timer_start()
 	if velocity.y > 0:
 		land = true
