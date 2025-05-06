@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=70 format=3 uid="uid://dfu05fuyf4vuy"]
+[gd_resource type="TileSet" load_steps=72 format=3 uid="uid://dfu05fuyf4vuy"]
 
 [ext_resource type="Texture2D" uid="uid://bu3otia4my213" path="res://текстуры/bg_doroga.png" id="1_a2fpb"]
 [ext_resource type="Texture2D" uid="uid://c54kn4wujjovx" path="res://текстуры/cube.png" id="2_yrgmu"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://crhxf6wtc3448" path="res://текстуры/столб и фонарь.png" id="18_ny25i"]
 [ext_resource type="Texture2D" uid="uid://cue7sl0illxyb" path="res://текстуры/level/ramka.png" id="18_rwy45"]
 [ext_resource type="Texture2D" uid="uid://txiob6ctxwgj" path="res://текстуры/фонарь.png" id="19_6vw14"]
+[ext_resource type="Texture2D" uid="uid://dhd07co2v0g68" path="res://level2/level2_texture/material.png" id="19_nb41v"]
 [ext_resource type="Texture2D" uid="uid://ddg01o73nygog" path="res://текстуры/level/table.png" id="19_xxme7"]
 [ext_resource type="Texture2D" uid="uid://do538puwwe00b" path="res://текстуры/level/lotok.png" id="20_03ker"]
 [ext_resource type="Texture2D" uid="uid://boxuyh3q5i154" path="res://текстуры/bed.png" id="21_iuoui"]
@@ -214,6 +215,19 @@ texture = ExtResource("18_rwy45")
 1:3/0 = 0
 2:3/0 = 0
 3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pgh88"]
+texture = ExtResource("19_nb41v")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3mkde"]
 texture = ExtResource("20_03ker")
@@ -6999,3 +7013,4 @@ sources/33 = SubResource("TileSetAtlasSource_vgv73")
 sources/34 = SubResource("TileSetAtlasSource_k8fah")
 sources/36 = SubResource("TileSetAtlasSource_4ah0v")
 sources/6 = SubResource("TileSetAtlasSource_nxtrv")
+sources/25 = SubResource("TileSetAtlasSource_pgh88")
