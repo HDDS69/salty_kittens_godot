@@ -116,11 +116,11 @@ func _process(delta: float) -> void:
 					JUMP_VELOCITY = -450.0
 					anim.play("hidel")
 			if direction == -1:
-				$CollisionShape2D/AnimatedSprite2D.flip_h = true
+				anim.flip_h = true
 				$hit.set_deferred("monitorable", false)
 				$hit2.set_deferred("monitorable", true)
 			elif direction == 1:
-				$CollisionShape2D/AnimatedSprite2D.flip_h = false
+				anim.flip_h = false
 				$hit.set_deferred("monitorable", true)
 				$hit2.set_deferred("monitorable", false)
 			if velocity.y > 0:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://blv5krx4egejb"]
+[gd_scene load_steps=28 format=4 uid="uid://blv5krx4egejb"]
 
 [ext_resource type="TileSet" uid="uid://dfu05fuyf4vuy" path="res://level/level.tres" id="1_fr3fn"]
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://player.tscn" id="2_gq2vc"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://bqqpa0c6foxpq" path="res://bg.gd" id="4_b42di"]
 [ext_resource type="Texture2D" uid="uid://b6baq1asqhgdt" path="res://текстуры/bg/35.png" id="5_ihp28"]
 [ext_resource type="Texture2D" uid="uid://clu55dowosb3e" path="res://текстуры/bg/36.png" id="6_3px8s"]
-[ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://player.tres" id="6_se3ec"]
 [ext_resource type="Texture2D" uid="uid://dnn8bflaqyv6v" path="res://текстуры/bg/37.png" id="7_gwbof"]
 [ext_resource type="Texture2D" uid="uid://dulg04vrml0c0" path="res://текстуры/bg/38.png" id="8_dmj27"]
 [ext_resource type="Texture2D" uid="uid://c8fkck5qifxbm" path="res://текстуры/bg/40.png" id="9_s6w3g"]
@@ -19,31 +18,12 @@
 [ext_resource type="Texture2D" uid="uid://cuuxmcyh0t0jf" path="res://текстуры/bg/46.png" id="16_55y0q"]
 [ext_resource type="Texture2D" uid="uid://du0v6udlbn6t1" path="res://текстуры/bg/47.png" id="17_26idj"]
 [ext_resource type="Texture2D" uid="uid://c8ies5j07ilfo" path="res://текстуры/доп контент/cat.png" id="19_3px8s"]
-[ext_resource type="Script" uid="uid://fju6ylog0gdq" path="res://playermenu.gd" id="20_snket"]
-[ext_resource type="Texture2D" uid="uid://gr1e4ecqyqme" path="res://текстуры/death/0.png" id="68_ctbb5"]
-[ext_resource type="Texture2D" uid="uid://4onbjxjuoxrw" path="res://текстуры/death/1.png" id="69_da20t"]
-[ext_resource type="Texture2D" uid="uid://dx3gndwgfc8ny" path="res://текстуры/death/2.png" id="70_wjwf7"]
-[ext_resource type="Texture2D" uid="uid://bcio2mc5y7aca" path="res://текстуры/death/3.png" id="71_t0gyw"]
 [ext_resource type="Texture2D" uid="uid://dtepxmbcjl6ew" path="res://текстуры/bg/0.png" id="72_77iqv"]
-[ext_resource type="Texture2D" uid="uid://c08fqk7vximag" path="res://текстуры/death/4.png" id="72_fckul"]
-[ext_resource type="Texture2D" uid="uid://du14csra3kjgu" path="res://текстуры/death/5.png" id="73_5jv7e"]
 [ext_resource type="Texture2D" uid="uid://ighwurnmi8bt" path="res://текстуры/bg/1.png" id="73_in84s"]
 [ext_resource type="Texture2D" uid="uid://chr18n6fff4a6" path="res://текстуры/bg/2.png" id="74_h4xpc"]
-[ext_resource type="Texture2D" uid="uid://baxeik6h6pmn2" path="res://текстуры/death/6.png" id="74_qoqh6"]
 [ext_resource type="Texture2D" uid="uid://np0yxevrqtv2" path="res://текстуры/bg/3.png" id="75_cnvpo"]
-[ext_resource type="Texture2D" uid="uid://bkvmt8a8wal3l" path="res://текстуры/death/7.png" id="75_ma3jr"]
-[ext_resource type="Texture2D" uid="uid://dxuucqlidhgxm" path="res://текстуры/death/8.png" id="76_2m5ja"]
 [ext_resource type="Texture2D" uid="uid://dlywsc3n8ax3b" path="res://текстуры/bg/33.png" id="76_qllol"]
 [ext_resource type="Texture2D" uid="uid://ryhciba00ttg" path="res://текстуры/bg/34.png" id="77_6shsc"]
-[ext_resource type="Texture2D" uid="uid://b2vfmqdeyxwrc" path="res://текстуры/death/9.png" id="77_nwod8"]
-[ext_resource type="Texture2D" uid="uid://cgnx8ktq52e8a" path="res://текстуры/death/10.png" id="78_b3j6n"]
-[ext_resource type="Texture2D" uid="uid://555t58id5jk2" path="res://текстуры/death/11.png" id="79_kmpuh"]
-[ext_resource type="Texture2D" uid="uid://biwm8xmwe3jqt" path="res://текстуры/death/12.png" id="80_r2cjx"]
-[ext_resource type="Texture2D" uid="uid://db038p08u8sbl" path="res://текстуры/death/13.png" id="81_lfn7r"]
-[ext_resource type="Texture2D" uid="uid://dxkayfsvsgt6q" path="res://текстуры/death/14.png" id="82_hqlw5"]
-[ext_resource type="Texture2D" uid="uid://dq80cs04ll2cg" path="res://текстуры/доп контент/angry.png" id="83_1mar5"]
-[ext_resource type="Texture2D" uid="uid://bghwr16kfkygl" path="res://текстуры/доп контент/icon.png" id="84_i4lma"]
-[ext_resource type="Texture2D" uid="uid://b86vp80iuefb6" path="res://текстуры/доп контент/heart.png" id="85_vfnx2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gq2vc"]
 font = ExtResource("3_fr3fn")
@@ -54,75 +34,6 @@ outline_color = Color(0, 0, 0, 1)
 font_size = 25
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_751fq"]
-size = Vector2(49, 45)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_mnjts"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("68_ctbb5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("69_da20t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("70_wjwf7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("71_t0gyw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("72_fckul")
-}, {
-"duration": 1.0,
-"texture": ExtResource("73_5jv7e")
-}, {
-"duration": 1.0,
-"texture": ExtResource("74_qoqh6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("75_ma3jr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("76_2m5ja")
-}, {
-"duration": 1.0,
-"texture": ExtResource("77_nwod8")
-}, {
-"duration": 1.0,
-"texture": ExtResource("78_b3j6n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("79_kmpuh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("80_r2cjx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("81_lfn7r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("82_hqlw5")
-}],
-"loop": false,
-"name": &"death",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"hit",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"xex",
-"speed": 5.0
-}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jbxiq"]
 animations = [{
@@ -310,78 +221,6 @@ KITTENS"
 label_settings = SubResource("LabelSettings_gwbof")
 metadata/_edit_use_anchors_ = true
 
-[node name="player2" type="CharacterBody2D" parent="."]
-modulate = Color(0.984314, 0.788235, 0.941176, 1)
-show_behind_parent = true
-top_level = true
-position = Vector2(178, -81)
-script = ExtResource("20_snket")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player2"]
-position = Vector2(43, 54)
-shape = SubResource("RectangleShape2D_751fq")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player2/CollisionShape2D"]
-position = Vector2(-5, -25)
-sprite_frames = ExtResource("6_se3ec")
-animation = &"hidel"
-autoplay = "hidel"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player2/CollisionShape2D/AnimatedSprite2D"]
-position = Vector2(2, -19)
-sprite_frames = SubResource("SpriteFrames_mnjts")
-animation = &"hit"
-autoplay = "xex"
-
-[node name="Angry" type="Sprite2D" parent="player2/CollisionShape2D/AnimatedSprite2D"]
-visible = false
-position = Vector2(16, 35)
-scale = Vector2(2, 2)
-texture = ExtResource("83_1mar5")
-
-[node name="Timer" type="Timer" parent="player2"]
-wait_time = 5.0
-autostart = true
-
-[node name="Icon" type="Sprite2D" parent="player2"]
-visible = false
-position = Vector2(45, 6)
-scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("84_i4lma")
-
-[node name="Heart" type="Sprite2D" parent="player2"]
-visible = false
-modulate = Color(1, 0.137255, 0.0745098, 1)
-position = Vector2(17, -8)
-scale = Vector2(2.1875, 2.1875)
-texture = ExtResource("85_vfnx2")
-
-[node name="Heart2" type="Sprite2D" parent="player2/Heart"]
-modulate = Color(1, 0, 0.396078, 0.639216)
-position = Vector2(13.2571, -3.65714)
-rotation = 0.160327
-texture = ExtResource("85_vfnx2")
-
-[node name="Heart3" type="Sprite2D" parent="player2/Heart"]
-modulate = Color(1, 1, 0.239216, 0.486275)
-position = Vector2(26.9714, 2.28571)
-rotation = -0.196109
-texture = ExtResource("85_vfnx2")
-
-[node name="Heart4" type="Sprite2D" parent="player2/Heart"]
-position = Vector2(21.9429, -5.94286)
-rotation = 0.106168
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("85_vfnx2")
-
-[node name="Heart5" type="Sprite2D" parent="player2/Heart"]
-modulate = Color(1, 0, 0, 1)
-self_modulate = Color(1, 1, 0, 1)
-position = Vector2(4.57143, -9.14286)
-rotation = 0.106168
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("85_vfnx2")
-
 [node name="bg" type="ParallaxBackground" parent="."]
 script = ExtResource("4_b42di")
 
@@ -407,6 +246,3 @@ motion_mirroring = Vector2(1150, 0)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="bg"]
 position = Vector2(3, 5)
-
-[connection signal="input_event" from="player2" to="player2" method="_on_input_event"]
-[connection signal="timeout" from="player2/Timer" to="player2" method="_on_timer_timeout"]

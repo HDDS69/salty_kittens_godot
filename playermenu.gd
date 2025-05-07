@@ -8,7 +8,6 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
 	if randf() <0.01 :
 		velocity.y += JUMP_VELOCITY 
 		$CollisionShape2D/AnimatedSprite2D.play("jump")
@@ -25,9 +24,11 @@ func _physics_process(delta: float) -> void:
 func _on_timer_timeout() -> void:
 	$CollisionShape2D/AnimatedSprite2D.play("hit")
 
+func death():
+	queue_free()
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	print(event)
+
+func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			$Icon.visible = !$Icon.visible
@@ -54,6 +55,3 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			$Icon.visible = false
 			$CollisionShape2D/AnimatedSprite2D/Angry.visible = !$CollisionShape2D/AnimatedSprite2D/Angry.visible 
 			$Heart.visible = false
-
-func death():
-	queue_free()

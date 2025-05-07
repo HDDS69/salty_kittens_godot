@@ -5,7 +5,7 @@ var entered = false
 
 func _process(delta):
 	if entered == true and $"../player".actiom == true:
-		$RichTextLabel.text = 'братишка , можешь донести меня до бара ? очень уж хочется [wave]пива  '
+		$RichTextLabel.text = 'братишка , можешь донести меня до бара ? очень уж хочется [wave] пива				                           '
 		$ui.hide()
 		$AnimationPlayer.play("show")
 		await $AnimationPlayer.animation_finished
@@ -15,6 +15,8 @@ func _process(delta):
 		$"../player".animTV = true
 		$"../player".SPEED = 100
 		$"../player".JUMP_VELOCITY = -250.0
+		$AnimatedSprite2D.play("puf")
+		await $AnimatedSprite2D.animation_finished
 		queue_free()
 		
 

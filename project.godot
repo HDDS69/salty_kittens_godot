@@ -25,6 +25,7 @@ SavePoint="*res://save_point.gd"
 [debug]
 
 settings/stdout/print_fps=true
+settings/physics_interpolation=false
 
 [display]
 

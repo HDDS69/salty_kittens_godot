@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=44 format=3 uid="uid://bguq4n7gblp8e"]
+[gd_resource type="SpriteFrames" load_steps=57 format=3 uid="uid://bguq4n7gblp8e"]
 
 [ext_resource type="Texture2D" uid="uid://t57kw0wqc4jq" path="res://текстуры/stand_TV/stand0.png" id="1_3j8cm"]
 [ext_resource type="Texture2D" uid="uid://4601rhsbxkah" path="res://текстуры/stand_TV/stand1.png" id="2_nfuh6"]
@@ -25,6 +25,52 @@
 [ext_resource type="Texture2D" uid="uid://cbqw1wefwiwrh" path="res://текстуры/stand_TV/stand22.png" id="23_wnrgb"]
 [ext_resource type="Texture2D" uid="uid://bcrid2x28818o" path="res://текстуры/stand_TV/stand23.png" id="24_aii0u"]
 [ext_resource type="Texture2D" uid="uid://dr0p3pxqk7hf7" path="res://текстуры/sleep_finaly_tv1-Sheet.png" id="25_nfuh6"]
+[ext_resource type="Texture2D" uid="uid://bxtutrwb7750a" path="res://текстуры/hit_tv/Sprite-0002-Sheet.png" id="25_wcoh1"]
+[ext_resource type="Texture2D" uid="uid://dqu1edn8avehf" path="res://текстуры/tv-cat walk.png" id="26_b0si8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1trqa"]
+atlas = ExtResource("25_wcoh1")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbj6d"]
+atlas = ExtResource("25_wcoh1")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnrgb"]
+atlas = ExtResource("25_wcoh1")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aii0u"]
+atlas = ExtResource("25_wcoh1")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uimtg"]
+atlas = ExtResource("25_wcoh1")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efjv2"]
+atlas = ExtResource("25_wcoh1")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sksf"]
+atlas = ExtResource("25_wcoh1")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ssgu5"]
+atlas = ExtResource("26_b0si8")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1act"]
+atlas = ExtResource("26_b0si8")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b1o1"]
+atlas = ExtResource("26_b0si8")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq5i0"]
+atlas = ExtResource("26_b0si8")
+region = Rect2(96, 96, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcoh1"]
 atlas = ExtResource("25_nfuh6")
@@ -104,7 +150,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -112,7 +158,7 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": false,
 "name": &"fall",
 "speed": 5.0
 }, {
@@ -191,21 +237,39 @@ animations = [{
 }],
 "loop": true,
 "name": &"hidel",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": SubResource("AtlasTexture_1trqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbj6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnrgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aii0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uimtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efjv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sksf")
 }],
-"loop": true,
+"loop": false,
 "name": &"hit",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -213,13 +277,22 @@ animations = [{
 "duration": 1.0,
 "texture": null
 }],
-"loop": true,
+"loop": false,
 "name": &"land",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": SubResource("AtlasTexture_ssgu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1act")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b1o1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq5i0")
 }],
 "loop": true,
 "name": &"run",
