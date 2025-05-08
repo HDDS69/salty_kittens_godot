@@ -39,7 +39,6 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("ui_focus_next") and salty_platform == false:
 		salty_platform = true
-	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if Input.is_action_just_pressed("1"):
