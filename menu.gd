@@ -2,6 +2,12 @@ extends Node2D
 @onready var setting = $setting
 var yes = true
 var add = 0
+var platform = OS.get_name()
+
+func _ready() -> void:
+	if platform == "Android":
+		SavePoint.fullscreen = true
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 
 func _on_play_pressed():
 	$sound/click.play()

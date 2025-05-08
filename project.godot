@@ -16,7 +16,7 @@ run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/image="res://текстуры/start/Sprite-0001.png"
-config/icon="res://icon.svg"
+config/icon="uid://ccck3akb0d64c"
 
 [autoload]
 

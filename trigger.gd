@@ -6,8 +6,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if entered == true and $"../player".actiom == true:
-		$Label.visible = !$Label.visible
+	if entered:
+		if Input.is_action_just_pressed("ui_action_button"):
+			$Label.visible = !$Label.visible
 		
 func _on_body_entered(body):
 	if body.name == "player":

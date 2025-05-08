@@ -27,12 +27,8 @@ var sleep_anim = false
 var blaster = false
 var recharge = true
 var count = 3
-var animTV = false
+var transition = false
 func _process(delta: float) -> void:
-	if animTV == true:
-		$CollisionShape2D/TV.visible = true
-		$CollisionShape2D/AnimatedSprite2D.visible = false
-		anim = $CollisionShape2D/TV
 	invulnerability_timer_start()
 	if velocity.y > 0:
 		land = true
@@ -46,6 +42,7 @@ func _process(delta: float) -> void:
 	else:
 		actiom = false
 	action = false
+	
 	if Input.is_action_just_pressed("ui_focus_next") and salty_platform == false:
 		action = true
 		salty_platform = true
@@ -87,10 +84,8 @@ func _process(delta: float) -> void:
 			# Handle jump.
 			if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 				velocity.y = JUMP_VELOCITY
-				if JUMP_VELOCITY <= -450 and JUMP_VELOCITY >= -500 :
-					JUMP_VELOCITY -= 10
-					anim.play("jump")
-					$music/jump.play()
+				anim.play("jump")
+				$music/jump.play()
 			if count == 0:
 				$Timer.start()
 				count = -1000
@@ -99,6 +94,7 @@ func _process(delta: float) -> void:
 				boom()
 			direction = Input.get_axis("ui_left_player", "ui_right_player")
 			if direction:
+				transition = true
 				velocity.x = direction * SPEED
 				if velocity.y  == 0 :
 					anim.play("run")
@@ -113,7 +109,10 @@ func _process(delta: float) -> void:
 					await anim.animation_finished
 					land = false
 				elif velocity.y  == 0 :
-					JUMP_VELOCITY = -450.0
+					if transition :
+						anim.play("transition")
+						await anim.animation_finished
+						transition = false
 					anim.play("hidel")
 			if direction == -1:
 				anim.flip_h = true
@@ -152,6 +151,7 @@ func invulnerability_timer_start():
 	if invulnerability_start == true:
 		invulnerability_start = false
 		$Timer_invulnerability.start()
+		
 func sleep(x,y):
 	sleep_anim = !sleep_anim
 	x_cord = x
@@ -173,3 +173,10 @@ func _on_timer_timeout():
 	
 func _on_light_pressed() -> void:
 	SavePoint.light = !SavePoint.light
+
+func animTV() -> void:
+	SPEED = 100
+	JUMP_VELOCITY = -250.0
+	$CollisionShape2D/TV.visible = true
+	$CollisionShape2D/AnimatedSprite2D.visible = false
+	anim = $CollisionShape2D/TV

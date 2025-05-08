@@ -6,6 +6,8 @@ var directionFALL
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	velocity.y += JUMP_VELOCITY
+	
+	
 func _physics_process(delta):
 	if not is_on_floor():
 		#$CollisionShape2D/Timer.start()
@@ -13,10 +15,6 @@ func _physics_process(delta):
 	velocity.x = SPEED * directionFALL
 	move_and_slide() 
 
-
-func _on_timer_timeout():
-	#$CollisionShape2D.show()
-	pass
 
 func death():
 	$AnimatedSprite2D.play("death")

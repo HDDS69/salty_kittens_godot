@@ -13,6 +13,7 @@ func _process(delta):
 		recoil_x = -1000
 	#законментировать для мобильной версии
 	look_at(get_global_mouse_position())
+		
 func shoot():
 	$"..".count -=1
 	var b = bullet.instantiate()

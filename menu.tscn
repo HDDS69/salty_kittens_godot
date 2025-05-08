@@ -238,63 +238,6 @@ rotation = 0.106168
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("74_48v53")
 
-[node name="buttons_group" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-scale = Vector2(0.9, 0.8)
-
-[node name="play" type="Button" parent="buttons_group"]
-layout_mode = 0
-offset_left = 25.0
-offset_top = 39.0
-offset_right = 412.0
-offset_bottom = 161.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = ExtResource("4_pfncu")
-theme_override_font_sizes/font_size = 50
-text = "играть"
-metadata/_edit_use_anchors_ = true
-
-[node name="setting_button" type="Button" parent="buttons_group"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 150.0
-offset_right = 411.0
-offset_bottom = 272.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = ExtResource("4_pfncu")
-theme_override_font_sizes/font_size = 50
-text = "настройки
-"
-metadata/_edit_use_anchors_ = true
-
-[node name="autors" type="Button" parent="buttons_group"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.00443655
-anchor_bottom = 0.00443655
-offset_left = 24.0
-offset_top = 255.0
-offset_right = 411.0
-offset_bottom = 377.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = ExtResource("4_pfncu")
-theme_override_font_sizes/font_size = 50
-text = "титры"
-metadata/_edit_use_anchors_ = true
-
-[node name="quite" type="Button" parent="buttons_group"]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 369.0
-offset_right = 413.0
-offset_bottom = 491.0
-scale = Vector2(0.8, 0.8)
-theme_override_fonts/font = ExtResource("4_pfncu")
-theme_override_font_sizes/font_size = 50
-text = "выход"
-metadata/_edit_use_anchors_ = true
-
 [node name="bg" parent="." instance=ExtResource("2_uxt0t")]
 scroll_offset = Vector2(678, 309)
 scroll_ignore_camera_zoom = true
@@ -353,12 +296,62 @@ theme_override_fonts/font = ExtResource("4_pfncu")
 [node name="quit_setting" parent="setting/Panel/VBoxContainer" index="2"]
 theme_override_fonts/font = ExtResource("4_pfncu")
 
+[node name="buttons_group" type="Node" parent="."]
+
+[node name="play" type="Button" parent="buttons_group"]
+offset_left = 23.0
+offset_top = 18.0
+offset_right = 410.0
+offset_bottom = 140.0
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("4_pfncu")
+theme_override_font_sizes/font_size = 50
+text = "играть"
+metadata/_edit_use_anchors_ = true
+
+[node name="setting_button" type="Button" parent="buttons_group"]
+offset_left = 22.0
+offset_top = 125.0
+offset_right = 409.0
+offset_bottom = 247.0
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("4_pfncu")
+theme_override_font_sizes/font_size = 50
+text = "настройки
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="autors" type="Button" parent="buttons_group"]
+anchors_preset = -1
+anchor_top = 0.00443655
+anchor_bottom = 0.00443655
+offset_left = 21.6
+offset_top = 231.125
+offset_right = 408.6
+offset_bottom = 353.125
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("4_pfncu")
+theme_override_font_sizes/font_size = 50
+text = "титры"
+metadata/_edit_use_anchors_ = true
+
+[node name="quite" type="Button" parent="buttons_group"]
+offset_left = 23.4
+offset_top = 341.0
+offset_right = 410.4
+offset_bottom = 463.0
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("4_pfncu")
+theme_override_font_sizes/font_size = 50
+text = "выход"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="input_event" from="player" to="player" method="_on_input_event"]
 [connection signal="timeout" from="player/Timer" to="player" method="_on_timer_timeout"]
+[connection signal="pressed" from="setting/Panel/VBoxContainer/controll" to="setting" method="_on_controll_pressed"]
 [connection signal="pressed" from="buttons_group/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="buttons_group/setting_button" to="." method="_on_setting_button_pressed"]
 [connection signal="pressed" from="buttons_group/autors" to="." method="_on_autors_pressed"]
 [connection signal="pressed" from="buttons_group/quite" to="." method="_on_quite_pressed"]
-[connection signal="pressed" from="setting/Panel/VBoxContainer/controll" to="setting" method="_on_controll_pressed"]
 
 [editable path="setting"]

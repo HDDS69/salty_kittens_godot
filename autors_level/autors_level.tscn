@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://blv5krx4egejb"]
+[gd_scene load_steps=50 format=4 uid="uid://blv5krx4egejb"]
 
 [ext_resource type="TileSet" uid="uid://dfu05fuyf4vuy" path="res://level/level.tres" id="1_fr3fn"]
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://player.tscn" id="2_gq2vc"]
@@ -18,6 +18,26 @@
 [ext_resource type="Texture2D" uid="uid://cuuxmcyh0t0jf" path="res://текстуры/bg/46.png" id="16_55y0q"]
 [ext_resource type="Texture2D" uid="uid://du0v6udlbn6t1" path="res://текстуры/bg/47.png" id="17_26idj"]
 [ext_resource type="Texture2D" uid="uid://c8ies5j07ilfo" path="res://текстуры/доп контент/cat.png" id="19_3px8s"]
+[ext_resource type="Script" uid="uid://fju6ylog0gdq" path="res://playermenu.gd" id="25_se3ec"]
+[ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://player.tres" id="26_y4tli"]
+[ext_resource type="Texture2D" uid="uid://gr1e4ecqyqme" path="res://текстуры/death/0.png" id="27_6ek12"]
+[ext_resource type="Texture2D" uid="uid://4onbjxjuoxrw" path="res://текстуры/death/1.png" id="28_8jyly"]
+[ext_resource type="Texture2D" uid="uid://dx3gndwgfc8ny" path="res://текстуры/death/2.png" id="29_owja2"]
+[ext_resource type="Texture2D" uid="uid://bcio2mc5y7aca" path="res://текстуры/death/3.png" id="30_044ck"]
+[ext_resource type="Texture2D" uid="uid://c08fqk7vximag" path="res://текстуры/death/4.png" id="31_8ms2k"]
+[ext_resource type="Texture2D" uid="uid://du14csra3kjgu" path="res://текстуры/death/5.png" id="32_x1aui"]
+[ext_resource type="Texture2D" uid="uid://baxeik6h6pmn2" path="res://текстуры/death/6.png" id="33_u6xt7"]
+[ext_resource type="Texture2D" uid="uid://bkvmt8a8wal3l" path="res://текстуры/death/7.png" id="34_epkdo"]
+[ext_resource type="Texture2D" uid="uid://dxuucqlidhgxm" path="res://текстуры/death/8.png" id="35_b5hs4"]
+[ext_resource type="Texture2D" uid="uid://b2vfmqdeyxwrc" path="res://текстуры/death/9.png" id="36_jkqli"]
+[ext_resource type="Texture2D" uid="uid://cgnx8ktq52e8a" path="res://текстуры/death/10.png" id="37_ace7e"]
+[ext_resource type="Texture2D" uid="uid://555t58id5jk2" path="res://текстуры/death/11.png" id="38_hkj8g"]
+[ext_resource type="Texture2D" uid="uid://biwm8xmwe3jqt" path="res://текстуры/death/12.png" id="39_tmsin"]
+[ext_resource type="Texture2D" uid="uid://db038p08u8sbl" path="res://текстуры/death/13.png" id="40_iek24"]
+[ext_resource type="Texture2D" uid="uid://dxkayfsvsgt6q" path="res://текстуры/death/14.png" id="41_4775l"]
+[ext_resource type="Texture2D" uid="uid://dq80cs04ll2cg" path="res://текстуры/доп контент/angry.png" id="42_0cti7"]
+[ext_resource type="Texture2D" uid="uid://bghwr16kfkygl" path="res://текстуры/доп контент/icon.png" id="43_53dx2"]
+[ext_resource type="Texture2D" uid="uid://b86vp80iuefb6" path="res://текстуры/доп контент/heart.png" id="44_8ce04"]
 [ext_resource type="Texture2D" uid="uid://dtepxmbcjl6ew" path="res://текстуры/bg/0.png" id="72_77iqv"]
 [ext_resource type="Texture2D" uid="uid://ighwurnmi8bt" path="res://текстуры/bg/1.png" id="73_in84s"]
 [ext_resource type="Texture2D" uid="uid://chr18n6fff4a6" path="res://текстуры/bg/2.png" id="74_h4xpc"]
@@ -98,6 +118,75 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 0.1
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_550pb"]
+size = Vector2(43, 55)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yt72h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_6ek12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_8jyly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_owja2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_044ck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_8ms2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_x1aui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_u6xt7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_epkdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_b5hs4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_jkqli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ace7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_hkj8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_tmsin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_iek24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_4775l")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"xex",
+"speed": 5.0
 }]
 
 [node name="autors" type="Node2D"]
@@ -246,3 +335,225 @@ motion_mirroring = Vector2(1150, 0)
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="bg"]
 position = Vector2(3, 5)
+
+[node name="bots" type="Node" parent="."]
+
+[node name="player_bot" type="CharacterBody2D" parent="bots"]
+modulate = Color(0.9931, 0.8175, 0.544614, 1)
+show_behind_parent = true
+position = Vector2(185, -210)
+script = ExtResource("25_se3ec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bots/player_bot"]
+position = Vector2(41.5, 59.5)
+shape = SubResource("RectangleShape2D_550pb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bots/player_bot/CollisionShape2D"]
+position = Vector2(-2, -19)
+sprite_frames = ExtResource("26_y4tli")
+animation = &"hidel"
+autoplay = "hidel"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bots/player_bot/CollisionShape2D/AnimatedSprite2D"]
+position = Vector2(2, -19)
+sprite_frames = SubResource("SpriteFrames_yt72h")
+animation = &"xex"
+autoplay = "xex"
+
+[node name="Angry" type="Sprite2D" parent="bots/player_bot/CollisionShape2D/AnimatedSprite2D"]
+visible = false
+position = Vector2(16, 35)
+scale = Vector2(2, 2)
+texture = ExtResource("42_0cti7")
+
+[node name="Timer" type="Timer" parent="bots/player_bot"]
+wait_time = 5.0
+autostart = true
+
+[node name="Icon" type="Sprite2D" parent="bots/player_bot"]
+visible = false
+position = Vector2(45, 6)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("43_53dx2")
+
+[node name="Heart" type="Sprite2D" parent="bots/player_bot"]
+visible = false
+modulate = Color(1, 0.137255, 0.0745098, 1)
+position = Vector2(17, -8)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("44_8ce04")
+
+[node name="Heart2" type="Sprite2D" parent="bots/player_bot/Heart"]
+modulate = Color(1, 0, 0.396078, 0.639216)
+position = Vector2(13.2571, -3.65714)
+rotation = 0.160327
+texture = ExtResource("44_8ce04")
+
+[node name="Heart3" type="Sprite2D" parent="bots/player_bot/Heart"]
+modulate = Color(1, 1, 0.239216, 0.486275)
+position = Vector2(26.9714, 2.28571)
+rotation = -0.196109
+texture = ExtResource("44_8ce04")
+
+[node name="Heart4" type="Sprite2D" parent="bots/player_bot/Heart"]
+position = Vector2(21.9429, -5.94286)
+rotation = 0.106168
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("44_8ce04")
+
+[node name="Heart5" type="Sprite2D" parent="bots/player_bot/Heart"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(4.57143, -9.14286)
+rotation = 0.106168
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("44_8ce04")
+
+[node name="player_bot2" type="CharacterBody2D" parent="bots"]
+modulate = Color(0.9931, 0.8175, 0.544614, 1)
+show_behind_parent = true
+position = Vector2(-426, -256)
+script = ExtResource("25_se3ec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bots/player_bot2"]
+position = Vector2(41.5, 59.5)
+shape = SubResource("RectangleShape2D_550pb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bots/player_bot2/CollisionShape2D"]
+position = Vector2(-2, -19)
+sprite_frames = ExtResource("26_y4tli")
+animation = &"hidel"
+autoplay = "hidel"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bots/player_bot2/CollisionShape2D/AnimatedSprite2D"]
+position = Vector2(2, -19)
+sprite_frames = SubResource("SpriteFrames_yt72h")
+animation = &"xex"
+autoplay = "xex"
+
+[node name="Angry" type="Sprite2D" parent="bots/player_bot2/CollisionShape2D/AnimatedSprite2D"]
+visible = false
+position = Vector2(16, 35)
+scale = Vector2(2, 2)
+texture = ExtResource("42_0cti7")
+
+[node name="Timer" type="Timer" parent="bots/player_bot2"]
+wait_time = 5.0
+autostart = true
+
+[node name="Icon" type="Sprite2D" parent="bots/player_bot2"]
+visible = false
+position = Vector2(45, 6)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("43_53dx2")
+
+[node name="Heart" type="Sprite2D" parent="bots/player_bot2"]
+visible = false
+modulate = Color(1, 0.137255, 0.0745098, 1)
+position = Vector2(17, -8)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("44_8ce04")
+
+[node name="Heart2" type="Sprite2D" parent="bots/player_bot2/Heart"]
+modulate = Color(1, 0, 0.396078, 0.639216)
+position = Vector2(13.2571, -3.65714)
+rotation = 0.160327
+texture = ExtResource("44_8ce04")
+
+[node name="Heart3" type="Sprite2D" parent="bots/player_bot2/Heart"]
+modulate = Color(1, 1, 0.239216, 0.486275)
+position = Vector2(26.9714, 2.28571)
+rotation = -0.196109
+texture = ExtResource("44_8ce04")
+
+[node name="Heart4" type="Sprite2D" parent="bots/player_bot2/Heart"]
+position = Vector2(21.9429, -5.94286)
+rotation = 0.106168
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("44_8ce04")
+
+[node name="Heart5" type="Sprite2D" parent="bots/player_bot2/Heart"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(4.57143, -9.14286)
+rotation = 0.106168
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("44_8ce04")
+
+[node name="player_bot3" type="CharacterBody2D" parent="bots"]
+modulate = Color(0.9931, 0.8175, 0.544614, 1)
+show_behind_parent = true
+position = Vector2(1155, -176)
+script = ExtResource("25_se3ec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bots/player_bot3"]
+position = Vector2(41.5, 59.5)
+shape = SubResource("RectangleShape2D_550pb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bots/player_bot3/CollisionShape2D"]
+position = Vector2(-2, -19)
+sprite_frames = ExtResource("26_y4tli")
+animation = &"hidel"
+autoplay = "hidel"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bots/player_bot3/CollisionShape2D/AnimatedSprite2D"]
+position = Vector2(2, -19)
+sprite_frames = SubResource("SpriteFrames_yt72h")
+animation = &"xex"
+autoplay = "xex"
+
+[node name="Angry" type="Sprite2D" parent="bots/player_bot3/CollisionShape2D/AnimatedSprite2D"]
+visible = false
+position = Vector2(16, 35)
+scale = Vector2(2, 2)
+texture = ExtResource("42_0cti7")
+
+[node name="Timer" type="Timer" parent="bots/player_bot3"]
+wait_time = 5.0
+autostart = true
+
+[node name="Icon" type="Sprite2D" parent="bots/player_bot3"]
+visible = false
+position = Vector2(45, 6)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("43_53dx2")
+
+[node name="Heart" type="Sprite2D" parent="bots/player_bot3"]
+visible = false
+modulate = Color(1, 0.137255, 0.0745098, 1)
+position = Vector2(17, -8)
+scale = Vector2(2.1875, 2.1875)
+texture = ExtResource("44_8ce04")
+
+[node name="Heart2" type="Sprite2D" parent="bots/player_bot3/Heart"]
+modulate = Color(1, 0, 0.396078, 0.639216)
+position = Vector2(13.2571, -3.65714)
+rotation = 0.160327
+texture = ExtResource("44_8ce04")
+
+[node name="Heart3" type="Sprite2D" parent="bots/player_bot3/Heart"]
+modulate = Color(1, 1, 0.239216, 0.486275)
+position = Vector2(26.9714, 2.28571)
+rotation = -0.196109
+texture = ExtResource("44_8ce04")
+
+[node name="Heart4" type="Sprite2D" parent="bots/player_bot3/Heart"]
+position = Vector2(21.9429, -5.94286)
+rotation = 0.106168
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("44_8ce04")
+
+[node name="Heart5" type="Sprite2D" parent="bots/player_bot3/Heart"]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 1, 0, 1)
+position = Vector2(4.57143, -9.14286)
+rotation = 0.106168
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("44_8ce04")
+
+[connection signal="input_event" from="bots/player_bot" to="bots/player_bot" method="_on_input_event"]
+[connection signal="timeout" from="bots/player_bot/Timer" to="bots/player_bot" method="_on_timer_timeout"]
+[connection signal="input_event" from="bots/player_bot2" to="bots/player_bot2" method="_on_input_event"]
+[connection signal="timeout" from="bots/player_bot2/Timer" to="bots/player_bot2" method="_on_timer_timeout"]
+[connection signal="input_event" from="bots/player_bot3" to="bots/player_bot3" method="_on_input_event"]
+[connection signal="timeout" from="bots/player_bot3/Timer" to="bots/player_bot3" method="_on_timer_timeout"]

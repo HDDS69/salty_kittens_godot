@@ -76,10 +76,5 @@ frame_progress = 0.929665
 position = Vector2(-2, 2.5)
 shape = SubResource("RectangleShape2D_uej7r")
 
-[node name="Timer" type="Timer" parent="stone_1/stone2"]
-process_callback = 0
-wait_time = 2.0
-
 [connection signal="timeout" from="stone2/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="stone_1" to="." method="_on_stone_1_body_entered"]
-[connection signal="timeout" from="stone_1/stone2/Timer" to="." method="_on_timer_timeout"]

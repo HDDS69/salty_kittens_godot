@@ -255,7 +255,7 @@ shape = SubResource("RectangleShape2D_lo2je")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 position = Vector2(-5, -25)
 sprite_frames = ExtResource("3_pgbbb")
-animation = &"run"
+animation = &"death"
 autoplay = "hidel"
 
 [node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
@@ -279,7 +279,7 @@ bbcode_enabled = true
 visible = false
 position = Vector2(-5, -24.75)
 sprite_frames = ExtResource("8_331ug")
-animation = &"hidel"
+animation = &"jump"
 autoplay = "hidel"
 
 [node name="effect" type="AnimatedSprite2D" parent="CollisionShape2D"]
