@@ -13,7 +13,6 @@ var health = 3
 var salt = 0
 var alive = true
 var death1 = false
-var action = false
 var land = false
 var invulnerability = false
 var invulnerability_start = false
@@ -37,14 +36,8 @@ func _process(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
-	if Input.is_action_just_pressed("ui_action_button"):
-		actiom = true
-	else:
-		actiom = false
-	action = false
 	
 	if Input.is_action_just_pressed("ui_focus_next") and salty_platform == false:
-		action = true
 		salty_platform = true
 	
 	# Get the input direction and handle the movement/deceleration.
