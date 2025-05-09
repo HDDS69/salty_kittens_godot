@@ -13,6 +13,8 @@ func _process(delta):
 			$RichTextLabel.text = 'нажмите [wave]E[/wave] что бы взять телевизор'
 			while not Input.is_action_just_pressed("ui_action_button"):
 				await get_tree().process_frame  # Ждем следующий кадр
+				if $"../player".broke :
+					break
 			$"../player".animTV()
 			$AnimatedSprite2D.play("puf")
 			await $AnimatedSprite2D.animation_finished

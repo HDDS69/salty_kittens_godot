@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+var broke = false
 var SPEED = 200.0
 var JUMP_VELOCITY = -450.0
 var x_cord = 1
