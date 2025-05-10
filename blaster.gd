@@ -15,6 +15,7 @@ func _process(delta):
 	look_at(get_global_mouse_position())
 		
 func shoot():
+	$AudioStreamPlayer2D.play()
 	$"..".count -=1
 	var b = bullet.instantiate()
 	get_tree().root.add_child(b)

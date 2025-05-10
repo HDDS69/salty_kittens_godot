@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://6y604yoy0lfl" path="res://текстуры/Untitled 01-16-2024 07-48-14.png" id="5_08jmo"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://player.tres" id="8_8tnp7"]
 [ext_resource type="Script" uid="uid://fju6ylog0gdq" path="res://playermenu.gd" id="8_yl6au"]
+[ext_resource type="AudioStream" uid="uid://bc5p4nxapjq2q" path="res://текстуры/sound/Pineapples in my head.mp3" id="28_8tnp7"]
 [ext_resource type="Texture2D" uid="uid://gr1e4ecqyqme" path="res://текстуры/death/0.png" id="56_vuvg7"]
 [ext_resource type="Texture2D" uid="uid://4onbjxjuoxrw" path="res://текстуры/death/1.png" id="57_54ody"]
 [ext_resource type="Texture2D" uid="uid://dx3gndwgfc8ny" path="res://текстуры/death/2.png" id="58_qxfsd"]
@@ -28,7 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://bghwr16kfkygl" path="res://текстуры/доп контент/icon.png" id="73_g741s"]
 [ext_resource type="Texture2D" uid="uid://b86vp80iuefb6" path="res://текстуры/доп контент/heart.png" id="74_48v53"]
 [ext_resource type="Texture2D" uid="uid://c8ies5j07ilfo" path="res://текстуры/доп контент/cat.png" id="75_fb88d"]
-[ext_resource type="AudioStream" uid="uid://ccs3wwa30uair" path="res://sound/Project_2.mp3" id="76_60gfu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bv2w"]
 size = Vector2(43, 55)
@@ -279,8 +279,8 @@ tile_set = SubResource("TileSet_n0cf5")
 stream = ExtResource("4_oq66f")
 
 [node name="sound_menu" type="AudioStreamPlayer" parent="sound"]
-stream = ExtResource("76_60gfu")
-volume_db = -20.613
+stream = ExtResource("28_8tnp7")
+volume_db = -10.0
 autoplay = true
 parameters/looping = true
 

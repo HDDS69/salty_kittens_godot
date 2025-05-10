@@ -1,10 +1,11 @@
-[gd_scene load_steps=66 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=67 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://player.gd" id="1_8m1ne"]
 [ext_resource type="PackedScene" uid="uid://cn78231br5yqe" path="res://boom.tscn" id="2_l4htu"]
 [ext_resource type="PackedScene" uid="uid://dfo3gpmlnp5h6" path="res://bullet.tscn" id="2_xbhkx"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://player.tres" id="3_pgbbb"]
 [ext_resource type="SpriteFrames" uid="uid://bguq4n7gblp8e" path="res://tv.tres" id="8_331ug"]
+[ext_resource type="AudioStream" uid="uid://bh8nsyb3yrfic" path="res://текстуры/sound/blaster.mp3" id="32_ny14h"]
 [ext_resource type="Texture2D" uid="uid://cqmbmiixqt31w" path="res://ui/Untitled 03-13-2024 10-01-45.png" id="60_mu4fn"]
 [ext_resource type="Texture2D" uid="uid://cicxjimgddfkc" path="res://ui/Untitled 03-13-2024 10-01-451.png" id="61_pwn7i"]
 [ext_resource type="Texture2D" uid="uid://boqdfrp71gn3o" path="res://текстуры/Untitled 03-11-2024 08-48-21.png" id="65_hrq5w"]
@@ -491,6 +492,10 @@ position = Vector2(16, 0.999999)
 scale = Vector2(3.55023, 3.55023)
 sprite_frames = SubResource("SpriteFrames_2acp6")
 autoplay = "default"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="blaster"]
+stream = ExtResource("32_ny14h")
+volume_db = -10.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0

@@ -35,7 +35,9 @@ func death():
 	pos_to = true
 	pos = self.position
 	$radius.monitoring = true
+	$Node2D/Boom.visible = false
 	$AnimatedSprite2D.play("default")
+	$sound.play()
 	await $AnimatedSprite2D.animation_finished
 	queue_free()
 

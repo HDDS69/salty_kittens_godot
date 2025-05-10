@@ -4,7 +4,7 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var chace = false
 var shoot_timer = false
-var speed = 1000
+var speed = 550
 var hit_ft = false
 var Death = false
 var helth = 3
@@ -31,7 +31,7 @@ func _physics_process(delta):
 	if chace and stupidvar:
 			var direction = to_local(player.global_position).normalized()
 			position.y = player.position.y - 200
-			velocity.x = speed * direction.x 
+			velocity.x = speed * direction.x
 			if velocity.x < 0:
 				$AnimatedSprite2D.rotation = -0.1
 			elif velocity.x > 0:
@@ -56,6 +56,7 @@ func _on_death_2_body_entered(body):
 			body.health -= 1
 func shoot():
 	if count > 0 and chace :
+		$AudioStreamPlayer2D/AudioStreamPlayer2D.play()
 		count -= 1
 		var b = bullet.instantiate()
 		get_tree().root.add_child(b)

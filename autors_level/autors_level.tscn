@@ -231,6 +231,7 @@ text = "ImMrNkch :
 сценарист
 художник
 музыкант
+диктор
 "
 label_settings = SubResource("LabelSettings_gq2vc")
 metadata/_edit_use_anchors_ = true

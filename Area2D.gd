@@ -5,6 +5,5 @@ extends Area2D
 func _process(delta):
 	if $"..".chace:
 		var pos = $"..".player.position
-		pos.x +=30
+		pos.x +=45 #+  randf_range(-15,15)
 		look_at(pos)
-	
