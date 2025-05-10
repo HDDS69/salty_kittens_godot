@@ -642,7 +642,7 @@ shadow_enabled = true
 texture = ExtResource("41_pxflf")
 
 [node name="mob" parent="." node_paths=PackedStringArray("player") instance=ExtResource("39_axyxg")]
-position = Vector2(1373, 432)
+position = Vector2(1373, 369)
 player = NodePath("../player")
 
 [node name="Area2D3" parent="." instance=ExtResource("46_x0838")]
