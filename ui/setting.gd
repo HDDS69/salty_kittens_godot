@@ -1,5 +1,5 @@
 extends Control
-
+@onready var sound_click = $"../sound/click"
 var fullscreen = false
 
 func _on_quit_setting_pressed():
@@ -7,7 +7,7 @@ func _on_quit_setting_pressed():
 
 func _on_full_screen_pressed():
 	fullscreen = !fullscreen
-	$"../sound/click".play()
+	sound_click.play()
 	if fullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:
@@ -15,4 +15,4 @@ func _on_full_screen_pressed():
 
 
 func _on_controll_pressed() -> void:
-	$"../sound/click".play()
+	sound_click.play()

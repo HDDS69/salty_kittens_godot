@@ -408,6 +408,7 @@ shape = SubResource("RectangleShape2D_cebvf")
 action = "boom"
 
 [node name="Virtual Joystick" type="Control" parent="mobile controller"]
+modulate = Color(1, 1, 1, 0.435294)
 layout_mode = 3
 anchors_preset = 6
 anchor_left = 1.0

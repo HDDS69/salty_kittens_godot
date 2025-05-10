@@ -6,10 +6,10 @@ var he = true
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if entered == true and $"../player".hit == true and he == true:
-		var stone_1 = stone.instantiate()
-		stone_1.directionFALL = $"../player".direction
-		add_child(stone_1)
-		he = false
+			var stone_1 = stone.instantiate()
+			stone_1.directionFALL = $"../player".direction
+			add_child(stone_1)
+			he = false
 	if he == false:
 		$CollisionShape2D/AnimatedSprite2D.hide()
 		$ui.hide()

@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 			velocity.y += 10
 			one = self.position.x
 			two = self.position.y
-			$CollisionShape2D/AnimatedSprite2D.flip_h = false
+			anim.flip_h = false
 			anim.play("sleep")
 			await anim.animation_finished
 			self.position.x = one

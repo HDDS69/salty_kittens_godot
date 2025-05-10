@@ -32,6 +32,7 @@ settings/physics_interpolation=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
+window/vsync/vsync_mode=0
 
 [input]
 
@@ -107,3 +108,5 @@ textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+occlusion_culling/use_occlusion_culling=true
+textures/use_occlusion_culling=true

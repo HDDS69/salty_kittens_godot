@@ -14,7 +14,7 @@ var stupidvar = true
 
 @export var bullet : PackedScene
 @export var player : Node2D
-
+@onready var anim = $AnimatedSprite2D
 func _physics_process(delta):
 	$ProgressBar.value = helth
 	if hit_ft and player.hit :
@@ -26,18 +26,18 @@ func _physics_process(delta):
 		
 	if count <= 0 and recharge:
 		recharge = false
-		$AnimatedSprite2D.self_modulate = "#ff0000"
+		anim.self_modulate = "#ff0000"
 		$recharge.start()
 	if chace and stupidvar:
 			var direction = to_local(player.global_position).normalized()
 			position.y = player.position.y - 200
 			velocity.x = speed * direction.x
 			if velocity.x < 0:
-				$AnimatedSprite2D.rotation = -0.1
+				anim.rotation = -0.1
 			elif velocity.x > 0:
-				$AnimatedSprite2D.rotation = 0.1
+				anim.rotation = 0.1
 			else :
-				$AnimatedSprite2D.rotation = 0
+				anim.rotation = 0
 			move_and_slide()
 	if shoot_timer and chace:
 			$Timer.start()
@@ -68,7 +68,7 @@ func death():
 	if helth <= 0 and Death == false:
 		Death = true
 		$AnimatedSprite2D.play("death")
-		await $AnimatedSprite2D.animation_finished #дождаться окончании анимации
+		await anim.animation_finished #дождаться окончании анимации
 		queue_free()
 
 
@@ -104,5 +104,5 @@ func _on_shoot_body_exited(body: Node2D) -> void:
 
 func _on_recharge_timeout() -> void:
 	count = 4
-	$AnimatedSprite2D.self_modulate = "#ffffff"
+	anim.self_modulate = "#ffffff"
 	stupidvar = true

@@ -1,11 +1,14 @@
-[gd_resource type="TileSet" load_steps=74 format=3 uid="uid://dfu05fuyf4vuy"]
+[gd_resource type="TileSet" load_steps=79 format=3 uid="uid://dfu05fuyf4vuy"]
 
 [ext_resource type="Texture2D" uid="uid://bu3otia4my213" path="res://текстуры/bg_doroga.png" id="1_a2fpb"]
 [ext_resource type="Texture2D" uid="uid://c54kn4wujjovx" path="res://текстуры/cube.png" id="2_yrgmu"]
 [ext_resource type="PackedScene" uid="uid://dyhtbn77nlgvq" path="res://level/trash_can.tscn" id="3_4x3gs"]
 [ext_resource type="Texture2D" uid="uid://bjscafoxskyfx" path="res://текстуры/bloks.png" id="3_pugrl"]
 [ext_resource type="Texture2D" uid="uid://46gqbgubmc2h" path="res://текстуры/oboi.png" id="4_0xkvf"]
+[ext_resource type="PackedScene" uid="uid://dwe8uyi30jkan" path="res://текстуры/level/borel.tscn" id="4_4k1sn"]
 [ext_resource type="Texture2D" uid="uid://ddin1dg31bf8b" path="res://текстуры/zabor1.png" id="4_8hy3j"]
+[ext_resource type="PackedScene" uid="uid://3jyuid1mhowh" path="res://stone.tscn" id="4_b87n2"]
+[ext_resource type="PackedScene" uid="uid://cbsdguel865kq" path="res://box.tscn" id="4_gdjt7"]
 [ext_resource type="Texture2D" uid="uid://d3uu7vux5c1ue" path="res://текстуры/Untitled 12-11-2023 09-42-001.png" id="4_vaojp"]
 [ext_resource type="Texture2D" uid="uid://blajdwyfi3q3l" path="res://текстуры/level/b1g2.png" id="5_066rt"]
 [ext_resource type="Texture2D" uid="uid://6y604yoy0lfl" path="res://текстуры/Untitled 01-16-2024 07-48-14.png" id="5_pk8wl"]
@@ -31,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://do538puwwe00b" path="res://текстуры/level/lotok.png" id="20_03ker"]
 [ext_resource type="Texture2D" uid="uid://boxuyh3q5i154" path="res://текстуры/bed.png" id="21_iuoui"]
 [ext_resource type="Texture2D" uid="uid://dil1xmrb0mnvj" path="res://текстуры/divan.png" id="22_t7ibs"]
+[ext_resource type="PackedScene" uid="uid://cy4dfmjr88k02" path="res://mob.tscn" id="24_mfxhn"]
 [ext_resource type="Texture2D" uid="uid://cwisg1luq6ftq" path="res://текстуры/level/lampa.png" id="26_iwgpx"]
 [ext_resource type="Texture2D" uid="uid://c8aw0ubn3w46c" path="res://текстуры/level/beer.png" id="27_i773w"]
 [ext_resource type="Texture2D" uid="uid://c0as31ryhvpw3" path="res://текстуры/level/0beer.png" id="28_kt06f"]
@@ -112,6 +116,9 @@ texture = ExtResource("2_yrgmu")
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_g0c37"]
 resource_name = "box"
 scenes/1/scene = ExtResource("3_4x3gs")
+scenes/2/scene = ExtResource("4_gdjt7")
+scenes/3/scene = ExtResource("4_4k1sn")
+scenes/4/scene = ExtResource("4_b87n2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1gva"]
 texture = ExtResource("4_0xkvf")
@@ -240,6 +247,10 @@ texture = ExtResource("20_03ker")
 1:3/0 = 0
 2:3/0 = 0
 3:3/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_rnm0h"]
+resource_name = "mobs"
+scenes/1/scene = ExtResource("24_mfxhn")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3orw"]
 texture = ExtResource("18_ny25i")
@@ -7021,3 +7032,4 @@ sources/36 = SubResource("TileSetAtlasSource_4ah0v")
 sources/6 = SubResource("TileSetAtlasSource_nxtrv")
 sources/25 = SubResource("TileSetAtlasSource_pgh88")
 sources/35 = SubResource("TileSetAtlasSource_4k1sn")
+sources/27 = SubResource("TileSetScenesCollectionSource_rnm0h")

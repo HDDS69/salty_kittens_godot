@@ -29,7 +29,7 @@ script = ExtResource("1_cw1v1")
 stone = ExtResource("2_tlw13")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8, 23)
+position = Vector2(-20, 31)
 shape = SubResource("RectangleShape2D_q2rqk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
