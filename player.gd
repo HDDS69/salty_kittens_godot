@@ -10,6 +10,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var health = 3
 @onready var anim = $CollisionShape2D/AnimatedSprite2D
 @onready var anim1 = $CollisionShape2D/effect
+@onready var blaster_texture = $blaster
 var salt = 0
 var alive = true
 var death1 = false
@@ -54,14 +55,14 @@ func _process(delta: float) -> void:
 			self.position.y = two
 		else:
 			if Input.is_action_just_pressed("1"):
-				$blaster.visible = false
+				blaster_texture.visible = false
 				blaster = false
 			if Input.is_action_just_pressed("2"):
 				blaster = true
-				$blaster.visible = true
+				blaster_texture.visible = true
 			if Input.is_action_just_pressed("ui_hit_player0") or hit:
 				if blaster and count > 0:
-					$blaster.shoot()
+					blaster_texture.shoot()
 				else:
 					if is_on_floor():  # Проверяем, находится ли игрок на земле
 						hit = true
@@ -133,7 +134,7 @@ func death():
 func attack():
 	if Input.is_action_just_pressed("ui_hit_player0") or hit:
 				if blaster and count >0:
-					$blaster.shoot()
+					blaster_texture.shoot()
 				else:
 					hit = true
 					one = self.position.x

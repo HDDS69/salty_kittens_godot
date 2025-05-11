@@ -24,7 +24,6 @@ SavePoint="*res://save_point.gd"
 
 [debug]
 
-settings/stdout/print_fps=true
 settings/physics_interpolation=false
 
 [display]
@@ -32,7 +31,6 @@ settings/physics_interpolation=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
-window/vsync/vsync_mode=0
 
 [input]
 

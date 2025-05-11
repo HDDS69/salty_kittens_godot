@@ -20,9 +20,8 @@ var stupidvar = true
 @onready var timer = $Timer
 @onready var sound = $AudioStreamPlayer2D/AudioStreamPlayer2D
 @onready var marker = $Area2D/Marker2D
-func _physics_process(delta):
+func _process(delta):
 	HP_bar.value = helth
-	
 	if hit_ft and player.hit :
 		death()
 	
@@ -70,9 +69,12 @@ func shoot():
 		get_tree().root.add_child(b)
 		b.transform = marker.global_transform
 		shoot_timer = true
+		
+		
 #функция смерти
 func death():
 	helth -=1
+
 	if helth <= 0 and Death == false:
 		Death = true
 		anim.play("death")
