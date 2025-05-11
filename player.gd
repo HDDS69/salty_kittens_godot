@@ -41,12 +41,7 @@ func _process(delta: float) -> void:
 		salty_platform = true
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	if Input.is_action_just_pressed("1"):
-		$blaster.visible = false
-		blaster = false
-	if Input.is_action_just_pressed("2"):
-		blaster = true
-		$blaster.visible = true
+	
 	if alive == true:
 		if sleep_anim :
 			velocity.y += 10
@@ -58,6 +53,12 @@ func _process(delta: float) -> void:
 			self.position.x = one
 			self.position.y = two
 		else:
+			if Input.is_action_just_pressed("1"):
+				$blaster.visible = false
+				blaster = false
+			if Input.is_action_just_pressed("2"):
+				blaster = true
+				$blaster.visible = true
 			if Input.is_action_just_pressed("ui_hit_player0") or hit:
 				if blaster and count > 0:
 					$blaster.shoot()

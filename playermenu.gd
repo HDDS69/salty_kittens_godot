@@ -3,8 +3,12 @@ extends CharacterBody2D
 const SPEED = 4500.0
 const JUMP_VELOCITY = -400.0
 var clone = false
-
 @onready var anim = $CollisionShape2D/AnimatedSprite2D
+@onready var angry = $CollisionShape2D/AnimatedSprite2D/Angry
+@onready var heart = $Heart
+@onready var icon = $Icon
+@onready var menu = $".."
+@onready var count = $"../bg/count_clicker"
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -17,9 +21,9 @@ func _physics_process(delta: float) -> void:
 		velocity.x = SPEED * delta * randf_range(-1,1)
 		anim.play("run")
 	if velocity.x < 0 :
-				$CollisionShape2D/AnimatedSprite2D.flip_h = true
+				anim.flip_h = true
 	elif velocity.x > 0:
-				$CollisionShape2D/AnimatedSprite2D.flip_h = false
+				anim.flip_h = false
 	move_and_slide()
 
 
@@ -33,27 +37,27 @@ func death():
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			$Icon.visible = !$Icon.visible
-			$CollisionShape2D/AnimatedSprite2D/Angry.visible = false
-			$Heart.visible = false
+			icon.visible = !icon.visible
+			angry.visible = false
+			heart.visible = false
 			if clone == false :
-				if $"..".yes :
-					$"..".add += 1
-					$"../bg/count_clicker".text = str($"..".add)
+				if menu.yes :
+					menu.add += 1
+					count.text = str(menu.add)
 				else :
-					$"../bg/count_clicker".text = "сломанная фигня"
-				if $"..".add == 666 :
-					$"..".yes = false
+					count.text = "сломанная фигня"
+				if menu.add == 666 :
+					menu.yes = false
 					for i in range(50):
 						var dup = self.duplicate()
 						dup.clone = true
 						dup.position = self.position + Vector2(50, 0)
-						$"..".get_parent().add_child(dup)
+						menu.get_parent().add_child(dup)
 		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
-			$Icon.visible = false
-			$CollisionShape2D/AnimatedSprite2D/Angry.visible = false
-			$Heart.visible = !$Heart.visible
+			icon.visible = false
+			angry.visible = false
+			heart.visible = !heart.visible
 		elif event.button_index == MOUSE_BUTTON_MIDDLE and event.pressed:
-			$Icon.visible = false
-			$CollisionShape2D/AnimatedSprite2D/Angry.visible = !$CollisionShape2D/AnimatedSprite2D/Angry.visible 
-			$Heart.visible = false
+			icon.visible = false
+			angry.visible = !angry.visible 
+			heart.visible = false

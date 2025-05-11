@@ -15,8 +15,14 @@ var stupidvar = true
 @export var bullet : PackedScene
 @export var player : Node2D
 @onready var anim = $AnimatedSprite2D
+@onready var HP_bar = $ProgressBar
+@onready var recharge_timer = $recharge
+@onready var timer = $Timer
+@onready var sound = $AudioStreamPlayer2D/AudioStreamPlayer2D
+@onready var marker = $Area2D/Marker2D
 func _physics_process(delta):
-	$ProgressBar.value = helth
+	HP_bar.value = helth
+	
 	if hit_ft and player.hit :
 		death()
 	
@@ -27,7 +33,8 @@ func _physics_process(delta):
 	if count <= 0 and recharge:
 		recharge = false
 		anim.self_modulate = "#ff0000"
-		$recharge.start()
+		recharge_timer.start()
+		
 	if chace and stupidvar:
 			var direction = to_local(player.global_position).normalized()
 			position.y = player.position.y - 200
@@ -40,7 +47,7 @@ func _physics_process(delta):
 				anim.rotation = 0
 			move_and_slide()
 	if shoot_timer and chace:
-			$Timer.start()
+			timer.start()
 			shoot_timer = false
 	
 	
@@ -54,20 +61,21 @@ func _on_death_2_body_entered(body):
 			body.invulnerability = true
 			body.invulnerability_start = true
 			body.health -= 1
+			
 func shoot():
 	if count > 0 and chace :
-		$AudioStreamPlayer2D/AudioStreamPlayer2D.play()
+		sound.play()
 		count -= 1
 		var b = bullet.instantiate()
 		get_tree().root.add_child(b)
-		b.transform = $Area2D/Marker2D.global_transform
+		b.transform = marker.global_transform
 		shoot_timer = true
 #функция смерти
 func death():
 	helth -=1
 	if helth <= 0 and Death == false:
 		Death = true
-		$AnimatedSprite2D.play("death")
+		anim.play("death")
 		await anim.animation_finished #дождаться окончании анимации
 		queue_free()
 

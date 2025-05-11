@@ -4,7 +4,7 @@ var entered = false
 @onready var player = $"../player"
 @onready var ui = $ui
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta: float) -> void:
 	if entered:
 		if Input.is_action_just_pressed("ui_action_button"):
 			player.health = 3

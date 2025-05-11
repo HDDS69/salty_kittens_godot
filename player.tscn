@@ -215,22 +215,19 @@ animations = [{
 [sub_resource type="GDScript" id="GDScript_sk34d"]
 script/source = "extends AnimatedSprite2D
 @onready var anim = self
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
+@onready var player = $\"../..\"
+@onready var label = $\"../Label\"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta: float) -> void:
 	#лучший скрипт всего человечества(хуйня)
-	$\"../Label\".text = \"salt:\" + str($\"../..\".salt)
+	label.text = \"salt:\" + str(player.salt)
 	anim.play(\"hp\")
-	if $\"../..\".health == 2:
+	if player.health == 2:
 		anim.play(\"1\")
-	elif $\"../..\".health == 1:
+	elif player.health == 1:
 		anim.play(\"2\")
-	elif $\"../..\".health == 0:
+	elif player.health == 0:
 		anim.play(\"3\")
 "
 
@@ -685,7 +682,6 @@ stream = ExtResource("68_qmmh8")
 position = Vector2(-6, 7)
 occluder = SubResource("OccluderPolygon2D_evup4")
 
-[connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="timeout" from="Timer_invulnerability" to="." method="_on_timer_invulnerability_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/pause" to="." method="_on_pause_pressed"]
