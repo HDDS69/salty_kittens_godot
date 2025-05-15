@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="saltykitens"
-config/version="0.0.2"
+config/version="0.0.3"
 run/main_scene="res://menu.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
@@ -22,15 +22,16 @@ config/icon="uid://ccck3akb0d64c"
 
 SavePoint="*res://save_point.gd"
 
-[debug]
-
-settings/physics_interpolation=false
-
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
+mouse_cursor/custom_image="uid://c84o5lhfnvnbk"
+
+[editor]
+
+movie_writer/disable_vsync=true
 
 [input]
 
@@ -106,5 +107,6 @@ textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
+textures/webp_compression/lossless_compression_factor=50.0
 occlusion_culling/use_occlusion_culling=true
 textures/use_occlusion_culling=true

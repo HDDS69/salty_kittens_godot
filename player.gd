@@ -11,6 +11,14 @@ var health = 3
 @onready var anim = $CollisionShape2D/AnimatedSprite2D
 @onready var anim1 = $CollisionShape2D/effect
 @onready var blaster_texture = $blaster
+@onready var hit1 = $hit
+@onready var hit2 = $hit2
+@onready var sound_jump = $music/jump
+@onready var sound_land = $music/land
+@onready var Rtext = $CollisionShape2D/recharge
+@onready var timer = $Timer
+@onready var timer_i = $Timer_invulnerability
+@onready var marker = $blaster/Marker2D
 var salt = 0
 var alive = true
 var death1 = false
@@ -36,8 +44,6 @@ func _process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		
-	
 	if Input.is_action_just_pressed("ui_focus_next") and salty_platform == false:
 		salty_platform = true
 	# Get the input direction and handle the movement/deceleration.
@@ -79,11 +85,11 @@ func _process(delta: float) -> void:
 			if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 				velocity.y = JUMP_VELOCITY
 				anim.play("jump")
-				$music/jump.play()
+				sound_jump.play()
 			if count == 0:
-				$Timer.start()
+				timer.start()
 				count = -1000
-				$CollisionShape2D/recharge.text = "[wave = 30]перезарядка..."
+				Rtext.text = "[wave = 30]перезарядка..."
 			if Input.is_action_just_pressed("boom"):
 				boom()
 			direction = Input.get_axis("ui_left_player", "ui_right_player")
@@ -93,13 +99,12 @@ func _process(delta: float) -> void:
 				if velocity.y  == 0 :
 					anim.play("run")
 					land = false
-				
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 				if land == true and velocity.y == 0:
 					anim1.play("land")
 					anim.play("land")
-					$music/land.play()
+					sound_land.play()
 					await anim.animation_finished
 					land = false
 				elif velocity.y  == 0 :
@@ -110,12 +115,12 @@ func _process(delta: float) -> void:
 					anim.play("hidel")
 			if direction == -1:
 				anim.flip_h = true
-				$hit.set_deferred("monitorable", false)
-				$hit2.set_deferred("monitorable", true)
+				hit1.set_deferred("monitorable", false)
+				hit2.set_deferred("monitorable", true)
 			elif direction == 1:
 				anim.flip_h = false
-				$hit.set_deferred("monitorable", true)
-				$hit2.set_deferred("monitorable", false)
+				hit1.set_deferred("monitorable", true)
+				hit2.set_deferred("monitorable", false)
 			if velocity.y > 0:
 				anim.play("fall")
 			move_and_slide()
@@ -144,7 +149,7 @@ func attack():
 func invulnerability_timer_start():
 	if invulnerability_start == true:
 		invulnerability_start = false
-		$Timer_invulnerability.start()
+		timer_i.start()
 		
 func sleep(x,y):
 	sleep_anim = !sleep_anim
@@ -157,13 +162,13 @@ func _on_timer_invulnerability_timeout():
 func boom():
 	var g = granade.instantiate()
 	get_tree().root.add_child(g)
-	g.transform = $blaster/Marker2D.global_transform
+	g.transform = marker.global_transform
 
 
 
 func _on_timer_timeout():
 	count = 3
-	$CollisionShape2D/recharge.text = ""
+	Rtext.text = ""
 	
 func _on_light_pressed() -> void:
 	SavePoint.light = !SavePoint.light
@@ -171,6 +176,6 @@ func _on_light_pressed() -> void:
 func animTV() -> void:
 	SPEED = 100
 	JUMP_VELOCITY = -250.0
-	$CollisionShape2D/TV.visible = true
-	$CollisionShape2D/AnimatedSprite2D.visible = false
+	anim.visible = false
 	anim = $CollisionShape2D/TV
+	anim.visible = true
