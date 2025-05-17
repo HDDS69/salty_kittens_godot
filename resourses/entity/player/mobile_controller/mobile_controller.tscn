@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://dbblifoi13t5c"]
+
+[ext_resource type="Texture2D" uid="uid://boqdfrp71gn3o" path="res://текстуры/Untitled 03-11-2024 08-48-21.png" id="1_x0k7w"]
+[ext_resource type="Texture2D" uid="uid://drlhlqr55jjw0" path="res://ui/Untitled 03-11-2024 08-48-213.png" id="2_mans0"]
+[ext_resource type="Texture2D" uid="uid://b3v3rwv5ahdfx" path="res://ui/Untitled 03-11-2024 08-48-21.png" id="3_eh3um"]
+[ext_resource type="Texture2D" uid="uid://b5b0tre0hrd84" path="res://текстуры/mobile_control/salt0.png" id="4_rhhkq"]
+[ext_resource type="Texture2D" uid="uid://d4mhpxxx3vwwg" path="res://ui/Untitled 03-13-2024 10-01-452.png" id="4_v8jiq"]
+[ext_resource type="Texture2D" uid="uid://dcoxuhyba6ieb" path="res://текстуры/mobile_control/salt1.png" id="5_e4q1v"]
+[ext_resource type="Texture2D" uid="uid://dfxladixl1rvw" path="res://ui/Untitled 03-13-2024 10-01-453.png" id="5_u662h"]
+[ext_resource type="Texture2D" uid="uid://b76se51gqdco5" path="res://текстуры/mobile_control/hit0.png" id="6_god7k"]
+[ext_resource type="Texture2D" uid="uid://nmnmja5any4s" path="res://текстуры/mobile_control/hit1.png" id="7_ommrs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cebvf"]
+size = Vector2(100, 100)
+
+[node name="mobile controller" type="CanvasLayer"]
+
+[node name="jump" type="TouchScreenButton" parent="."]
+position = Vector2(973, 614)
+rotation = -1.5708
+scale = Vector2(1.31367, 1.25753)
+texture_normal = ExtResource("1_x0k7w")
+texture_pressed = ExtResource("2_mans0")
+shape = SubResource("RectangleShape2D_cebvf")
+action = "ui_accept"
+
+[node name="right" type="TouchScreenButton" parent="."]
+position = Vector2(243, 490)
+scale = Vector2(1.3073, 1.25143)
+texture_normal = ExtResource("3_eh3um")
+texture_pressed = ExtResource("2_mans0")
+shape = SubResource("RectangleShape2D_cebvf")
+action = "ui_right_player"
+
+[node name="left" type="TouchScreenButton" parent="."]
+position = Vector2(169, 609)
+rotation = -3.14159
+scale = Vector2(1.25, 1.19658)
+texture_normal = ExtResource("3_eh3um")
+texture_pressed = ExtResource("2_mans0")
+shape = SubResource("RectangleShape2D_cebvf")
+action = "ui_left_player"
+
+[node name="eat_salt" type="TouchScreenButton" parent="."]
+position = Vector2(48, 30)
+rotation = -6.28319
+scale = Vector2(0.749132, 0.717117)
+texture_normal = ExtResource("4_rhhkq")
+texture_pressed = ExtResource("5_e4q1v")
+shape = SubResource("RectangleShape2D_cebvf")
+action = "ui_focus_next"
+
+[node name="hit" type="TouchScreenButton" parent="."]
+position = Vector2(988, 371)
+rotation = -6.28319
+scale = Vector2(0.749132, 0.717117)
+texture_normal = ExtResource("6_god7k")
+texture_pressed = ExtResource("7_ommrs")
+shape = SubResource("RectangleShape2D_cebvf")
+action = "ui_hit_player0"
+
+[node name="action" type="TouchScreenButton" parent="."]
+position = Vector2(1071, 371)
+rotation = -6.28319
+scale = Vector2(0.749132, 0.717117)
+texture_normal = ExtResource("4_v8jiq")
+texture_pressed = ExtResource("5_u662h")
+shape = SubResource("RectangleShape2D_cebvf")
+action = "ui_action_button"

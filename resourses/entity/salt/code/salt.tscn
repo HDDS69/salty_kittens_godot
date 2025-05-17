@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8jsbiqw2orbe"]
+
+[ext_resource type="Script" uid="uid://b3iro31d1u4gw" path="res://resourses/entity/salt/code/salt.gd" id="1_g5k3l"]
+[ext_resource type="Texture2D" uid="uid://b7s458k1v42bu" path="res://resourses/entity/salt/texture/salt.png" id="2_mp645"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_62dl0"]
+radius = 14.0
+
+[node name="salt" type="Area2D"]
+script = ExtResource("1_g5k3l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_62dl0")
+
+[node name="Salt" type="Sprite2D" parent="CollisionShape2D2"]
+position = Vector2(-1, -3)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("2_mp645")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_62dl0")
+
+[node name="Salt" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(-1, -3)
+scale = Vector2(2.4, 2.4)
+texture = ExtResource("2_mp645")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

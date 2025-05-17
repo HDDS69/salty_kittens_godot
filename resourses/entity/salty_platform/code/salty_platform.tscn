@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgy28uv0keipq"]
+
+[ext_resource type="Script" uid="uid://bxv0jpseijka5" path="res://salty_platform.gd" id="1_acg6m"]
+[ext_resource type="Texture2D" uid="uid://dovpehtr0xjku" path="res://текстуры/Untitled 01-18-2024 09-50-31.png" id="1_dpful"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apsjf"]
+size = Vector2(64, 20)
+
+[node name="salty platform" type="CharacterBody2D"]
+position = Vector2(-8, 1)
+script = ExtResource("1_acg6m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -4)
+shape = SubResource("RectangleShape2D_apsjf")
+one_way_collision_margin = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dpful")
+
+[node name="Untitled01-18-202409-50-31" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-16, 0)
+texture = ExtResource("1_dpful")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(16, 0)
+texture = ExtResource("1_dpful")
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D/Sprite2D"]
+position = Vector2(16, 0)
+texture = ExtResource("1_dpful")
+
+[node name="Untitled01-18-202409-50-31" type="Sprite2D" parent="."]
+position = Vector2(-16, -6)
+texture = ExtResource("1_dpful")
+
+[node name="Untitled01-18-202409-50-32" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("1_dpful")
+
+[node name="Untitled01-18-202409-50-33" type="Sprite2D" parent="."]
+position = Vector2(16, -6)
+texture = ExtResource("1_dpful")
+
+[node name="Untitled01-18-202409-50-34" type="Sprite2D" parent="."]
+position = Vector2(32, -6)
+texture = ExtResource("1_dpful")
+
+[node name="Untitled01-18-202409-50-35" type="Sprite2D" parent="."]
+position = Vector2(8, -6)
+texture = ExtResource("1_dpful")

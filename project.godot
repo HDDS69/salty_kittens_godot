@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="saltykitens"
+config/name="salty kittens"
 config/version="0.0.3"
-run/main_scene="res://menu.tscn"
+run/main_scene="uid://cx8epnvjemxxp"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/image="res://текстуры/start/Sprite-0001.png"
@@ -20,13 +20,12 @@ config/icon="uid://ccck3akb0d64c"
 
 [autoload]
 
-SavePoint="*res://save_point.gd"
+SavePoint="*res://resourses/global_code/save_point.gd"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
-window/stretch/scale_mode="integer"
 mouse_cursor/custom_image="uid://c84o5lhfnvnbk"
 
 [editor]

@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://wba1s21cpm1b"]
+
+[ext_resource type="Script" uid="uid://dik5n43jcy43t" path="res://lamp.gd" id="1_bp0xq"]
+[ext_resource type="Texture2D" uid="uid://l3y3pb0at2us" path="res://текстуры/lamp.png" id="1_tvkcd"]
+[ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://ui/Untitled 06-12-2024 11-00-24.png" id="2_q78lm"]
+[ext_resource type="Script" uid="uid://bxv0jpseijka5" path="res://salty_platform.gd" id="4_h8r7l"]
+[ext_resource type="Texture2D" uid="uid://dovpehtr0xjku" path="res://текстуры/Untitled 01-18-2024 09-50-31.png" id="5_51cgt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0kd0"]
+size = Vector2(40, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apsjf"]
+size = Vector2(64, 20)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_bp0xq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, -27)
+shape = SubResource("RectangleShape2D_t0kd0")
+
+[node name="Lamp" type="Sprite2D" parent="."]
+position = Vector2(20, -40)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("1_tvkcd")
+
+[node name="ui" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(21, -70)
+scale = Vector2(0.546875, 0.546875)
+texture = ExtResource("2_q78lm")
+
+[node name="salty platform" type="CharacterBody2D" parent="."]
+visible = false
+position = Vector2(135, -42)
+script = ExtResource("4_h8r7l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="salty platform"]
+position = Vector2(8, -4)
+shape = SubResource("RectangleShape2D_apsjf")
+disabled = true
+one_way_collision_margin = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="salty platform"]
+texture = ExtResource("5_51cgt")
+
+[node name="Untitled01-18-202409-50-31" type="Sprite2D" parent="salty platform/Sprite2D"]
+position = Vector2(-16, 0)
+texture = ExtResource("5_51cgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="salty platform/Sprite2D"]
+position = Vector2(16, 0)
+texture = ExtResource("5_51cgt")
+
+[node name="Sprite2D" type="Sprite2D" parent="salty platform/Sprite2D/Sprite2D"]
+position = Vector2(16, 0)
+texture = ExtResource("5_51cgt")
+
+[node name="Untitled01-18-202409-50-31" type="Sprite2D" parent="salty platform"]
+position = Vector2(-16, -6)
+texture = ExtResource("5_51cgt")
+
+[node name="Untitled01-18-202409-50-32" type="Sprite2D" parent="salty platform"]
+position = Vector2(0, -6)
+texture = ExtResource("5_51cgt")
+
+[node name="Untitled01-18-202409-50-33" type="Sprite2D" parent="salty platform"]
+position = Vector2(16, -6)
+texture = ExtResource("5_51cgt")
+
+[node name="Untitled01-18-202409-50-34" type="Sprite2D" parent="salty platform"]
+position = Vector2(32, -6)
+texture = ExtResource("5_51cgt")
+
+[node name="Untitled01-18-202409-50-35" type="Sprite2D" parent="salty platform"]
+position = Vector2(8, -6)
+texture = ExtResource("5_51cgt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

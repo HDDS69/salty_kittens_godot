@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://di45bv5qx106q"
+path="res://.godot/imported/May smarts (1).mp3-8db5ba5e85e8e27b1f58c56b2905f603.mp3str"
+
+[deps]
+
+source_file="res://resourses/levels/level_1/music/May smarts (1).mp3"
+dest_files=["res://.godot/imported/May smarts (1).mp3-8db5ba5e85e8e27b1f58c56b2905f603.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
