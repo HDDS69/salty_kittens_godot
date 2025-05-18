@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=4 uid="uid://blv5krx4egejb"]
 
 [ext_resource type="TileSet" uid="uid://7ft6j5eram06" path="res://resourses/levels/level_autors/level_autors.tres" id="1_na15r"]
-[ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://resourses/entity/player/base/player.tscn" id="2_gq2vc"]
+[ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://resourses/entity/player/base/code/player.tscn" id="2_gq2vc"]
 [ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="3_fr3fn"]
 [ext_resource type="Script" uid="uid://bqqpa0c6foxpq" path="res://resourses/levels/resourses_levels/background/code/bg.gd" id="4_b42di"]
 [ext_resource type="Texture2D" uid="uid://b6baq1asqhgdt" path="res://resourses/levels/resourses_levels/background/texture/35.png" id="5_ihp28"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cxbpmy6ohiox4" path="res://resourses/levels/resourses_levels/background/texture/45.png" id="15_fjtn0"]
 [ext_resource type="Texture2D" uid="uid://cuuxmcyh0t0jf" path="res://resourses/levels/resourses_levels/background/texture/46.png" id="16_55y0q"]
 [ext_resource type="Texture2D" uid="uid://du0v6udlbn6t1" path="res://resourses/levels/resourses_levels/background/texture/47.png" id="17_26idj"]
-[ext_resource type="Texture2D" uid="uid://c8ies5j07ilfo" path="res://текстуры/доп контент/cat.png" id="19_3px8s"]
+[ext_resource type="Texture2D" uid="uid://ce3jasughfa21" path="res://resourses/shared_resources/texture/logo/cat.png" id="19_3px8s"]
 [ext_resource type="PackedScene" uid="uid://bhntp72fw4cqj" path="res://resourses/entity/player_bot/code/player_bot.tscn" id="25_auwx8"]
 [ext_resource type="Texture2D" uid="uid://dtepxmbcjl6ew" path="res://resourses/levels/resourses_levels/background/texture/0.png" id="72_77iqv"]
 [ext_resource type="Texture2D" uid="uid://ighwurnmi8bt" path="res://resourses/levels/resourses_levels/background/texture/1.png" id="73_in84s"]

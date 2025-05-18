@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c54kn4wujjovx" path="res://текстуры/cube.png" id="2_ugn2t"]
 [ext_resource type="PackedScene" uid="uid://dyhtbn77nlgvq" path="res://resourses/levels/level_1/trash_can.tscn" id="3_15k1q"]
 [ext_resource type="PackedScene" uid="uid://cbsdguel865kq" path="res://resourses/entity/box/code/box.tscn" id="4_p4hyt"]
-[ext_resource type="PackedScene" uid="uid://dwe8uyi30jkan" path="res://текстуры/level/borel.tscn" id="5_roqwy"]
+[ext_resource type="PackedScene" uid="uid://dwe8uyi30jkan" path="res://resourses/entity/borrel/code/borel.tscn" id="5_roqwy"]
 [ext_resource type="PackedScene" uid="uid://3jyuid1mhowh" path="res://resourses/entity/stone/code/stone.tscn" id="6_pdems"]
 [ext_resource type="Texture2D" uid="uid://46gqbgubmc2h" path="res://текстуры/oboi.png" id="7_adb75"]
 [ext_resource type="Texture2D" uid="uid://ddin1dg31bf8b" path="res://текстуры/zabor1.png" id="8_n65rv"]

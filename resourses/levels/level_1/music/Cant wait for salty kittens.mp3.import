@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c44v1o0wb4kfs"
+path="res://.godot/imported/Cant wait for salty kittens.mp3-5f8539c2b40bdba9e79601593ad2146e.mp3str"
+
+[deps]
+
+source_file="res://resourses/levels/level_1/music/Cant wait for salty kittens.mp3"
+dest_files=["res://.godot/imported/Cant wait for salty kittens.mp3-5f8539c2b40bdba9e79601593ad2146e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

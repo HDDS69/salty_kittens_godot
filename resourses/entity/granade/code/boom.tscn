@@ -1,8 +1,8 @@
 [gd_scene load_steps=22 format=3 uid="uid://cn78231br5yqe"]
 
 [ext_resource type="Script" uid="uid://bjw2ri4jwsf7r" path="res://resourses/entity/granade/code/boom.gd" id="1_r0rwm"]
-[ext_resource type="Texture2D" uid="uid://da4sj7mxbec58" path="res://текстуры/boom.png" id="2_61aer"]
-[ext_resource type="Texture2D" uid="uid://bf3r2bkt2ije3" path="res://текстуры/boo,.png" id="3_q5x1a"]
+[ext_resource type="Texture2D" uid="uid://da4sj7mxbec58" path="res://resourses/entity/granade/texture/boom.png" id="2_61aer"]
+[ext_resource type="Texture2D" uid="uid://bf3r2bkt2ije3" path="res://resourses/entity/granade/texture/boo,.png" id="3_q5x1a"]
 [ext_resource type="AudioStream" uid="uid://crco6l1ombkwo" path="res://текстуры/sound/boom.mp3" id="4_ubxla"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ehq8b"]

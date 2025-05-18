@@ -1,102 +1,20 @@
-[gd_scene load_steps=32 format=4 uid="uid://cx8epnvjemxxp"]
+[gd_scene load_steps=15 format=4 uid="uid://cx8epnvjemxxp"]
 
 [ext_resource type="Script" uid="uid://x6tjppvdk43d" path="res://resourses/levels/level_menu/code/menu.gd" id="1_hi436"]
 [ext_resource type="PackedScene" uid="uid://dqjofyfd21oan" path="res://resourses/levels/resourses_levels/background/code/bg.tscn" id="2_uxt0t"]
-[ext_resource type="PackedScene" uid="uid://cnrhbkhjw1emt" path="res://ui/setting.tscn" id="3_78klw"]
+[ext_resource type="PackedScene" uid="uid://cnrhbkhjw1emt" path="res://resourses/entity/player/setting/code/setting.tscn" id="3_78klw"]
 [ext_resource type="AudioStream" uid="uid://63fg3i20okh3" path="res://текстуры/sound/click.mp3" id="4_oq66f"]
 [ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="4_pfncu"]
-[ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/player/base/player.tres" id="8_8tnp7"]
+[ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/player/base/code/player.tres" id="8_8tnp7"]
 [ext_resource type="Script" uid="uid://fju6ylog0gdq" path="res://resourses/entity/player_bot/code/playermenu.gd" id="8_yl6au"]
 [ext_resource type="TileSet" uid="uid://ycx6cqvxial4" path="res://resourses/levels/level_menu/code/menu.tres" id="25_p34rd"]
 [ext_resource type="AudioStream" uid="uid://bc5p4nxapjq2q" path="res://текстуры/sound/Pineapples in my head.mp3" id="28_8tnp7"]
-[ext_resource type="Texture2D" uid="uid://gr1e4ecqyqme" path="res://текстуры/death/0.png" id="56_vuvg7"]
-[ext_resource type="Texture2D" uid="uid://4onbjxjuoxrw" path="res://текстуры/death/1.png" id="57_54ody"]
-[ext_resource type="Texture2D" uid="uid://dx3gndwgfc8ny" path="res://текстуры/death/2.png" id="58_qxfsd"]
-[ext_resource type="Texture2D" uid="uid://bcio2mc5y7aca" path="res://текстуры/death/3.png" id="59_xubuu"]
-[ext_resource type="Texture2D" uid="uid://c08fqk7vximag" path="res://текстуры/death/4.png" id="60_cje1v"]
-[ext_resource type="Texture2D" uid="uid://du14csra3kjgu" path="res://текстуры/death/5.png" id="61_2tgbe"]
-[ext_resource type="Texture2D" uid="uid://baxeik6h6pmn2" path="res://текстуры/death/6.png" id="62_uwv1q"]
-[ext_resource type="Texture2D" uid="uid://bkvmt8a8wal3l" path="res://текстуры/death/7.png" id="63_mb34k"]
-[ext_resource type="Texture2D" uid="uid://dxuucqlidhgxm" path="res://текстуры/death/8.png" id="64_k6rh7"]
-[ext_resource type="Texture2D" uid="uid://b2vfmqdeyxwrc" path="res://текстуры/death/9.png" id="65_45325"]
-[ext_resource type="Texture2D" uid="uid://cgnx8ktq52e8a" path="res://текстуры/death/10.png" id="66_2fave"]
-[ext_resource type="Texture2D" uid="uid://555t58id5jk2" path="res://текстуры/death/11.png" id="67_fngla"]
-[ext_resource type="Texture2D" uid="uid://biwm8xmwe3jqt" path="res://текстуры/death/12.png" id="68_gqqpx"]
-[ext_resource type="Texture2D" uid="uid://db038p08u8sbl" path="res://текстуры/death/13.png" id="69_c8hs1"]
-[ext_resource type="Texture2D" uid="uid://dxkayfsvsgt6q" path="res://текстуры/death/14.png" id="70_0fkhs"]
 [ext_resource type="Texture2D" uid="uid://dq80cs04ll2cg" path="res://resourses/entity/player_bot/texture/angry.png" id="72_qgs18"]
 [ext_resource type="Texture2D" uid="uid://bghwr16kfkygl" path="res://resourses/entity/player_bot/texture/icon.png" id="73_g741s"]
 [ext_resource type="Texture2D" uid="uid://b86vp80iuefb6" path="res://resourses/entity/player_bot/texture/heart.png" id="74_48v53"]
-[ext_resource type="Texture2D" uid="uid://c8ies5j07ilfo" path="res://текстуры/доп контент/cat.png" id="75_fb88d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bv2w"]
 size = Vector2(43, 55)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6pvwi"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("56_vuvg7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("57_54ody")
-}, {
-"duration": 1.0,
-"texture": ExtResource("58_qxfsd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("59_xubuu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("60_cje1v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("61_2tgbe")
-}, {
-"duration": 1.0,
-"texture": ExtResource("62_uwv1q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("63_mb34k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("64_k6rh7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65_45325")
-}, {
-"duration": 1.0,
-"texture": ExtResource("66_2fave")
-}, {
-"duration": 1.0,
-"texture": ExtResource("67_fngla")
-}, {
-"duration": 1.0,
-"texture": ExtResource("68_gqqpx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("69_c8hs1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("70_0fkhs")
-}],
-"loop": false,
-"name": &"death",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"hit",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": null
-}],
-"loop": true,
-"name": &"xex",
-"speed": 5.0
-}]
 
 [sub_resource type="LabelSettings" id="LabelSettings_yi6bf"]
 font_size = 25
@@ -121,12 +39,6 @@ position = Vector2(-2, -19)
 sprite_frames = ExtResource("8_8tnp7")
 animation = &"hidel"
 autoplay = "hidel"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player/CollisionShape2D/AnimatedSprite2D"]
-position = Vector2(2, -19)
-sprite_frames = SubResource("SpriteFrames_6pvwi")
-animation = &"xex"
-autoplay = "xex"
 
 [node name="Angry" type="Sprite2D" parent="player/CollisionShape2D/AnimatedSprite2D"]
 visible = false
@@ -185,7 +97,6 @@ scroll_ignore_camera_zoom = true
 position = Vector2(950, 224)
 rotation = 0.112594
 scale = Vector2(3.80155, 3.80155)
-texture = ExtResource("75_fb88d")
 
 [node name="logotext" type="Label" parent="bg/logo"]
 offset_left = -49.3336

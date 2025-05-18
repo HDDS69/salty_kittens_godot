@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=9 format=3 uid="uid://7ft6j5eram06"]
 
-[ext_resource type="Texture2D" uid="uid://cw2rkeftfyt2v" path="res://текстуры/Untitled 01-09-2024 10-06-05.png" id="1_hvjyl"]
-[ext_resource type="Texture2D" uid="uid://crhxf6wtc3448" path="res://текстуры/столб и фонарь.png" id="2_ia21d"]
-[ext_resource type="Texture2D" uid="uid://c0clh3x6bbbju" path="res://текстуры/столб.png" id="3_3813r"]
-[ext_resource type="Texture2D" uid="uid://6y604yoy0lfl" path="res://текстуры/Untitled 01-16-2024 07-48-14.png" id="4_u6vc3"]
+[ext_resource type="Texture2D" uid="uid://cw2rkeftfyt2v" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 01-09-2024 10-06-05.png" id="1_hvjyl"]
+[ext_resource type="Texture2D" uid="uid://crhxf6wtc3448" path="res://resourses/levels/resourses_levels/tilemap/texture/столб и фонарь.png" id="2_ia21d"]
+[ext_resource type="Texture2D" uid="uid://c0clh3x6bbbju" path="res://resourses/levels/resourses_levels/tilemap/texture/столб.png" id="3_3813r"]
+[ext_resource type="Texture2D" uid="uid://6y604yoy0lfl" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 01-16-2024 07-48-14.png" id="4_u6vc3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8tnp7"]
 texture = ExtResource("1_hvjyl")
