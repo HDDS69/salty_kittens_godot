@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://crm0f0xpnkejn" path="res://resourses/entity/TV/texture/TV.png" id="1_wxi4x"]
 [ext_resource type="Script" uid="uid://bcao2mjn6s4kh" path="res://resourses/entity/TV/code/TV.gd" id="1_ye00f"]
-[ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://ui/Untitled 06-12-2024 11-00-24.png" id="3_gmtlm"]
+[ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://resourses/shared_resources/texture/ui/Untitled 06-12-2024 11-00-24.png" id="3_gmtlm"]
 [ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="4_v571j"]
-[ext_resource type="Texture2D" uid="uid://cfeok18ypvsgi" path="res://текстуры/puf.png" id="5_uboxy"]
+[ext_resource type="Texture2D" uid="uid://cfeok18ypvsgi" path="res://resourses/entity/TV/texture/puf.png" id="5_uboxy"]
 [ext_resource type="Texture2D" uid="uid://blod5nf63ivmn" path="res://resourses/entity/TV/texture/TV-Sheet.png" id="6_75nnp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdlkc"]

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ks7etcffcrgk"
-path="res://.godot/imported/Untitled 08-14-2024 11-08-44.png-fab8950c115210fe0d06719a8e9bd142.ctex"
+uid="uid://dt13r06u87fib"
+path="res://.godot/imported/joystick_tip_arrows.png-c24c56bc84db34bbac309090c1be60f8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joystick/texture/Untitled 08-14-2024 11-08-44.png"
-dest_files=["res://.godot/imported/Untitled 08-14-2024 11-08-44.png-fab8950c115210fe0d06719a8e9bd142.ctex"]
+source_file="res://resourses/entity/player/mobile_controller/joystick/jousuck/addons/virtual_joystick/textures/joystick_tip_arrows.png"
+dest_files=["res://.godot/imported/joystick_tip_arrows.png-c24c56bc84db34bbac309090c1be60f8.ctex"]
 
 [params]
 
-compress/mode=1
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlx03pgoywkfw"
-path="res://.godot/imported/5f394193cd6b2173f7a82981.png-02299adc47011fae7fccef69bb028409.ctex"
+uid="uid://cxsmwn7lbnoqf"
+path="res://.godot/imported/ShowcasePreview.png-f0296979b107452b2e1ec65f62e2b9ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://joystick/texture/5f394193cd6b2173f7a82981.png"
-dest_files=["res://.godot/imported/5f394193cd6b2173f7a82981.png-02299adc47011fae7fccef69bb028409.ctex"]
+source_file="res://resourses/entity/player/mobile_controller/joystick/jousuck/addons/virtual_joystick/previews/ShowcasePreview.png"
+dest_files=["res://.godot/imported/ShowcasePreview.png-f0296979b107452b2e1ec65f62e2b9ff.ctex"]
 
 [params]
 

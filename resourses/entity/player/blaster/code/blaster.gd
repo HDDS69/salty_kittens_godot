@@ -8,7 +8,6 @@ var recoil_x
 @onready var marker = $Marker2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
-	
 	if (get_global_mouse_position().x) < 0 :
 		blaster.flip_v = true
 		recoil_x = 1000
