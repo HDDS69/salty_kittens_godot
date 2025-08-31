@@ -46,32 +46,32 @@ func _on_a_3_body_entered(body: Node2D) -> void:
 func _on_a_3_body_exited(body: Node2D) -> void:
 	check(body,ed3,false)
 
-func _on_а_body_entered(body: Node2D) -> void:
+func _on_a_body_entered(body: Node2D) -> void:
 	check(body,ed4,true)
 
-func _on_а_body_exited(body: Node2D) -> void:
+func _on_a_body_exited(body: Node2D) -> void:
 	check(body,ed4,false)
 
 
-func _on_а_5_body_exited(body: Node2D) -> void:
+func _on_a_5_body_exited(body: Node2D) -> void:
 	check(body,ed5,false)
 
 
-func _on_а_5_body_entered(body: Node2D) -> void:
+func _on_a_5_body_entered(body: Node2D) -> void:
 	check(body,ed5,true)
 
 
-func _on_а_6_body_exited(body: Node2D) -> void:
+func _on_a_6_body_exited(body: Node2D) -> void:
 	check(body,ed6,false)
 
 
-func _on_а_6_body_entered(body: Node2D) -> void:
+func _on_a_6_body_entered(body: Node2D) -> void:
 	check(body,ed6,true)
 
 
-func _on_а_8_body_exited(body: Node2D) -> void:
+func _on_a_8_body_exited(body: Node2D) -> void:
 	check(body,ed8,false)
 
 
-func _on_а_8_body_entered(body: Node2D) -> void:
+func _on_a_8_body_entered(body: Node2D) -> void:
 	check(body,ed8,true)

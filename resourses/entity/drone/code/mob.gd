@@ -6,8 +6,8 @@ var chace = false
 var shoot_timer = false
 var speed = 550
 var hit_ft = false
-var Death = false
-var helth = 3
+var dead = false
+var health = 3
 var count = 3
 var recharge = false
 var stupidvar = true
@@ -21,7 +21,7 @@ var stupidvar = true
 @onready var sound = $AudioStreamPlayer2D/AudioStreamPlayer2D
 @onready var marker = $Area2D/Marker2D
 func _process(delta):
-	HP_bar.value = helth
+	HP_bar.value = health
 	if hit_ft and player.hit :
 		death()
 	
@@ -71,14 +71,14 @@ func shoot():
 		shoot_timer = true
 		
 		
-#функция смерти
+# функция смерти
 func death():
-	helth -=1
+	health -=1
 
-	if helth <= 0 and Death == false:
-		Death = true
+	if health <= 0 and dead == false:
+		dead = true
 		anim.play("death")
-		await anim.animation_finished #дождаться окончании анимации
+		await anim.animation_finished       # дождаться окончания анимации
 		queue_free()
 
 
