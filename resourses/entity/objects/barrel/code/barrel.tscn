@@ -1,8 +1,8 @@
 [gd_scene load_steps=17 format=3 uid="uid://dwe8uyi30jkan"]
 
-[ext_resource type="Script" uid="uid://bgggys80wix26" path="res://текстуры/level/borel.gd" id="1_r87uk"]
-[ext_resource type="Texture2D" uid="uid://cup0dh8c1ipjv" path="res://текстуры/level/borel.png" id="2_1cwlo"]
-[ext_resource type="Texture2D" uid="uid://b7olnjtj2iff3" path="res://текстуры/level/boom_borel.png" id="3_hosmi"]
+[ext_resource type="Script" uid="uid://bgggys80wix26" path="res://resourses/entity/objects/barrel/code/barrel.gd" id="1_r87uk"]
+[ext_resource type="Texture2D" uid="uid://c7pqeh4e35um0" path="res://resourses/entity/objects/barrel/texture/barrel.png" id="2_5w15r"]
+[ext_resource type="Texture2D" uid="uid://dorfh0mss3e88" path="res://resourses/entity/objects/barrel/texture/barrel_explosion.png" id="3_2m1ee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7uxg"]
 size = Vector2(27.5, 30)
@@ -15,36 +15,36 @@ properties/0/path = NodePath(".:position")
 properties/0/spawn = true
 properties/0/replication_mode = 2
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbpsc"]
-atlas = ExtResource("3_hosmi")
+[sub_resource type="AtlasTexture" id="AtlasTexture_64hgw"]
+atlas = ExtResource("3_2m1ee")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dgymu"]
-atlas = ExtResource("3_hosmi")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g8o7t"]
-atlas = ExtResource("3_hosmi")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ogge"]
-atlas = ExtResource("3_hosmi")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vkktw"]
-atlas = ExtResource("3_hosmi")
-region = Rect2(128, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fuio7"]
-atlas = ExtResource("3_hosmi")
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7l6r"]
+atlas = ExtResource("3_2m1ee")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t6bbe"]
-atlas = ExtResource("3_hosmi")
+[sub_resource type="AtlasTexture" id="AtlasTexture_kv4g4"]
+atlas = ExtResource("3_2m1ee")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr8ca"]
+atlas = ExtResource("3_2m1ee")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py13x"]
+atlas = ExtResource("3_2m1ee")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rblpr"]
+atlas = ExtResource("3_2m1ee")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10k05"]
+atlas = ExtResource("3_2m1ee")
 region = Rect2(192, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ledu"]
-atlas = ExtResource("3_hosmi")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mqqs"]
+atlas = ExtResource("3_2m1ee")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d68ky"]
@@ -54,31 +54,31 @@ animations = [{
 "texture": null
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pbpsc")
+"texture": SubResource("AtlasTexture_64hgw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dgymu")
+"texture": SubResource("AtlasTexture_t7l6r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g8o7t")
+"texture": SubResource("AtlasTexture_kv4g4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ogge")
+"texture": SubResource("AtlasTexture_tr8ca")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vkktw")
+"texture": SubResource("AtlasTexture_py13x")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fuio7")
+"texture": SubResource("AtlasTexture_rblpr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t6bbe")
+"texture": SubResource("AtlasTexture_10k05")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7ledu")
+"texture": SubResource("AtlasTexture_8mqqs")
 }],
 "loop": false,
-"name": &"boom",
+"name": &"explosion",
 "speed": 5.0
 }]
 
@@ -89,9 +89,9 @@ polygon = PackedVector2Array(-10.0158, -16.2323, -8.76386, -16.2323, -8.76386, -
 scale = Vector2(1.59747, 1.66335)
 script = ExtResource("1_r87uk")
 
-[node name="Borel3" type="Sprite2D" parent="."]
+[node name="Barrel" type="Sprite2D" parent="."]
 position = Vector2(4, -4)
-texture = ExtResource("2_1cwlo")
+texture = ExtResource("2_5w15r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.75, -4)
@@ -110,7 +110,7 @@ replication_config = SubResource("SceneReplicationConfig_oxf7s")
 position = Vector2(4, -4)
 scale = Vector2(1.875, 1.875)
 sprite_frames = SubResource("SpriteFrames_d68ky")
-animation = &"boom"
+animation = &"explosion"
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_jaouy")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7olnjtj2iff3"
-path="res://.godot/imported/boom_borel.png-18b7408920690b8302aabcf131ae40d7.ctex"
+uid="uid://bwiwvn2dl0rj6"
+path="res://.godot/imported/explosion_barrel.png-436acca8051cc336465a040fd75c3ecd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resourses/entity/objects/barrel/texture/boom_borel.png"
-dest_files=["res://.godot/imported/boom_borel.png-18b7408920690b8302aabcf131ae40d7.ctex"]
+source_file="res://resourses/entity/objects/barrel/texture/explosion_barrel.png"
+dest_files=["res://.godot/imported/explosion_barrel.png-436acca8051cc336465a040fd75c3ecd.ctex"]
 
 [params]
 

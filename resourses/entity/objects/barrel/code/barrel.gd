@@ -9,7 +9,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func death():
 	$CollisionShape2D.set_deferred("disabled", true);
-	$Borel3.visible = false
-	$AnimatedSprite2D.play("boom")
+	$Barrel.visible = false
+	$AnimatedSprite2D.play("explosion")
 	await $AnimatedSprite2D.animation_finished
 	queue_free()
