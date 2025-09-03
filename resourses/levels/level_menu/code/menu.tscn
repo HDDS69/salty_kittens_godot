@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://x6tjppvdk43d" path="res://resourses/levels/level_menu/code/menu.gd" id="1_hi436"]
 [ext_resource type="PackedScene" uid="uid://dqjofyfd21oan" path="res://resourses/levels/resourses_levels/background/code/bg.tscn" id="2_uxt0t"]
-[ext_resource type="PackedScene" uid="uid://cnrhbkhjw1emt" path="res://resourses/entity/player/setting/code/setting.tscn" id="3_78klw"]
+[ext_resource type="PackedScene" uid="uid://cnrhbkhjw1emt" path="res://resourses/ui/setting/code/setting.tscn" id="3_78klw"]
 [ext_resource type="AudioStream" uid="uid://63fg3i20okh3" path="res://resourses/shared_resources/sound/click.mp3" id="4_oq66f"]
 [ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="4_pfncu"]
-[ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/player/base/code/player.tres" id="8_8tnp7"]
-[ext_resource type="Script" uid="uid://fju6ylog0gdq" path="res://resourses/entity/player_bot/code/playermenu.gd" id="8_yl6au"]
+[ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="8_8tnp7"]
+[ext_resource type="Script" uid="uid://fju6ylog0gdq" path="res://resourses/entity/npcs/player_bot/code/playermenu.gd" id="8_yl6au"]
 [ext_resource type="TileSet" uid="uid://ycx6cqvxial4" path="res://resourses/levels/level_menu/code/menu.tres" id="25_p34rd"]
 [ext_resource type="AudioStream" uid="uid://bc5p4nxapjq2q" path="res://resourses/levels/level_menu/sound/Pineapples in my head.mp3" id="28_8tnp7"]
-[ext_resource type="Texture2D" uid="uid://dq80cs04ll2cg" path="res://resourses/entity/player_bot/texture/angry.png" id="72_qgs18"]
-[ext_resource type="Texture2D" uid="uid://bghwr16kfkygl" path="res://resourses/entity/player_bot/texture/icon.png" id="73_g741s"]
-[ext_resource type="Texture2D" uid="uid://b86vp80iuefb6" path="res://resourses/entity/player_bot/texture/heart.png" id="74_48v53"]
+[ext_resource type="Texture2D" uid="uid://dq80cs04ll2cg" path="res://resourses/entity/npcs/player_bot/texture/angry.png" id="72_qgs18"]
+[ext_resource type="Texture2D" uid="uid://bghwr16kfkygl" path="res://resourses/entity/npcs/player_bot/texture/icon.png" id="73_g741s"]
+[ext_resource type="Texture2D" uid="uid://b86vp80iuefb6" path="res://resourses/entity/npcs/player_bot/texture/heart.png" id="74_48v53"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bv2w"]
 size = Vector2(43, 55)
@@ -159,7 +159,7 @@ theme_override_font_sizes/font_size = 50
 text = "играть"
 metadata/_edit_use_anchors_ = true
 
-[node name="setting_button" type="Button" parent="buttons_group"]
+[node name="settings_button" type="Button" parent="buttons_group"]
 offset_left = 22.0
 offset_top = 125.0
 offset_right = 409.0
@@ -171,7 +171,7 @@ text = "настройки
 "
 metadata/_edit_use_anchors_ = true
 
-[node name="autors" type="Button" parent="buttons_group"]
+[node name="authors" type="Button" parent="buttons_group"]
 anchors_preset = -1
 anchor_top = 0.00443655
 anchor_bottom = 0.00443655
@@ -185,7 +185,7 @@ theme_override_font_sizes/font_size = 50
 text = "титры"
 metadata/_edit_use_anchors_ = true
 
-[node name="quite" type="Button" parent="buttons_group"]
+[node name="quit" type="Button" parent="buttons_group"]
 offset_left = 23.4
 offset_top = 341.0
 offset_right = 410.4
@@ -200,8 +200,8 @@ metadata/_edit_use_anchors_ = true
 [connection signal="timeout" from="player/Timer" to="player" method="_on_timer_timeout"]
 [connection signal="pressed" from="setting/Panel/VBoxContainer/controll" to="setting" method="_on_controll_pressed"]
 [connection signal="pressed" from="buttons_group/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="buttons_group/setting_button" to="." method="_on_setting_button_pressed"]
-[connection signal="pressed" from="buttons_group/autors" to="." method="_on_autors_pressed"]
-[connection signal="pressed" from="buttons_group/quite" to="." method="_on_quite_pressed"]
+[connection signal="pressed" from="buttons_group/settings_button" to="." method="_on_setting_button_pressed"]
+[connection signal="pressed" from="buttons_group/authors" to="." method="_on_autors_pressed"]
+[connection signal="pressed" from="buttons_group/quit" to="." method="_on_quite_pressed"]
 
 [editable path="setting"]
