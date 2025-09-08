@@ -14,8 +14,9 @@ func _physics_process(delta: float) -> void:
 	else :
 		blaster.flip_v = false
 		recoil_x = -1000
-	#законментировать для мобильной версии
-	look_at(get_global_mouse_position())
+	# не следовать за пальцем на мобильной версии
+	if OS.get_name() != "Android":
+		look_at(get_global_mouse_position())
 		
 func shoot():
 	sound.play()
