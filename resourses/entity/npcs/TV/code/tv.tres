@@ -1,14 +1,14 @@
 [gd_resource type="SpriteFrames" load_steps=152 format=3 uid="uid://bguq4n7gblp8e"]
 
-[ext_resource type="Texture2D" uid="uid://ctvpvjphpf0tf" path="res://resourses/entity/player/base/texture/cat_TV/tv-cat idle last-Sheet.png" id="1_0fldf"]
-[ext_resource type="Texture2D" uid="uid://bhliupymqktye" path="res://resourses/entity/player/base/texture/cat_TV/death_tv-Sheet.png" id="1_3hha4"]
-[ext_resource type="Texture2D" uid="uid://374x0q530pha" path="res://resourses/entity/player/base/texture/cat_TV/tv-cat idle enter.png" id="1_bgb0k"]
-[ext_resource type="Texture2D" uid="uid://bco7s81dvmq5c" path="res://resourses/entity/player/base/texture/cat_TV/this is what floating feels like.png" id="2_snkgs"]
-[ext_resource type="Texture2D" uid="uid://brrqq5p6833f3" path="res://resourses/entity/player/base/texture/cat_TV/HUYAK.png" id="3_3hha4"]
-[ext_resource type="Texture2D" uid="uid://dq1pxvyadvg2p" path="res://resourses/entity/player/base/texture/cat_TV/prizemlenie.png" id="5_66lqx"]
-[ext_resource type="Texture2D" uid="uid://0x7qf7j4vqog" path="res://resourses/entity/player/base/texture/cat_TV/prig.png" id="5_dp5ft"]
-[ext_resource type="Texture2D" uid="uid://donup40e4ns7d" path="res://resourses/entity/player/base/texture/cat_TV/tv-cat walk-Sheet.png" id="7_21tx2"]
-[ext_resource type="Texture2D" uid="uid://dr0p3pxqk7hf7" path="res://resourses/entity/player/base/texture/cat_TV/sleep_finaly_tv1-Sheet.png" id="25_nfuh6"]
+[ext_resource type="Texture2D" uid="uid://ctvpvjphpf0tf" path="res://resourses/entity/other/player/base/texture/cat_TV/tv-cat idle last-Sheet.png" id="1_0fldf"]
+[ext_resource type="Texture2D" uid="uid://bhliupymqktye" path="res://resourses/entity/other/player/base/texture/cat_TV/death_tv-Sheet.png" id="1_3hha4"]
+[ext_resource type="Texture2D" uid="uid://374x0q530pha" path="res://resourses/entity/other/player/base/texture/cat_TV/tv-cat idle enter.png" id="1_bgb0k"]
+[ext_resource type="Texture2D" uid="uid://bco7s81dvmq5c" path="res://resourses/entity/other/player/base/texture/cat_TV/this is what floating feels like.png" id="2_snkgs"]
+[ext_resource type="Texture2D" uid="uid://brrqq5p6833f3" path="res://resourses/entity/other/player/base/texture/cat_TV/HUYAK.png" id="3_3hha4"]
+[ext_resource type="Texture2D" uid="uid://dq1pxvyadvg2p" path="res://resourses/entity/other/player/base/texture/cat_TV/prizemlenie.png" id="5_66lqx"]
+[ext_resource type="Texture2D" uid="uid://0x7qf7j4vqog" path="res://resourses/entity/other/player/base/texture/cat_TV/prig.png" id="5_dp5ft"]
+[ext_resource type="Texture2D" uid="uid://donup40e4ns7d" path="res://resourses/entity/other/player/base/texture/cat_TV/tv-cat walk-Sheet.png" id="7_21tx2"]
+[ext_resource type="Texture2D" uid="uid://dr0p3pxqk7hf7" path="res://resourses/entity/other/player/base/texture/cat_TV/sleep_finaly_tv1-Sheet.png" id="25_nfuh6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_20ib2"]
 atlas = ExtResource("1_3hha4")

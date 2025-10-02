@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=100 format=3 uid="uid://bq2cacsi7h0bx"]
+[gd_resource type="SpriteFrames" load_steps=105 format=3 uid="uid://bq2cacsi7h0bx"]
 
 [ext_resource type="Texture2D" uid="uid://mdv8gsd6h1y8" path="res://resourses/entity/other/player/base/texture/cat/death.png" id="1_fvuha"]
+[ext_resource type="Texture2D" uid="uid://cocuxk28plnwa" path="res://resourses/entity/other/player/base/texture/cat/fall.png" id="2_adw5b"]
 [ext_resource type="Texture2D" uid="uid://c5imtgbil7vaf" path="res://resourses/entity/other/player/base/texture/cat/idle.png" id="2_jyjmd"]
 [ext_resource type="Texture2D" uid="uid://d2f6rstyal6j" path="res://resourses/entity/other/player/base/texture/cat/hit.png" id="3_jwdvq"]
 [ext_resource type="Texture2D" uid="uid://fpst83vs1ilr" path="res://resourses/entity/other/player/base/texture/cat/jump.png" id="4_6ahrs"]
@@ -59,6 +60,22 @@ region = Rect2(1056, 0, 96, 96)
 [sub_resource type="AtlasTexture" id="AtlasTexture_21udc"]
 atlas = ExtResource("1_fvuha")
 region = Rect2(1152, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neu4h"]
+atlas = ExtResource("2_adw5b")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uw5e2"]
+atlas = ExtResource("2_adw5b")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbura"]
+atlas = ExtResource("2_adw5b")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f843c"]
+atlas = ExtResource("2_adw5b")
+region = Rect2(288, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u3ind"]
 atlas = ExtResource("2_jyjmd")
@@ -424,16 +441,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": SubResource("AtlasTexture_neu4h")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": SubResource("AtlasTexture_uw5e2")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": SubResource("AtlasTexture_qbura")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": SubResource("AtlasTexture_f843c")
 }],
 "loop": true,
 "name": &"fall",

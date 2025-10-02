@@ -13,7 +13,7 @@ config_version=5
 config/name="salty kittens"
 config/version="0.0.3"
 run/main_scene="uid://cx8epnvjemxxp"
-config/features=PackedStringArray("4.4", "GL Compatibility")
+config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
 boot_splash/image="res://текстуры/start/Sprite-0001.png"
 config/icon="uid://b3ga0q11rvecn"
@@ -21,6 +21,7 @@ config/icon="uid://b3ga0q11rvecn"
 [autoload]
 
 SavePoint="*res://resourses/global_code/save_point.gd"
+DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 
 [display]
 
@@ -31,6 +32,10 @@ mouse_cursor/custom_image="uid://c84o5lhfnvnbk"
 [editor]
 
 movie_writer/disable_vsync=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg")
 
 [input]
 
