@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=68 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="PackedScene" uid="uid://cn78231br5yqe" path="res://resourses/entity/projectiles/pomegrenade/code/boom.tscn" id="2_ny14h"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://crhquqw084nub" path="res://resourses/ui/mobile_controller/texture/button_pause.png" id="32_galrp"]
 [ext_resource type="AudioStream" uid="uid://bh8nsyb3yrfic" path="res://resourses/entity/other/player/blaster/sound/blaster.mp3" id="32_ny14h"]
 [ext_resource type="Texture2D" uid="uid://xfwt41mclny3" path="res://resourses/ui/mobile_controller/texture/button_pause_pressed.png" id="33_55vbn"]
+[ext_resource type="FontFile" uid="uid://bkyohh76x8qg6" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.otf" id="33_cv5i6"]
 [ext_resource type="AudioStream" uid="uid://b6gd3p2ehsg8b" path="res://resourses/entity/other/player/base/sound/jump.mp3" id="67_v58pc"]
 [ext_resource type="AudioStream" uid="uid://c3x81i1us0cwj" path="res://resourses/entity/other/player/base/sound/land.mp3" id="68_qmmh8"]
 [ext_resource type="Script" uid="uid://cr8jo7ea12fkm" path="res://resourses/entity/other/player/blaster/code/blaster.gd" id="69_fr3kn"]
@@ -175,6 +176,13 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rljtb"]
 size = Vector2(100, 100)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m5ng5"]
+font = ExtResource("33_cv5i6")
+stacked_outline_count = 1
+stacked_shadow_count = 1
+stacked_outline_0/size = 2
+stacked_shadow_0/offset = Vector2(1, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwvdg"]
 atlas = ExtResource("90_87nqs")
@@ -649,6 +657,40 @@ theme_override_fonts/font = ExtResource("91_d1y0c")
 action_mode = 0
 text = "включить / выключить освещение"
 
+[node name="music" type="Label" parent="CanvasLayer/setting/Panel/VBoxContainer/light"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 24.0
+offset_right = 441.0
+offset_bottom = 34.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+tooltip_text = "настройки громкости"
+text = "настройки громкости"
+label_settings = SubResource("LabelSettings_m5ng5")
+
+[node name="music_value" type="Label" parent="CanvasLayer/setting/Panel/VBoxContainer/light"]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 24.0
+offset_right = 635.0
+offset_bottom = 34.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+tooltip_text = "настройки громкости"
+text = "100%"
+label_settings = SubResource("LabelSettings_m5ng5")
+
+[node name="HScrollBar" type="HScrollBar" parent="CanvasLayer/setting/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 15)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+tooltip_text = "громкость музыки"
+min_value = -80.0
+max_value = 0.0
+step = 1.0
+
 [node name="quit_setting" type="Button" parent="CanvasLayer/setting/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("91_d1y0c")
@@ -701,4 +743,5 @@ occluder = SubResource("OccluderPolygon2D_evup4")
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/controll" to="CanvasLayer/pause" method="_on_controll_pressed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/full screen" to="CanvasLayer/pause" method="_on_full_screen_pressed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/light" to="." method="_on_light_pressed"]
+[connection signal="value_changed" from="CanvasLayer/setting/Panel/VBoxContainer/HScrollBar" to="CanvasLayer/pause" method="_on_h_scroll_bar_value_changed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/quit_setting" to="CanvasLayer/pause" method="_on_quit_setting_pressed"]

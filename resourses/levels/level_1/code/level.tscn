@@ -667,7 +667,7 @@ shadow_enabled = true
 texture = ExtResource("41_pxflf")
 
 [node name="Area2D3" parent="." instance=ExtResource("46_x0838")]
-position = Vector2(5245, 577)
+position = Vector2(5250, 578)
 scale = Vector2(7.35325, 8.0274)
 
 [node name="Label" type="Label" parent="Area2D3"]
