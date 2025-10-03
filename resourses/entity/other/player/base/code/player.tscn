@@ -618,7 +618,6 @@ vertical_alignment = 1
 
 [node name="setting" type="Control" parent="CanvasLayer"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1151.0
@@ -690,6 +689,10 @@ tooltip_text = "громкость музыки"
 min_value = -80.0
 max_value = 0.0
 step = 1.0
+page = 3.0
+value = -80.0
+rounded = true
+allow_greater = true
 
 [node name="quit_setting" type="Button" parent="CanvasLayer/setting/Panel/VBoxContainer"]
 layout_mode = 2

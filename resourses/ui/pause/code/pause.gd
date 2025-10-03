@@ -66,5 +66,5 @@ func _on_quit_pressed() -> void:
 
 
 func _on_h_scroll_bar_value_changed(value: float) -> void:
-	$"../setting/Panel/VBoxContainer/light/music_value".text  = str(1)+"%"
+	$"../setting/Panel/VBoxContainer/light/music_value".text  = str(int((value + 80)/80 * 100))+"%"
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),value)
