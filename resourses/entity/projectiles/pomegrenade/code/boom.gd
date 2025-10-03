@@ -12,7 +12,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 func _physics_process(delta):
-	# Add the gravity.
+	## Add the gravity.
 	$Node2D.rotate(0.1)
 	if pos_to :
 		position = pos

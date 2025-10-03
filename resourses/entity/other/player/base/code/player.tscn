@@ -618,6 +618,7 @@ vertical_alignment = 1
 
 [node name="setting" type="Control" parent="CanvasLayer"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1151.0

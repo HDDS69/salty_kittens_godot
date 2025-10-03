@@ -1,9 +1,9 @@
 [gd_scene load_steps=22 format=3 uid="uid://cn78231br5yqe"]
 
-[ext_resource type="Script" uid="uid://bjw2ri4jwsf7r" path="res://resourses/entity/pomegrenade/code/boom.gd" id="1_r0rwm"]
-[ext_resource type="Texture2D" uid="uid://da4sj7mxbec58" path="res://resourses/entity/pomegrenade/texture/boom.png" id="2_61aer"]
-[ext_resource type="Texture2D" uid="uid://bf3r2bkt2ije3" path="res://resourses/entity/pomegrenade/texture/boo,.png" id="3_q5x1a"]
-[ext_resource type="AudioStream" uid="uid://crco6l1ombkwo" path="res://resourses/entity/pomegrenade/sound/boom.mp3" id="4_ubxla"]
+[ext_resource type="Script" uid="uid://bjw2ri4jwsf7r" path="res://resourses/entity/projectiles/pomegrenade/code/boom.gd" id="1_r0rwm"]
+[ext_resource type="Texture2D" uid="uid://da4sj7mxbec58" path="res://resourses/entity/projectiles/pomegrenade/texture/boom.png" id="2_61aer"]
+[ext_resource type="Texture2D" uid="uid://bf3r2bkt2ije3" path="res://resourses/entity/projectiles/pomegrenade/texture/boo,.png" id="3_q5x1a"]
+[ext_resource type="AudioStream" uid="uid://crco6l1ombkwo" path="res://resourses/entity/projectiles/pomegrenade/sound/boom.mp3" id="4_ubxla"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ehq8b"]
 radius = 10.198
