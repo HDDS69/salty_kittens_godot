@@ -1,7 +1,7 @@
 [gd_scene load_steps=68 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
-[ext_resource type="PackedScene" uid="uid://cn78231br5yqe" path="res://resourses/entity/projectiles/pomegrenade/code/boom.tscn" id="2_ny14h"]
+[ext_resource type="PackedScene" uid="uid://d1dlmmptam0ue" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="2_cv5i6"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
 [ext_resource type="Texture2D" uid="uid://cc3t5joeasu6k" path="res://resourses/entity/other/player/base/texture/cat/land_effect.png" id="5_k71g3"]
 [ext_resource type="SpriteFrames" uid="uid://bguq4n7gblp8e" path="res://resourses/entity/npcs/TV/code/tv.tres" id="8_331ug"]
@@ -39,7 +39,7 @@
 [ext_resource type="Script" uid="uid://dktx14jgtok82" path="res://resourses/ui/FPS/label_fps.gd" id="95_d17l8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo2je"]
-size = Vector2(49, 45.5)
+size = Vector2(64.5, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pew11"]
 atlas = ExtResource("5_k71g3")
@@ -263,10 +263,10 @@ polygon = PackedVector2Array(23, 70, 62, 70, 62, 68, 23, 68)
 show_behind_parent = true
 top_level = true
 script = ExtResource("1_8m1ne")
-granade = ExtResource("2_ny14h")
+granade = ExtResource("2_cv5i6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(43, 53.75)
+position = Vector2(35.25, 52)
 shape = SubResource("RectangleShape2D_lo2je")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
@@ -306,6 +306,7 @@ animation = &"land"
 autoplay = "xex"
 
 [node name="mobile controller" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="mobile controller"]
 anchors_preset = 6

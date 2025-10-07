@@ -15,7 +15,7 @@ func _ready() -> void:
 		DiscordRPC.app_id = 1423378584986456245 # Application ID
 		#DiscordRPC.details = "релиза не будет"
 		DiscordRPC.state = "в меню"
-		DiscordRPC.large_image = "background" # Image key from "Art Assets"
+		#DiscordRPC.large_image = "background" # Image key from "Art Assets"
 		DiscordRPC.large_image_text = "котята лого"
 		#DiscordRPC.small_image = "drone" # Image key from "Art Assets"
 		#DiscordRPC.small_image_text = "ломаю железяки"

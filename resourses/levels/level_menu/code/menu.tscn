@@ -101,10 +101,15 @@ scale = Vector2(3.80155, 3.80155)
 texture = ExtResource("8_4051e")
 
 [node name="logotext" type="Label" parent="bg/logo"]
-offset_left = -61.539085
-offset_top = 8.281996
-offset_right = 40.460915
-offset_bottom = 62.281998
+anchors_preset = -1
+anchor_left = -0.0078125
+anchor_top = -0.1484375
+anchor_right = -0.0078125
+anchor_bottom = -0.1484375
+offset_left = -51.711105
+offset_top = 25.754345
+offset_right = 50.288895
+offset_bottom = 79.75435
 rotation = 0.00377296
 theme_override_fonts/font = ExtResource("4_pfncu")
 text = "SALTY 

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://np0yxevrqtv2" path="res://resourses/levels/resourses_levels/background/texture/3.png" id="5_v0fnv"]
 [ext_resource type="VideoStream" uid="uid://bee241c0v8mbf" path="res://resourses/levels/level_1/reklama/Timeline-12.ogv" id="22_uuqa8"]
 [ext_resource type="AudioStream" uid="uid://dl7kk2rd5wk62" path="res://resourses/levels/level_1/reklama/echorofl.mp3" id="23_uuqa8"]
-[ext_resource type="TileSet" uid="uid://huoug6s04p7x" path="res://resourses/levels/level_1/code/tilemap/level.tres" id="26_1wwgy"]
+[ext_resource type="TileSet" uid="uid://huoug6s04p7x" path="res://resourses/levels/level_2/code/tilemap/level2.tres" id="26_1wwgy"]
 [ext_resource type="Texture2D" uid="uid://ccr61g1qaerdl" path="res://resourses/ui/mobile_controller/texture/button_one.png" id="30_oaehd"]
 [ext_resource type="Texture2D" uid="uid://bideyn123tp8h" path="res://resourses/ui/mobile_controller/texture/button_two.png" id="31_f8y3u"]
 [ext_resource type="Texture2D" uid="uid://bwup5s4baqp0m" path="res://resourses/ui/mobile_controller/texture/hit.png" id="32_0k1o5"]
@@ -178,6 +178,7 @@ motion_mirroring = Vector2(1150, 0)
 position = Vector2(3, 5)
 
 [node name="street" type="CanvasGroup" parent="."]
+position = Vector2(1, 2)
 clear_margin = 1300.0
 metadata/_edit_group_ = true
 
