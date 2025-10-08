@@ -685,7 +685,8 @@ text = "сори но демка кончилась.
 position = Vector2(483, 620)
 
 [node name="mob" parent="." node_paths=PackedStringArray("player") instance=ExtResource("39_axyxg")]
-position = Vector2(1415, 391)
+position = Vector2(1388, 317.00003)
+scale = Vector2(1.0000001, 1.0531813)
 player = NodePath("../player")
 
 [node name="mob2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("39_axyxg")]

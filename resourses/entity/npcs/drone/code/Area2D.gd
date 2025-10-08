@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var mob =  $".."
+@onready var drone =  $".."
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if mob.chace:
