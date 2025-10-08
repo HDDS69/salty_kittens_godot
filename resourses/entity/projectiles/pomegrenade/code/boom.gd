@@ -12,14 +12,16 @@ func death():
 	await $AnimatedSprite2D.animation_finished
 	queue_free()
 
+func damage(dmg):
+	death()
 #по окончанию таймера вызывается функция смерти
 func _on_timer_timeout():
 	death()
 
 # проверяем тела которые находятся в радиусе взрыва и "убиваем" если есть в радиусе
 func _on_radius_body_entered(body):
-	if body.name != 'TileMapLayer' and body.name != "salty platform":
-		body.death()
+	if body.name != 'TileMapLayer' and body.name != "salty platform" and body.name != "player":
+		body.damage(1)
 
 #при соприкосновении к любому телу начинается 1секундный таймер
 func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:

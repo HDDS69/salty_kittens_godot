@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://cvnyc5d1bfy3d" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 07-22-2024 10-16-07.png" id="4_741hc"]
 
 [sub_resource type="Curve2D" id="Curve2D_vejpd"]
+bake_interval = 0.01
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -23, 53, 0, 0, 0, 0, 389, 4, 0, 0, 0, 0, 1, 11, 0, 0, 0, 0, -21, 37)
+}
+point_count = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibx1y"]
 size = Vector2(99, 29)
@@ -117,8 +122,13 @@ size = Vector2(37, 11.5)
 curve = SubResource("Curve2D_vejpd")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-23, 53)
+rotation = -0.118375994
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Path2D/PathFollow2D"]
+rotation = 0.12221284
+mass = 30.0
+gravity_scale = 0.0
 script = ExtResource("1_741hc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/RigidBody2D"]
