@@ -7,22 +7,23 @@ const JUMP_VELOCITY = -400.0
 var pos
 var pos_to
 
-
-func _physics_process(delta):
-	## Add the gravity.
-	if pos_to :
-		self.position = pos
-	if count <= 300 :
-		self.position += SPEED * transform.x
-	else :
-		self.velocity.x = 0
+#
+#func _physics_process(delta):
+	### Add the gravity.
+	#if pos_to :
+		#self.position = pos
+	#if count <= 300 :
+		#self.position += SPEED * transform.x
+	#else :
+		#self.velocity.x = 0
 
 
 func death():
-	pos_to = true
-	pos = self.position
+	#pos_to = true
+	#pos = self.position
 	$radius.monitoring = true
 	$Boom.visible = false
+	self.freeze = true
 	$AnimatedSprite2D.play("default")
 	$sound.play()
 	await $AnimatedSprite2D.animation_finished

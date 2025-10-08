@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjf8wjl6g1do3" path="res://resourses/levels/level_2/level2_texture/bar.png" id="1_vpr75"]
 [ext_resource type="TileSet" uid="uid://huoug6s04p7x" path="res://resourses/levels/level_2/code/tilemap/level2.tres" id="2_0eg7s"]
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="3_xua0x"]
-[ext_resource type="PackedScene" uid="uid://cn78231br5yqe" path="res://resourses/entity/projectiles/pomegrenade/code/boom.tscn" id="4_ehfoh"]
+[ext_resource type="PackedScene" uid="uid://d1dlmmptam0ue" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="4_ehfoh"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="5_b4ban"]
 [ext_resource type="SpriteFrames" uid="uid://bguq4n7gblp8e" path="res://resourses/entity/npcs/TV/code/tv.tres" id="6_7eakn"]
 [ext_resource type="Texture2D" uid="uid://cc3t5joeasu6k" path="res://resourses/entity/other/player/base/texture/cat/land_effect.png" id="7_wpj7q"]

@@ -163,6 +163,8 @@ func boom():
 	var g = granade.instantiate()
 	get_tree().root.add_child(g)
 	g.transform = marker.global_transform
+	g.apply_impulse(marker.global_transform.x.normalized() * 600)
+	
 
 
 

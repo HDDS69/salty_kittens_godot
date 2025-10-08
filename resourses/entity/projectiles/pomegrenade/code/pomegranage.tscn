@@ -7,12 +7,12 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u34rk"]
 friction = 0.2
-bounce = 0.55
+bounce = 0.52
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2smtc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m6ulc"]
-radius = 57.1402
+radius = 67.00746
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2i764"]
 atlas = ExtResource("2_u34rk")
@@ -121,7 +121,7 @@ polygon = PackedVector2Array(-4, -9, -1, -9, -1, -7, 1, -7, 1, -9, 3, -9, 3, -5,
 
 [node name="RigidBody2D" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_u34rk")
-inertia = 0.3
+freeze_mode = 1
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_u34rk")

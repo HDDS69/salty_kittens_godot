@@ -1,5 +1,5 @@
 extends Node2D
 
 func _ready() -> void:
-	DiscordRPC.state = "уровень 2"
+	DiscordRPC.state = "в баре"
 	DiscordRPC.refresh()
