@@ -21,6 +21,7 @@ var stupidvar = true
 @onready var sound = $AudioStreamPlayer2D/AudioStreamPlayer2D
 @onready var marker = $Area2D/Marker2D
 func _process(delta):
+	
 	HP_bar.value = health
 	if hit_ft and player.hit :
 		death()
