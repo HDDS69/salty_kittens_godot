@@ -758,7 +758,7 @@ position = Vector2(-6, 7)
 occluder = SubResource("OccluderPolygon2D_evup4")
 
 [node name="drone" parent="." instance=ExtResource("41_b4ban")]
-position = Vector2(-75, -102)
+position = Vector2(-74, -169)
 
 [connection signal="timeout" from="player/Timer_invulnerability" to="player" method="_on_timer_invulnerability_timeout"]
 [connection signal="timeout" from="player/Timer" to="player" method="_on_timer_timeout"]

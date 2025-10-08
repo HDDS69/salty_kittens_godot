@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://drkw1gq1eictd"]
+[gd_scene load_steps=23 format=3 uid="uid://drkw1gq1eictd"]
 
 [ext_resource type="Script" uid="uid://dmc3ylyeniuu5" path="res://resourses/entity/npcs/drone/code/drone.gd" id="1_741hc"]
 [ext_resource type="Texture2D" uid="uid://d0lgxfixkk1xj" path="res://resourses/entity/npcs/drone/texture/dronebreak.png" id="1_ibx1y"]
@@ -116,17 +116,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qe81u"]
 size = Vector2(37, 11.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_741hc"]
+size = Vector2(484.0099, 247.85562)
+
 [node name="drone" type="Node2D"]
 
 [node name="Path2D" type="Path2D" parent="."]
+position = Vector2(23, -53)
 curve = SubResource("Curve2D_vejpd")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(-23, 53)
 rotation = -0.118375994
+rotates = false
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Path2D/PathFollow2D"]
-rotation = 0.12221284
+rotation = 0.11929488
 mass = 30.0
 gravity_scale = 0.0
 script = ExtResource("1_741hc")
@@ -172,3 +177,11 @@ offset_top = 1.4980166
 offset_right = 64.61324
 offset_bottom = 24.498016
 text = "HP"
+
+[node name="Area2D2" type="Area2D" parent="Path2D/PathFollow2D/RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/RigidBody2D/Area2D2"]
+position = Vector2(0.00091934204, 1.0000019)
+shape = SubResource("RectangleShape2D_741hc")
+
+[connection signal="body_entered" from="Path2D/PathFollow2D/RigidBody2D/Area2D2" to="Path2D/PathFollow2D/RigidBody2D" method="_on_area_2d_2_body_entered"]
