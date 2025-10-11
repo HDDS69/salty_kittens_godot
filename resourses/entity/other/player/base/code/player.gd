@@ -108,7 +108,7 @@ func _process(delta: float) -> void:
 					await anim.animation_finished
 					land = false
 				elif velocity.y  == 0 :
-					if transition :
+					if transition and $CollisionShape2D/AnimatedSprite2D.visible == false:
 						anim.play("transition")
 						await anim.animation_finished
 						transition = false
@@ -163,6 +163,8 @@ func boom():
 	var g = granade.instantiate()
 	get_tree().root.add_child(g)
 	g.transform = marker.global_transform
+	g.apply_impulse(marker.global_transform.x.normalized() * 600)
+	
 
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cx8epnvjemxxp"]
+[gd_scene load_steps=16 format=4 uid="uid://cx8epnvjemxxp"]
 
 [ext_resource type="Script" uid="uid://x6tjppvdk43d" path="res://resourses/levels/level_menu/code/menu.gd" id="1_hi436"]
 [ext_resource type="PackedScene" uid="uid://dqjofyfd21oan" path="res://resourses/levels/resourses_levels/background/code/bg.tscn" id="2_uxt0t"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://63fg3i20okh3" path="res://resourses/shared_resources/sound/click.mp3" id="4_oq66f"]
 [ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="4_pfncu"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="8_8tnp7"]
+[ext_resource type="Texture2D" uid="uid://ce3jasughfa21" path="res://resourses/shared_resources/texture/logo/cat.png" id="8_4051e"]
 [ext_resource type="Script" uid="uid://fju6ylog0gdq" path="res://resourses/entity/npcs/player_bot/code/playermenu.gd" id="8_yl6au"]
 [ext_resource type="TileSet" uid="uid://ycx6cqvxial4" path="res://resourses/levels/level_menu/code/menu.tres" id="25_p34rd"]
 [ext_resource type="AudioStream" uid="uid://bc5p4nxapjq2q" path="res://resourses/levels/level_menu/sound/Pineapples in my head.mp3" id="28_8tnp7"]
@@ -59,7 +60,7 @@ texture = ExtResource("73_g741s")
 [node name="Heart" type="Sprite2D" parent="player"]
 visible = false
 modulate = Color(1, 0.137255, 0.0745098, 1)
-position = Vector2(17, -8)
+position = Vector2(14, 21)
 scale = Vector2(2.1875, 2.1875)
 texture = ExtResource("74_48v53")
 
@@ -94,15 +95,21 @@ scroll_offset = Vector2(678, 309)
 scroll_ignore_camera_zoom = true
 
 [node name="logo" type="Sprite2D" parent="bg"]
-position = Vector2(950, 224)
+position = Vector2(953.00006, 230)
 rotation = 0.112594
 scale = Vector2(3.80155, 3.80155)
+texture = ExtResource("8_4051e")
 
 [node name="logotext" type="Label" parent="bg/logo"]
-offset_left = -49.3336
-offset_top = 6.24856
-offset_right = 52.6664
-offset_bottom = 41.2486
+anchors_preset = -1
+anchor_left = -0.0078125
+anchor_top = -0.1484375
+anchor_right = -0.0078125
+anchor_bottom = -0.1484375
+offset_left = -51.711105
+offset_top = 25.754345
+offset_right = 50.288895
+offset_bottom = 79.75435
 rotation = 0.00377296
 theme_override_fonts/font = ExtResource("4_pfncu")
 text = "SALTY 
@@ -146,9 +153,14 @@ theme_override_fonts/font = ExtResource("4_pfncu")
 [node name="quit_setting" parent="setting/Panel/VBoxContainer" index="2"]
 theme_override_fonts/font = ExtResource("4_pfncu")
 
-[node name="buttons_group" type="Node" parent="."]
+[node name="buttons_group" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 337.0
+offset_bottom = 467.0
 
 [node name="play" type="Button" parent="buttons_group"]
+layout_mode = 0
 offset_left = 23.0
 offset_top = 18.0
 offset_right = 410.0
@@ -160,6 +172,10 @@ text = "играть"
 metadata/_edit_use_anchors_ = true
 
 [node name="settings_button" type="Button" parent="buttons_group"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.004282655
+anchor_bottom = -0.004282655
 offset_left = 22.0
 offset_top = 125.0
 offset_right = 409.0
@@ -172,13 +188,14 @@ text = "настройки
 metadata/_edit_use_anchors_ = true
 
 [node name="authors" type="Button" parent="buttons_group"]
+layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.00443655
-anchor_bottom = 0.00443655
+anchor_top = -0.012467705
+anchor_bottom = -0.012467705
 offset_left = 21.6
-offset_top = 231.125
+offset_top = 233.82242
 offset_right = 408.6
-offset_bottom = 353.125
+offset_bottom = 355.82242
 scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = ExtResource("4_pfncu")
 theme_override_font_sizes/font_size = 50
@@ -186,6 +203,10 @@ text = "титры"
 metadata/_edit_use_anchors_ = true
 
 [node name="quit" type="Button" parent="buttons_group"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.010706638
+anchor_bottom = -0.010706638
 offset_left = 23.4
 offset_top = 341.0
 offset_right = 410.4
@@ -200,8 +221,8 @@ metadata/_edit_use_anchors_ = true
 [connection signal="timeout" from="player/Timer" to="player" method="_on_timer_timeout"]
 [connection signal="pressed" from="setting/Panel/VBoxContainer/controll" to="setting" method="_on_controll_pressed"]
 [connection signal="pressed" from="buttons_group/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="buttons_group/settings_button" to="." method="_on_setting_button_pressed"]
-[connection signal="pressed" from="buttons_group/authors" to="." method="_on_autors_pressed"]
-[connection signal="pressed" from="buttons_group/quit" to="." method="_on_quite_pressed"]
+[connection signal="pressed" from="buttons_group/settings_button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="buttons_group/authors" to="." method="_on_authors_pressed"]
+[connection signal="pressed" from="buttons_group/quit" to="." method="_on_quit_pressed"]
 
 [editable path="setting"]

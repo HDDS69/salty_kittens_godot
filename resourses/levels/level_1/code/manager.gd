@@ -12,6 +12,10 @@ var death = false
 @onready var ed6 = $"../education/6"
 @onready var ed8 = $"../education/8"
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
+func _ready() -> void:
+	DiscordRPC.state = "уровень 1"
+	DiscordRPC.refresh()
+	
 func _physics_process(delta: float) -> void:
 	if SavePoint.light == false :
 		light.visible = false

@@ -13,3 +13,7 @@ func death():
 	$AnimatedSprite2D.play("explosion")
 	await $AnimatedSprite2D.animation_finished
 	queue_free()
+
+func damage(dmg):
+	if dmg >= 1:
+		death()

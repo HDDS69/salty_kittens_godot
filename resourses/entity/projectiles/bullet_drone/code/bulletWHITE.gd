@@ -18,8 +18,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_body_entered(body):
-	#if body.name not in whitelist:	
-	#queue_free()
 	if body.name == 'player':
 		body.health -=1
 	if body.name == 'TileMapLayer':

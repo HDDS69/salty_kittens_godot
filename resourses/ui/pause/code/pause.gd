@@ -63,3 +63,8 @@ func _on_quit_pressed() -> void:
 	$"../..".broke = true
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://resourses/levels/level_menu/code/menu.tscn")
+
+
+func _on_h_scroll_bar_value_changed(value: float) -> void:
+	$"../setting/Panel/VBoxContainer/light/music_value".text  = str(int((value + 80)/80 * 100))+"%"
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),value)

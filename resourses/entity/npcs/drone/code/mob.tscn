@@ -1,13 +1,13 @@
 [gd_scene load_steps=28 format=3 uid="uid://cy4dfmjr88k02"]
 
-[ext_resource type="Script" uid="uid://bx06e1uo1sk64" path="res://resourses/entity/drone/code/mob.gd" id="1_1crrg"]
-[ext_resource type="Texture2D" uid="uid://bqojnv0r6ifw2" path="res://resourses/entity/drone/texture/drone.png" id="2_5limf"]
-[ext_resource type="PackedScene" uid="uid://bys2fq87tspfr" path="res://bullet_DRONE.tscn" id="2_r605y"]
-[ext_resource type="Texture2D" uid="uid://d0lgxfixkk1xj" path="res://resourses/entity/drone/texture/dronebreak.png" id="3_ld6pw"]
-[ext_resource type="Script" uid="uid://bxvg7idt33k2n" path="res://resourses/entity/drone/code/Area2D.gd" id="3_ndglu"]
-[ext_resource type="Texture2D" uid="uid://cvnyc5d1bfy3d" path="res://текстуры/Untitled 07-22-2024 10-16-07.png" id="3_p8wik"]
-[ext_resource type="AudioStream" uid="uid://co1pqjg54w1u8" path="res://текстуры/sound/dron_fly.mp3" id="7_1qmh0"]
-[ext_resource type="AudioStream" uid="uid://cvgvgjkrsm400" path="res://текстуры/sound/dron_piu.mp3" id="8_gfurk"]
+[ext_resource type="Script" uid="uid://bx06e1uo1sk64" path="res://resourses/entity/npcs/drone/code/mob.gd" id="1_1crrg"]
+[ext_resource type="Texture2D" uid="uid://bqojnv0r6ifw2" path="res://resourses/entity/npcs/drone/texture/drone.png" id="2_5limf"]
+[ext_resource type="PackedScene" uid="uid://bys2fq87tspfr" path="res://resourses/entity/projectiles/bullet_drone/code/bullet_DRONE.tscn" id="2_r605y"]
+[ext_resource type="Texture2D" uid="uid://d0lgxfixkk1xj" path="res://resourses/entity/npcs/drone/texture/dronebreak.png" id="3_ld6pw"]
+[ext_resource type="Script" uid="uid://bxvg7idt33k2n" path="res://resourses/entity/npcs/drone/code/Area2D.gd" id="3_ndglu"]
+[ext_resource type="Texture2D" uid="uid://cvnyc5d1bfy3d" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 07-22-2024 10-16-07.png" id="3_p8wik"]
+[ext_resource type="AudioStream" uid="uid://co1pqjg54w1u8" path="res://resourses/entity/npcs/drone/sound/dron_fly.mp3" id="7_1qmh0"]
+[ext_resource type="AudioStream" uid="uid://cvgvgjkrsm400" path="res://resourses/entity/npcs/drone/sound/dron_piu.mp3" id="8_gfurk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ci2au"]
 size = Vector2(101, 48)

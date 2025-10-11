@@ -1,44 +1,45 @@
-[gd_scene load_steps=66 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=68 format=3 uid="uid://c27fe3qnrj4ms"]
 
-[ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/player/base/code/player.gd" id="1_8m1ne"]
-[ext_resource type="PackedScene" uid="uid://cn78231br5yqe" path="res://resourses/entity/pomegrenade/code/boom.tscn" id="2_ny14h"]
-[ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/player/base/code/player.tres" id="3_pgbbb"]
-[ext_resource type="Texture2D" uid="uid://cc3t5joeasu6k" path="res://resourses/entity/player/base/texture/cat/land_effect.png" id="5_k71g3"]
-[ext_resource type="SpriteFrames" uid="uid://bguq4n7gblp8e" path="res://resourses/entity/TV/code/tv.tres" id="8_331ug"]
-[ext_resource type="Texture2D" uid="uid://cykqp8ka6tq30" path="res://resourses/entity/player/mobile_controller/texture/button_action.png" id="11_o4fn0"]
-[ext_resource type="Texture2D" uid="uid://dtg36ugusxdbd" path="res://resourses/entity/player/mobile_controller/texture/button_action_pressed.png" id="12_lifl0"]
-[ext_resource type="Texture2D" uid="uid://chqhvfn62ay7k" path="res://resourses/entity/player/mobile_controller/texture/button_arrow.png" id="13_krayp"]
-[ext_resource type="Texture2D" uid="uid://csgdq40lwye06" path="res://resourses/entity/player/mobile_controller/texture/button_arrow_pressed.png" id="14_jxutx"]
-[ext_resource type="Texture2D" uid="uid://crgl7ytdeb2el" path="res://resourses/entity/player/mobile_controller/texture/button_salt.png" id="15_dj4mu"]
-[ext_resource type="Texture2D" uid="uid://e76emg6k28uw" path="res://resourses/entity/player/mobile_controller/texture/button_salt_pressed.png" id="16_bfcbp"]
-[ext_resource type="Texture2D" uid="uid://bwup5s4baqp0m" path="res://resourses/entity/player/mobile_controller/texture/hit.png" id="17_hn0t7"]
-[ext_resource type="PackedScene" uid="uid://dfo3gpmlnp5h6" path="res://resourses/entity/bullet/code/bullet.tscn" id="30_ny14h"]
-[ext_resource type="Texture2D" uid="uid://crhquqw084nub" path="res://resourses/entity/player/mobile_controller/texture/button_pause.png" id="32_galrp"]
-[ext_resource type="AudioStream" uid="uid://bh8nsyb3yrfic" path="res://resourses/entity/player/blaster/sound/blaster.mp3" id="32_ny14h"]
-[ext_resource type="Texture2D" uid="uid://xfwt41mclny3" path="res://resourses/entity/player/mobile_controller/texture/button_pause_pressed.png" id="33_55vbn"]
-[ext_resource type="AudioStream" uid="uid://b6gd3p2ehsg8b" path="res://resourses/entity/player/base/sound/jump.mp3" id="67_v58pc"]
-[ext_resource type="AudioStream" uid="uid://c3x81i1us0cwj" path="res://resourses/entity/player/base/sound/land.mp3" id="68_qmmh8"]
-[ext_resource type="Script" uid="uid://cr8jo7ea12fkm" path="res://resourses/entity/player/blaster/code/blaster.gd" id="69_fr3kn"]
-[ext_resource type="Texture2D" uid="uid://bta6i87i6tk84" path="res://resourses/entity/player/mobile_controller/texture/hit_pressed.png" id="71_w2dpe"]
-[ext_resource type="Texture2D" uid="uid://b3loc2bqtjq2r" path="res://resourses/entity/player/blaster/texture/recharge.png" id="73_vihgm"]
-[ext_resource type="Texture2D" uid="uid://cjj6qnlbjeayw" path="res://resourses/entity/player/mobile_controller/texture/button_one_pressed.png" id="74_276gg"]
-[ext_resource type="Texture2D" uid="uid://ccr61g1qaerdl" path="res://resourses/entity/player/mobile_controller/texture/button_one.png" id="75_6tot8"]
-[ext_resource type="Texture2D" uid="uid://drqv4x3172q61" path="res://resourses/entity/player/mobile_controller/texture/button_two_pressed.png" id="76_7ua45"]
-[ext_resource type="Texture2D" uid="uid://bideyn123tp8h" path="res://resourses/entity/player/mobile_controller/texture/button_two.png" id="77_tucw7"]
-[ext_resource type="Texture2D" uid="uid://doyfyso10ptm6" path="res://resourses/entity/player/mobile_controller/texture/grande_buttom.png" id="78_y4fi5"]
-[ext_resource type="Texture2D" uid="uid://bef43llfar5bv" path="res://resourses/entity/player/mobile_controller/texture/granade_buttom_pressed.png" id="79_ukxdx"]
-[ext_resource type="Script" uid="uid://ddpebavxlo2i7" path="res://resourses/entity/player/mobile_controller/joystick/joystick.gd" id="81_1mwr7"]
-[ext_resource type="Texture2D" uid="uid://dlx03pgoywkfw" path="res://resourses/entity/player/mobile_controller/joystick/texture/5f394193cd6b2173f7a82981.png" id="81_nc8c3"]
-[ext_resource type="Script" uid="uid://cqvwiesvk3vct" path="res://resourses/entity/player/mobile_controller/joystick/jousuck/addons/virtual_joystick/virtual_joystick.gd" id="82_qvknn"]
-[ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://resourses/entity/player/mobile_controller/joystick/jousuck/addons/virtual_joystick/textures/joystick_base_outline.png" id="83_xsgbm"]
-[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://resourses/entity/player/mobile_controller/joystick/jousuck/addons/virtual_joystick/textures/joystick_tip_arrows.png" id="84_djclt"]
-[ext_resource type="Script" uid="uid://bx8idcymi81ep" path="res://resourses/entity/player/pause/code/pause.gd" id="89_iraf3"]
-[ext_resource type="Texture2D" uid="uid://b2duhhcvfouem" path="res://resourses/entity/player/base/texture/heart/heart.png" id="90_87nqs"]
+[ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
+[ext_resource type="PackedScene" uid="uid://d1dlmmptam0ue" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="2_cv5i6"]
+[ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
+[ext_resource type="Texture2D" uid="uid://cc3t5joeasu6k" path="res://resourses/entity/other/player/base/texture/cat/land_effect.png" id="5_k71g3"]
+[ext_resource type="SpriteFrames" uid="uid://bguq4n7gblp8e" path="res://resourses/entity/npcs/TV/code/tv.tres" id="8_331ug"]
+[ext_resource type="Texture2D" uid="uid://cykqp8ka6tq30" path="res://resourses/ui/mobile_controller/texture/button_action.png" id="11_o4fn0"]
+[ext_resource type="Texture2D" uid="uid://dtg36ugusxdbd" path="res://resourses/ui/mobile_controller/texture/button_action_pressed.png" id="12_lifl0"]
+[ext_resource type="Texture2D" uid="uid://chqhvfn62ay7k" path="res://resourses/ui/mobile_controller/texture/button_arrow.png" id="13_krayp"]
+[ext_resource type="Texture2D" uid="uid://csgdq40lwye06" path="res://resourses/ui/mobile_controller/texture/button_arrow_pressed.png" id="14_jxutx"]
+[ext_resource type="Texture2D" uid="uid://crgl7ytdeb2el" path="res://resourses/ui/mobile_controller/texture/button_salt.png" id="15_dj4mu"]
+[ext_resource type="Texture2D" uid="uid://e76emg6k28uw" path="res://resourses/ui/mobile_controller/texture/button_salt_pressed.png" id="16_bfcbp"]
+[ext_resource type="Texture2D" uid="uid://bwup5s4baqp0m" path="res://resourses/ui/mobile_controller/texture/hit.png" id="17_hn0t7"]
+[ext_resource type="PackedScene" uid="uid://dfo3gpmlnp5h6" path="res://resourses/entity/projectiles/bullet/code/bullet.tscn" id="30_ny14h"]
+[ext_resource type="Texture2D" uid="uid://crhquqw084nub" path="res://resourses/ui/mobile_controller/texture/button_pause.png" id="32_galrp"]
+[ext_resource type="AudioStream" uid="uid://bh8nsyb3yrfic" path="res://resourses/entity/other/player/blaster/sound/blaster.mp3" id="32_ny14h"]
+[ext_resource type="Texture2D" uid="uid://xfwt41mclny3" path="res://resourses/ui/mobile_controller/texture/button_pause_pressed.png" id="33_55vbn"]
+[ext_resource type="FontFile" uid="uid://bkyohh76x8qg6" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.otf" id="33_cv5i6"]
+[ext_resource type="AudioStream" uid="uid://b6gd3p2ehsg8b" path="res://resourses/entity/other/player/base/sound/jump.mp3" id="67_v58pc"]
+[ext_resource type="AudioStream" uid="uid://c3x81i1us0cwj" path="res://resourses/entity/other/player/base/sound/land.mp3" id="68_qmmh8"]
+[ext_resource type="Script" uid="uid://cr8jo7ea12fkm" path="res://resourses/entity/other/player/blaster/code/blaster.gd" id="69_fr3kn"]
+[ext_resource type="Texture2D" uid="uid://bta6i87i6tk84" path="res://resourses/ui/mobile_controller/texture/hit_pressed.png" id="71_w2dpe"]
+[ext_resource type="Texture2D" uid="uid://b3loc2bqtjq2r" path="res://resourses/entity/other/player/blaster/texture/recharge.png" id="73_vihgm"]
+[ext_resource type="Texture2D" uid="uid://cjj6qnlbjeayw" path="res://resourses/ui/mobile_controller/texture/button_one_pressed.png" id="74_276gg"]
+[ext_resource type="Texture2D" uid="uid://ccr61g1qaerdl" path="res://resourses/ui/mobile_controller/texture/button_one.png" id="75_6tot8"]
+[ext_resource type="Texture2D" uid="uid://drqv4x3172q61" path="res://resourses/ui/mobile_controller/texture/button_two_pressed.png" id="76_7ua45"]
+[ext_resource type="Texture2D" uid="uid://bideyn123tp8h" path="res://resourses/ui/mobile_controller/texture/button_two.png" id="77_tucw7"]
+[ext_resource type="Texture2D" uid="uid://doyfyso10ptm6" path="res://resourses/ui/mobile_controller/texture/grande_buttom.png" id="78_y4fi5"]
+[ext_resource type="Texture2D" uid="uid://bef43llfar5bv" path="res://resourses/ui/mobile_controller/texture/granade_buttom_pressed.png" id="79_ukxdx"]
+[ext_resource type="Script" uid="uid://ddpebavxlo2i7" path="res://resourses/ui/mobile_controller/joystick/joystick.gd" id="81_1mwr7"]
+[ext_resource type="Texture2D" uid="uid://dlx03pgoywkfw" path="res://resourses/ui/mobile_controller/joystick/texture/5f394193cd6b2173f7a82981.png" id="81_nc8c3"]
+[ext_resource type="Script" uid="uid://cqvwiesvk3vct" path="res://resourses/ui/mobile_controller/joystick/jousuck/addons/virtual_joystick/virtual_joystick.gd" id="82_qvknn"]
+[ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://resourses/ui/mobile_controller/joystick/jousuck/addons/virtual_joystick/textures/joystick_base_outline.png" id="83_xsgbm"]
+[ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://resourses/ui/mobile_controller/joystick/jousuck/addons/virtual_joystick/textures/joystick_tip_arrows.png" id="84_djclt"]
+[ext_resource type="Script" uid="uid://bx8idcymi81ep" path="res://resourses/ui/pause/code/pause.gd" id="89_iraf3"]
+[ext_resource type="Texture2D" uid="uid://b2duhhcvfouem" path="res://resourses/entity/other/player/base/texture/heart/heart.png" id="90_87nqs"]
 [ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="91_d1y0c"]
-[ext_resource type="Script" uid="uid://dktx14jgtok82" path="res://resourses/entity/player/FPS/label_fps.gd" id="95_d17l8"]
+[ext_resource type="Script" uid="uid://dktx14jgtok82" path="res://resourses/ui/FPS/label_fps.gd" id="95_d17l8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo2je"]
-size = Vector2(49, 45.5)
+size = Vector2(64.5, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pew11"]
 atlas = ExtResource("5_k71g3")
@@ -176,6 +177,13 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rljtb"]
 size = Vector2(100, 100)
 
+[sub_resource type="LabelSettings" id="LabelSettings_m5ng5"]
+font = ExtResource("33_cv5i6")
+stacked_outline_count = 1
+stacked_shadow_count = 1
+stacked_outline_0/size = 2
+stacked_shadow_0/offset = Vector2(1, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_bwvdg"]
 atlas = ExtResource("90_87nqs")
 region = Rect2(32, 0, 32, 32)
@@ -255,16 +263,16 @@ polygon = PackedVector2Array(23, 70, 62, 70, 62, 68, 23, 68)
 show_behind_parent = true
 top_level = true
 script = ExtResource("1_8m1ne")
-granade = ExtResource("2_ny14h")
+granade = ExtResource("2_cv5i6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(43, 53.75)
+position = Vector2(35.25, 52)
 shape = SubResource("RectangleShape2D_lo2je")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 position = Vector2(-5, -25)
 sprite_frames = ExtResource("3_pgbbb")
-animation = &"transition"
+animation = &"fall"
 autoplay = "hidel"
 
 [node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
@@ -298,6 +306,7 @@ animation = &"land"
 autoplay = "xex"
 
 [node name="mobile controller" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="mobile controller"]
 anchors_preset = 6
@@ -649,6 +658,44 @@ theme_override_fonts/font = ExtResource("91_d1y0c")
 action_mode = 0
 text = "включить / выключить освещение"
 
+[node name="music" type="Label" parent="CanvasLayer/setting/Panel/VBoxContainer/light"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 24.0
+offset_right = 441.0
+offset_bottom = 34.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+tooltip_text = "настройки громкости"
+text = "настройки громкости"
+label_settings = SubResource("LabelSettings_m5ng5")
+
+[node name="music_value" type="Label" parent="CanvasLayer/setting/Panel/VBoxContainer/light"]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 24.0
+offset_right = 635.0
+offset_bottom = 34.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+tooltip_text = "настройки громкости"
+text = "100%"
+label_settings = SubResource("LabelSettings_m5ng5")
+
+[node name="HScrollBar" type="HScrollBar" parent="CanvasLayer/setting/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(200, 15)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 1
+tooltip_text = "громкость музыки"
+min_value = -80.0
+max_value = 0.0
+step = 1.0
+page = 3.0
+value = -80.0
+rounded = true
+allow_greater = true
+
 [node name="quit_setting" type="Button" parent="CanvasLayer/setting/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("91_d1y0c")
@@ -701,4 +748,5 @@ occluder = SubResource("OccluderPolygon2D_evup4")
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/controll" to="CanvasLayer/pause" method="_on_controll_pressed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/full screen" to="CanvasLayer/pause" method="_on_full_screen_pressed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/light" to="." method="_on_light_pressed"]
+[connection signal="value_changed" from="CanvasLayer/setting/Panel/VBoxContainer/HScrollBar" to="CanvasLayer/pause" method="_on_h_scroll_bar_value_changed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/quit_setting" to="CanvasLayer/pause" method="_on_quit_setting_pressed"]

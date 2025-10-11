@@ -1,69 +1,72 @@
-[gd_scene load_steps=22 format=3 uid="uid://cn78231br5yqe"]
+[gd_scene load_steps=23 format=3 uid="uid://d1dlmmptam0ue"]
 
-[ext_resource type="Script" uid="uid://bjw2ri4jwsf7r" path="res://resourses/entity/pomegrenade/code/boom.gd" id="1_r0rwm"]
-[ext_resource type="Texture2D" uid="uid://da4sj7mxbec58" path="res://resourses/entity/pomegrenade/texture/boom.png" id="2_61aer"]
-[ext_resource type="Texture2D" uid="uid://bf3r2bkt2ije3" path="res://resourses/entity/pomegrenade/texture/boo,.png" id="3_q5x1a"]
-[ext_resource type="AudioStream" uid="uid://crco6l1ombkwo" path="res://resourses/entity/pomegrenade/sound/boom.mp3" id="4_ubxla"]
+[ext_resource type="Texture2D" uid="uid://da4sj7mxbec58" path="res://resourses/entity/projectiles/pomegrenade/texture/boom.png" id="1_gm5f2"]
+[ext_resource type="Script" uid="uid://bjw2ri4jwsf7r" path="res://resourses/entity/projectiles/pomegrenade/code/boom.gd" id="1_u34rk"]
+[ext_resource type="Texture2D" uid="uid://bf3r2bkt2ije3" path="res://resourses/entity/projectiles/pomegrenade/texture/boo,.png" id="2_u34rk"]
+[ext_resource type="AudioStream" uid="uid://crco6l1ombkwo" path="res://resourses/entity/projectiles/pomegrenade/sound/boom.mp3" id="3_sxoil"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ehq8b"]
-radius = 10.198
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u34rk"]
+friction = 0.2
+bounce = 0.52
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_y30mt"]
-radius = 57.1402
+[sub_resource type="CircleShape2D" id="CircleShape2D_2smtc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m6ulc"]
+radius = 67.00746
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2i764"]
-atlas = ExtResource("3_q5x1a")
+atlas = ExtResource("2_u34rk")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ikd3c"]
-atlas = ExtResource("3_q5x1a")
+atlas = ExtResource("2_u34rk")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ehmmj"]
-atlas = ExtResource("3_q5x1a")
+atlas = ExtResource("2_u34rk")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_te4np"]
-atlas = ExtResource("3_q5x1a")
+atlas = ExtResource("2_u34rk")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j27go"]
-atlas = ExtResource("3_q5x1a")
+atlas = ExtResource("2_u34rk")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_si0v7"]
-atlas = ExtResource("3_q5x1a")
+atlas = ExtResource("2_u34rk")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_huibo"]
-atlas = ExtResource("3_q5x1a")
+atlas = ExtResource("2_u34rk")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yl8tv"]
-atlas = ExtResource("3_q5x1a")
+atlas = ExtResource("2_u34rk")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o71y6"]
-atlas = ExtResource("3_q5x1a")
+atlas = ExtResource("2_u34rk")
 region = Rect2(512, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l245s"]
-atlas = ExtResource("3_q5x1a")
+atlas = ExtResource("2_u34rk")
 region = Rect2(576, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_68gau"]
-atlas = ExtResource("3_q5x1a")
+atlas = ExtResource("2_u34rk")
 region = Rect2(640, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_57i2v"]
-atlas = ExtResource("3_q5x1a")
+atlas = ExtResource("2_u34rk")
 region = Rect2(704, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rl7ex"]
-atlas = ExtResource("3_q5x1a")
+atlas = ExtResource("2_u34rk")
 region = Rect2(768, 0, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_urc4p"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ohjye"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -113,51 +116,50 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uj5gk"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y717b"]
 polygon = PackedVector2Array(-4, -9, -1, -9, -1, -7, 1, -7, 1, -9, 3, -9, 3, -5, 6, -5, 6, -3, 8, -3, 8, 5, 6, 5, 6, 7, 3, 7, 3, 10, -4, 10, -4, 7, -6, 7, -6, 5, -9, 5, -9, -2, -6, -2, -6, -5, -4, -5)
 
-[node name="boom" type="CharacterBody2D"]
-script = ExtResource("1_r0rwm")
-metadata/_edit_horizontal_guides_ = [-11.0]
+[node name="RigidBody2D" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_u34rk")
+freeze_mode = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_u34rk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_ehq8b")
+position = Vector2(-1, -2)
+shape = SubResource("CircleShape2D_2smtc")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_ehq8b")
+[node name="Boom" type="Sprite2D" parent="."]
+position = Vector2(-14, -16)
+scale = Vector2(2.4375, 2.4375)
+texture = ExtResource("1_gm5f2")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.5
+one_shot = true
 
 [node name="radius" type="Area2D" parent="."]
+position = Vector2(-1, -2)
 monitoring = false
 
 [node name="radius" type="CollisionShape2D" parent="radius"]
-shape = SubResource("CircleShape2D_y30mt")
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Boom" type="Sprite2D" parent="Node2D"]
-position = Vector2(-13, -14)
-scale = Vector2(2.3125, 2.3125)
-texture = ExtResource("2_61aer")
+shape = SubResource("CircleShape2D_m6ulc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(2, 2)
 scale = Vector2(2.38281, 2.38281)
-sprite_frames = SubResource("SpriteFrames_urc4p")
+sprite_frames = SubResource("SpriteFrames_ohjye")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_uj5gk")
+position = Vector2(0, -3)
+occluder = SubResource("OccluderPolygon2D_y717b")
 
 [node name="sound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_ubxla")
+stream = ExtResource("3_sxoil")
 max_distance = 500.0
 
 [node name="AudioListener2D" type="AudioListener2D" parent="sound"]
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="radius" to="." method="_on_radius_body_entered"]
