@@ -7,7 +7,7 @@ var he = true
 @onready var ui = $ui
 @onready var anim = $CollisionShape2D/AnimatedSprite2D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if entered == true and player.hit == true and he == true:
 			var stone_1 = stone.instantiate()
 			stone_1.directionFALL = player.direction

@@ -17,7 +17,7 @@ var touched = false
 		#else : 
 			#small.position = Vector2(0,0)
 			#touched = false
-func _process(delta):
+func _process(_delta):
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if input_direction != Vector2.ZERO:  # Проверка, движется ли игрок
 		var target_rotation = input_direction.angle()  # Получаем угол для вращения

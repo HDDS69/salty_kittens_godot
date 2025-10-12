@@ -6,7 +6,7 @@ var x1 = 0
 var x2 = 0
 var dir = 0
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#if drone.state == drone.states.attack :
 		var pos = $"..".player.position 
 		pos.x +=30 #+  randf_range(-15,15)
