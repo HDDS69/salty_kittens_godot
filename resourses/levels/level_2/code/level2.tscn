@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://j2bhyqi8cn3r"]
+[gd_scene load_steps=72 format=4 uid="uid://j2bhyqi8cn3r"]
 
 [ext_resource type="Script" uid="uid://vvuwjinsa6gr" path="res://resourses/levels/level_2/code/level_2.gd" id="1_ehfoh"]
 [ext_resource type="Texture2D" uid="uid://bjf8wjl6g1do3" path="res://resourses/levels/level_2/level2_texture/bar.png" id="1_vpr75"]
@@ -40,6 +40,7 @@
 [ext_resource type="Script" uid="uid://dktx14jgtok82" path="res://resourses/ui/FPS/label_fps.gd" id="37_78e0m"]
 [ext_resource type="AudioStream" uid="uid://b6gd3p2ehsg8b" path="res://resourses/entity/other/player/base/sound/jump.mp3" id="38_a0l6b"]
 [ext_resource type="AudioStream" uid="uid://c3x81i1us0cwj" path="res://resourses/entity/other/player/base/sound/land.mp3" id="39_g1uj8"]
+[ext_resource type="PackedScene" uid="uid://bj115nqn7krxc" path="res://resourses/entity/npcs/drone_ram/code/drone_ram.tscn" id="41_b4ban"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo2je"]
 size = Vector2(49, 45.5)
@@ -756,6 +757,9 @@ stream = ExtResource("39_g1uj8")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="player"]
 position = Vector2(-6, 7)
 occluder = SubResource("OccluderPolygon2D_evup4")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("41_b4ban")]
+position = Vector2(427, -39)
 
 [connection signal="timeout" from="player/Timer_invulnerability" to="player" method="_on_timer_invulnerability_timeout"]
 [connection signal="timeout" from="player/Timer" to="player" method="_on_timer_timeout"]
