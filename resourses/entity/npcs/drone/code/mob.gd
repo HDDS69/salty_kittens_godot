@@ -24,7 +24,7 @@ func _process(delta):
 	
 	HP_bar.value = health
 	if hit_ft and player.hit :
-		death()
+		damage(1)
 	
 	if count <= 0 and stupidvar :
 		recharge = true
@@ -73,8 +73,8 @@ func shoot():
 		
 		
 # функция смерти
-func death():
-	health -=1
+func damage(dmg):
+	health -=dmg
 
 	if health <= 0 and dead == false:
 		dead = true

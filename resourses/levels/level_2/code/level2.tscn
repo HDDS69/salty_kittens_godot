@@ -877,7 +877,7 @@ position = Vector2(-6, 7)
 occluder = SubResource("OccluderPolygon2D_evup4")
 
 [node name="drone" type="Node2D" parent="."]
-position = Vector2(-202, -288)
+position = Vector2(570, -10)
 
 [node name="Path2D" type="Path2D" parent="drone"]
 position = Vector2(23, -53)
@@ -905,10 +905,9 @@ scale = Vector2(4.17188, 4.17188)
 sprite_frames = SubResource("SpriteFrames_dfv57")
 autoplay = "default"
 
-[node name="muzzle" type="Area2D" parent="drone/Path2D/PathFollow2D/RigidBody2D" node_paths=PackedStringArray("player")]
+[node name="muzzle" type="Area2D" parent="drone/Path2D/PathFollow2D/RigidBody2D"]
 position = Vector2(1, 11)
 script = ExtResource("44_0jp6o")
-player = NodePath("../../../../../player")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="drone/Path2D/PathFollow2D/RigidBody2D/muzzle"]
 position = Vector2(14.5, -2.25)

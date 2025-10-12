@@ -153,14 +153,9 @@ theme_override_fonts/font = ExtResource("4_pfncu")
 [node name="quit_setting" parent="setting/Panel/VBoxContainer" index="2"]
 theme_override_fonts/font = ExtResource("4_pfncu")
 
-[node name="buttons_group" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 337.0
-offset_bottom = 467.0
+[node name="buttons_group" type="Node" parent="."]
 
 [node name="play" type="Button" parent="buttons_group"]
-layout_mode = 0
 offset_left = 23.0
 offset_top = 18.0
 offset_right = 410.0
@@ -172,50 +167,44 @@ text = "играть"
 metadata/_edit_use_anchors_ = true
 
 [node name="settings_button" type="Button" parent="buttons_group"]
-layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.004282655
 anchor_bottom = -0.004282655
 offset_left = 22.0
-offset_top = 125.0
+offset_top = 125.77516
 offset_right = 409.0
-offset_bottom = 247.0
+offset_bottom = 247.77516
 scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = ExtResource("4_pfncu")
 theme_override_font_sizes/font_size = 50
 text = "настройки
 "
-metadata/_edit_use_anchors_ = true
 
 [node name="authors" type="Button" parent="buttons_group"]
-layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.012467705
 anchor_bottom = -0.012467705
 offset_left = 21.6
-offset_top = 233.82242
+offset_top = 236.07907
 offset_right = 408.6
-offset_bottom = 355.82242
+offset_bottom = 358.07907
 scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = ExtResource("4_pfncu")
 theme_override_font_sizes/font_size = 50
 text = "титры"
-metadata/_edit_use_anchors_ = true
 
 [node name="quit" type="Button" parent="buttons_group"]
-layout_mode = 1
 anchors_preset = -1
 anchor_top = -0.010706638
 anchor_bottom = -0.010706638
 offset_left = 23.4
-offset_top = 341.0
+offset_top = 342.9379
 offset_right = 410.4
-offset_bottom = 463.0
+offset_bottom = 464.9379
 scale = Vector2(0.8, 0.8)
 theme_override_fonts/font = ExtResource("4_pfncu")
 theme_override_font_sizes/font_size = 50
 text = "выход"
-metadata/_edit_use_anchors_ = true
 
 [connection signal="input_event" from="player" to="player" method="_on_input_event"]
 [connection signal="timeout" from="player/Timer" to="player" method="_on_timer_timeout"]
