@@ -39,7 +39,6 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_3_body_entered(body: Node2D) -> void:
-	print(body.name)
 	if body.name != 'TileMapLayer' and body.name != "salty platform":
 		body.damage(1)
 		queue_free()

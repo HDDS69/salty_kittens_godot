@@ -759,7 +759,7 @@ position = Vector2(-6, 7)
 occluder = SubResource("OccluderPolygon2D_evup4")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("41_b4ban")]
-position = Vector2(455, -42)
+position = Vector2(474, -56)
 
 [connection signal="timeout" from="player/Timer_invulnerability" to="player" method="_on_timer_invulnerability_timeout"]
 [connection signal="timeout" from="player/Timer" to="player" method="_on_timer_timeout"]
