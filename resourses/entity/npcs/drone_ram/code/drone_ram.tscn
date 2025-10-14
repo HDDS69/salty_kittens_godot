@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj115nqn7krxc"]
+
+[ext_resource type="Script" uid="uid://cbhmvpjniy1ih" path="res://resourses/entity/npcs/drone_ram/code/drone_ram.gd" id="1_7gaed"]
+[ext_resource type="Texture2D" uid="uid://drgvgtdq1728b" path="res://resourses/entity/npcs/drone_ram/texture/drone_ram.png" id="1_275et"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0l4b"]
+size = Vector2(80, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_275et"]
+size = Vector2(553, 71)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gaed"]
+size = Vector2(85, 46)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7gaed"]
+radius = 110.45361
+
+[node name="RigidBody2D" type="RigidBody2D"]
+mass = 1000.0
+script = ExtResource("1_7gaed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_r0l4b")
+
+[node name="DroneRam" type="Sprite2D" parent="."]
+position = Vector2(8, 9)
+texture = ExtResource("1_275et")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(236, 1)
+shape = SubResource("RectangleShape2D_275et")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(3.5, -3)
+shape = SubResource("RectangleShape2D_7gaed")
+
+[node name="Area2D3" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+shape = SubResource("CircleShape2D_7gaed")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_3_body_entered"]

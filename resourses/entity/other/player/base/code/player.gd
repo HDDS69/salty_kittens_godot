@@ -135,7 +135,10 @@ func death():
 		health = 3
 		position.y = y_cord
 		position.x = x_cord  
-		
+
+func damage(dmg):
+	health -=dmg
+
 func attack():
 	if Input.is_action_just_pressed("ui_hit_player0") or hit:
 				if blaster and count >0:
