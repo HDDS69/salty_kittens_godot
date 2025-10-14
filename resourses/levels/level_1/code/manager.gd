@@ -16,7 +16,7 @@ func _ready() -> void:
 	DiscordRPC.state = "уровень 1"
 	DiscordRPC.refresh()
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if SavePoint.light == false :
 		light.visible = false
 	else :

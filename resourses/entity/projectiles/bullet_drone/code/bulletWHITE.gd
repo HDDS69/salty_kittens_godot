@@ -13,7 +13,7 @@ var whitelist = [
 ]
 # Called when the node enters the scene tree for the first time.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	position += SPEED * transform.x
 
 

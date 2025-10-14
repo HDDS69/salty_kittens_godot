@@ -20,7 +20,7 @@ var stupidvar = true
 @onready var timer = $Timer
 @onready var sound = $AudioStreamPlayer2D/AudioStreamPlayer2D
 @onready var marker = $Area2D/Marker2D
-func _process(delta):
+func _process(_delta):
 	
 	HP_bar.value = health
 	if hit_ft and player.hit :
@@ -83,7 +83,7 @@ func damage(dmg):
 		queue_free()
 
 
-func _on_death_2_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+func _on_death_2_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
 	if area.name == 'hit' or area.name == 'hit2':
 		hit_ft = true
 

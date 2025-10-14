@@ -8,7 +8,7 @@ var entered = false
 @onready var ui = $ui
 @onready var Rtext = $RichTextLabel
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if entered == true :
 		if Input.is_action_just_pressed("ui_action_button"):
 			Rtext.text = 'братишка , можешь донести меня до бара ? очень уж хочется [wave] пива				                           '
