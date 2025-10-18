@@ -206,6 +206,21 @@ theme_override_fonts/font = ExtResource("4_pfncu")
 theme_override_font_sizes/font_size = 50
 text = "выход"
 
+[node name="test" type="Button" parent="buttons_group"]
+anchors_preset = -1
+anchor_top = -0.07253087
+anchor_right = 1.0
+anchor_bottom = -0.07253087
+offset_left = 981.0
+offset_top = 459.99997
+offset_right = -29.75
+offset_bottom = 535.0
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("4_pfncu")
+theme_override_font_sizes/font_size = 50
+text = "тест"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="input_event" from="player" to="player" method="_on_input_event"]
 [connection signal="timeout" from="player/Timer" to="player" method="_on_timer_timeout"]
 [connection signal="pressed" from="setting/Panel/VBoxContainer/controll" to="setting" method="_on_controll_pressed"]
@@ -213,5 +228,6 @@ text = "выход"
 [connection signal="pressed" from="buttons_group/settings_button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="buttons_group/authors" to="." method="_on_authors_pressed"]
 [connection signal="pressed" from="buttons_group/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="buttons_group/test" to="." method="_on_test_pressed"]
 
 [editable path="setting"]
