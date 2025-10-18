@@ -16,3 +16,7 @@ mono_crash.*.json
 
 # VSCode settings
 .vscode/
+
+# Godot addons
+addons/sparrowatlas_editor/
+addons/discord-rpc-gd/
