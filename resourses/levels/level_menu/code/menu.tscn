@@ -23,6 +23,7 @@ outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [node name="menu" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_hi436")
 
 [node name="player" type="CharacterBody2D" parent="."]
@@ -154,8 +155,10 @@ theme_override_fonts/font = ExtResource("4_pfncu")
 theme_override_fonts/font = ExtResource("4_pfncu")
 
 [node name="buttons_group" type="Node" parent="."]
+process_mode = 3
 
 [node name="play" type="Button" parent="buttons_group"]
+process_mode = 3
 offset_left = 23.0
 offset_top = 18.0
 offset_right = 410.0
@@ -167,6 +170,7 @@ text = "играть"
 metadata/_edit_use_anchors_ = true
 
 [node name="settings_button" type="Button" parent="buttons_group"]
+process_mode = 3
 anchors_preset = -1
 anchor_top = -0.004282655
 anchor_bottom = -0.004282655
@@ -181,6 +185,7 @@ text = "настройки
 "
 
 [node name="authors" type="Button" parent="buttons_group"]
+process_mode = 3
 anchors_preset = -1
 anchor_top = -0.012467705
 anchor_bottom = -0.012467705
@@ -194,6 +199,7 @@ theme_override_font_sizes/font_size = 50
 text = "титры"
 
 [node name="quit" type="Button" parent="buttons_group"]
+process_mode = 3
 anchors_preset = -1
 anchor_top = -0.010706638
 anchor_bottom = -0.010706638

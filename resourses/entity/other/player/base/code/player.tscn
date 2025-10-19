@@ -270,9 +270,9 @@ position = Vector2(35.25, 52)
 shape = SubResource("RectangleShape2D_lo2je")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(-5, -25)
+position = Vector2(2.75, -23)
 sprite_frames = ExtResource("3_pgbbb")
-animation = &"hidel"
+animation = &"hit"
 autoplay = "hidel"
 
 [node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
@@ -302,7 +302,7 @@ autoplay = "hidel"
 [node name="effect" type="AnimatedSprite2D" parent="CollisionShape2D"]
 position = Vector2(-5, -3.75)
 sprite_frames = SubResource("SpriteFrames_28d1b")
-animation = &"land"
+animation = &"xex"
 autoplay = "xex"
 
 [node name="mobile controller" type="CanvasLayer" parent="."]

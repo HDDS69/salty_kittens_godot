@@ -32,5 +32,6 @@ tile_set = SubResource("TileSet_rlrdm")
 [node name="player" parent="." instance=ExtResource("1_w32lr")]
 position = Vector2(286, 326)
 
-[node name="mob" parent="." instance=ExtResource("3_othqp")]
+[node name="mob" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_othqp")]
 position = Vector2(-167, 87)
+player = NodePath("../player")
