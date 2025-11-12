@@ -5,19 +5,29 @@ enum states {idle,fly,attack,death,recharge,attack_timer,recharge_timer}
 var state: states = states.idle
 var hp = 3
 var count = 0
-var can_shoot = true
+var x = 0
+var y = 0
+var player
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$ProgressBar.value = hp
 	if state == states.idle:
-		$"..".progress_ratio += delta * 0.1
+		$"..".progress_ratio += _delta * 0.1
+		self.position.y += sin(y) * 0.15
+		#self.position.x += cos(x) * 10
+		x += 1
+		y +=0.1	
 	elif state == states.death:
 		death()
 	elif state == states.attack:
-		pass
+		var pos = player.position 
+		$muzzle.look_at(pos)
+		if $"time to shot".is_stopped():
+			$"time to shot".start()
 	elif state == states.recharge:
 		state = states.recharge_timer
-		$recharge.start()
+		if $recharge.is_stopped():
+			$recharge.start()
 		
 
 func death():
@@ -39,6 +49,7 @@ func attack():
 	
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	if body.name == "player":
+		player = body
 		state = states.attack
 		
 func _on_area_2d_2_body_exited(body: Node2D) -> void:

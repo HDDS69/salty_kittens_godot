@@ -1,10 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://drkw1gq1eictd"]
+[gd_scene load_steps=23 format=3 uid="uid://drkw1gq1eictd"]
 
 [ext_resource type="Script" uid="uid://dmc3ylyeniuu5" path="res://resourses/entity/npcs/drone/code/drone.gd" id="1_741hc"]
 [ext_resource type="Texture2D" uid="uid://d0lgxfixkk1xj" path="res://resourses/entity/npcs/drone/texture/dronebreak.png" id="1_ibx1y"]
 [ext_resource type="Texture2D" uid="uid://bqojnv0r6ifw2" path="res://resourses/entity/npcs/drone/texture/drone.png" id="2_8gp32"]
 [ext_resource type="PackedScene" uid="uid://bys2fq87tspfr" path="res://resourses/entity/projectiles/bullet_drone/code/bullet_DRONE.tscn" id="2_qe81u"]
-[ext_resource type="Script" uid="uid://bxvg7idt33k2n" path="res://resourses/entity/npcs/drone/code/Area2D.gd" id="3_dfv57"]
 [ext_resource type="Texture2D" uid="uid://cvnyc5d1bfy3d" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 07-22-2024 10-16-07.png" id="4_741hc"]
 
 [sub_resource type="Curve2D" id="Curve2D_vejpd"]
@@ -128,11 +127,11 @@ curve = SubResource("Curve2D_vejpd")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(-23, 53)
-rotation = -0.118375994
+rotation = -0.0033388857
 rotates = false
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Path2D/PathFollow2D"]
-rotation = 0.11929488
+rotation = 0.0034209
 mass = 30.0
 gravity_scale = 0.0
 script = ExtResource("1_741hc")
@@ -150,7 +149,6 @@ autoplay = "default"
 
 [node name="muzzle" type="Area2D" parent="Path2D/PathFollow2D/RigidBody2D"]
 position = Vector2(1, 11)
-script = ExtResource("3_dfv57")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/RigidBody2D/muzzle"]
 position = Vector2(14.5, -2.25)
