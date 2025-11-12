@@ -5,19 +5,20 @@ enum states {idle,fly,attack,death,recharge}
 var state: states = states.idle
 var hp = 3
 var count = 3
-var x = 0
-var y = 0
+var x = 1
+var y = 1
 var player
 
 func _process(_delta: float) -> void:
 	$ProgressBar.value = hp
 	if state == states.idle:
-		$"..".progress_ratio += _delta * 0.1
-		#linear_velocity.x = 150
-		position.y += sin(y) * 0.15
+		#$"..".progress_ratio += _delta * 0.1
+		linear_velocity.x = 150 * x
+		linear_velocity.y = 10 * y
+		#position.y += sin(y) * 0.15
 		#self.position.x += cos(x) * 10
-		x += 1
-		y +=0.1
+		#x += 1
+		#y +=0.1
 	elif state == states.death:
 		death()
 	elif state == states.attack:
@@ -75,3 +76,11 @@ func _on_timer_timeout() -> void:
 
 func _on_time_to_shot_timeout() -> void:
 	attack()
+
+
+func _on_timer_fly_timeout() -> void:
+	x = -x
+
+
+func _on_timer_y_timeout() -> void:
+	y = -y

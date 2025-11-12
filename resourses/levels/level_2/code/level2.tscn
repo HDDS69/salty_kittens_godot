@@ -287,7 +287,7 @@ position = Vector2(1069, -112)
 [node name="player" type="CharacterBody2D" parent="."]
 show_behind_parent = true
 top_level = true
-position = Vector2(1064, -68)
+position = Vector2(1065, -81)
 script = ExtResource("3_xua0x")
 granade = ExtResource("4_ehfoh")
 
@@ -520,7 +520,7 @@ shape = SubResource("CapsuleShape2D_dpgy2")
 
 [node name="blaster" type="Area2D" parent="player"]
 visible = false
-position = Vector2(40, 50)
+position = Vector2(1, 1)
 script = ExtResource("27_m8hmd")
 bullet = ExtResource("28_s6m4t")
 

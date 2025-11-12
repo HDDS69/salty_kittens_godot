@@ -9,7 +9,7 @@
 [sub_resource type="Curve2D" id="Curve2D_vejpd"]
 bake_interval = 0.01
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -23, 53, 0, 0, 0, 0, 576, 51, 0, 0, 0, 0, -22, 53)
+"points": PackedVector2Array(0, 0, 0, 0, -23, 53, 0, 0, 0, 0, 880, 52, 0, 0, 0, 0, -22, 53)
 }
 point_count = 3
 
@@ -126,14 +126,14 @@ position = Vector2(23, -53)
 curve = SubResource("Curve2D_vejpd")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(284.74988, 51.972454)
+position = Vector2(284.75043, 52.6592)
 rotation = -0.0033388857
 progress = 307.75082
 rotates = false
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Path2D/PathFollow2D"]
 rotation = 0.0034209
-mass = 1000.0
+mass = 30.0
 gravity_scale = 0.0
 script = ExtResource("1_741hc")
 bullet = ExtResource("2_qe81u")
@@ -193,7 +193,16 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
+[node name="Timer_fly" type="Timer" parent="."]
+wait_time = 1.5
+autostart = true
+
+[node name="Timer_y" type="Timer" parent="Timer_fly"]
+autostart = true
+
 [connection signal="body_entered" from="Path2D/PathFollow2D/RigidBody2D/Area2D2" to="Path2D/PathFollow2D/RigidBody2D" method="_on_area_2d_2_body_entered"]
 [connection signal="body_exited" from="Path2D/PathFollow2D/RigidBody2D/Area2D2" to="Path2D/PathFollow2D/RigidBody2D" method="_on_area_2d_2_body_exited"]
 [connection signal="timeout" from="Path2D/PathFollow2D/RigidBody2D/recharge" to="Path2D/PathFollow2D/RigidBody2D" method="_on_timer_timeout"]
 [connection signal="timeout" from="Path2D/PathFollow2D/RigidBody2D/time to shot" to="Path2D/PathFollow2D/RigidBody2D" method="_on_time_to_shot_timeout"]
+[connection signal="timeout" from="Timer_fly" to="Path2D/PathFollow2D/RigidBody2D" method="_on_timer_fly_timeout"]
+[connection signal="timeout" from="Timer_fly/Timer_y" to="Path2D/PathFollow2D/RigidBody2D" method="_on_timer_y_timeout"]
