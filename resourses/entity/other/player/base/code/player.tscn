@@ -493,7 +493,7 @@ shape = SubResource("CapsuleShape2D_dpgy2")
 
 [node name="blaster" type="Area2D" parent="."]
 visible = false
-position = Vector2(40, 50)
+position = Vector2(1, 1)
 script = ExtResource("69_fr3kn")
 bullet = ExtResource("30_ny14h")
 

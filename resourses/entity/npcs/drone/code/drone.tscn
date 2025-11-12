@@ -133,7 +133,7 @@ rotates = false
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Path2D/PathFollow2D"]
 rotation = 0.0034209
-mass = 30.0
+mass = 1000.0
 gravity_scale = 0.0
 script = ExtResource("1_741hc")
 bullet = ExtResource("2_qe81u")
