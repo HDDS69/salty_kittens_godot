@@ -21,6 +21,7 @@ func _process(_delta: float) -> void:
 		death()
 	elif state == states.attack:
 		var pos = player.position 
+		self.position.x = pos.x
 		$muzzle.look_at(pos)
 		if $"time to shot".is_stopped():
 			$"time to shot".start()
