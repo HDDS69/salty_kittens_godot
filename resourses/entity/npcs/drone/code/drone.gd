@@ -13,7 +13,8 @@ func _process(_delta: float) -> void:
 	$ProgressBar.value = hp
 	if state == states.idle:
 		$"..".progress_ratio += _delta * 0.1
-		self.position.y += sin(y) * 0.15
+		#linear_velocity.x = 150
+		position.y += sin(y) * 0.15
 		#self.position.x += cos(x) * 10
 		x += 1
 		y +=0.1
@@ -21,7 +22,9 @@ func _process(_delta: float) -> void:
 		death()
 	elif state == states.attack:
 		var pos = player.position 
-		self.position.x = pos.x
+		var direction =  to_local(player.global_position).normalized()
+		#position.y = player.position.y
+		linear_velocity.x = 150 * direction.x
 		$muzzle.look_at(pos)
 		if $"time to shot".is_stopped():
 			$"time to shot".start()

@@ -266,7 +266,7 @@ script = ExtResource("1_8m1ne")
 granade = ExtResource("2_cv5i6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(35.25, 52)
+position = Vector2(1.25, 2)
 shape = SubResource("RectangleShape2D_lo2je")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
@@ -478,13 +478,13 @@ stretch_mode = 5
 wait_time = 2.0
 
 [node name="hit" type="Area2D" parent="."]
-position = Vector2(76, 65)
+position = Vector2(42, 15)
 
 [node name="hit" type="CollisionShape2D" parent="hit"]
 shape = SubResource("CapsuleShape2D_dpgy2")
 
 [node name="hit2" type="Area2D" parent="."]
-position = Vector2(8, 65)
+position = Vector2(-26, 15)
 monitorable = false
 
 [node name="hit2" type="CollisionShape2D" parent="hit2"]
@@ -692,6 +692,7 @@ min_value = -80.0
 max_value = 0.0
 step = 1.0
 page = 3.0
+value = -3.0
 rounded = true
 allow_greater = true
 
@@ -735,7 +736,7 @@ stream = ExtResource("67_v58pc")
 stream = ExtResource("68_qmmh8")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(-6, 7)
+position = Vector2(-40, -43)
 occluder = SubResource("OccluderPolygon2D_evup4")
 
 [connection signal="timeout" from="Timer_invulnerability" to="." method="_on_timer_invulnerability_timeout"]
