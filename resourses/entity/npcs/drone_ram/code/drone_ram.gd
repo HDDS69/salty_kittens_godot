@@ -4,7 +4,7 @@ enum states {idle,attack,wait,death}
 var state: states = states.idle
 var hp = 5
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if state == states.idle:
 		pass
 	elif state == states.attack:

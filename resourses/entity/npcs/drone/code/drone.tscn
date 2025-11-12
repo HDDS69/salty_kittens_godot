@@ -126,8 +126,9 @@ position = Vector2(23, -53)
 curve = SubResource("Curve2D_vejpd")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-23, 53)
+position = Vector2(284.74988, 51.972454)
 rotation = -0.0033388857
+progress = 307.75082
 rotates = false
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Path2D/PathFollow2D"]
@@ -186,6 +187,7 @@ shape = SubResource("RectangleShape2D_741hc")
 
 [node name="recharge" type="Timer" parent="Path2D/PathFollow2D/RigidBody2D"]
 wait_time = 3.0
+one_shot = true
 
 [node name="time to shot" type="Timer" parent="Path2D/PathFollow2D/RigidBody2D"]
 wait_time = 2.0
