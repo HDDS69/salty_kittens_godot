@@ -1,7 +1,13 @@
 extends RigidBody2D
 
 @export var bullet : PackedScene
-enum states {idle,fly,attack,death,recharge}
+@onready var anim = $AnimatedSprite2D
+@onready var timer_shot =  $"time to shot"
+@onready var timer_recharge = $recharge
+@onready var hp_bar = $ProgressBar
+@onready var muzzle = $muzzle
+@onready var muzzle_marker = $muzzle/Marker2D
+enum states {idle,attack,death,recharge}
 var state: states = states.idle
 var hp = 3
 var count = 3
@@ -9,56 +15,60 @@ var x = 1
 var y = 1
 var player
 
+func _ready() -> void:
+	hp_bar.value = hp
+
 func _process(_delta: float) -> void:
-	$ProgressBar.value = hp
 	if state == states.idle:
-		#$"..".progress_ratio += _delta * 0.1
 		linear_velocity.x = 150 * x
 		linear_velocity.y = 10 * y
-		#position.y += sin(y) * 0.15
-		#self.position.x += cos(x) * 10
-		#x += 1
-		#y +=0.1
+		
+		if linear_velocity.x > 0:
+			anim.rotation = 0.1
+		elif linear_velocity.x < 0:
+			anim.rotation = -0.1
+		else:
+			anim.rotation = 0
+
 	elif state == states.death:
 		death()
+		
 	elif state == states.attack:
 		var pos = player.position 
-		var direction =  to_local(player.global_position).normalized()
-		#position.y = player.position.y
+		var direction =  to_local(player.global_position+Vector2(0,-170)).normalized()
 		linear_velocity.x = 150 * direction.x
-		$muzzle.look_at(pos)
-		if $"time to shot".is_stopped():
-			$"time to shot".start()
+		linear_velocity.y = 150 * direction.y
+		muzzle.look_at(pos)
+		if count == 0:
+			state = states.recharge
+		if timer_shot.is_stopped():
+			timer_shot.start()
 	elif state == states.recharge:
-		$AnimatedSprite2D.self_modulate = "#ff0000"
-		if $recharge.is_stopped():
-			$recharge.start()
+		linear_velocity = Vector2(0,0)
+		anim.self_modulate = "#ff0000"
+		if timer_recharge.is_stopped():
+			timer_recharge.start()
 		
 
 func death():
 	gravity_scale = 1.0
 	inertia = 1.0
-	$AnimatedSprite2D.play("death")
-	await $AnimatedSprite2D.animation_finished
+	anim.play("death")
+	await anim.animation_finished
 	queue_free()
 
 func damage(dmg):
 	hp -= dmg
+	hp_bar.value = hp
 	if hp <= 0:
 		state = states.death
 
 func attack():
-	if count <= 0:
-		state = states.recharge
-	else:
 		count -=1
 		var b = bullet.instantiate()
 		get_tree().root.add_child(b)
-		b.transform = $muzzle/Marker2D.global_transform
+		b.transform = muzzle_marker.global_transform
 
-	
-	
-	
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	if body.name == "player":
 		player = body
@@ -67,20 +77,20 @@ func _on_area_2d_2_body_entered(body: Node2D) -> void:
 func _on_area_2d_2_body_exited(body: Node2D) -> void:
 	if body.name == "player":
 		state = states.idle
+		player = null
+		timer_shot.stop() 
 
 func _on_timer_timeout() -> void:
-	$AnimatedSprite2D.self_modulate = "#ffffff"
+	anim.self_modulate = "#ffffff"
 	count = 3
 	if state == states.recharge:
 		state = states.attack
-
+		
 func _on_time_to_shot_timeout() -> void:
 	attack()
 
-
 func _on_timer_fly_timeout() -> void:
 	x = -x
-
 
 func _on_timer_y_timeout() -> void:
 	y = -y
