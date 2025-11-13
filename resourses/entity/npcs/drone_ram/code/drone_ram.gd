@@ -3,10 +3,12 @@ extends RigidBody2D
 enum states {idle,attack,wait,death}
 var state: states = states.idle
 var hp = 5
-
-func _process(delta: float) -> void:
+var x = 0
+func _process(_delta: float) -> void:
 	if state == states.idle:
-		pass
+		#self.position.x += asin(sin(x))
+		x += 0.1
+		linear_velocity.x = 750 * round(sin(x)) * _delta
 	elif state == states.attack:
 		linear_velocity.x = 150 #7500 * delta
 

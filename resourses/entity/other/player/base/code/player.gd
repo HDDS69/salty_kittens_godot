@@ -7,7 +7,7 @@ var y_cord = 400
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var granade : PackedScene
-var health = 3
+var health = 3000
 @onready var anim = $CollisionShape2D/AnimatedSprite2D
 @onready var anim1 = $CollisionShape2D/effect
 @onready var blaster_texture = $blaster
@@ -86,9 +86,8 @@ func _process(delta: float) -> void:
 				velocity.y = JUMP_VELOCITY
 				anim.play("jump")
 				sound_jump.play()
-			if count == 0:
+			if count == 0 and timer.is_stopped():
 				timer.start()
-				count = -1000
 				Rtext.text = "[wave = 30]перезарядка..."
 			if Input.is_action_just_pressed("boom"):
 				boom()

@@ -1,16 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://drkw1gq1eictd"]
+[gd_scene load_steps=23 format=3 uid="uid://drkw1gq1eictd"]
 
 [ext_resource type="Script" uid="uid://dmc3ylyeniuu5" path="res://resourses/entity/npcs/drone/code/drone.gd" id="1_741hc"]
 [ext_resource type="Texture2D" uid="uid://d0lgxfixkk1xj" path="res://resourses/entity/npcs/drone/texture/dronebreak.png" id="1_ibx1y"]
 [ext_resource type="Texture2D" uid="uid://bqojnv0r6ifw2" path="res://resourses/entity/npcs/drone/texture/drone.png" id="2_8gp32"]
 [ext_resource type="PackedScene" uid="uid://bys2fq87tspfr" path="res://resourses/entity/projectiles/bullet_drone/code/bullet_DRONE.tscn" id="2_qe81u"]
-[ext_resource type="Script" uid="uid://bxvg7idt33k2n" path="res://resourses/entity/npcs/drone/code/Area2D.gd" id="3_dfv57"]
 [ext_resource type="Texture2D" uid="uid://cvnyc5d1bfy3d" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 07-22-2024 10-16-07.png" id="4_741hc"]
 
 [sub_resource type="Curve2D" id="Curve2D_vejpd"]
 bake_interval = 0.01
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -23, 53, 0, 0, 0, 0, 576, 51, 0, 0, 0, 0, -22, 53)
+"points": PackedVector2Array(0, 0, 0, 0, -23, 53, 0, 0, 0, 0, 880, 52, 0, 0, 0, 0, -22, 53)
 }
 point_count = 3
 
@@ -118,7 +117,7 @@ animations = [{
 size = Vector2(37, 11.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_741hc"]
-size = Vector2(484.0099, 247.85562)
+size = Vector2(484.0099, 514.99884)
 
 [node name="drone" type="Node2D"]
 
@@ -127,30 +126,32 @@ position = Vector2(23, -53)
 curve = SubResource("Curve2D_vejpd")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-23, 53)
-rotation = -0.118375994
+position = Vector2(284.75043, 52.6592)
+rotation = -0.0033388857
+progress = 307.75082
 rotates = false
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Path2D/PathFollow2D"]
-rotation = 0.11929488
-mass = 30.0
+rotation = 0.0034209
+mass = 246.267
 gravity_scale = 0.0
 script = ExtResource("1_741hc")
 bullet = ExtResource("2_qe81u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/RigidBody2D"]
-position = Vector2(0.5, 0.5)
+position = Vector2(0.99902344, 0.56710446)
+scale = Vector2(0.902534, 1.0445154)
 shape = SubResource("RectangleShape2D_ibx1y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Path2D/PathFollow2D/RigidBody2D"]
-position = Vector2(1, -6)
-scale = Vector2(4.17188, 4.17188)
+position = Vector2(1.4990234, -5.9328957)
+scale = Vector2(3.7652633, 4.3575926)
 sprite_frames = SubResource("SpriteFrames_dfv57")
 autoplay = "default"
 
 [node name="muzzle" type="Area2D" parent="Path2D/PathFollow2D/RigidBody2D"]
-position = Vector2(1, 11)
-script = ExtResource("3_dfv57")
+position = Vector2(1.4990234, 11.067104)
+scale = Vector2(0.902534, 1.0445154)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/RigidBody2D/muzzle"]
 position = Vector2(14.5, -2.25)
@@ -165,11 +166,11 @@ texture = ExtResource("4_741hc")
 position = Vector2(27, -1)
 
 [node name="ProgressBar" type="ProgressBar" parent="Path2D/PathFollow2D/RigidBody2D"]
-offset_left = -18.000002
-offset_top = -37.0
-offset_right = 21.551168
-offset_bottom = -10.0
-scale = Vector2(0.8849296, 0.6675505)
+offset_left = -16.753456
+offset_top = -36.932957
+offset_right = 22.797714
+offset_bottom = -9.932957
+scale = Vector2(0.79867905, 0.69726676)
 max_value = 3.0
 
 [node name="Label" type="Label" parent="Path2D/PathFollow2D/RigidBody2D/ProgressBar"]
@@ -180,20 +181,30 @@ offset_right = 64.61324
 offset_bottom = 24.498016
 text = "HP"
 
-[node name="Area2D2" type="Area2D" parent="Path2D/PathFollow2D/RigidBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/RigidBody2D/Area2D2"]
-position = Vector2(0.00091934204, 1.0000019)
-shape = SubResource("RectangleShape2D_741hc")
-
 [node name="recharge" type="Timer" parent="Path2D/PathFollow2D/RigidBody2D"]
 wait_time = 3.0
+one_shot = true
 
 [node name="time to shot" type="Timer" parent="Path2D/PathFollow2D/RigidBody2D"]
 wait_time = 2.0
 one_shot = true
 
-[connection signal="body_entered" from="Path2D/PathFollow2D/RigidBody2D/Area2D2" to="Path2D/PathFollow2D/RigidBody2D" method="_on_area_2d_2_body_entered"]
-[connection signal="body_exited" from="Path2D/PathFollow2D/RigidBody2D/Area2D2" to="Path2D/PathFollow2D/RigidBody2D" method="_on_area_2d_2_body_exited"]
+[node name="Area2D2" type="Area2D" parent="Path2D/PathFollow2D/RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/RigidBody2D/Area2D2"]
+position = Vector2(0.00091552734, 2.8393822)
+shape = SubResource("RectangleShape2D_741hc")
+
+[node name="Timer_fly" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="Timer_y" type="Timer" parent="Timer_fly"]
+autostart = true
+
 [connection signal="timeout" from="Path2D/PathFollow2D/RigidBody2D/recharge" to="Path2D/PathFollow2D/RigidBody2D" method="_on_timer_timeout"]
 [connection signal="timeout" from="Path2D/PathFollow2D/RigidBody2D/time to shot" to="Path2D/PathFollow2D/RigidBody2D" method="_on_time_to_shot_timeout"]
+[connection signal="body_entered" from="Path2D/PathFollow2D/RigidBody2D/Area2D2" to="Path2D/PathFollow2D/RigidBody2D" method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Path2D/PathFollow2D/RigidBody2D/Area2D2" to="Path2D/PathFollow2D/RigidBody2D" method="_on_area_2d_2_body_exited"]
+[connection signal="timeout" from="Timer_fly" to="Path2D/PathFollow2D/RigidBody2D" method="_on_timer_fly_timeout"]
+[connection signal="timeout" from="Timer_fly/Timer_y" to="Path2D/PathFollow2D/RigidBody2D" method="_on_timer_y_timeout"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://resourses/entity/other/player/base/code/player.tscn" id="1_w32lr"]
 [ext_resource type="Texture2D" uid="uid://dipa2s3u318l" path="res://resourses/levels/test/res/barwood.png" id="2_ryojb"]
-[ext_resource type="PackedScene" uid="uid://c3vubj8x2y2l1" path="res://resourses/levels/test/code/drone-test/mob.tscn" id="3_othqp"]
+[ext_resource type="PackedScene" uid="uid://cy4dfmjr88k02" path="res://resourses/entity/npcs/drone/code/mob.tscn" id="3_othqp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w32lr"]
 
@@ -37,4 +37,6 @@ tile_set = SubResource("TileSet_rlrdm")
 [node name="player" parent="." instance=ExtResource("1_w32lr")]
 position = Vector2(240, 338)
 
-[node name="mob" parent="." instance=ExtResource("3_othqp")]
+[node name="mob" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_othqp")]
+position = Vector2(-167, 87)
+player = NodePath("../player")
