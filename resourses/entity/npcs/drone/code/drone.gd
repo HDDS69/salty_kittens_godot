@@ -13,6 +13,7 @@ var hp = 3
 var count = 3
 var x = 1
 var y = 1
+var z = 50
 var player
 
 func _ready() -> void:
@@ -94,3 +95,5 @@ func _on_timer_fly_timeout() -> void:
 
 func _on_timer_y_timeout() -> void:
 	y = -y
+	z = -z
+	print(z)
