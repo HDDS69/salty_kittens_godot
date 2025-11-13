@@ -117,9 +117,11 @@ animations = [{
 size = Vector2(37, 11.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_741hc"]
-size = Vector2(484.0099, 514.99884)
+size = Vector2(484.0099, 1458.0051)
 
 [node name="drone" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [11.0]
+metadata/_edit_vertical_guides_ = [309.0]
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(23, -53)
@@ -133,7 +135,7 @@ rotates = false
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Path2D/PathFollow2D"]
 rotation = 0.0034209
-mass = 246.267
+mass = 30.0
 gravity_scale = 0.0
 script = ExtResource("1_741hc")
 bullet = ExtResource("2_qe81u")
@@ -189,12 +191,6 @@ one_shot = true
 wait_time = 2.0
 one_shot = true
 
-[node name="Area2D2" type="Area2D" parent="Path2D/PathFollow2D/RigidBody2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/RigidBody2D/Area2D2"]
-position = Vector2(0.00091552734, 2.8393822)
-shape = SubResource("RectangleShape2D_741hc")
-
 [node name="Timer_fly" type="Timer" parent="."]
 wait_time = 2.5
 autostart = true
@@ -202,9 +198,21 @@ autostart = true
 [node name="Timer_y" type="Timer" parent="Timer_fly"]
 autostart = true
 
+[node name="Timer_z" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(307.75043, -0.34080124)
+rotation = 8.201436e-05
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0.00088500977, 2.3371696)
+shape = SubResource("RectangleShape2D_741hc")
+
 [connection signal="timeout" from="Path2D/PathFollow2D/RigidBody2D/recharge" to="Path2D/PathFollow2D/RigidBody2D" method="_on_timer_timeout"]
 [connection signal="timeout" from="Path2D/PathFollow2D/RigidBody2D/time to shot" to="Path2D/PathFollow2D/RigidBody2D" method="_on_time_to_shot_timeout"]
-[connection signal="body_entered" from="Path2D/PathFollow2D/RigidBody2D/Area2D2" to="Path2D/PathFollow2D/RigidBody2D" method="_on_area_2d_2_body_entered"]
-[connection signal="body_exited" from="Path2D/PathFollow2D/RigidBody2D/Area2D2" to="Path2D/PathFollow2D/RigidBody2D" method="_on_area_2d_2_body_exited"]
 [connection signal="timeout" from="Timer_fly" to="Path2D/PathFollow2D/RigidBody2D" method="_on_timer_fly_timeout"]
 [connection signal="timeout" from="Timer_fly/Timer_y" to="Path2D/PathFollow2D/RigidBody2D" method="_on_timer_y_timeout"]
+[connection signal="timeout" from="Timer_z" to="Path2D/PathFollow2D/RigidBody2D" method="_on_timer_z_timeout"]
+[connection signal="body_entered" from="Area2D2" to="Path2D/PathFollow2D/RigidBody2D" method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Path2D/PathFollow2D/RigidBody2D" method="_on_area_2d_2_body_exited"]
