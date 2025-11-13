@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var chace = false
+var chase = false
 var shoot_timer = false
 var speed = 550
 var hit_ft = false
@@ -35,7 +35,7 @@ func _process(_delta):
 		anim.self_modulate = "#ff0000"
 		recharge_timer.start()
 		
-	if chace and stupidvar:
+	if chase and stupidvar:
 			var direction = to_local(player.global_position).normalized()
 			position.y = player.position.y - 200
 			velocity.x = speed * direction.x
@@ -46,7 +46,7 @@ func _process(_delta):
 			else :
 				anim.rotation = 0
 			move_and_slide()
-	if shoot_timer and chace:
+	if shoot_timer and chase:
 			timer.start()
 			shoot_timer = false
 	
@@ -63,7 +63,7 @@ func _on_death_2_body_entered(body):
 			body.health -= 1
 			
 func shoot():
-	if count > 0 and chace :
+	if count > 0 and chase :
 		sound.play()
 		count -= 1
 		var b = bullet.instantiate()
@@ -95,12 +95,12 @@ func _on_timer_timeout():
 
 func _on_way_body_entered(body: Node2D) -> void:
 	if body.name == "player":
-		chace = true
+		chase = true
 
 
 func _on_way_body_exited(body: Node2D) -> void:
 	if body.name == "player":
-		chace = false
+		chase = false
 
 
 func _on_shoot_body_entered(body: Node2D) -> void:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=4 uid="uid://cqmodp4yf6npn"]
+[gd_scene load_steps=7 format=4 uid="uid://cqmodp4yf6npn"]
 
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://resourses/entity/other/player/base/code/player.tscn" id="1_w32lr"]
 [ext_resource type="Texture2D" uid="uid://dipa2s3u318l" path="res://resourses/levels/test/res/barwood.png" id="2_ryojb"]
+[ext_resource type="PackedScene" uid="uid://c3vubj8x2y2l1" path="res://resourses/levels/test/code/drone-test/mob.tscn" id="3_othqp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w32lr"]
 
@@ -35,3 +36,5 @@ tile_set = SubResource("TileSet_rlrdm")
 
 [node name="player" parent="." instance=ExtResource("1_w32lr")]
 position = Vector2(240, 338)
+
+[node name="mob" parent="." instance=ExtResource("3_othqp")]
