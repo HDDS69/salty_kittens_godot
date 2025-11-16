@@ -8,7 +8,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func _on_body_entered(body):
-#TODO нужно сделать так чтобы оно игнорировало тайлмапы по типу объекта а не по имени
+# TODO #7 нужно сделать так чтобы оно игнорировало тайлмапы по типу объекта а не по имени
 	if body.name != 'TileMapLayer' and body.name != 'player' and body.name != "salty platform" and body.name != 'barwood ground':
 		body.damage(1)
 	queue_free()
