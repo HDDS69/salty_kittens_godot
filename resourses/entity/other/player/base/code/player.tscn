@@ -544,6 +544,7 @@ action = "ui_cancel"
 
 [node name="pause" type="Control" parent="CanvasLayer"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
