@@ -1,8 +1,6 @@
 extends RigidBody2D
 
 
-# Called when the node enters the scene tree for the first time.
-
 func death():
 	$CollisionShape2D.set_deferred("disabled", true);
 	self.gravity_scale = 0.0
