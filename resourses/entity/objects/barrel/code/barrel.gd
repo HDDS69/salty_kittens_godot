@@ -1,14 +1,11 @@
-extends CharacterBody2D
+extends RigidBody2D
 
 
 # Called when the node enters the scene tree for the first time.
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == 'player' :
-		death()
-
 func death():
 	$CollisionShape2D.set_deferred("disabled", true);
+	self.gravity_scale = 0.0
 	$Barrel.visible = false
 	$AnimatedSprite2D.play("explosion")
 	await $AnimatedSprite2D.animation_finished
