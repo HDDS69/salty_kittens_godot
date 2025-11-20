@@ -114,10 +114,9 @@ size = Vector2(584.0001, 1458.0051)
 
 [node name="drone" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [11.0]
-metadata/_edit_vertical_guides_ = [309.0]
+metadata/_edit_vertical_guides_ = [309.0, -65.0, 209.0, 57.0]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(307.75043, -0.34080124)
 rotation = 8.201436e-05
 mass = 30.0
 gravity_scale = 0.0
