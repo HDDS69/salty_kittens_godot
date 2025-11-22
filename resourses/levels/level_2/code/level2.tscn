@@ -287,7 +287,7 @@ position = Vector2(1069, -112)
 [node name="player" type="CharacterBody2D" parent="."]
 show_behind_parent = true
 top_level = true
-position = Vector2(1065, -81)
+position = Vector2(-5, -90)
 script = ExtResource("3_xua0x")
 granade = ExtResource("4_ehfoh")
 

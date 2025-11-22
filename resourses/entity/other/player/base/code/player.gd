@@ -86,8 +86,9 @@ func _process(delta: float) -> void:
 				velocity.y = JUMP_VELOCITY
 				anim.play("jump")
 				sound_jump.play()
-			if count == 0 and timer.is_stopped():
+			if count == 0:
 				timer.start()
+				count = -1000
 				Rtext.text = "[wave = 30]перезарядка..."
 			if Input.is_action_just_pressed("boom"):
 				boom()

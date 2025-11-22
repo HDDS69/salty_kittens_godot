@@ -1,19 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://dwe8uyi30jkan"]
+[gd_scene load_steps=15 format=3 uid="uid://dwe8uyi30jkan"]
 
 [ext_resource type="Script" uid="uid://bgggys80wix26" path="res://resourses/entity/objects/barrel/code/barrel.gd" id="1_r87uk"]
 [ext_resource type="Texture2D" uid="uid://c7pqeh4e35um0" path="res://resourses/entity/objects/barrel/texture/barrel.png" id="2_5w15r"]
 [ext_resource type="Texture2D" uid="uid://dorfh0mss3e88" path="res://resourses/entity/objects/barrel/texture/barrel_explosion.png" id="3_2m1ee"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7uxg"]
-size = Vector2(27.5, 30)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxxtn"]
-size = Vector2(28, 30)
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_oxf7s"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 2
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5w15r"]
+size = Vector2(45, 51)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64hgw"]
 atlas = ExtResource("3_2m1ee")
@@ -85,34 +77,25 @@ animations = [{
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jaouy"]
 polygon = PackedVector2Array(-10.0158, -16.2323, -8.76386, -16.2323, -8.76386, -17.4347, -6.88589, -17.4347, -6.88589, -18.0359, -3.75594, -18.0359, -3.75594, -19.2383, 11.8938, -19.2383, 11.8938, -18.0359, 15.0238, -18.0359, 15.0238, -16.8335, 16.9017, -16.8335, 16.9017, -16.2323, 18.1537, -16.2323, 18.1537, 9.61914, 16.9017, 9.61914, 16.9017, 10.8215, -6.88589, 10.8215, -6.88589, 10.2203, -9.38985, 10.2203, -9.38985, 9.01795, -10.0158, 9.01795)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-scale = Vector2(1.59747, 1.66335)
+[node name="RigidBody2D" type="RigidBody2D"]
+mass = 123.522
 script = ExtResource("1_r87uk")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, -6.5)
+shape = SubResource("RectangleShape2D_5w15r")
+
 [node name="Barrel" type="Sprite2D" parent="."]
-position = Vector2(4, -4)
+position = Vector2(6.38988, -6.6534)
+scale = Vector2(1.59747, 1.66335)
 texture = ExtResource("2_5w15r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.75, -4)
-shape = SubResource("RectangleShape2D_d7uxg")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(4, -4)
-shape = SubResource("RectangleShape2D_cxxtn")
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_oxf7s")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4, -4)
-scale = Vector2(1.875, 1.875)
+position = Vector2(6.38988, -6.6534)
+scale = Vector2(2.9952564, 3.1187813)
 sprite_frames = SubResource("SpriteFrames_d68ky")
 animation = &"explosion"
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+scale = Vector2(1.59747, 1.66335)
 occluder = SubResource("OccluderPolygon2D_jaouy")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

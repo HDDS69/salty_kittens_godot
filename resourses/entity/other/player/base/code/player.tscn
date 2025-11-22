@@ -481,6 +481,7 @@ wait_time = 2.0
 position = Vector2(42, 15)
 
 [node name="hit" type="CollisionShape2D" parent="hit"]
+position = Vector2(3, 0)
 shape = SubResource("CapsuleShape2D_dpgy2")
 
 [node name="hit2" type="Area2D" parent="."]
@@ -544,6 +545,7 @@ action = "ui_cancel"
 
 [node name="pause" type="Control" parent="CanvasLayer"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -703,7 +705,7 @@ action_mode = 0
 text = "выйти"
 
 [node name="heal" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(50, 45)
+position = Vector2(54.999996, 43.000004)
 scale = Vector2(2.54687, 2.70944)
 sprite_frames = SubResource("SpriteFrames_6vv36")
 animation = &"hp"
