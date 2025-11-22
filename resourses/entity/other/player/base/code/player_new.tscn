@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://5kol34iah4iw"]
+
+[ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="1_7rf6a"]
+[ext_resource type="Script" uid="uid://b2anvmuj3knar" path="res://resourses/entity/other/player/base/code/player_new.gd" id="1_d28q8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnic1"]
+size = Vector2(66, 47.5)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_d28q8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(33, -24.25)
+shape = SubResource("RectangleShape2D_jnic1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(45, -48)
+sprite_frames = ExtResource("1_7rf6a")
+animation = &"hidel"
+autoplay = "hidel"

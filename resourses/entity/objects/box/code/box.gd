@@ -8,7 +8,7 @@ func _physics_process(_delta: float) -> void:
 	if entered:
 		if Input.is_action_just_pressed("ui_action_button"):
 			player.health = 3
-			player.sleep(self.position.x -10,self.position.y-30)
+			player.sleep(self.position.x,self.position.y)
 			self.hide()
 		
 func _on_body_entered(body):
