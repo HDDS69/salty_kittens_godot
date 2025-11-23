@@ -18,7 +18,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func _on_body_entered(body):
-	if body.name == 'player':
+	if body.name == 'drone_ram':
 		body.damage(1)
 		queue_free()
 	if body.name == 'TileMapLayer':
