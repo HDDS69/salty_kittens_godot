@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://54uwo88kkjuf" path="res://resourses/entity/objects/stone/code/stone.gd" id="1_cw1v1"]
 [ext_resource type="Texture2D" uid="uid://cw2rkeftfyt2v" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 01-09-2024 10-06-05.png" id="1_ed23n"]
-[ext_resource type="PackedScene" path="res://resourses/entity/objects/stone_fall/code/stone_1.tscn" id="2_tlw13"]
 [ext_resource type="Texture2D" uid="uid://rgqkd2ykxt6q" path="res://resourses/entity/objects/stone/texture/partical.png" id="4_20ini"]
 [ext_resource type="Texture2D" uid="uid://d22sxtqxknkb" path="res://resourses/shared_resources/texture/ui/ui_hit.png" id="4_muwl5"]
 
@@ -60,9 +59,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_72qg3"]
 size = Vector2(44, 21)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20ini"]
+size = Vector2(107, 84)
+
 [node name="stone" type="RigidBody2D"]
 script = ExtResource("1_cw1v1")
-stone = ExtResource("2_tlw13")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8.25, -2.5)
@@ -70,20 +71,30 @@ shape = SubResource("RectangleShape2D_q2rqk")
 
 [node name="ui" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(0, -33)
+position = Vector2(8, -38)
 scale = Vector2(1.03906, 1.03906)
 texture = ExtResource("4_muwl5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1.5229772, 1.5229772, 1.5229772, 1)
 position = Vector2(9, -13)
 scale = Vector2(2.8125, 2.5624998)
 sprite_frames = SubResource("SpriteFrames_j0e5a")
 autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="."]
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(8, -2.5)
 shape = SubResource("RectangleShape2D_72qg3")
 
+[node name="ent" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ent"]
+position = Vector2(6.5, -32)
+shape = SubResource("RectangleShape2D_20ini")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ent" to="." method="_on_ent_body_entered"]
+[connection signal="body_exited" from="ent" to="." method="_on_ent_body_exited"]
