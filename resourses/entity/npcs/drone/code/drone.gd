@@ -8,7 +8,7 @@ extends RigidBody2D
 @onready var muzzle = $muzzle
 @onready var muzzle_marker = $muzzle/Marker2D
 @onready var area = $Area2D2
-@onready var sound_shoot = $"../AudioStreamPlayer2D/AudioStreamPlayer2D"
+@onready var sound_shoot = $AudioStreamPlayer2D/AudioStreamPlayer2D
 enum states {idle,attack,death,recharge}
 var state: states = states.idle
 var hp = 3

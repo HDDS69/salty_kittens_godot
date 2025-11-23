@@ -182,6 +182,21 @@ one_shot = true
 position = Vector2(0.50000095, 2.3371696)
 shape = SubResource("RectangleShape2D_741hc")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RigidBody2D"]
+rotation = -8.201436e-05
+stream = ExtResource("6_dsspx")
+volume_db = -10.0
+autoplay = true
+max_distance = 350.0
+parameters/looping = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RigidBody2D/AudioStreamPlayer2D"]
+stream = ExtResource("7_i11h8")
+volume_db = -7.0
+max_distance = 400.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="RigidBody2D/AudioStreamPlayer2D/AudioStreamPlayer2D"]
+
 [node name="Timer_fly" type="Timer" parent="."]
 wait_time = 2.5
 autostart = true
@@ -191,20 +206,6 @@ autostart = true
 
 [node name="Timer_z" type="Timer" parent="."]
 wait_time = 2.0
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_dsspx")
-volume_db = -10.0
-autoplay = true
-max_distance = 350.0
-parameters/looping = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayer2D"]
-stream = ExtResource("7_i11h8")
-volume_db = -7.0
-max_distance = 400.0
-
-[node name="AudioListener2D" type="AudioListener2D" parent="AudioStreamPlayer2D/AudioStreamPlayer2D"]
 
 [connection signal="timeout" from="RigidBody2D/recharge" to="RigidBody2D" method="_on_timer_timeout"]
 [connection signal="timeout" from="RigidBody2D/time to shot" to="RigidBody2D" method="_on_time_to_shot_timeout"]

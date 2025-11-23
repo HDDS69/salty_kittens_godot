@@ -95,7 +95,7 @@ func _process(delta: float) -> void:
 		
 		if direction == -1:
 			anim.flip_h = true
-			hit.position.x = -46
+			hit.position.x = -47
 			
 		elif direction == 1:
 			anim.flip_h = false
