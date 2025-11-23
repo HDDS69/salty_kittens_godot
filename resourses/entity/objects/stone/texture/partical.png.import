@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccyx2gm0donm5"
-path="res://.godot/imported/partical.png-57d66cfa408ac4c988d92a00e88caf33.ctex"
+uid="uid://rgqkd2ykxt6q"
+path="res://.godot/imported/partical.png-ffca496959a31d256fead1890928fa91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resourses/entity/objects/stone_fall/texture/partical.png"
-dest_files=["res://.godot/imported/partical.png-57d66cfa408ac4c988d92a00e88caf33.ctex"]
+source_file="res://resourses/entity/objects/stone/texture/partical.png"
+dest_files=["res://.godot/imported/partical.png-ffca496959a31d256fead1890928fa91.ctex"]
 
 [params]
 

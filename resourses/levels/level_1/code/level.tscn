@@ -691,7 +691,7 @@ text = "сори но демка кончилась.
 увидимся позже"
 
 [node name="Area2D" parent="." instance=ExtResource("42_k1ecl")]
-position = Vector2(1641, 37)
+position = Vector2(1599, 47)
 
 [node name="sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("38_samc1")
@@ -700,7 +700,7 @@ autoplay = true
 parameters/looping = true
 
 [node name="drone" parent="." instance=ExtResource("42_1wwgy")]
-position = Vector2(2011, -47)
+position = Vector2(2394, -113)
 
 [node name="drone2" parent="." instance=ExtResource("42_1wwgy")]
 position = Vector2(3409, -49)

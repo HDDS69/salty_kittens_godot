@@ -1,12 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://3jyuid1mhowh"]
+[gd_scene load_steps=14 format=3 uid="uid://3jyuid1mhowh"]
 
 [ext_resource type="Script" uid="uid://54uwo88kkjuf" path="res://resourses/entity/objects/stone/code/stone.gd" id="1_cw1v1"]
 [ext_resource type="Texture2D" uid="uid://cw2rkeftfyt2v" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 01-09-2024 10-06-05.png" id="1_ed23n"]
-[ext_resource type="PackedScene" uid="uid://biolsc1m46omi" path="res://resourses/entity/objects/stone_fall/code/stone_1.tscn" id="2_tlw13"]
+[ext_resource type="PackedScene" path="res://resourses/entity/objects/stone_fall/code/stone_1.tscn" id="2_tlw13"]
+[ext_resource type="Texture2D" uid="uid://rgqkd2ykxt6q" path="res://resourses/entity/objects/stone/texture/partical.png" id="4_20ini"]
 [ext_resource type="Texture2D" uid="uid://d22sxtqxknkb" path="res://resourses/shared_resources/texture/ui/ui_hit.png" id="4_muwl5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2rqk"]
 size = Vector2(41.5, 19)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opvv7"]
+atlas = ExtResource("4_20ini")
+region = Rect2(0, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xes5k"]
+atlas = ExtResource("4_20ini")
+region = Rect2(12, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54y72"]
+atlas = ExtResource("4_20ini")
+region = Rect2(24, 0, 12, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehx76"]
+atlas = ExtResource("4_20ini")
+region = Rect2(36, 0, 12, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xbn7w"]
 atlas = ExtResource("1_ed23n")
@@ -16,6 +33,23 @@ region = Rect2(48, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_opvv7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xes5k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54y72")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehx76")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_xbn7w")
 }],
 "loop": true,
@@ -23,7 +57,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72qg3"]
+size = Vector2(44, 21)
+
+[node name="stone" type="RigidBody2D"]
 script = ExtResource("1_cw1v1")
 stone = ExtResource("2_tlw13")
 
@@ -38,6 +75,15 @@ scale = Vector2(1.03906, 1.03906)
 texture = ExtResource("4_muwl5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(9, -14)
+position = Vector2(9, -13)
 scale = Vector2(2.8125, 2.5624998)
 sprite_frames = SubResource("SpriteFrames_j0e5a")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, -2.5)
+shape = SubResource("RectangleShape2D_72qg3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
