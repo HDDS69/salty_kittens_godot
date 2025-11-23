@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=4 uid="uid://edx064hnqy0p"]
+[gd_scene load_steps=55 format=4 uid="uid://edx064hnqy0p"]
 
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://resourses/entity/other/player/base/code/player.tscn" id="1_5u35f"]
 [ext_resource type="Script" uid="uid://dijwguluakihd" path="res://resourses/levels/level_1/code/manager.gd" id="1_h74ei"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ighwurnmi8bt" path="res://resourses/levels/resourses_levels/background/texture/1.png" id="3_mq0bl"]
 [ext_resource type="Texture2D" uid="uid://chr18n6fff4a6" path="res://resourses/levels/resourses_levels/background/texture/2.png" id="4_pvyrb"]
 [ext_resource type="Texture2D" uid="uid://np0yxevrqtv2" path="res://resourses/levels/resourses_levels/background/texture/3.png" id="5_v0fnv"]
+[ext_resource type="Texture2D" uid="uid://dphjcds0h2be3" path="res://resourses/levels/level_1/texture/Sprite-0001.png" id="22_l8apu"]
 [ext_resource type="VideoStream" uid="uid://bee241c0v8mbf" path="res://resourses/levels/level_1/reklama/Timeline-12.ogv" id="22_uuqa8"]
 [ext_resource type="AudioStream" uid="uid://dl7kk2rd5wk62" path="res://resourses/levels/level_1/reklama/echorofl.mp3" id="23_uuqa8"]
 [ext_resource type="TileSet" uid="uid://huoug6s04p7x" path="res://resourses/levels/level_2/code/tilemap/level2.tres" id="26_1wwgy"]
@@ -154,7 +155,6 @@ script = ExtResource("1_h74ei")
 script = ExtResource("1_uvbaq")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="bg"]
-position = Vector2(0, 3)
 motion_scale = Vector2(0, 0)
 motion_mirroring = Vector2(1150, 0)
 
@@ -171,6 +171,12 @@ scale = Vector2(0.694336, 0.694336)
 sprite_frames = SubResource("SpriteFrames_vfx2f")
 autoplay = "default"
 frame = 1
+
+[node name="Sprite0001" type="Sprite2D" parent="bg/ParallaxLayer"]
+modulate = Color(0.15487596, 0.154876, 0.15487596, 1)
+position = Vector2(614.00006, 406.00003)
+scale = Vector2(1.1388888, 1.34375)
+texture = ExtResource("22_l8apu")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="bg"]
 position = Vector2(1158, -583)

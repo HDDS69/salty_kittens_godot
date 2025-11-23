@@ -43,6 +43,8 @@ func _process(delta: float) -> void:
 			blaster = !blaster
 			blaster_texture.visible = blaster
 			
+		
+			
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			anim.play("jump")
 			sound_jump.play()
@@ -72,7 +74,8 @@ func _process(delta: float) -> void:
 				
 			if velocity.y > 0:
 				anim.play("fall")
-		
+		if Input.is_action_just_pressed('dash'):
+			velocity.x = direction * (SPEED * 150)
 		if Input.is_action_just_pressed("ui_hit_player0"):
 			if blaster and count > 0:
 				blaster_texture.shoot()

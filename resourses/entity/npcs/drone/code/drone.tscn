@@ -1,10 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://drkw1gq1eictd"]
+[gd_scene load_steps=24 format=3 uid="uid://drkw1gq1eictd"]
 
 [ext_resource type="Script" uid="uid://dmc3ylyeniuu5" path="res://resourses/entity/npcs/drone/code/drone.gd" id="1_741hc"]
 [ext_resource type="Texture2D" uid="uid://d0lgxfixkk1xj" path="res://resourses/entity/npcs/drone/texture/dronebreak.png" id="1_ibx1y"]
 [ext_resource type="Texture2D" uid="uid://bqojnv0r6ifw2" path="res://resourses/entity/npcs/drone/texture/drone.png" id="2_8gp32"]
 [ext_resource type="PackedScene" uid="uid://bys2fq87tspfr" path="res://resourses/entity/projectiles/bullet_drone/code/bullet_DRONE.tscn" id="2_qe81u"]
 [ext_resource type="Texture2D" uid="uid://cvnyc5d1bfy3d" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 07-22-2024 10-16-07.png" id="4_741hc"]
+[ext_resource type="AudioStream" uid="uid://co1pqjg54w1u8" path="res://resourses/entity/npcs/drone/sound/dron_fly.mp3" id="6_dsspx"]
+[ext_resource type="AudioStream" uid="uid://cvgvgjkrsm400" path="res://resourses/entity/npcs/drone/sound/dron_piu.mp3" id="7_i11h8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibx1y"]
 size = Vector2(99, 29)
@@ -110,7 +112,7 @@ animations = [{
 size = Vector2(37, 11.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_741hc"]
-size = Vector2(584.0001, 1458.0051)
+size = Vector2(799.0005, 1458.0051)
 
 [node name="drone" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [11.0]
@@ -177,7 +179,7 @@ one_shot = true
 [node name="Area2D2" type="Area2D" parent="RigidBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D2"]
-position = Vector2(0.24932861, 2.3371696)
+position = Vector2(0.50000095, 2.3371696)
 shape = SubResource("RectangleShape2D_741hc")
 
 [node name="Timer_fly" type="Timer" parent="."]
@@ -189,6 +191,20 @@ autostart = true
 
 [node name="Timer_z" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_dsspx")
+volume_db = -10.0
+autoplay = true
+max_distance = 350.0
+parameters/looping = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayer2D"]
+stream = ExtResource("7_i11h8")
+volume_db = -7.0
+max_distance = 400.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="AudioStreamPlayer2D/AudioStreamPlayer2D"]
 
 [connection signal="timeout" from="RigidBody2D/recharge" to="RigidBody2D" method="_on_timer_timeout"]
 [connection signal="timeout" from="RigidBody2D/time to shot" to="RigidBody2D" method="_on_time_to_shot_timeout"]
