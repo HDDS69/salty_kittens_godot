@@ -272,7 +272,7 @@ shape = SubResource("RectangleShape2D_lo2je")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 position = Vector2(2.75, -23)
 sprite_frames = ExtResource("3_pgbbb")
-animation = &"death"
+animation = &"sleep"
 autoplay = "hidel"
 
 [node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
@@ -475,21 +475,14 @@ texture = ExtResource("84_djclt")
 stretch_mode = 5
 
 [node name="Timer_invulnerability" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 1.5
 
 [node name="hit" type="Area2D" parent="."]
 position = Vector2(42, 15)
+monitoring = false
 
 [node name="hit" type="CollisionShape2D" parent="hit"]
 position = Vector2(3, 0)
-shape = SubResource("CapsuleShape2D_dpgy2")
-
-[node name="hit2" type="Area2D" parent="."]
-position = Vector2(-26, 15)
-monitorable = false
-
-[node name="hit2" type="CollisionShape2D" parent="hit2"]
-position = Vector2(0, -1)
 shape = SubResource("CapsuleShape2D_dpgy2")
 
 [node name="blaster" type="Area2D" parent="."]
@@ -517,6 +510,7 @@ volume_db = -10.0
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
+one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -742,6 +736,7 @@ position = Vector2(-40, -43)
 occluder = SubResource("OccluderPolygon2D_evup4")
 
 [connection signal="timeout" from="Timer_invulnerability" to="." method="_on_timer_invulnerability_timeout"]
+[connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/Panel/VBoxContainer/resume" to="CanvasLayer/pause" method="_on_resume_pressed"]

@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=76 format=3 uid="uid://huoug6s04p7x"]
+[gd_resource type="TileSet" load_steps=78 format=3 uid="uid://huoug6s04p7x"]
 
 [ext_resource type="Texture2D" uid="uid://bu3otia4my213" path="res://resourses/levels/resourses_levels/tilemap/texture/bg_doroga.png" id="1_gb6wh"]
 [ext_resource type="Texture2D" uid="uid://c54kn4wujjovx" path="res://resourses/levels/resourses_levels/tilemap/texture/cube.png" id="2_ugn2t"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cue7sl0illxyb" path="res://resourses/levels/resourses_levels/tilemap/texture/ramka.png" id="21_mv542"]
 [ext_resource type="Texture2D" uid="uid://dhd07co2v0g68" path="res://resourses/levels/level_2/level2_texture/material.png" id="22_f3t3u"]
 [ext_resource type="Texture2D" uid="uid://do538puwwe00b" path="res://resourses/levels/resourses_levels/tilemap/texture/lotok.png" id="23_t5vxt"]
+[ext_resource type="Texture2D" uid="uid://d1mg4062yltol" path="res://resourses/levels/level_2/level2_texture/barwood.png" id="24_757pp"]
 [ext_resource type="Texture2D" uid="uid://crhxf6wtc3448" path="res://resourses/levels/resourses_levels/tilemap/texture/столб и фонарь.png" id="24_wihbr"]
 [ext_resource type="Texture2D" uid="uid://txiob6ctxwgj" path="res://resourses/levels/resourses_levels/tilemap/texture/фонарь.png" id="25_dtpd8"]
 [ext_resource type="Texture2D" uid="uid://d3uu7vux5c1ue" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 12-11-2023 09-42-001.png" id="26_2yvpm"]
@@ -245,6 +246,21 @@ texture = ExtResource("23_t5vxt")
 1:3/0 = 0
 2:3/0 = 0
 3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ryyvt"]
+texture = ExtResource("24_757pp")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3orw"]
 texture = ExtResource("24_wihbr")
@@ -7025,3 +7041,4 @@ sources/36 = SubResource("TileSetAtlasSource_4ah0v")
 sources/6 = SubResource("TileSetAtlasSource_nxtrv")
 sources/25 = SubResource("TileSetAtlasSource_pgh88")
 sources/35 = SubResource("TileSetAtlasSource_4k1sn")
+sources/27 = SubResource("TileSetAtlasSource_ryyvt")

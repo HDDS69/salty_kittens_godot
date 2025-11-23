@@ -19,7 +19,7 @@ func _physics_process(_delta: float) -> void:
 
 func _on_body_entered(body):
 	if body.name == 'player':
-		body.health -=1
+		body.damage(1)
 		queue_free()
 	if body.name == 'TileMapLayer':
 		queue_free()
