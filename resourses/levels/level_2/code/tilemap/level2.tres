@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=78 format=3 uid="uid://huoug6s04p7x"]
+[gd_resource type="TileSet" load_steps=86 format=3 uid="uid://huoug6s04p7x"]
 
 [ext_resource type="Texture2D" uid="uid://bu3otia4my213" path="res://resourses/levels/resourses_levels/tilemap/texture/bg_doroga.png" id="1_gb6wh"]
 [ext_resource type="Texture2D" uid="uid://c54kn4wujjovx" path="res://resourses/levels/resourses_levels/tilemap/texture/cube.png" id="2_ugn2t"]
@@ -34,10 +34,14 @@
 [ext_resource type="Texture2D" uid="uid://7kkqd0s1ejj" path="res://resourses/levels/resourses_levels/tilemap/texture/Mudri_dub.png" id="32_cj5hg"]
 [ext_resource type="Texture2D" uid="uid://c0as31ryhvpw3" path="res://resourses/levels/resourses_levels/tilemap/texture/0beer.png" id="33_y3rrk"]
 [ext_resource type="Texture2D" uid="uid://6y604yoy0lfl" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 01-16-2024 07-48-14.png" id="34_22rid"]
+[ext_resource type="Texture2D" uid="uid://61b5x605f0v7" path="res://resourses/levels/level_2/level2_texture/lamp_bar.png" id="34_ryyvt"]
+[ext_resource type="Texture2D" uid="uid://ba6ugb57qfljt" path="res://resourses/levels/level_2/level2_texture/bar_stool.png" id="35_fpcpr"]
 [ext_resource type="Texture2D" uid="uid://c70ftmjrmoke5" path="res://resourses/entity/objects/trash_can/texture/Untitled 01-17-2024 09-38-27.png" id="35_q3ekk"]
 [ext_resource type="Texture2D" uid="uid://bp58d3o2e7r01" path="res://resourses/levels/resourses_levels/tilemap/texture/lampa.png" id="36_04shg"]
+[ext_resource type="Texture2D" uid="uid://bu8om7db471t" path="res://resourses/levels/level_2/level2_texture/bar_table.png" id="36_iuqmm"]
 [ext_resource type="Texture2D" uid="uid://dr5p16kjx0vf0" path="res://resourses/levels/resourses_levels/tilemap/texture/brick2.png" id="37_52k7s"]
 [ext_resource type="Texture2D" uid="uid://cw2rkeftfyt2v" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 01-09-2024 10-06-05.png" id="38_hgrmr"]
+[ext_resource type="Texture2D" uid="uid://bq8kgby5jwm8l" path="res://resourses/levels/level_2/level2_texture/bar_stool_table.png" id="38_woavo"]
 [ext_resource type="Texture2D" uid="uid://cdm2xpfar1e0r" path="res://resourses/levels/resourses_levels/tilemap/texture/ladder.png" id="39_qf7c5"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mfxh5"]
@@ -6891,6 +6895,49 @@ texture = ExtResource("33_y3rrk")
 0:0/0 = 0
 0:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fpcpr"]
+texture = ExtResource("34_ryyvt")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iuqmm"]
+texture = ExtResource("35_fpcpr")
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.9962673, -8, -1.9962673, -7.0456467, -3.9925346, -7.0456467, -3.953392, -6.0279427, -5.0493813, -6.0279427, -5.0102386, 4.971095, -4.0316772, 5.0102377, -3.9925346, 6.9673615, -3.053114, 6.9673615, -3.0139713, 8, 8, 8, 8, -8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.9892216, -8, 1.9893351, -6.998749, 3.9992847, -6.998749, 3.9889774, -5.998928, 4.988799, -5.998928, 5, 5, 3.984375, 4.9921875, 3.9921875, 6.9921875, 3, 6.9921875, 2.9921875, 8, -8, 8, -8, -8)
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_woavo"]
+texture = ExtResource("36_iuqmm")
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_82jcr"]
 texture = ExtResource("34_22rid")
 0:0/0 = 0
@@ -6941,6 +6988,17 @@ texture = ExtResource("34_22rid")
 3:3/0 = 0
 3:3/0/z_index = 1
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7mlg"]
+texture = ExtResource("38_woavo")
+0:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evwo6"]
 texture = ExtResource("35_q3ekk")
@@ -7042,3 +7100,7 @@ sources/6 = SubResource("TileSetAtlasSource_nxtrv")
 sources/25 = SubResource("TileSetAtlasSource_pgh88")
 sources/35 = SubResource("TileSetAtlasSource_4k1sn")
 sources/27 = SubResource("TileSetAtlasSource_ryyvt")
+sources/37 = SubResource("TileSetAtlasSource_fpcpr")
+sources/38 = SubResource("TileSetAtlasSource_iuqmm")
+sources/39 = SubResource("TileSetAtlasSource_woavo")
+sources/40 = SubResource("TileSetAtlasSource_j7mlg")

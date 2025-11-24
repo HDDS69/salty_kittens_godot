@@ -482,11 +482,11 @@ script = ExtResource("69_fr3kn")
 bullet = ExtResource("30_ny14h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="blaster"]
-position = Vector2(54, -2)
+position = Vector2(63, -2)
 shape = SubResource("RectangleShape2D_bn4h3")
 
 [node name="Marker2D" type="Marker2D" parent="blaster"]
-position = Vector2(57, -2)
+position = Vector2(54, -2)
 
 [node name="blaster" type="AnimatedSprite2D" parent="blaster"]
 position = Vector2(16, 0.999999)
