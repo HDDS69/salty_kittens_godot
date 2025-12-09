@@ -1,8 +1,9 @@
-[gd_scene load_steps=66 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=68 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="PackedScene" uid="uid://d1dlmmptam0ue" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="2_cv5i6"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
+[ext_resource type="Texture2D" uid="uid://db3l1db0sqqwp" path="res://resourses/entity/other/player/base/texture/dialog/gialog_background.png" id="4_m5ng5"]
 [ext_resource type="Texture2D" uid="uid://cc3t5joeasu6k" path="res://resourses/entity/other/player/base/texture/cat/land_effect.png" id="5_k71g3"]
 [ext_resource type="SpriteFrames" uid="uid://bguq4n7gblp8e" path="res://resourses/entity/npcs/TV/code/tv.tres" id="8_331ug"]
 [ext_resource type="Texture2D" uid="uid://cykqp8ka6tq30" path="res://resourses/ui/mobile_controller/texture/button_action.png" id="11_o4fn0"]
@@ -175,6 +176,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rljtb"]
 size = Vector2(100, 100)
 
+[sub_resource type="LabelSettings" id="LabelSettings_cv5i6"]
+font = ExtResource("91_d1y0c")
+font_size = 32
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 0.28235295)
+
 [sub_resource type="LabelSettings" id="LabelSettings_m5ng5"]
 font = ExtResource("33_cv5i6")
 stacked_outline_count = 1
@@ -274,8 +283,9 @@ animation = &"sleep"
 autoplay = "hidel"
 
 [node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
-position = Vector2(-43.5, -175.5)
+position = Vector2(-42.499996, -115.000015)
 scale = Vector2(22.798, 0.913744)
+zoom = Vector2(1.5, 1.5)
 process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
@@ -526,6 +536,25 @@ texture_normal = ExtResource("32_galrp")
 texture_pressed = ExtResource("33_55vbn")
 shape = SubResource("RectangleShape2D_rljtb")
 action = "ui_cancel"
+
+[node name="dialog" type="Node2D" parent="CanvasLayer/MarginContainer"]
+position = Vector2(-955, -4.9999847)
+
+[node name="GialogBackground" type="Sprite2D" parent="CanvasLayer/MarginContainer/dialog"]
+modulate = Color(1, 1, 1, 0.38431373)
+position = Vector2(577.00006, 389)
+texture = ExtResource("4_m5ng5")
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/dialog"]
+offset_left = 75.0
+offset_top = 527.0
+offset_right = 913.0
+offset_bottom = 625.0
+label_settings = SubResource("LabelSettings_cv5i6")
+autowrap_mode = 3
+
+[node name="Marker2D" type="Marker2D" parent="CanvasLayer/MarginContainer/dialog"]
+position = Vector2(960, 570)
 
 [node name="pause" type="Control" parent="CanvasLayer"]
 process_mode = 3

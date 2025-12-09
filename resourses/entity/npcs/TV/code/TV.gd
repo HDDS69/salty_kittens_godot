@@ -11,6 +11,7 @@ var entered = false
 func _physics_process(_delta: float) -> void:
 	if entered == true :
 		if Input.is_action_just_pressed("ui_action_button"):
+			player.dialog('братишка , можешь донести меня до бара ? очень уж хочется [wave] пива				                           ')
 			Rtext.text = 'братишка , можешь донести меня до бара ? очень уж хочется [wave] пива				                           '
 			ui.hide()
 			anim_text.play("show")
