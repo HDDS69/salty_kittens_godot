@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="PackedScene" uid="uid://d1dlmmptam0ue" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="2_cv5i6"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
-[ext_resource type="Texture2D" uid="uid://db3l1db0sqqwp" path="res://resourses/entity/other/player/base/texture/dialog/gialog_background.png" id="4_m5ng5"]
 [ext_resource type="Texture2D" uid="uid://cc3t5joeasu6k" path="res://resourses/entity/other/player/base/texture/cat/land_effect.png" id="5_k71g3"]
 [ext_resource type="SpriteFrames" uid="uid://bguq4n7gblp8e" path="res://resourses/entity/npcs/TV/code/tv.tres" id="8_331ug"]
 [ext_resource type="Texture2D" uid="uid://cykqp8ka6tq30" path="res://resourses/ui/mobile_controller/texture/button_action.png" id="11_o4fn0"]
@@ -18,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://bh8nsyb3yrfic" path="res://resourses/entity/other/player/blaster/sound/blaster.mp3" id="32_ny14h"]
 [ext_resource type="Texture2D" uid="uid://xfwt41mclny3" path="res://resourses/ui/mobile_controller/texture/button_pause_pressed.png" id="33_55vbn"]
 [ext_resource type="FontFile" uid="uid://bkyohh76x8qg6" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.otf" id="33_cv5i6"]
+[ext_resource type="Texture2D" uid="uid://dgg84t16l6o8y" path="res://resourses/entity/other/player/base/texture/dialog/dialog_background3.png" id="36_m5ng5"]
 [ext_resource type="AudioStream" uid="uid://b6gd3p2ehsg8b" path="res://resourses/entity/other/player/base/sound/jump.mp3" id="67_v58pc"]
 [ext_resource type="AudioStream" uid="uid://c3x81i1us0cwj" path="res://resourses/entity/other/player/base/sound/land.mp3" id="68_qmmh8"]
 [ext_resource type="Script" uid="uid://cr8jo7ea12fkm" path="res://resourses/entity/other/player/blaster/code/blaster.gd" id="69_fr3kn"]
@@ -540,10 +540,12 @@ action = "ui_cancel"
 [node name="dialog" type="Node2D" parent="CanvasLayer/MarginContainer"]
 position = Vector2(-955, -4.9999847)
 
-[node name="GialogBackground" type="Sprite2D" parent="CanvasLayer/MarginContainer/dialog"]
-modulate = Color(1, 1, 1, 0.38431373)
-position = Vector2(577.00006, 389)
-texture = ExtResource("4_m5ng5")
+[node name="Marker2D" type="Marker2D" parent="CanvasLayer/MarginContainer/dialog"]
+position = Vector2(960, 570)
+
+[node name="DialogBackground3" type="Sprite2D" parent="CanvasLayer/MarginContainer/dialog"]
+position = Vector2(577, 319)
+texture = ExtResource("36_m5ng5")
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/dialog"]
 offset_left = 75.0
@@ -552,9 +554,6 @@ offset_right = 913.0
 offset_bottom = 625.0
 label_settings = SubResource("LabelSettings_cv5i6")
 autowrap_mode = 3
-
-[node name="Marker2D" type="Marker2D" parent="CanvasLayer/MarginContainer/dialog"]
-position = Vector2(960, 570)
 
 [node name="pause" type="Control" parent="CanvasLayer"]
 process_mode = 3

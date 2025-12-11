@@ -170,6 +170,7 @@ func _on_hit_body_entered(body: Node2D) -> void:
 		body.damage(1)
 
 
-func dialog(text):
+func dialog(text,img):
 	$CanvasLayer/MarginContainer/dialog.visible = true
 	$CanvasLayer/MarginContainer/dialog/Label.text = text
+	
