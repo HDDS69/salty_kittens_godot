@@ -172,5 +172,5 @@ func _on_hit_body_entered(body: Node2D) -> void:
 
 func dialog(text,img):
 	$CanvasLayer/MarginContainer/dialog.visible = true
-	$CanvasLayer/MarginContainer/dialog/Label.text = text
-	
+	$CanvasLayer/MarginContainer/dialog/RichTextLabel.text = text
+	$CanvasLayer/MarginContainer/dialog/TextureRect.texture = img

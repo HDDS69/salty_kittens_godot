@@ -7,16 +7,17 @@ var entered = false
 @onready var player = $"../player"
 @onready var ui = $ui
 @onready var Rtext = $RichTextLabel
+var dialog_img = preload("res://resourses/entity/npcs/TV/texture/TV.png")
 
 func _physics_process(_delta: float) -> void:
 	if entered == true :
 		if Input.is_action_just_pressed("ui_action_button"):
-			player.dialog('братишка , можешь донести меня до бара ? очень уж хочется [wave] пива				                           ')
-			Rtext.text = 'братишка , можешь донести меня до бара ? очень уж хочется [wave] пива				                           '
+			player.dialog('братишка , можешь донести меня до бара ? очень уж хочется [wave] пива				                           ',dialog_img)
+			#Rtext.text = 'братишка , можешь донести меня до бара ? очень уж хочется [wave] пива				                           '
 			ui.hide()
 			anim_text.play("show")
 			await anim_text.animation_finished
-			Rtext.text = 'нажмите [wave]E[/wave] что бы взять телевизор'
+			#Rtext.text = 'нажмите [wave]E[/wave] что бы взять телевизор'
 			while not Input.is_action_just_pressed("ui_action_button"):
 				await get_tree().process_frame  # Ждем следующий кадр
 				if player.broke :
@@ -36,5 +37,5 @@ func _on_body_exited(body):
 	if body.name == "player":
 		entered = false
 		ui.hide()
-		Rtext.text = ' '
+		#Rtext.text = ' '
 		anim_text.stop()

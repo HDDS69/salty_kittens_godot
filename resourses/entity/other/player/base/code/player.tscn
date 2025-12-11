@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=67 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="PackedScene" uid="uid://d1dlmmptam0ue" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="2_cv5i6"]
@@ -175,14 +175,6 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rljtb"]
 size = Vector2(100, 100)
-
-[sub_resource type="LabelSettings" id="LabelSettings_cv5i6"]
-font = ExtResource("91_d1y0c")
-font_size = 32
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 10
-shadow_color = Color(0, 0, 0, 0.28235295)
 
 [sub_resource type="LabelSettings" id="LabelSettings_m5ng5"]
 font = ExtResource("33_cv5i6")
@@ -538,22 +530,42 @@ shape = SubResource("RectangleShape2D_rljtb")
 action = "ui_cancel"
 
 [node name="dialog" type="Node2D" parent="CanvasLayer/MarginContainer"]
+visible = false
 position = Vector2(-955, -4.9999847)
-
-[node name="Marker2D" type="Marker2D" parent="CanvasLayer/MarginContainer/dialog"]
-position = Vector2(960, 570)
 
 [node name="DialogBackground3" type="Sprite2D" parent="CanvasLayer/MarginContainer/dialog"]
 position = Vector2(577, 319)
 texture = ExtResource("36_m5ng5")
 
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/dialog"]
-offset_left = 75.0
-offset_top = 527.0
-offset_right = 913.0
-offset_bottom = 625.0
-label_settings = SubResource("LabelSettings_cv5i6")
-autowrap_mode = 3
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/dialog"]
+offset_left = 49.0
+offset_top = 515.0
+offset_right = 938.0
+offset_bottom = 609.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 3
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("91_d1y0c")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "
+"
+scroll_active = false
+visible_characters_behavior = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/dialog"]
+position = Vector2(1054, 564)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/dialog"]
+offset_left = 999.0
+offset_top = 516.0
+offset_right = 1107.0
+offset_bottom = 612.0
+expand_mode = 4
+stretch_mode = 5
 
 [node name="pause" type="Control" parent="CanvasLayer"]
 process_mode = 3

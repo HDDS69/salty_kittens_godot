@@ -1,9 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://bmvro43qmydke"]
+[gd_scene load_steps=40 format=3 uid="uid://bmvro43qmydke"]
 
 [ext_resource type="Texture2D" uid="uid://crm0f0xpnkejn" path="res://resourses/entity/npcs/TV/texture/TV.png" id="1_wxi4x"]
 [ext_resource type="Script" uid="uid://bcao2mjn6s4kh" path="res://resourses/entity/npcs/TV/code/TV.gd" id="1_ye00f"]
 [ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://resourses/shared_resources/texture/ui/Untitled 06-12-2024 11-00-24.png" id="3_gmtlm"]
-[ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="4_v571j"]
 [ext_resource type="Texture2D" uid="uid://cfeok18ypvsgi" path="res://resourses/entity/npcs/TV/texture/puf.png" id="5_uboxy"]
 [ext_resource type="Texture2D" uid="uid://blod5nf63ivmn" path="res://resourses/entity/npcs/TV/texture/TV-Sheet.png" id="6_75nnp"]
 
@@ -288,19 +287,8 @@ position = Vector2(41, -100)
 scale = Vector2(0.726562, 0.726562)
 texture = ExtResource("3_gmtlm")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -40.0
-offset_top = -117.0
-offset_right = 123.0
-offset_bottom = -51.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_v571j")
-bbcode_enabled = true
-scroll_active = false
-visible_characters_behavior = 3
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../RichTextLabel")
+root_node = NodePath("")
 libraries = {
 &"": SubResource("AnimationLibrary_0o8vn")
 }
