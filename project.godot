@@ -22,6 +22,7 @@ config/icon="uid://b3ga0q11rvecn"
 
 SavePoint="*res://resourses/global_code/save_point.gd"
 DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
+Signalbus="*res://resourses/entity/other/dialog/code/signalbus.gd"
 
 [display]
 

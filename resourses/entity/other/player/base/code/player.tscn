@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=68 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="PackedScene" uid="uid://d1dlmmptam0ue" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="2_cv5i6"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://crgl7ytdeb2el" path="res://resourses/ui/mobile_controller/texture/button_salt.png" id="15_dj4mu"]
 [ext_resource type="Texture2D" uid="uid://e76emg6k28uw" path="res://resourses/ui/mobile_controller/texture/button_salt_pressed.png" id="16_bfcbp"]
 [ext_resource type="Texture2D" uid="uid://bwup5s4baqp0m" path="res://resourses/ui/mobile_controller/texture/hit.png" id="17_hn0t7"]
+[ext_resource type="Script" uid="uid://vj024w5stxer" path="res://resourses/entity/other/player/base/code/dialog.gd" id="29_cv5i6"]
 [ext_resource type="PackedScene" uid="uid://dfo3gpmlnp5h6" path="res://resourses/entity/projectiles/bullet/code/bullet.tscn" id="30_ny14h"]
 [ext_resource type="Texture2D" uid="uid://crhquqw084nub" path="res://resourses/ui/mobile_controller/texture/button_pause.png" id="32_galrp"]
 [ext_resource type="AudioStream" uid="uid://bh8nsyb3yrfic" path="res://resourses/entity/other/player/blaster/sound/blaster.mp3" id="32_ny14h"]
@@ -532,6 +533,8 @@ action = "ui_cancel"
 [node name="dialog" type="Node2D" parent="CanvasLayer/MarginContainer"]
 visible = false
 position = Vector2(-955, -4.9999847)
+script = ExtResource("29_cv5i6")
+scene_text_file = "res://resourses/entity/other/dialog/code/dialogs.json"
 
 [node name="DialogBackground3" type="Sprite2D" parent="CanvasLayer/MarginContainer/dialog"]
 position = Vector2(577, 319)

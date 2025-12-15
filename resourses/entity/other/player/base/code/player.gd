@@ -168,9 +168,3 @@ func animTV() -> void:
 func _on_hit_body_entered(body: Node2D) -> void:
 	if body.name != 'TileMapLayer' and body.name != "salty platform":
 		body.damage(1)
-
-
-func dialog(text,img):
-	$CanvasLayer/MarginContainer/dialog.visible = true
-	$CanvasLayer/MarginContainer/dialog/RichTextLabel.text = text
-	$CanvasLayer/MarginContainer/dialog/TextureRect.texture = img

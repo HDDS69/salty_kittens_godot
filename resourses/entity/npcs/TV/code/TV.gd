@@ -14,6 +14,7 @@ func _physics_process(_delta: float) -> void:
 		if Input.is_action_just_pressed("ui_action_button"):
 			player.dialog('братишка , можешь донести меня до бара ? очень уж хочется [wave] пива				                           ',dialog_img)
 			#Rtext.text = 'братишка , можешь донести меня до бара ? очень уж хочется [wave] пива				                           '
+			
 			ui.hide()
 			anim_text.play("show")
 			await anim_text.animation_finished
@@ -27,6 +28,7 @@ func _physics_process(_delta: float) -> void:
 			Rtext.text = ""
 			await anim.animation_finished
 			queue_free()
+
 
 func _on_body_entered(body):
 	if body.name == "player":
