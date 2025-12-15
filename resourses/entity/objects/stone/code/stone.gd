@@ -6,6 +6,7 @@ extends RigidBody2D
 var x = 0
 
 func damage(_dmg):
+	Signalbus.emit_signal('display_dialog',"камень")
 	x = randfn(-500,500)
 	apply_impulse(Vector2(x,-600))
 	kil_zone.monitoring = true
