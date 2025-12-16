@@ -12,7 +12,7 @@ func _ready() -> void:
 	
 func _input(event: InputEvent) -> void:
 	if area_active and event.is_action_pressed("ui_action_button"):
-		Signalbus.emit_signal('display_dialog',dialog_key)
+		Signalbus.emit_signal('display_dialog',dialog_key,dialog_img)
 
 func on_dialog_finished(current_dialog_key):
 	if current_dialog_key == dialog_key:

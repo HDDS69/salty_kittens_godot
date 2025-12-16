@@ -1,7 +1,7 @@
 extends Node2D
  
 @onready var bg = $DialogBackground3
-@onready var camera = $Sprite2D
+@onready var dialog_image = $TextureRect
 @onready var dialog_text = $RichTextLabel
 @onready var anim_text = $RichTextLabel/AnimationPlayer
 
@@ -35,12 +35,14 @@ func next_line():
 		
 func finish():
 	dialog_text.text = ""
+	dialog_image.texture = null
 	self.visible = false
 	in_progress = false
 	Signalbus.emit_signal('dialog_finish',current_dialog_key)
 	
-func on_display_dialog(dialog_key):
+func on_display_dialog(dialog_key,dialog_img):
 	current_dialog_key = dialog_key
+	dialog_image.texture = dialog_img
 	if in_progress:
 		next_line()
 	else:

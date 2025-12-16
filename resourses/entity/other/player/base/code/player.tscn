@@ -566,6 +566,7 @@ shape = SubResource("RectangleShape2D_rljtb")
 action = "ui_cancel"
 
 [node name="dialog" type="Node2D" parent="CanvasLayer/MarginContainer"]
+process_mode = 3
 visible = false
 position = Vector2(-955, -4.9999847)
 script = ExtResource("29_cv5i6")
@@ -602,9 +603,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_0o8vn")
 }
 speed_scale = 0.132
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/dialog"]
-position = Vector2(1054, 564)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/dialog"]
 offset_left = 999.0
