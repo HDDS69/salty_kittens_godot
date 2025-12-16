@@ -25,7 +25,7 @@ func _physics_process(_delta: float) -> void:
 	#	$"../../mobile controller".hide()
 
 func _on_resume_pressed() -> void:
-	self.hide
+	self.hide()
 	get_tree().paused = false
 	self.visible = false
 	setting = false

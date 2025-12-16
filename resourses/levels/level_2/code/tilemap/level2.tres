@@ -1,11 +1,7 @@
-[gd_resource type="TileSet" load_steps=88 format=3 uid="uid://huoug6s04p7x"]
+[gd_resource type="TileSet" load_steps=82 format=3 uid="uid://huoug6s04p7x"]
 
 [ext_resource type="Texture2D" uid="uid://bu3otia4my213" path="res://resourses/levels/resourses_levels/tilemap/texture/bg_doroga.png" id="1_gb6wh"]
 [ext_resource type="Texture2D" uid="uid://c54kn4wujjovx" path="res://resourses/levels/resourses_levels/tilemap/texture/cube.png" id="2_ugn2t"]
-[ext_resource type="PackedScene" uid="uid://dyhtbn77nlgvq" path="res://resourses/entity/objects/trash_can/code/trash_can.tscn" id="3_15k1q"]
-[ext_resource type="PackedScene" uid="uid://cbsdguel865kq" path="res://resourses/entity/objects/box/code/box.tscn" id="4_p4hyt"]
-[ext_resource type="PackedScene" uid="uid://dwe8uyi30jkan" path="res://resourses/entity/objects/barrel/code/barrel.tscn" id="5_roqwy"]
-[ext_resource type="PackedScene" uid="uid://3jyuid1mhowh" path="res://resourses/entity/objects/stone/code/stone.tscn" id="6_pdems"]
 [ext_resource type="Texture2D" uid="uid://46gqbgubmc2h" path="res://resourses/levels/resourses_levels/tilemap/texture/oboi.png" id="7_adb75"]
 [ext_resource type="Texture2D" uid="uid://ddin1dg31bf8b" path="res://resourses/levels/resourses_levels/tilemap/texture/zabor1.png" id="8_n65rv"]
 [ext_resource type="Texture2D" uid="uid://ktjjfbu60kra" path="res://resourses/levels/resourses_levels/tilemap/texture/oboi1.png" id="9_7uc16"]
@@ -116,13 +112,6 @@ texture = ExtResource("2_ugn2t")
 2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_g0c37"]
-resource_name = "box"
-scenes/1/scene = ExtResource("3_15k1q")
-scenes/2/scene = ExtResource("4_p4hyt")
-scenes/3/scene = ExtResource("5_roqwy")
-scenes/4/scene = ExtResource("6_pdems")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d1gva"]
 texture = ExtResource("7_adb75")
@@ -6733,33 +6722,6 @@ texture = ExtResource("26_2yvpm")
 49:63/0/z_index = -1
 49:63/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nfy87"]
-0:9/0 = 0
-1:9/0 = 0
-2:9/0 = 0
-0:10/0 = 0
-1:10/0 = 0
-2:10/0 = 0
-3:10/0 = 0
-4:10/0 = 0
-5:10/0 = 0
-6:10/0 = 0
-7:10/0 = 0
-8:10/0 = 0
-9:10/0 = 0
-10:10/0 = 0
-0:11/0 = 0
-1:11/0 = 0
-2:11/0 = 0
-3:11/0 = 0
-4:11/0 = 0
-5:11/0 = 0
-6:11/0 = 0
-7:11/0 = 0
-8:11/0 = 0
-9:11/0 = 0
-10:11/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dy0rc"]
 texture = ExtResource("28_mjkif")
 0:3/0 = 0
@@ -7099,7 +7061,6 @@ sources/5 = SubResource("TileSetAtlasSource_evwo6")
 sources/8 = SubResource("TileSetAtlasSource_larln")
 sources/7 = SubResource("TileSetAtlasSource_worel")
 sources/9 = SubResource("TileSetAtlasSource_f5j68")
-sources/10 = SubResource("TileSetScenesCollectionSource_g0c37")
 sources/3 = SubResource("TileSetAtlasSource_ali2x")
 sources/12 = SubResource("TileSetAtlasSource_hphe1")
 sources/14 = SubResource("TileSetAtlasSource_ljueh")
@@ -7116,7 +7077,6 @@ sources/22 = SubResource("TileSetAtlasSource_mp3yo")
 sources/23 = SubResource("TileSetAtlasSource_lobxp")
 sources/28 = SubResource("TileSetAtlasSource_q3orw")
 sources/29 = SubResource("TileSetAtlasSource_x1ckt")
-sources/30 = SubResource("TileSetAtlasSource_nfy87")
 sources/31 = SubResource("TileSetAtlasSource_dy0rc")
 sources/24 = SubResource("TileSetAtlasSource_htka1")
 sources/26 = SubResource("TileSetAtlasSource_3mkde")

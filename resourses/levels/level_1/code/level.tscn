@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://edx064hnqy0p"]
+[gd_scene load_steps=55 format=4 uid="uid://edx064hnqy0p"]
 
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://resourses/entity/other/player/base/code/player.tscn" id="1_5u35f"]
 [ext_resource type="Script" uid="uid://dijwguluakihd" path="res://resourses/levels/level_1/code/manager.gd" id="1_h74ei"]
@@ -10,8 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dphjcds0h2be3" path="res://resourses/levels/level_1/texture/Sprite-0001.png" id="22_l8apu"]
 [ext_resource type="VideoStream" uid="uid://bee241c0v8mbf" path="res://resourses/levels/level_1/reklama/Timeline-12.ogv" id="22_uuqa8"]
 [ext_resource type="AudioStream" uid="uid://dl7kk2rd5wk62" path="res://resourses/levels/level_1/reklama/echorofl.mp3" id="23_uuqa8"]
-[ext_resource type="TileSet" uid="uid://huoug6s04p7x" path="res://resourses/levels/level_2/code/tilemap/level2.tres" id="26_1wwgy"]
-[ext_resource type="TileSet" uid="uid://huoug6s04p7x" path="res://resourses/levels/level_1/code/tilemap/level.tres" id="27_iqpsj"]
+[ext_resource type="TileSet" uid="uid://huoug6s04p7x" path="res://resourses/levels/level_2/code/tilemap/level2.tres" id="27_iqpsj"]
 [ext_resource type="Texture2D" uid="uid://ccr61g1qaerdl" path="res://resourses/ui/mobile_controller/texture/button_one.png" id="30_oaehd"]
 [ext_resource type="Texture2D" uid="uid://bideyn123tp8h" path="res://resourses/ui/mobile_controller/texture/button_two.png" id="31_f8y3u"]
 [ext_resource type="Texture2D" uid="uid://bwup5s4baqp0m" path="res://resourses/ui/mobile_controller/texture/hit.png" id="32_0k1o5"]
@@ -267,7 +266,7 @@ tile_set = ExtResource("27_iqpsj")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMapLayer"]
 tile_map_data = PackedByteArray("AACw/yAAHwAAAAMAAACw/yEAHwAAAAQAAACw/yIAHwAAAAUAAACw/yMAHwAAAAYAAACw/yQAHwAAAAcAAACx/yAAHwABAAMAAACx/yEAHwABAAQAAACx/yIAHwABAAUAAACx/yMAHwABAAYAAACx/yQAHwABAAcAAACy/yAAHwACAAMAAACy/yEAHwACAAQAAACy/yIAHwACAAUAAACy/yMAHwACAAYAAACy/yQAHwACAAcAAACz/yAAHwADAAMAAACz/yEAHwADAAQAAACz/yIAHwADAAUAAACz/yMAHwADAAYAAACz/yQAHwADAAcAAAC0/yAAHwAEAAMAAAC0/yEAHwAEAAQAAAC0/yIAHwAEAAUAAAC0/yMAHwAEAAYAAAC0/yQAHwAEAAcAAAC1/yAAHwAFAAMAAAC1/yEAHwAFAAQAAAC1/yIAHwAFAAUAAAC1/yMAHwAFAAYAAAC1/yQAHwAFAAcAAAC2/yAAHwAGAAMAAAC2/yEAHwAGAAQAAAC2/yIAHwAGAAUAAAC2/yMAHwAGAAYAAAC2/yQAHwAGAAcAAAC3/yAAHwAHAAMAAAC3/yEAHwAHAAQAAAC3/yIAHwAHAAUAAAC3/yMAHwAHAAYAAAC3/yQAHwAHAAcAAAC4/yAAHwAIAAMAAAC4/yEAHwAIAAQAAAC4/yIAHwAIAAUAAAC4/yMAHwAIAAYAAAC4/yQAHwAIAAcAAAC5/yEAHwAJAAQAAAC5/yIAHwAJAAUAAAC5/yMAHwAJAAYAAAC5/yQAHwAJAAcAAAC6/yEAHwAKAAQAAAC6/yIAHwAKAAUAAAC6/yMAHwAKAAYAAAC6/yQAHwAKAAcAAAC7/yAAHwALAAMAAAC7/yEAHwAAAAQAABC7/yIAHwAAAAUAABC7/yMAHwAAAAYAABC7/yQAHwAAAAcAABDH/yIAIAABAAEAAADH/yMAIAABAAIAAADH/yQAIAABAAMAAADI/yIAIAACAAEAAADI/yQAIAACAAMAAADJ/yIAIAADAAEAAADJ/yQAIAADAAMAAADK/yIAIAAEAAEAAADK/yQAIAAEAAMAAADL/yIAIAAFAAEAAADL/yQAIAAFAAMAAADM/yIAIAAGAAEAAADM/yMAIAAGAAIAAADM/yQAIAAGAAMAAAC8/yMAGgAAAAIAAAC8/yQAGgAAAAMAAAC9/yMAGgABAAIAAAC9/yQAGgABAAMAAAC+/yMAGgACAAIAAAC+/yQAGgACAAMAAAC//yMAGgADAAIAAAC//yQAGgADAAMAAADI/yMAIAACAAIAAADJ/yMAIAADAAIAAADK/yMAIAAEAAIAAADL/yMAIAAFAAIAAACy/xwAGAAAAAAAAACy/x0AGAAAAAEAAACy/x4AGAAAAAIAAACy/x8AGAAAAAMAAACz/xwAGAABAAAAAACz/x0AGAABAAEAAACz/x4AGAABAAIAAACz/x8AGAABAAMAAAC0/xwAGAACAAAAAAC0/x0AGAACAAEAAAC0/x4AGAACAAIAAAC0/x8AGAACAAMAAAC1/xwAGAADAAAAAAC1/x0AGAADAAEAAAC1/x4AGAADAAIAAAC1/x8AGAADAAMAAAC+/x0AIQAAAAIAAAC//xsAIQABAAAAAAC//xwAIQABAAEAAAC//x0AIQABAAIAAADA/xsAIQACAAAAAADA/xwAIQACAAEAAADA/x0AIQACAAIAAADB/x0AIQADAAIAAADG/yMAIgAAAAAAAADG/yQAIgAAAAEAAADF/yMAJAAAAAAAAADF/yQAJAAAAAEAAADE/yMAJAAAAAAAAADE/yQAJAAAAAEAAADC/yQAJAAAAAAAAGDD/yQAJAAAAAEAAGDN/yQAJAAAAAAAAGDO/yQAJAAAAAEAAGDE/yIAJAAAAAAAAGDF/yIAJAAAAAEAAGDa/yMAKQAAAAEAAADa/yQAKQAAAAIAAADb/yQAJAAAAAAAAGDc/yQAJAAAAAEAAGDb/yIAIgAAAAAAAADb/yMAIgAAAAEAAADd/yUAHAACAAAAAEDj/yUAHAACAAMAAEDk/yUAHAACAAMAAEDd/yQAHAABAAAAAEDe/yUAHAACAAEAAEDe/yQAHAABAAEAAEDf/yUAHAACAAIAAEDf/yQAHAABAAIAAEDg/yUAHAACAAAAAEDg/yQAHAABAAAAAEDh/yUAHAACAAEAAEDh/yQAHAABAAEAAEDi/yUAHAACAAIAAEDi/yQAHAABAAIAAEDj/yQADAAAAAEAAADl/yEAHAABAAAAABDl/yIAHAABAAEAABDl/yMADAAAAAAAAADl/yQADAAAAAEAAADk/yEAHAACAAAAABDk/yIAHAACAAEAABDk/yMADAABAAAAAADk/yQADAABAAEAAADm/yMADAABAAAAAADm/yQADAABAAEAAADj/yMADAAAAAAAAADo/yQACgAAAAAAAQD4/yQACgAAAAAAAQDs/yQACAACAAAAAADr/yQACAADAAAAAADn/xsABgAAAAAAAADo/xsABgABAAAAAADp/xsABgACAAAAAADq/xsABgADAAAAAAD2/xsABgAAAAAAAAD3/xsABgABAAAAAAD4/xsABgACAAAAAAD5/xsABgADAAAAAACTASEAAQAAAAAAAACTASIAAQAAAAEAAACTASMAAQAAAAIAAACTASQAAQAAAAMAAACUASEAAQABAAAAAACUASIAAQABAAEAAACUASMAAQABAAIAAACUASQAAQABAAMAAACVASEAAQACAAAAAACVASIAAQACAAEAAACVASMAAQACAAIAAACVASQAAQACAAMAAACWASEAAQADAAAAAACWASIAAQADAAEAAACWASMAAQADAAIAAACWASQAAQADAAMAAAA7ASIAHAABAAIAAAA7ASMAHAABAAMAAAA7ASQAHAABAAIAAAA7ASUAHAABAAMAAAA8ASIAHAACAAIAAAA8ASMAHAACAAMAAAA8ASQAHAACAAIAAAA8ASUAHAACAAMAAAA7ASAAHAABAAIAAAA7ASEAHAABAAMAAAA8ASAAHAACAAIAAAA8ASEAHAACAAMAAAA7AR4AHAABAAAAAAA7AR8AHAABAAEAAAA8AR4AHAACAAAAAAA8AR8AHAACAAEAAABXACQACgAAAAAAAQDcACQACgAAAAAAAQD1ACQACgAAAAAAAQAzASQACgAAAAAAAQBRASQACgAAAAAAAQBDASQACgAAAAAAAQAjAScABwAAAAAAAAAkAScABwAAAAAAAAAkASgABwAAAAAAAAAjASgABwAAAAAAAAAjASkABwAAAAAAAAAkASkABwAAAAAAAAAlASgABwAAAAAAAAAdASMADAAAAAAAAAAdASQADAAAAAEAAAAeASMADAABAAAAAAAeASQADAABAAEAAAAbASMADAAAAAAAAAAbASQADAAAAAEAAAAcASMADAABAAAAAAAcASQADAABAAEAAAAZASMADAABAAAAAAAZASQADAABAAEAAAAaASMADAABAAAAAAAaASQADAABAAEAAAAYASMADAAAAAAAAAAYASQADAAAAAEAAADX/xgACQAAAAAAAFDW/xgACQAAAAEAAFDW/xkACQABAAEAAFDZ/xYACQABAAEAAFDY/xYACQAAAAEAAFDY/xcACQAAAAAAAFDa/xUACQAAAAAAAFDZ/xUACQAAAAEAAFDX/xYACQAAAAEAAFDX/xcACQAAAAEAAFDW/xcACQAAAAEAAFDY/xUACQAAAAEAAFDk/xUACQAAAAEAADDk/xYACQAAAAEAADDj/xUACQAAAAEAADDj/xYACQABAAEAADDi/xUACQABAAEAADDk/xcACQABAAEAADDl/xcACQAAAAEAADDl/xgACQAAAAAAADDm/xgACQAAAAEAADDm/xkACQAAAAAAADDn/xgACQAAAAEAADDm/xcACQAAAAEAADDl/xYACQAAAAEAADDj/yIAKQAEAAIAAAA=")
-tile_set = ExtResource("26_1wwgy")
+tile_set = ExtResource("27_iqpsj")
 
 [node name="box2" parent="." instance=ExtResource("69_x1h0d")]
 position = Vector2(2843, 56)
@@ -279,17 +278,16 @@ position = Vector2(-41, -23)
 
 [node name="1" type="RichTextLabel" parent="education"]
 visible = false
-offset_left = -208.0
-offset_top = 504.0
-offset_right = -30.0
-offset_bottom = 650.0
+offset_left = 929.0
+offset_top = -68.0
+offset_right = 1107.0
+offset_bottom = 78.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "что бы разбить бочки или другие препятствия используется дробовик или гранаты ."
 tab_size = 1
 
 [node name="Area2D" type="Area2D" parent="education/1"]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="education/1/Area2D"]
 position = Vector2(75, 68.5)
@@ -297,20 +295,21 @@ shape = SubResource("RectangleShape2D_2ywit")
 
 [node name="2" type="RichTextLabel" parent="education"]
 visible = false
-offset_left = -622.0
-offset_top = 517.0
-offset_right = -399.0
-offset_bottom = 671.0
+offset_left = 632.0
+offset_top = -77.0
+offset_right = 855.0
+offset_bottom = 77.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "на клавиатуре : 
-1 - лапки 
+2 переключение - лапки/
+дробовик 
 (использовать :  лкм)
-2 - дробовик (использовать : лкм )
 Q - гранаты "
 tab_size = 1
 
 [node name="2" type="Area2D" parent="education/2"]
+position = Vector2(-19, -2)
 
 [node name="2" type="CollisionShape2D" parent="education/2/2"]
 position = Vector2(112.5, 69)
@@ -350,10 +349,10 @@ texture = ExtResource("33_k1ecl")
 visible = false
 show_behind_parent = true
 top_level = true
-offset_left = 135.0
-offset_top = 499.0
-offset_right = 336.0
-offset_bottom = 639.0
+offset_left = 1324.0
+offset_top = -101.0
+offset_right = 1525.0
+offset_bottom = 39.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[wave amp = 30][fade start=0 length=150 ] вы можете взимодействовать с некоторым предметами над ними будет соотвестующий значок"
@@ -386,10 +385,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="5" type="RichTextLabel" parent="education"]
 visible = false
-offset_left = 1494.0
-offset_top = 519.0
-offset_right = 1668.0
-offset_bottom = 659.0
+offset_left = 2519.0
+offset_top = -66.0
+offset_right = 2693.0
+offset_bottom = 74.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[wave amp=30 ] предлагаю вздремнуть 
@@ -404,10 +403,10 @@ shape = SubResource("RectangleShape2D_2ywit")
 
 [node name="6" type="RichTextLabel" parent="education"]
 visible = false
-offset_left = 1757.0
-offset_top = 516.0
-offset_right = 1931.0
-offset_bottom = 656.0
+offset_left = 2920.0
+offset_top = -64.0
+offset_right = 3094.0
+offset_bottom = 76.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[wave amp=30 ] сон не только востонавливает хп 
@@ -422,10 +421,10 @@ position = Vector2(83.8125, 69)
 shape = SubResource("RectangleShape2D_2ywit")
 
 [node name="7" type="RichTextLabel" parent="education"]
-offset_left = 7220.0
-offset_top = -33.0
-offset_right = 7394.0
-offset_bottom = 107.0
+offset_left = 7213.0
+offset_top = -39.0
+offset_right = 7387.0
+offset_bottom = 101.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[wave amp=30 ]а дальше [/wave] [shake]нельзя потому что[/shake][rainbow] разраб 
@@ -435,10 +434,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="8" type="RichTextLabel" parent="education"]
 visible = false
-offset_left = 5059.0
-offset_top = 540.0
-offset_right = 5233.0
-offset_bottom = 680.0
+offset_left = 6134.0
+offset_top = -67.0
+offset_right = 6308.0
+offset_bottom = 73.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 text = "[wave amp=30 ][fade start=0 length=30] обучение всё , а вот и бар."
@@ -451,6 +450,7 @@ position = Vector2(83.8125, 69)
 shape = SubResource("RectangleShape2D_2ywit")
 
 [node name="9" type="RichTextLabel" parent="education"]
+visible = false
 offset_left = 2017.0
 offset_top = -40.0
 offset_right = 2222.0
@@ -678,16 +678,6 @@ texture = ExtResource("41_pxflf")
 position = Vector2(6408, -5)
 scale = Vector2(7.35325, 8.0274)
 
-[node name="Label" type="Label" parent="Area2D3"]
-visible = false
-offset_left = -13.7354
-offset_top = -5.73037
-offset_right = 199.265
-offset_bottom = 43.2696
-scale = Vector2(0.168655, 0.114627)
-text = "сори но демка кончилась.
-увидимся позже"
-
 [node name="Area2D" parent="." instance=ExtResource("42_k1ecl")]
 position = Vector2(1623, 68)
 
@@ -713,7 +703,7 @@ position = Vector2(1121, 55)
 position = Vector2(1132, 1)
 can_sleep = false
 
-[node name="Area2D2" parent="." instance=ExtResource("44_l8apu")]
+[node name="TV" parent="." instance=ExtResource("44_l8apu")]
 position = Vector2(291, 43)
 
 [connection signal="body_entered" from="education/1/Area2D" to="manager" method="_on_area_2d_body_entered"]
