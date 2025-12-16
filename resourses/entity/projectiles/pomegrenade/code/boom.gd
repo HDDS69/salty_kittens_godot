@@ -1,15 +1,19 @@
 extends RigidBody2D
 
 var costil = false
-
+@onready var radius = $radius
+@onready var boom = $Boom
+@onready var sound = $sound
+@onready var anim = $AnimatedSprite2D
+@onready var timer = $Timer
 # функция смерти
 func death():
-	$radius.monitoring = true
-	$Boom.visible = false
+	radius.monitoring = true
+	boom.visible = false
 	self.freeze = true
-	$sound.play()
-	$AnimatedSprite2D.play("default")
-	await $AnimatedSprite2D.animation_finished
+	sound.play()
+	anim.play("default")
+	await anim.animation_finished
 	queue_free()
 
 func damage(_dmg):
@@ -27,4 +31,4 @@ func _on_radius_body_entered(body):
 func _on_body_shape_entered(_body_rid: RID, _body: Node, _body_shape_index: int, _local_shape_index: int) -> void:
 	if costil == false :
 		costil = true
-		$Timer.start()
+		timer.start()

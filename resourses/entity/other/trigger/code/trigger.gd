@@ -2,12 +2,10 @@ extends Area2D
 var entered = false
 @onready var label = $Label
 @onready var sprite = $"Untitled06-12-202411-00-24"
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(_delta: float) -> void:
-	if entered:
-		if Input.is_action_just_pressed("ui_action_button"):
-			get_tree().change_scene_to_file("res://resourses/levels/level_2/code/level2.tscn")
+		
+func _input(event: InputEvent) -> void:
+	if entered and event.is_action_pressed("ui_action_button"):
+		get_tree().change_scene_to_file("res://resourses/levels/level_2/code/level2.tscn")
 		
 func _on_body_entered(body):
 	if body.name == "player":

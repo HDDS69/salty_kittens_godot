@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://rgqkd2ykxt6q" path="res://resourses/entity/objects/stone/texture/partical.png" id="4_20ini"]
 [ext_resource type="Texture2D" uid="uid://d22sxtqxknkb" path="res://resourses/shared_resources/texture/ui/ui_hit.png" id="4_muwl5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2rqk"]
-size = Vector2(41.5, 19)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_opvv7"]
+size = Vector2(40, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_opvv7"]
 atlas = ExtResource("4_20ini")
@@ -66,8 +66,8 @@ size = Vector2(107, 84)
 script = ExtResource("1_cw1v1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.25, -2.5)
-shape = SubResource("RectangleShape2D_q2rqk")
+position = Vector2(9, -1)
+shape = SubResource("RectangleShape2D_opvv7")
 
 [node name="ui" type="Sprite2D" parent="."]
 visible = false
@@ -92,7 +92,7 @@ shape = SubResource("RectangleShape2D_72qg3")
 [node name="ent" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ent"]
-position = Vector2(6.5, -32)
+position = Vector2(7, -32)
 shape = SubResource("RectangleShape2D_20ini")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

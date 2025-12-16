@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=71 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="PackedScene" uid="uid://d1dlmmptam0ue" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="2_cv5i6"]
@@ -177,6 +177,41 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rljtb"]
 size = Vector2(100, 100)
 
+[sub_resource type="Animation" id="Animation_nyu1g"]
+length = 0.001
+step = 1.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_k2xlx"]
+resource_name = "show"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(2, 2),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.10000001, -0.06566667, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0o8vn"]
+_data = {
+&"RESET": SubResource("Animation_nyu1g"),
+&"show": SubResource("Animation_k2xlx")
+}
+
 [sub_resource type="LabelSettings" id="LabelSettings_m5ng5"]
 font = ExtResource("33_cv5i6")
 stacked_outline_count = 1
@@ -295,9 +330,9 @@ bbcode_enabled = true
 
 [node name="TV" type="AnimatedSprite2D" parent="CollisionShape2D"]
 visible = false
-position = Vector2(-5, -24.75)
+position = Vector2(1.75, -23)
 sprite_frames = ExtResource("8_331ug")
-animation = &"transition"
+animation = &"sleep"
 autoplay = "hidel"
 
 [node name="effect" type="AnimatedSprite2D" parent="CollisionShape2D"]
@@ -555,9 +590,18 @@ theme_override_fonts/normal_font = ExtResource("91_d1y0c")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
 text = "
-"
+3242123123342222222222222222222222222222222222222222222222"
 scroll_active = false
+visible_characters = 0
 visible_characters_behavior = 3
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/MarginContainer/dialog/RichTextLabel"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_0o8vn")
+}
+speed_scale = 0.132
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/MarginContainer/dialog"]
 position = Vector2(1054, 564)

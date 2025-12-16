@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var setting = $setting
+#@onready var setting = $setting
 var yes = true
 var add = 0
 var platform = OS.get_name()

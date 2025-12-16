@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://edx064hnqy0p"]
+[gd_scene load_steps=55 format=4 uid="uid://edx064hnqy0p"]
 
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://resourses/entity/other/player/base/code/player.tscn" id="1_5u35f"]
 [ext_resource type="Script" uid="uid://dijwguluakihd" path="res://resourses/levels/level_1/code/manager.gd" id="1_h74ei"]
@@ -35,9 +35,8 @@
 [ext_resource type="PackedScene" uid="uid://dwe8uyi30jkan" path="res://resourses/entity/objects/barrel/code/barrel.tscn" id="43_g8ktd"]
 [ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="43_kdsqi"]
 [ext_resource type="Texture2D" uid="uid://dgw2d5eiyviby" path="res://resourses/levels/resourses_levels/background/texture/42.png" id="44_as1q7"]
+[ext_resource type="PackedScene" uid="uid://bmvro43qmydke" path="res://resourses/entity/npcs/TV/code/TV.tscn" id="44_l8apu"]
 [ext_resource type="Texture2D" uid="uid://bcul2ywrbt3sr" path="res://resourses/levels/resourses_levels/background/texture/43.png" id="45_7q4rl"]
-[ext_resource type="Script" uid="uid://cuig0g082ys3h" path="res://resourses/entity/other/dialog/code/dialog_area.gd" id="45_iqpsj"]
-[ext_resource type="Texture2D" uid="uid://bh1tbi1amhqm2" path="res://resourses/entity/npcs/TV/texture/TV_no_beer.png" id="46_3kjub"]
 [ext_resource type="Texture2D" uid="uid://c3eaytqasr3xn" path="res://resourses/levels/resourses_levels/background/texture/44.png" id="46_24akx"]
 [ext_resource type="PackedScene" uid="uid://cq5huuu6lo0hl" path="res://resourses/entity/other/trigger/code/trigger.tscn" id="46_x0838"]
 [ext_resource type="Texture2D" uid="uid://cxbpmy6ohiox4" path="res://resourses/levels/resourses_levels/background/texture/45.png" id="47_rn18y"]
@@ -145,9 +144,6 @@ region = Rect2(401, 17, 107, 111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ywit"]
 size = Vector2(183, 143.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kjub"]
-size = Vector2(70, 50)
 
 [node name="level" type="Node2D"]
 
@@ -692,7 +688,7 @@ text = "сори но демка кончилась.
 увидимся позже"
 
 [node name="Area2D" parent="." instance=ExtResource("42_k1ecl")]
-position = Vector2(1599, 47)
+position = Vector2(1623, 68)
 
 [node name="sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("38_samc1")
@@ -716,19 +712,8 @@ position = Vector2(1121, 55)
 position = Vector2(1132, 1)
 can_sleep = false
 
-[node name="dialog_area" type="Area2D" parent="."]
-position = Vector2(350, 31)
-script = ExtResource("45_iqpsj")
-dialog_key = "TV_level1"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="dialog_area"]
-position = Vector2(-17, -15)
-shape = SubResource("RectangleShape2D_3kjub")
-
-[node name="TvNoBeer" type="Sprite2D" parent="dialog_area"]
-position = Vector2(-17, -41)
-scale = Vector2(1.0625, 1.0625)
-texture = ExtResource("46_3kjub")
+[node name="Area2D2" parent="." instance=ExtResource("44_l8apu")]
+position = Vector2(291, 43)
 
 [connection signal="body_entered" from="education/1/Area2D" to="manager" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="education/1/Area2D" to="manager" method="_on_area_2d_body_exited"]
@@ -742,5 +727,3 @@ texture = ExtResource("46_3kjub")
 [connection signal="body_exited" from="education/6/а6" to="manager" method="_on_а_6_body_exited"]
 [connection signal="body_entered" from="education/8/а8" to="manager" method="_on_а_8_body_entered"]
 [connection signal="body_exited" from="education/8/а8" to="manager" method="_on_а_8_body_exited"]
-[connection signal="body_entered" from="dialog_area" to="dialog_area" method="_on_body_entered"]
-[connection signal="body_exited" from="dialog_area" to="dialog_area" method="_on_body_exited"]

@@ -3,13 +3,14 @@ extends Node2D
 @onready var bg = $DialogBackground3
 @onready var camera = $Sprite2D
 @onready var dialog_text = $RichTextLabel
+@onready var anim_text = $RichTextLabel/AnimationPlayer
 
 @export_file('*json') var scene_text_file : String
 
 var scene_text: Dictionary = {}
 var selected_text: Array = []
 var in_progress: bool = false
-
+var current_dialog_key : String
 func _ready() -> void:
 	scene_text = load_scene_text()
 	Signalbus.connect('display_dialog',Callable(self,'on_display_dialog'))
@@ -23,6 +24,8 @@ func load_scene_text():
 		
 func show_text():
 	dialog_text.text = selected_text.pop_front()
+	anim_text.play("show")
+	await anim_text.animation_finished
 
 func next_line():
 	if selected_text.size() > 0:
@@ -34,8 +37,10 @@ func finish():
 	dialog_text.text = ""
 	self.visible = false
 	in_progress = false
+	Signalbus.emit_signal('dialog_finish',current_dialog_key)
 	
 func on_display_dialog(dialog_key):
+	current_dialog_key = dialog_key
 	if in_progress:
 		next_line()
 	else:
