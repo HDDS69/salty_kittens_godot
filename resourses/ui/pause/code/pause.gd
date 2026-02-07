@@ -11,21 +11,13 @@ func _ready() -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		$"../../mobile controller".visible = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(_delta: float) -> void:
-	if setting:
-		pass
-	else :
-		if Input.is_action_just_pressed("ui_cancel"):
-			get_tree().paused = !get_tree().paused
-			self.visible = !self.visible
-	#if visible_controller == true:
-	#	$"../../mobile controller".show()
-	#else:
-	#	$"../../mobile controller".hide()
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") and setting != true:
+		get_tree().paused = !get_tree().paused
+		self.visible = !self.visible
 
 func _on_resume_pressed() -> void:
-	self.hide
+	self.hide()
 	get_tree().paused = false
 	self.visible = false
 	setting = false

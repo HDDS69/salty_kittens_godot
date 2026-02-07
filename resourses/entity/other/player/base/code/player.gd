@@ -4,9 +4,9 @@ var broke = false
 var SPEED = 200.0
 var JUMP_VELOCITY = -450.0
 var spawn_pos = Vector2(0,0)
-var health = 3000
-enum states {walk, attack, sleep}
-var state: states = states.walk  # Исправлено: было states.idle, но у вас нет idle в enum
+var health = 3
+enum states {walk, attack, sleep,death}
+var state: states = states.walk
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -15,8 +15,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var anim = $CollisionShape2D/AnimatedSprite2D
 @onready var anim1 = $CollisionShape2D/effect
 @onready var blaster_texture = $blaster
-@onready var hit1 = $hit
-@onready var hit2 = $hit2
+@onready var hit = $hit
 @onready var sound_jump = $music/jump
 @onready var sound_land = $music/land
 @onready var Rtext = $CollisionShape2D/recharge
@@ -27,7 +26,6 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var salt = 0
 var land = false
 var invulnerability = false
-var invulnerability_start = false
 var direction = 0.0
 var blaster = false
 var count = 3
@@ -37,13 +35,15 @@ func _process(delta: float) -> void:
 	if velocity.y > 0:
 		land = true
 	
-	if state == states.walk:  # Исправлено: было = вместо ==
+	if state == states.walk:
 		if Input.is_action_just_pressed("boom"):
 			boom()
 		
 		if Input.is_action_just_pressed("2"):
 			blaster = !blaster
 			blaster_texture.visible = blaster
+			
+		
 			
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			anim.play("jump")
@@ -59,7 +59,7 @@ func _process(delta: float) -> void:
 				land = false
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-			if land == true and velocity.y == 0:
+			if land and velocity.y == 0:
 				anim1.play("land")
 				anim.play("land")
 				sound_land.play()
@@ -71,69 +71,76 @@ func _process(delta: float) -> void:
 					await anim.animation_finished
 					transition = false
 				anim.play("hidel")
-		
+				
+			if velocity.y > 0:
+				anim.play("fall")
+		if Input.is_action_just_pressed('dash'):
+			velocity.x = direction * (SPEED * 150)
 		if Input.is_action_just_pressed("ui_hit_player0"):
 			if blaster and count > 0:
 				blaster_texture.shoot()
 			else:
 				if is_on_floor():
 					state = states.attack
+					hit.monitoring = true
 					anim.play("hit")
-					await anim.animation_finished 
+					await anim.animation_finished
+					hit.monitoring = false
 					state = states.walk
 		
-		if count == 0:
+		if count == 0 :
 			timer.start()
 			count = -1000
 			Rtext.text = "[wave = 30]перезарядка..."
 		
 		if direction == -1:
 			anim.flip_h = true
-			hit1.set_deferred("monitorable", false)
-			hit2.set_deferred("monitorable", true)
+			hit.position.x = -47
+			
 		elif direction == 1:
 			anim.flip_h = false
-			hit1.set_deferred("monitorable", true)
-			hit2.set_deferred("monitorable", false)
+			hit.position.x = 42
 	
 	elif state == states.sleep:
+		velocity = Vector2(0,0)
 		anim.play("sleep")
 		await anim.animation_finished
 	elif state == states.attack:
 		velocity = Vector2(0,0)
+	elif state == states.death:
+		velocity = Vector2(0,0)
+		anim.play("death")
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		if velocity.y > 0:
-			anim.play("fall")
+
 				
 	move_and_slide()
 
 func death():
-	anim.play("death")
+	state = states.death
 	await anim.animation_finished
-	health = 3
 	position = spawn_pos
+	health = 3
+	state = states.walk
 
 func damage(dmg):
-	health -= dmg
-	if health == 0:
-		death()
-
-func invulnerability_timer_start():
-	if invulnerability_start == true:
-		invulnerability_start = false
+	if not invulnerability:
+		health -= dmg
 		timer_i.start()
+		invulnerability = true
+	if health <= 0:
+		death()
 		
 func sleep(x, y):
-	spawn_pos = Vector2(x, y)
-	anim.flip_h = false
-	state = states.sleep
-
-
-	
-	
-
+	if state == states.walk:
+		spawn_pos = Vector2(x, y)
+		anim.flip_h = false
+		invulnerability = true
+		state = states.sleep
+	else:
+		state = states.walk
+		invulnerability = false
 
 func _on_timer_invulnerability_timeout():
 	invulnerability = false
@@ -157,3 +164,7 @@ func animTV() -> void:
 	anim.visible = false
 	anim = $CollisionShape2D/TV
 	anim.visible = true
+
+func _on_hit_body_entered(body: Node2D) -> void:
+	if body.name != 'TileMapLayer' and body.name != "salty platform":
+		body.damage(1)

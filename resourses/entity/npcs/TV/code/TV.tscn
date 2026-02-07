@@ -1,51 +1,12 @@
-[gd_scene load_steps=41 format=3 uid="uid://bmvro43qmydke"]
+[gd_scene load_steps=36 format=3 uid="uid://bmvro43qmydke"]
 
-[ext_resource type="Texture2D" uid="uid://crm0f0xpnkejn" path="res://resourses/entity/TV/texture/TV.png" id="1_wxi4x"]
-[ext_resource type="Script" uid="uid://bcao2mjn6s4kh" path="res://resourses/entity/TV/code/TV.gd" id="1_ye00f"]
+[ext_resource type="Script" uid="uid://bcao2mjn6s4kh" path="res://resourses/entity/npcs/TV/code/TV.gd" id="1_ye00f"]
 [ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://resourses/shared_resources/texture/ui/Untitled 06-12-2024 11-00-24.png" id="3_gmtlm"]
-[ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="4_v571j"]
-[ext_resource type="Texture2D" uid="uid://cfeok18ypvsgi" path="res://resourses/entity/TV/texture/puf.png" id="5_uboxy"]
-[ext_resource type="Texture2D" uid="uid://blod5nf63ivmn" path="res://resourses/entity/TV/texture/TV-Sheet.png" id="6_75nnp"]
+[ext_resource type="Texture2D" uid="uid://cfeok18ypvsgi" path="res://resourses/entity/npcs/TV/texture/puf.png" id="5_uboxy"]
+[ext_resource type="Texture2D" uid="uid://blod5nf63ivmn" path="res://resourses/entity/npcs/TV/texture/TV-Sheet.png" id="6_75nnp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdlkc"]
 size = Vector2(90, 69)
-
-[sub_resource type="Animation" id="Animation_nyu1g"]
-length = 0.001
-step = 1.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-
-[sub_resource type="Animation" id="Animation_k2xlx"]
-resource_name = "show"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.621, 1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0o8vn"]
-_data = {
-&"RESET": SubResource("Animation_nyu1g"),
-&"show": SubResource("Animation_k2xlx")
-}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75nnp"]
 atlas = ExtResource("5_uboxy")
@@ -268,14 +229,8 @@ animations = [{
 
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_ye00f")
+dialog_key = "TV_level1"
 metadata/_edit_horizontal_guides_ = [-340.0]
-
-[node name="Tv" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(34, -28)
-scale = Vector2(0.167969, 0.164915)
-texture = ExtResource("1_wxi4x")
-offset = Vector2(-13.9639, 9.48146)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(37, -24.5)
@@ -287,24 +242,6 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(41, -100)
 scale = Vector2(0.726562, 0.726562)
 texture = ExtResource("3_gmtlm")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -40.0
-offset_top = -117.0
-offset_right = 123.0
-offset_bottom = -51.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_fonts/normal_font = ExtResource("4_v571j")
-bbcode_enabled = true
-scroll_active = false
-visible_characters_behavior = 3
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../RichTextLabel")
-libraries = {
-&"": SubResource("AnimationLibrary_0o8vn")
-}
-speed_scale = 0.132
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(38, -62)

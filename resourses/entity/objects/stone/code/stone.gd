@@ -1,27 +1,29 @@
-extends Area2D
-var entered = false
-@export var stone : PackedScene
-var he = true
+extends RigidBody2D
 
-@onready var player = $"../player"
 @onready var ui = $ui
-@onready var anim = $CollisionShape2D/AnimatedSprite2D
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	if entered == true and player.hit == true and he == true:
-			var stone_1 = stone.instantiate()
-			stone_1.directionFALL = player.direction
-			add_child(stone_1)
-			he = false
-	if he == false:
-		anim.hide()
-		ui.hide()
-func _on_body_entered(body):
-	if body.name == "player":
-		entered = true
-		ui.show()
+@onready var anim = $AnimatedSprite2D
+@onready var kil_zone = $Area2D
+var x = 0
 
-func _on_body_exited(body):
+func damage(_dmg):
+	x = randfn(-500,500)
+	apply_impulse(Vector2(x,-600))
+	kil_zone.monitoring = true
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.name != 'TileMapLayer' and self != body and body.name != 'player':
+		body.damage(100)
+		anim.play('death')
+		await anim.animation_finished
+		queue_free()
+	kil_zone.monitoring = false
+
+
+func _on_ent_body_exited(body: Node2D) -> void:
 	if body.name == "player":
-		entered = false
 		ui.hide()
+
+
+func _on_ent_body_entered(body: Node2D) -> void:
+	if body.name == "player":
+		ui.show()

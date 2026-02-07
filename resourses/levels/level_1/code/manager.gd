@@ -13,8 +13,9 @@ var death = false
 @onready var ed8 = $"../education/8"
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready() -> void:
-	DiscordRPC.state = "уровень 1"
-	DiscordRPC.refresh()
+	if DiscordRPC.get_is_discord_working():
+		DiscordRPC.state = "уровень 1"
+		DiscordRPC.refresh()
 	
 func _physics_process(_delta: float) -> void:
 	if SavePoint.light == false :
@@ -76,6 +77,5 @@ func _on_a_6_body_entered(body: Node2D) -> void:
 func _on_a_8_body_exited(body: Node2D) -> void:
 	check(body,ed8,false)
 
-
-func _on_a_8_body_entered(body: Node2D) -> void:
+func _on_а_8_body_entered(body: Node2D) -> void:
 	check(body,ed8,true)

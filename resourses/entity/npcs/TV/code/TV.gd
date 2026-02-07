@@ -1,39 +1,33 @@
 extends Area2D
 
-var entered = false
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-@onready var anim_text = $AnimationPlayer
+@export var dialog_key = ''
+var area_active = false
 @onready var anim = $AnimatedSprite2D
-@onready var player = $"../player"
 @onready var ui = $ui
-@onready var Rtext = $RichTextLabel
+var dialog_img = preload("res://resourses/entity/npcs/TV/texture/TV.png")
+var player : Object
 
-func _physics_process(_delta: float) -> void:
-	if entered == true :
-		if Input.is_action_just_pressed("ui_action_button"):
-			Rtext.text = 'братишка , можешь донести меня до бара ? очень уж хочется [wave] пива				                           '
-			ui.hide()
-			anim_text.play("show")
-			await anim_text.animation_finished
-			Rtext.text = 'нажмите [wave]E[/wave] что бы взять телевизор'
-			while not Input.is_action_just_pressed("ui_action_button"):
-				await get_tree().process_frame  # Ждем следующий кадр
-				if player.broke :
-					break
-			player.animTV()
-			anim.play("puf")
-			Rtext.text = ""
-			await anim.animation_finished
-			queue_free()
+func _ready() -> void:
+	Signalbus.connect('dialog_finish',Callable(self,'on_dialog_finished'))
+	
+func _input(event: InputEvent) -> void:
+	if area_active and event.is_action_pressed("ui_action_button"):
+		Signalbus.emit_signal('display_dialog',dialog_key,dialog_img)
 
-func _on_body_entered(body):
-	if body.name == "player":
-		entered = true
+func on_dialog_finished(current_dialog_key):
+	if current_dialog_key == dialog_key:
+		player.animTV()
+		anim.play("puf")
+		await anim.animation_finished
+		queue_free()
+		
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == 'player':
+		player = body
+		area_active = true
 		ui.show()
 
-func _on_body_exited(body):
-	if body.name == "player":
-		entered = false
+func _on_body_exited(body: Node2D) -> void:
+	if body.name == 'player':
+		area_active = false
 		ui.hide()
-		Rtext.text = ' '
-		anim_text.stop()
