@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://edx064hnqy0p"]
+[gd_scene load_steps=77 format=4 uid="uid://edx064hnqy0p"]
 
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://resourses/entity/other/player/base/code/player.tscn" id="1_5u35f"]
 [ext_resource type="Script" uid="uid://dijwguluakihd" path="res://resourses/levels/level_1/code/manager.gd" id="1_h74ei"]
@@ -28,18 +28,24 @@
 [ext_resource type="Texture2D" uid="uid://cwgtd0fytya83" path="res://resourses/levels/level_1/texture/atlas.png" id="41_k1ecl"]
 [ext_resource type="Texture2D" uid="uid://c8fkck5qifxbm" path="res://resourses/levels/resourses_levels/background/texture/40.png" id="41_occcm"]
 [ext_resource type="Texture2D" uid="uid://cdi52hph0caun" path="res://resourses/levels/resourses_levels/tilemap/texture/light1.png" id="41_pxflf"]
-[ext_resource type="PackedScene" uid="uid://drkw1gq1eictd" path="res://resourses/entity/npcs/drone/code/drone.tscn" id="42_1wwgy"]
 [ext_resource type="PackedScene" uid="uid://3jyuid1mhowh" path="res://resourses/entity/objects/stone/code/stone.tscn" id="42_k1ecl"]
+[ext_resource type="Script" uid="uid://dmc3ylyeniuu5" path="res://resourses/entity/npcs/drone/code/drone.gd" id="42_s6oc5"]
 [ext_resource type="Texture2D" uid="uid://cyxxisjgi3s1m" path="res://resourses/levels/resourses_levels/background/texture/39.png" id="42_tnbdi"]
+[ext_resource type="PackedScene" uid="uid://bys2fq87tspfr" path="res://resourses/entity/projectiles/bullet_drone/code/bullet_DRONE.tscn" id="43_8yy6i"]
 [ext_resource type="Texture2D" uid="uid://dhpb0g4ajc7e6" path="res://resourses/levels/resourses_levels/background/texture/41.png" id="43_aqc7d"]
 [ext_resource type="PackedScene" uid="uid://dwe8uyi30jkan" path="res://resourses/entity/objects/barrel/code/barrel.tscn" id="43_g8ktd"]
 [ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="43_kdsqi"]
 [ext_resource type="Texture2D" uid="uid://dgw2d5eiyviby" path="res://resourses/levels/resourses_levels/background/texture/42.png" id="44_as1q7"]
+[ext_resource type="Texture2D" uid="uid://d0lgxfixkk1xj" path="res://resourses/entity/npcs/drone/texture/dronebreak.png" id="44_g2gwd"]
 [ext_resource type="PackedScene" uid="uid://bmvro43qmydke" path="res://resourses/entity/npcs/TV/code/TV.tscn" id="44_l8apu"]
 [ext_resource type="Texture2D" uid="uid://bcul2ywrbt3sr" path="res://resourses/levels/resourses_levels/background/texture/43.png" id="45_7q4rl"]
+[ext_resource type="Texture2D" uid="uid://bqojnv0r6ifw2" path="res://resourses/entity/npcs/drone/texture/drone.png" id="45_75k5c"]
 [ext_resource type="Texture2D" uid="uid://c3eaytqasr3xn" path="res://resourses/levels/resourses_levels/background/texture/44.png" id="46_24akx"]
+[ext_resource type="Texture2D" uid="uid://cvnyc5d1bfy3d" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 07-22-2024 10-16-07.png" id="46_t5t38"]
 [ext_resource type="PackedScene" uid="uid://cq5huuu6lo0hl" path="res://resourses/entity/other/trigger/code/trigger.tscn" id="46_x0838"]
+[ext_resource type="AudioStream" uid="uid://co1pqjg54w1u8" path="res://resourses/entity/npcs/drone/sound/dron_fly.mp3" id="47_fysgr"]
 [ext_resource type="Texture2D" uid="uid://cxbpmy6ohiox4" path="res://resourses/levels/resourses_levels/background/texture/45.png" id="47_rn18y"]
+[ext_resource type="AudioStream" uid="uid://cvgvgjkrsm400" path="res://resourses/entity/npcs/drone/sound/dron_piu.mp3" id="48_2ld3k"]
 [ext_resource type="Texture2D" uid="uid://cuuxmcyh0t0jf" path="res://resourses/levels/resourses_levels/background/texture/46.png" id="48_o318s"]
 [ext_resource type="Texture2D" uid="uid://du0v6udlbn6t1" path="res://resourses/levels/resourses_levels/background/texture/47.png" id="49_rgl0s"]
 [ext_resource type="Texture2D" uid="uid://dbu5ycfkbju3v" path="res://resourses/levels/level_1/code/level.tres" id="58_wekh7"]
@@ -144,6 +150,112 @@ region = Rect2(401, 17, 107, 111)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ywit"]
 size = Vector2(183, 143.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibx1y"]
+size = Vector2(99, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxt3n"]
+atlas = ExtResource("44_g2gwd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eosf2"]
+atlas = ExtResource("44_g2gwd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t50k"]
+atlas = ExtResource("44_g2gwd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lykcn"]
+atlas = ExtResource("44_g2gwd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehxup"]
+atlas = ExtResource("44_g2gwd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64v7a"]
+atlas = ExtResource("44_g2gwd")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0wg7"]
+atlas = ExtResource("45_75k5c")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixxkn"]
+atlas = ExtResource("45_75k5c")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4l3h"]
+atlas = ExtResource("45_75k5c")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3ho1"]
+atlas = ExtResource("45_75k5c")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts5pd"]
+atlas = ExtResource("45_75k5c")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0agm1"]
+atlas = ExtResource("45_75k5c")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dfv57"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxt3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eosf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t50k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lykcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehxup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64v7a")
+}],
+"loop": false,
+"name": &"death",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0wg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixxkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4l3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3ho1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ts5pd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0agm1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qe81u"]
+size = Vector2(37, 11.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_741hc"]
+size = Vector2(799.0005, 1458.0051)
 
 [node name="level" type="Node2D"]
 
@@ -687,14 +799,287 @@ volume_db = -20.0
 autoplay = true
 parameters/looping = true
 
-[node name="drone" parent="." instance=ExtResource("42_1wwgy")]
+[node name="drone" type="Node2D" parent="."]
 position = Vector2(2394, -113)
+metadata/_edit_horizontal_guides_ = [11.0]
+metadata/_edit_vertical_guides_ = [309.0, -65.0, 209.0, 57.0]
 
-[node name="drone2" parent="." instance=ExtResource("42_1wwgy")]
+[node name="RigidBody2D" type="RigidBody2D" parent="drone"]
+rotation = 8.201436e-05
+mass = 30.0
+gravity_scale = 0.0
+script = ExtResource("42_s6oc5")
+bullet = ExtResource("43_8yy6i")
+hp = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drone/RigidBody2D"]
+position = Vector2(0.99902344, 0.56710446)
+scale = Vector2(0.902534, 1.0445154)
+shape = SubResource("RectangleShape2D_ibx1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="drone/RigidBody2D"]
+position = Vector2(1.4990234, -5.9328957)
+scale = Vector2(3.7652633, 4.3575926)
+sprite_frames = SubResource("SpriteFrames_dfv57")
+autoplay = "default"
+
+[node name="muzzle" type="Area2D" parent="drone/RigidBody2D"]
+position = Vector2(1.4990234, 11.067104)
+scale = Vector2(0.902534, 1.0445154)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drone/RigidBody2D/muzzle"]
+position = Vector2(14.5, -2.25)
+shape = SubResource("RectangleShape2D_qe81u")
+
+[node name="Untitled07-22-202410-16-07" type="Sprite2D" parent="drone/RigidBody2D/muzzle"]
+position = Vector2(0, -21)
+scale = Vector2(4.15625, 4.15625)
+texture = ExtResource("46_t5t38")
+
+[node name="Marker2D" type="Marker2D" parent="drone/RigidBody2D/muzzle"]
+position = Vector2(27, -1)
+
+[node name="ProgressBar" type="ProgressBar" parent="drone/RigidBody2D"]
+offset_left = -16.753456
+offset_top = -36.932957
+offset_right = 22.797714
+offset_bottom = -9.932957
+scale = Vector2(0.79867905, 0.69726676)
+
+[node name="Label" type="Label" parent="drone/RigidBody2D/ProgressBar"]
+layout_mode = 0
+offset_left = 39.55117
+offset_top = 1.4980166
+offset_right = 64.61324
+offset_bottom = 24.498016
+text = "HP"
+
+[node name="recharge" type="Timer" parent="drone/RigidBody2D"]
+wait_time = 3.0
+one_shot = true
+
+[node name="time to shot" type="Timer" parent="drone/RigidBody2D"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Area2D2" type="Area2D" parent="drone/RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drone/RigidBody2D/Area2D2"]
+position = Vector2(0.50000095, 2.3371696)
+shape = SubResource("RectangleShape2D_741hc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="drone/RigidBody2D"]
+rotation = -8.201436e-05
+stream = ExtResource("47_fysgr")
+volume_db = -10.0
+autoplay = true
+max_distance = 350.0
+parameters/looping = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="drone/RigidBody2D/AudioStreamPlayer2D"]
+stream = ExtResource("48_2ld3k")
+volume_db = -7.0
+max_distance = 400.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="drone/RigidBody2D/AudioStreamPlayer2D/AudioStreamPlayer2D"]
+
+[node name="Timer_fly" type="Timer" parent="drone"]
+wait_time = 2.5
+autostart = true
+
+[node name="Timer_y" type="Timer" parent="drone/Timer_fly"]
+autostart = true
+
+[node name="Timer_z" type="Timer" parent="drone"]
+wait_time = 2.0
+
+[node name="drone2" type="Node2D" parent="."]
 position = Vector2(3409, -49)
+metadata/_edit_horizontal_guides_ = [11.0]
+metadata/_edit_vertical_guides_ = [309.0, -65.0, 209.0, 57.0]
 
-[node name="drone3" parent="." instance=ExtResource("42_1wwgy")]
+[node name="RigidBody2D" type="RigidBody2D" parent="drone2"]
+rotation = 8.201436e-05
+mass = 30.0
+gravity_scale = 0.0
+script = ExtResource("42_s6oc5")
+bullet = ExtResource("43_8yy6i")
+hp = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drone2/RigidBody2D"]
+position = Vector2(0.99902344, 0.56710446)
+scale = Vector2(0.902534, 1.0445154)
+shape = SubResource("RectangleShape2D_ibx1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="drone2/RigidBody2D"]
+position = Vector2(1.4990234, -5.9328957)
+scale = Vector2(3.7652633, 4.3575926)
+sprite_frames = SubResource("SpriteFrames_dfv57")
+autoplay = "default"
+
+[node name="muzzle" type="Area2D" parent="drone2/RigidBody2D"]
+position = Vector2(1.4990234, 11.067104)
+scale = Vector2(0.902534, 1.0445154)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drone2/RigidBody2D/muzzle"]
+position = Vector2(14.5, -2.25)
+shape = SubResource("RectangleShape2D_qe81u")
+
+[node name="Untitled07-22-202410-16-07" type="Sprite2D" parent="drone2/RigidBody2D/muzzle"]
+position = Vector2(0, -21)
+scale = Vector2(4.15625, 4.15625)
+texture = ExtResource("46_t5t38")
+
+[node name="Marker2D" type="Marker2D" parent="drone2/RigidBody2D/muzzle"]
+position = Vector2(27, -1)
+
+[node name="ProgressBar" type="ProgressBar" parent="drone2/RigidBody2D"]
+offset_left = -16.753456
+offset_top = -36.932957
+offset_right = 22.797714
+offset_bottom = -9.932957
+scale = Vector2(0.79867905, 0.69726676)
+
+[node name="Label" type="Label" parent="drone2/RigidBody2D/ProgressBar"]
+layout_mode = 0
+offset_left = 39.55117
+offset_top = 1.4980166
+offset_right = 64.61324
+offset_bottom = 24.498016
+text = "HP"
+
+[node name="recharge" type="Timer" parent="drone2/RigidBody2D"]
+wait_time = 3.0
+one_shot = true
+
+[node name="time to shot" type="Timer" parent="drone2/RigidBody2D"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Area2D2" type="Area2D" parent="drone2/RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drone2/RigidBody2D/Area2D2"]
+position = Vector2(0.50000095, 2.3371696)
+shape = SubResource("RectangleShape2D_741hc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="drone2/RigidBody2D"]
+rotation = -8.201436e-05
+stream = ExtResource("47_fysgr")
+volume_db = -10.0
+autoplay = true
+max_distance = 350.0
+parameters/looping = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="drone2/RigidBody2D/AudioStreamPlayer2D"]
+stream = ExtResource("48_2ld3k")
+volume_db = -7.0
+max_distance = 400.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="drone2/RigidBody2D/AudioStreamPlayer2D/AudioStreamPlayer2D"]
+
+[node name="Timer_fly" type="Timer" parent="drone2"]
+wait_time = 2.5
+autostart = true
+
+[node name="Timer_y" type="Timer" parent="drone2/Timer_fly"]
+autostart = true
+
+[node name="Timer_z" type="Timer" parent="drone2"]
+wait_time = 2.0
+
+[node name="drone3" type="Node2D" parent="."]
 position = Vector2(4952, -49)
+metadata/_edit_horizontal_guides_ = [11.0]
+metadata/_edit_vertical_guides_ = [309.0, -65.0, 209.0, 57.0]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="drone3"]
+rotation = 8.201436e-05
+mass = 30.0
+gravity_scale = 0.0
+script = ExtResource("42_s6oc5")
+bullet = ExtResource("43_8yy6i")
+hp = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drone3/RigidBody2D"]
+position = Vector2(0.99902344, 0.56710446)
+scale = Vector2(0.902534, 1.0445154)
+shape = SubResource("RectangleShape2D_ibx1y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="drone3/RigidBody2D"]
+position = Vector2(1.4990234, -5.9328957)
+scale = Vector2(3.7652633, 4.3575926)
+sprite_frames = SubResource("SpriteFrames_dfv57")
+autoplay = "default"
+
+[node name="muzzle" type="Area2D" parent="drone3/RigidBody2D"]
+position = Vector2(1.4990234, 11.067104)
+scale = Vector2(0.902534, 1.0445154)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drone3/RigidBody2D/muzzle"]
+position = Vector2(14.5, -2.25)
+shape = SubResource("RectangleShape2D_qe81u")
+
+[node name="Untitled07-22-202410-16-07" type="Sprite2D" parent="drone3/RigidBody2D/muzzle"]
+position = Vector2(0, -21)
+scale = Vector2(4.15625, 4.15625)
+texture = ExtResource("46_t5t38")
+
+[node name="Marker2D" type="Marker2D" parent="drone3/RigidBody2D/muzzle"]
+position = Vector2(27, -1)
+
+[node name="ProgressBar" type="ProgressBar" parent="drone3/RigidBody2D"]
+offset_left = -16.753456
+offset_top = -36.932957
+offset_right = 22.797714
+offset_bottom = -9.932957
+scale = Vector2(0.79867905, 0.69726676)
+
+[node name="Label" type="Label" parent="drone3/RigidBody2D/ProgressBar"]
+layout_mode = 0
+offset_left = 39.55117
+offset_top = 1.4980166
+offset_right = 64.61324
+offset_bottom = 24.498016
+text = "HP"
+
+[node name="recharge" type="Timer" parent="drone3/RigidBody2D"]
+wait_time = 3.0
+one_shot = true
+
+[node name="time to shot" type="Timer" parent="drone3/RigidBody2D"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Area2D2" type="Area2D" parent="drone3/RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drone3/RigidBody2D/Area2D2"]
+position = Vector2(0.50000095, 2.3371696)
+shape = SubResource("RectangleShape2D_741hc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="drone3/RigidBody2D"]
+rotation = -8.201436e-05
+stream = ExtResource("47_fysgr")
+volume_db = -10.0
+autoplay = true
+max_distance = 350.0
+parameters/looping = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="drone3/RigidBody2D/AudioStreamPlayer2D"]
+stream = ExtResource("48_2ld3k")
+volume_db = -7.0
+max_distance = 400.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="drone3/RigidBody2D/AudioStreamPlayer2D/AudioStreamPlayer2D"]
+
+[node name="Timer_fly" type="Timer" parent="drone3"]
+wait_time = 2.5
+autostart = true
+
+[node name="Timer_y" type="Timer" parent="drone3/Timer_fly"]
+autostart = true
+
+[node name="Timer_z" type="Timer" parent="drone3"]
+wait_time = 2.0
 
 [node name="RigidBody2D" parent="." instance=ExtResource("43_g8ktd")]
 position = Vector2(1121, 55)
@@ -718,3 +1103,24 @@ position = Vector2(291, 43)
 [connection signal="body_exited" from="education/6/а6" to="manager" method="_on_а_6_body_exited"]
 [connection signal="body_entered" from="education/8/а8" to="manager" method="_on_а_8_body_entered"]
 [connection signal="body_exited" from="education/8/а8" to="manager" method="_on_а_8_body_exited"]
+[connection signal="timeout" from="drone/RigidBody2D/recharge" to="drone/RigidBody2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="drone/RigidBody2D/time to shot" to="drone/RigidBody2D" method="_on_time_to_shot_timeout"]
+[connection signal="body_entered" from="drone/RigidBody2D/Area2D2" to="drone/RigidBody2D" method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="drone/RigidBody2D/Area2D2" to="drone/RigidBody2D" method="_on_area_2d_2_body_exited"]
+[connection signal="timeout" from="drone/Timer_fly" to="drone/RigidBody2D" method="_on_timer_fly_timeout"]
+[connection signal="timeout" from="drone/Timer_fly/Timer_y" to="drone/RigidBody2D" method="_on_timer_y_timeout"]
+[connection signal="timeout" from="drone/Timer_z" to="drone/RigidBody2D" method="_on_timer_z_timeout"]
+[connection signal="timeout" from="drone2/RigidBody2D/recharge" to="drone2/RigidBody2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="drone2/RigidBody2D/time to shot" to="drone2/RigidBody2D" method="_on_time_to_shot_timeout"]
+[connection signal="body_entered" from="drone2/RigidBody2D/Area2D2" to="drone2/RigidBody2D" method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="drone2/RigidBody2D/Area2D2" to="drone2/RigidBody2D" method="_on_area_2d_2_body_exited"]
+[connection signal="timeout" from="drone2/Timer_fly" to="drone2/RigidBody2D" method="_on_timer_fly_timeout"]
+[connection signal="timeout" from="drone2/Timer_fly/Timer_y" to="drone2/RigidBody2D" method="_on_timer_y_timeout"]
+[connection signal="timeout" from="drone2/Timer_z" to="drone2/RigidBody2D" method="_on_timer_z_timeout"]
+[connection signal="timeout" from="drone3/RigidBody2D/recharge" to="drone3/RigidBody2D" method="_on_timer_timeout"]
+[connection signal="timeout" from="drone3/RigidBody2D/time to shot" to="drone3/RigidBody2D" method="_on_time_to_shot_timeout"]
+[connection signal="body_entered" from="drone3/RigidBody2D/Area2D2" to="drone3/RigidBody2D" method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="drone3/RigidBody2D/Area2D2" to="drone3/RigidBody2D" method="_on_area_2d_2_body_exited"]
+[connection signal="timeout" from="drone3/Timer_fly" to="drone3/RigidBody2D" method="_on_timer_fly_timeout"]
+[connection signal="timeout" from="drone3/Timer_fly/Timer_y" to="drone3/RigidBody2D" method="_on_timer_y_timeout"]
+[connection signal="timeout" from="drone3/Timer_z" to="drone3/RigidBody2D" method="_on_timer_z_timeout"]

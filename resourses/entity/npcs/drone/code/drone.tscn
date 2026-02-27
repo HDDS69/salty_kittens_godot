@@ -124,6 +124,7 @@ mass = 30.0
 gravity_scale = 0.0
 script = ExtResource("1_741hc")
 bullet = ExtResource("2_qe81u")
+hp = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(0.99902344, 0.56710446)
@@ -158,7 +159,6 @@ offset_top = -36.932957
 offset_right = 22.797714
 offset_bottom = -9.932957
 scale = Vector2(0.79867905, 0.69726676)
-max_value = 3.0
 
 [node name="Label" type="Label" parent="RigidBody2D/ProgressBar"]
 layout_mode = 0

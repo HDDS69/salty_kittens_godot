@@ -1,6 +1,5 @@
 extends Area2D
 var entered = false
-@onready var label = $Label
 @onready var sprite = $"Untitled06-12-202411-00-24"
 		
 func _input(event: InputEvent) -> void:

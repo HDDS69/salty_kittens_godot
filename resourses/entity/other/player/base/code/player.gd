@@ -5,7 +5,7 @@ var SPEED = 200.0
 var JUMP_VELOCITY = -450.0
 var spawn_pos = Vector2(0,0)
 var health = 3
-enum states {walk, attack, sleep,death}
+enum states {walk, attack, sleep,death,speak}
 var state: states = states.walk
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -22,6 +22,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var timer = $Timer
 @onready var timer_i = $Timer_invulnerability
 @onready var marker = $blaster/Marker2D
+@onready var timer_dash = $timer_dash
 
 var salt = 0
 var land = false
@@ -42,8 +43,6 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("2"):
 			blaster = !blaster
 			blaster_texture.visible = blaster
-			
-		
 			
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			anim.play("jump")
@@ -74,8 +73,9 @@ func _process(delta: float) -> void:
 				
 			if velocity.y > 0:
 				anim.play("fall")
-		if Input.is_action_just_pressed('dash'):
+		if Input.is_action_just_pressed('dash') and timer_dash.is_stopped():
 			velocity.x = direction * (SPEED * 150)
+			timer_dash.start()
 		if Input.is_action_just_pressed("ui_hit_player0"):
 			if blaster and count > 0:
 				blaster_texture.shoot()
@@ -86,7 +86,8 @@ func _process(delta: float) -> void:
 					anim.play("hit")
 					await anim.animation_finished
 					hit.monitoring = false
-					state = states.walk
+					if state == states.attack:
+						state = states.walk
 		
 		if count == 0 :
 			timer.start()
@@ -105,6 +106,8 @@ func _process(delta: float) -> void:
 		velocity = Vector2(0,0)
 		anim.play("sleep")
 		await anim.animation_finished
+	elif state == states.speak:
+		velocity = Vector2(0,0)
 	elif state == states.attack:
 		velocity = Vector2(0,0)
 	elif state == states.death:

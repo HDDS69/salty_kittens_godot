@@ -4,6 +4,7 @@ extends Node2D
 @onready var dialog_image = $TextureRect
 @onready var dialog_text = $RichTextLabel
 @onready var anim_text = $RichTextLabel/AnimationPlayer
+@onready var player = $"../../.."
 
 @export_file('*json') var scene_text_file : String
 
@@ -35,14 +36,15 @@ func next_line():
 		
 func finish():
 	dialog_text.text = ""
-	dialog_image.texture = null
 	self.visible = false
 	in_progress = false
+	player.state = player.states.walk
 	Signalbus.emit_signal('dialog_finish',current_dialog_key)
 	
 func on_display_dialog(dialog_key,dialog_img):
 	current_dialog_key = dialog_key
 	dialog_image.texture = dialog_img
+	player.state = player.states.speak
 	if in_progress:
 		next_line()
 	else:

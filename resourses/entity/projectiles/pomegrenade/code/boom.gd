@@ -10,7 +10,7 @@ var costil = false
 func death():
 	radius.monitoring = true
 	boom.visible = false
-	self.freeze = true
+	freeze = true
 	sound.play()
 	anim.play("default")
 	await anim.animation_finished
