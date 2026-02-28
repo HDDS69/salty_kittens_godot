@@ -311,7 +311,7 @@ animation = &"sleep"
 autoplay = "hidel"
 
 [node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
-position = Vector2(-42.499996, -115.000015)
+position = Vector2(-47.25, -19)
 scale = Vector2(22.798, 0.913744)
 zoom = Vector2(1.5, 1.5)
 process_callback = 0
