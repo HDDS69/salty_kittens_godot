@@ -810,6 +810,10 @@ stream = ExtResource("68_qmmh8")
 position = Vector2(-40, -43)
 occluder = SubResource("OccluderPolygon2D_evup4")
 
+[node name="timer_dash" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
 [connection signal="timeout" from="Timer_invulnerability" to="." method="_on_timer_invulnerability_timeout"]
 [connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

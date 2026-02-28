@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @export var bullet : PackedScene
+@export var hp : int
 @onready var anim = $AnimatedSprite2D
 @onready var timer_shot =  $"time to shot"
 @onready var timer_recharge = $recharge
@@ -11,7 +12,6 @@ extends RigidBody2D
 @onready var sound_shoot = $AudioStreamPlayer2D/AudioStreamPlayer2D
 enum states {idle,attack,death,recharge}
 var state: states = states.idle
-var hp = 3
 var count = 3
 var x = 1
 var y = 1
@@ -19,6 +19,7 @@ var z = 50
 var player
 
 func _ready() -> void:
+	hp_bar.max_value = hp
 	hp_bar.value = hp
 
 func _process(_delta: float) -> void:
