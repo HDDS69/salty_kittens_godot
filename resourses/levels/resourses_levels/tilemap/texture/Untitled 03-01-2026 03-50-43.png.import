@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfeacboek7kyq"
-path="res://.godot/imported/sleep_finaly.png-6a81f32091a4b5a706cdea4cc36d5125.ctex"
+uid="uid://c3cdqyjobohlp"
+path="res://.godot/imported/Untitled 03-01-2026 03-50-43.png-99e9e1b7ed5810ae8454a83d57ad8872.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resourses/levels/resourses_levels/tilemap/texture/sleep_finaly.png"
-dest_files=["res://.godot/imported/sleep_finaly.png-6a81f32091a4b5a706cdea4cc36d5125.ctex"]
+source_file="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 03-01-2026 03-50-43.png"
+dest_files=["res://.godot/imported/Untitled 03-01-2026 03-50-43.png-99e9e1b7ed5810ae8454a83d57ad8872.ctex"]
 
 [params]
 

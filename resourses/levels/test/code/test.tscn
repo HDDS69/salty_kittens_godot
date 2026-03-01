@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://cqmodp4yf6npn"]
+[gd_scene load_steps=12 format=4 uid="uid://cqmodp4yf6npn"]
 
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://resourses/entity/other/player/base/code/player.tscn" id="1_w32lr"]
 [ext_resource type="Texture2D" uid="uid://dipa2s3u318l" path="res://resourses/levels/test/res/barwood.png" id="2_ryojb"]
 [ext_resource type="PackedScene" uid="uid://drkw1gq1eictd" path="res://resourses/entity/npcs/drone/code/drone.tscn" id="3_othqp"]
 [ext_resource type="PackedScene" uid="uid://cbsdguel865kq" path="res://resourses/entity/objects/box/code/box.tscn" id="4_ijpn2"]
 [ext_resource type="PackedScene" uid="uid://dwe8uyi30jkan" path="res://resourses/entity/objects/barrel/code/barrel.tscn" id="5_5pjq2"]
+[ext_resource type="Texture2D" uid="uid://cb3yh4vlb5b5f" path="res://resourses/levels/resourses_levels/tilemap/texture/Sprite-0001.png" id="6_xnpd7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w32lr"]
 
@@ -25,6 +26,15 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_w32lr")
 sources/0 = SubResource("TileSetAtlasSource_7v3hs")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnpd7"]
+texture = ExtResource("6_xnpd7")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gx8e4"]
+tile_size = Vector2i(8, 8)
+sources/1 = SubResource("TileSetAtlasSource_xnpd7")
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -42,3 +52,8 @@ position = Vector2(590, 396)
 
 [node name="RigidBody2D" parent="." instance=ExtResource("5_5pjq2")]
 position = Vector2(471, 235)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAZADQAAQAAAAAAAAAYADQAAQAAAAAAAAAXADQAAQAAAAAAAAAWADQAAQAAAAAAAAAVADQAAQAAAAAAAAAUADQAAQAAAAAAAAATADQAAQAAAAAAAAASADQAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_gx8e4")
+rendering_quadrant_size = 8

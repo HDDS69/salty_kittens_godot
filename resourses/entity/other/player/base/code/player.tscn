@@ -39,38 +39,38 @@
 [ext_resource type="Script" uid="uid://dktx14jgtok82" path="res://resourses/ui/FPS/label_fps.gd" id="95_d17l8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo2je"]
-size = Vector2(64.5, 50)
+size = Vector2(20.5, 14.5)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pew11"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv5i6"]
 atlas = ExtResource("5_k71g3")
-region = Rect2(0, 0, 96, 96)
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w2g7f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma22b"]
 atlas = ExtResource("5_k71g3")
-region = Rect2(96, 0, 96, 96)
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y56v5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xilyh"]
 atlas = ExtResource("5_k71g3")
-region = Rect2(192, 0, 96, 96)
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o4fn0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_87bu0"]
 atlas = ExtResource("5_k71g3")
-region = Rect2(288, 0, 96, 96)
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_28d1b"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pew11")
+"texture": SubResource("AtlasTexture_cv5i6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w2g7f")
+"texture": SubResource("AtlasTexture_ma22b")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y56v5")
+"texture": SubResource("AtlasTexture_xilyh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o4fn0")
+"texture": SubResource("AtlasTexture_87bu0")
 }],
 "loop": false,
 "name": &"land",
@@ -92,8 +92,8 @@ radius = 106.042
 size = Vector2(100, 100)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dpgy2"]
-radius = 11.0
-height = 22.0
+radius = 6.0
+height = 12.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn4h3"]
 size = Vector2(9, 5.5)
@@ -292,7 +292,7 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_uf1d1"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_evup4"]
-polygon = PackedVector2Array(23, 70, 62, 70, 62, 68, 23, 68)
+polygon = PackedVector2Array(29, 70, 51, 70, 51, 68, 29, 68)
 
 [node name="player" type="CharacterBody2D"]
 show_behind_parent = true
@@ -301,42 +301,43 @@ script = ExtResource("1_8m1ne")
 granade = ExtResource("2_cv5i6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.25, 2)
+position = Vector2(-0.25, 19.25)
 shape = SubResource("RectangleShape2D_lo2je")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(2.75, -23)
+position = Vector2(0.25, -8.25)
 sprite_frames = ExtResource("3_pgbbb")
-animation = &"sleep"
+animation = &"fall"
 autoplay = "hidel"
 
 [node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
-position = Vector2(-47.25, -19)
-scale = Vector2(22.798, 0.913744)
-zoom = Vector2(1.5, 1.5)
+physics_interpolation_mode = 1
+position = Vector2(1.25, -10.25)
+scale = Vector2(21.797998, 0.6337439)
+zoom = Vector2(6.5, 6.5)
 process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="recharge" type="RichTextLabel" parent="CollisionShape2D"]
-offset_left = -56.5
-offset_top = -71.5
-offset_right = 69.5
-offset_bottom = -36.5
+offset_left = -55.0
+offset_top = -88.75
+offset_right = 71.0
+offset_bottom = -53.75
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
 
 [node name="TV" type="AnimatedSprite2D" parent="CollisionShape2D"]
 visible = false
-position = Vector2(1.75, -23)
+position = Vector2(2.25, -8.25)
 sprite_frames = ExtResource("8_331ug")
-animation = &"sleep"
+animation = &"hidel"
 autoplay = "hidel"
 
 [node name="effect" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(-5, -3.75)
+position = Vector2(0.25, -1.25)
 sprite_frames = SubResource("SpriteFrames_28d1b")
 animation = &"xex"
 autoplay = "xex"
@@ -506,11 +507,11 @@ stretch_mode = 5
 wait_time = 1.5
 
 [node name="hit" type="Area2D" parent="."]
-position = Vector2(42, 15)
+position = Vector2(18, 19)
 monitoring = false
 
 [node name="hit" type="CollisionShape2D" parent="hit"]
-position = Vector2(3, 0)
+position = Vector2(-2, 2)
 shape = SubResource("CapsuleShape2D_dpgy2")
 
 [node name="blaster" type="Area2D" parent="."]
@@ -567,12 +568,12 @@ action = "ui_cancel"
 
 [node name="dialog" type="Node2D" parent="CanvasLayer/MarginContainer"]
 process_mode = 3
-visible = false
 position = Vector2(-955, -4.9999847)
 script = ExtResource("29_cv5i6")
 scene_text_file = "res://resourses/entity/other/dialog/code/dialogs.json"
 
 [node name="DialogBackground3" type="Sprite2D" parent="CanvasLayer/MarginContainer/dialog"]
+visible = false
 position = Vector2(577, 319)
 texture = ExtResource("36_m5ng5")
 

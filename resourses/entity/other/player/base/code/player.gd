@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 var broke = false
-var SPEED = 200.0
-var JUMP_VELOCITY = -450.0
+var SPEED = 100.0
+var JUMP_VELOCITY = -350.0
 var spawn_pos = Vector2(0,0)
 var health = 3
 enum states {walk, attack, sleep,death,speak}
