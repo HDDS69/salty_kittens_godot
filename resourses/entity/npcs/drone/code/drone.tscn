@@ -128,18 +128,18 @@ hp = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(0.99902344, 0.56710446)
-scale = Vector2(0.902534, 1.0445154)
+scale = Vector2(0.22276905, 0.25781375)
 shape = SubResource("RectangleShape2D_ibx1y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
 position = Vector2(1.4990234, -5.9328957)
-scale = Vector2(3.7652633, 4.3575926)
+scale = Vector2(0.9293653, 1.0755676)
 sprite_frames = SubResource("SpriteFrames_dfv57")
 autoplay = "default"
 
 [node name="muzzle" type="Area2D" parent="RigidBody2D"]
 position = Vector2(1.4990234, 11.067104)
-scale = Vector2(0.902534, 1.0445154)
+scale = Vector2(0.22276905, 0.25781375)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/muzzle"]
 position = Vector2(14.5, -2.25)
@@ -158,7 +158,7 @@ offset_left = -16.753456
 offset_top = -36.932957
 offset_right = 22.797714
 offset_bottom = -9.932957
-scale = Vector2(0.79867905, 0.69726676)
+scale = Vector2(0.19713499, 0.17210376)
 
 [node name="Label" type="Label" parent="RigidBody2D/ProgressBar"]
 layout_mode = 0
@@ -177,6 +177,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="Area2D2" type="Area2D" parent="RigidBody2D"]
+scale = Vector2(0.2468261, 0.2468261)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D2"]
 position = Vector2(0.50000095, 2.3371696)
@@ -184,6 +185,7 @@ shape = SubResource("RectangleShape2D_741hc")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RigidBody2D"]
 rotation = -8.201436e-05
+scale = Vector2(0.2468261, 0.2468261)
 stream = ExtResource("6_dsspx")
 volume_db = -10.0
 autoplay = true

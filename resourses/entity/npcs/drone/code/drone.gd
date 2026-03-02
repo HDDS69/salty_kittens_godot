@@ -40,7 +40,7 @@ func _process(_delta: float) -> void:
 		
 	elif state == states.attack:
 		var pos = player.position 
-		var direction =  to_local(player.global_position+Vector2(0,-230)).normalized()
+		var direction =  to_local(player.global_position+Vector2(0,-60)).normalized()
 		linear_velocity.x = 150 * direction.x 
 		linear_velocity.y = 150 * direction.y
 		muzzle.look_at(pos)
