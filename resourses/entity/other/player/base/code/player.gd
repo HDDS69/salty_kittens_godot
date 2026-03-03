@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var broke = false
 var SPEED = 100.0
-var JUMP_VELOCITY = -350.0
+var JUMP_VELOCITY = -300.0
 var spawn_pos = Vector2(0,0)
 var health = 3
 enum states {walk, attack, sleep,death,speak}
@@ -74,7 +74,7 @@ func _process(delta: float) -> void:
 			if velocity.y > 0:
 				anim.play("fall")
 		if Input.is_action_just_pressed('dash') and timer_dash.is_stopped():
-			velocity.x = direction * (SPEED * 150)
+			velocity.x = direction * (SPEED * 80)
 			timer_dash.start()
 		if Input.is_action_just_pressed("ui_hit_player0"):
 			if blaster and count > 0:
@@ -152,7 +152,7 @@ func boom():
 	var g = granade.instantiate()
 	get_tree().root.add_child(g)
 	g.transform = marker.global_transform
-	g.apply_impulse(marker.global_transform.x.normalized() * 600)
+	g.apply_impulse(marker.global_transform.x.normalized() * 200)
 
 func _on_timer_timeout():
 	count = 3

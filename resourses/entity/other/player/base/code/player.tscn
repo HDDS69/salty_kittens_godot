@@ -314,17 +314,17 @@ autoplay = "hidel"
 physics_interpolation_mode = 1
 position = Vector2(1.25, -10.25)
 scale = Vector2(21.797998, 0.6337439)
-zoom = Vector2(3, 3)
+zoom = Vector2(6.5, 6.5)
 process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="recharge" type="RichTextLabel" parent="CollisionShape2D"]
-offset_left = -55.0
-offset_top = -88.75
-offset_right = 71.0
-offset_bottom = -53.75
+offset_left = -11.75
+offset_top = -16.25
+offset_right = 13.449997
+offset_bottom = -9.25
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
@@ -515,8 +515,8 @@ position = Vector2(-2, 2)
 shape = SubResource("CapsuleShape2D_dpgy2")
 
 [node name="blaster" type="Area2D" parent="."]
-visible = false
-position = Vector2(1, 1)
+position = Vector2(1, 20)
+scale = Vector2(0.2602426, 0.2602426)
 script = ExtResource("69_fr3kn")
 bullet = ExtResource("30_ny14h")
 

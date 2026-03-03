@@ -25,7 +25,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	area.global_rotation = 0
 	if state == states.idle:
-		linear_velocity.x = 150 * x
+		linear_velocity.x = 90 * x
 		linear_velocity.y = 15 * y
 		
 		if linear_velocity.x > 0:
@@ -40,9 +40,9 @@ func _process(_delta: float) -> void:
 		
 	elif state == states.attack:
 		var pos = player.position 
-		var direction =  to_local(player.global_position+Vector2(0,-60)).normalized()
-		linear_velocity.x = 150 * direction.x 
-		linear_velocity.y = 150 * direction.y
+		var direction =  to_local(player.global_position+Vector2(0,-35)).normalized()
+		linear_velocity.x = 90 * direction.x 
+		linear_velocity.y = 90 * direction.y
 		muzzle.look_at(pos)
 		if count == 0:
 			state = states.recharge

@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cvgvgjkrsm400" path="res://resourses/entity/npcs/drone/sound/dron_piu.mp3" id="7_i11h8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibx1y"]
-size = Vector2(99, 29)
+size = Vector2(130.17783, 38.792465)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxt3n"]
 atlas = ExtResource("1_ibx1y")
@@ -112,7 +112,7 @@ animations = [{
 size = Vector2(37, 11.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_741hc"]
-size = Vector2(799.0005, 1458.0051)
+size = Vector2(838.6465, 1432.2131)
 
 [node name="drone" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [11.0]
@@ -127,18 +127,18 @@ bullet = ExtResource("2_qe81u")
 hp = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(0.99902344, 0.56710446)
+position = Vector2(5.4995484, -3.0010254)
 scale = Vector2(0.22276905, 0.25781375)
 shape = SubResource("RectangleShape2D_ibx1y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
-position = Vector2(1.4990234, -5.9328957)
-scale = Vector2(0.9293653, 1.0755676)
+position = Vector2(5.500223, -5.15524)
+scale = Vector2(1.130901, 1.0441675)
 sprite_frames = SubResource("SpriteFrames_dfv57")
 autoplay = "default"
 
 [node name="muzzle" type="Area2D" parent="RigidBody2D"]
-position = Vector2(1.4990234, 11.067104)
+position = Vector2(6, -0.0004918575)
 scale = Vector2(0.22276905, 0.25781375)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/muzzle"]
@@ -180,7 +180,7 @@ one_shot = true
 scale = Vector2(0.2468261, 0.2468261)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D2"]
-position = Vector2(0.50000095, 2.3371696)
+position = Vector2(20.256844, -4.0530963)
 shape = SubResource("RectangleShape2D_741hc")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RigidBody2D"]

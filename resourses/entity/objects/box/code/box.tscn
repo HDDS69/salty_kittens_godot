@@ -5,31 +5,33 @@
 [ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://resourses/shared_resources/texture/ui/Untitled 06-12-2024 11-00-24.png" id="3_k7t82"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vkov"]
-size = Vector2(42, 40)
+size = Vector2(13, 12)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uh52w"]
-polygon = PackedVector2Array(-23, -19, -13, -19, -13, -16, -10, -16, -10, -13, 1, -13, 1, -10, 6, -10, 6, -13, 9, -13, 9, -16, 12, -16, 11, -20, 19, -19, 19, 21, -22, 20)
+polygon = PackedVector2Array(18.68639, 18.686396, -21.8008, 18.686396, -21.8008, -18.686396, -12.4576025, -18.686396, -12.4576025, -15.571997, -9.343204, -15.571997, -9.343204, -12.457596, 3.1143932, -12.457596, 3.1143932, -9.343197, 6.228792, -9.343197, 6.228792, -12.457596, 9.343191, -12.457596, 9.343191, -15.571997, 12.457592, -15.571997, 12.457592, -18.686396, 18.68639, -18.686396)
 
 [node name="box" type="Area2D"]
 position = Vector2(23, -21)
 script = ExtResource("1_phbp0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, -3)
+position = Vector2(-16.5, 15)
 shape = SubResource("RectangleShape2D_2vkov")
 
 [node name="Box" type="Sprite2D" parent="."]
-position = Vector2(-2, -4)
-scale = Vector2(1.3125, 1.53125)
+position = Vector2(-16.5, 13.75)
+scale = Vector2(0.40624994, 0.453125)
 texture = ExtResource("2_yu04v")
 
 [node name="ui" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-2, -59)
-scale = Vector2(0.78125, 0.78125)
+position = Vector2(-16, -1.0000008)
+scale = Vector2(0.17968751, 0.17968746)
 texture = ExtResource("3_k7t82")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(-15.999998, 15)
+scale = Vector2(0.3210892, 0.3210892)
 occluder = SubResource("OccluderPolygon2D_uh52w")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
