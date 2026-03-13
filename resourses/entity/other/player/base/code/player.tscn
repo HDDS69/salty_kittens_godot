@@ -314,7 +314,7 @@ autoplay = "hidel"
 physics_interpolation_mode = 1
 position = Vector2(1.25, -10.25)
 scale = Vector2(21.797998, 0.6337439)
-zoom = Vector2(6.5, 6.5)
+zoom = Vector2(6, 6)
 process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
@@ -507,7 +507,7 @@ stretch_mode = 5
 wait_time = 1.5
 
 [node name="hit" type="Area2D" parent="."]
-position = Vector2(18, 19)
+position = Vector2(19, 19)
 monitoring = false
 
 [node name="hit" type="CollisionShape2D" parent="hit"]
@@ -515,6 +515,7 @@ position = Vector2(-2, 2)
 shape = SubResource("CapsuleShape2D_dpgy2")
 
 [node name="blaster" type="Area2D" parent="."]
+visible = false
 position = Vector2(1, 20)
 scale = Vector2(0.2602426, 0.2602426)
 script = ExtResource("69_fr3kn")
@@ -525,7 +526,7 @@ position = Vector2(63, -2)
 shape = SubResource("RectangleShape2D_bn4h3")
 
 [node name="Marker2D" type="Marker2D" parent="blaster"]
-position = Vector2(54, -2)
+position = Vector2(65.32366, -1.1920929e-06)
 
 [node name="blaster" type="AnimatedSprite2D" parent="blaster"]
 position = Vector2(16, 0.999999)
@@ -568,12 +569,12 @@ action = "ui_cancel"
 
 [node name="dialog" type="Node2D" parent="CanvasLayer/MarginContainer"]
 process_mode = 3
+visible = false
 position = Vector2(-955, -4.9999847)
 script = ExtResource("29_cv5i6")
 scene_text_file = "res://resourses/entity/other/dialog/code/dialogs.json"
 
 [node name="DialogBackground3" type="Sprite2D" parent="CanvasLayer/MarginContainer/dialog"]
-visible = false
 position = Vector2(577, 319)
 texture = ExtResource("36_m5ng5")
 
@@ -775,27 +776,27 @@ action_mode = 0
 text = "выйти"
 
 [node name="heal" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(54.999996, 43.000004)
-scale = Vector2(2.54687, 2.70944)
+position = Vector2(67, 52.000008)
+scale = Vector2(5.1171846, 5.4438214)
 sprite_frames = SubResource("SpriteFrames_6vv36")
 animation = &"hp"
 autoplay = "hp"
 script = SubResource("GDScript_sk34d")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 94.0
-offset_top = 39.0
-offset_right = 251.0
-offset_bottom = 73.0
+offset_left = 120.0
+offset_top = 40.0
+offset_right = 277.0
+offset_bottom = 74.0
 theme_override_font_sizes/font_size = 25
 text = "salt :"
 label_settings = SubResource("LabelSettings_v3gx4")
 
 [node name="fps" type="Label" parent="CanvasLayer"]
-offset_left = 94.0
-offset_top = 61.0
-offset_right = 176.0
-offset_bottom = 121.0
+offset_left = 120.0
+offset_top = 62.0
+offset_right = 202.0
+offset_bottom = 122.0
 label_settings = SubResource("LabelSettings_uf1d1")
 script = ExtResource("95_d17l8")
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb3yh4vlb5b5f"
-path="res://.godot/imported/Sprite-0001.png-866890710ec13078f80c6aaf76c3302b.ctex"
+uid="uid://dbn41chlv2bnt"
+path="res://.godot/imported/фонарь88.png-dc7a380943d45121f18abd0a8f8645f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resourses/levels/resourses_levels/tilemap/texture/Sprite-0001.png"
-dest_files=["res://.godot/imported/Sprite-0001.png-866890710ec13078f80c6aaf76c3302b.ctex"]
+source_file="res://resourses/levels/resourses_levels/tilemap/texture/фонарь88.png"
+dest_files=["res://.godot/imported/фонарь88.png-dc7a380943d45121f18abd0a8f8645f0.ctex"]
 
 [params]
 

@@ -145,6 +145,7 @@ dash={
 
 [physics]
 
+2d/default_gravity=664.9229999999998
 common/physics_interpolation=true
 
 [rendering]

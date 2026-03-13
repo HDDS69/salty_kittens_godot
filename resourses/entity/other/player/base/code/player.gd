@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var broke = false
 var SPEED = 100.0
-var JUMP_VELOCITY = -300.0
+var JUMP_VELOCITY = -250.0
 var spawn_pos = Vector2(0,0)
 var health = 3
 enum states {walk, attack, sleep,death,speak}
@@ -96,11 +96,11 @@ func _process(delta: float) -> void:
 		
 		if direction == -1:
 			anim.flip_h = true
-			hit.position.x = -47
+			hit.position.x = -15
 			
 		elif direction == 1:
 			anim.flip_h = false
-			hit.position.x = 42
+			hit.position.x = 19
 	
 	elif state == states.sleep:
 		velocity = Vector2(0,0)
@@ -162,8 +162,8 @@ func _on_light_pressed() -> void:
 	SavePoint.light = !SavePoint.light
 
 func animTV() -> void:
-	SPEED = 100
-	JUMP_VELOCITY = -250.0
+	SPEED = 55
+	JUMP_VELOCITY = -175.0
 	anim.visible = false
 	anim = $CollisionShape2D/TV
 	anim.visible = true
