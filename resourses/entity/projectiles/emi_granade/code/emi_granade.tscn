@@ -1,0 +1,123 @@
+[gd_scene load_steps=20 format=3 uid="uid://fox6ommykngf"]
+
+[ext_resource type="PackedScene" uid="uid://d1dlmmptam0ue" path="res://resourses/entity/projectiles/granade_base/code/granade_base.tscn" id="1_avve6"]
+[ext_resource type="Texture2D" uid="uid://bmy10rhkbtt88" path="res://resourses/entity/projectiles/emi_granade/texture/emi-bomb.png" id="2_l4f0h"]
+[ext_resource type="Script" uid="uid://mht06iqkf4kp" path="res://resourses/entity/projectiles/emi_granade/code/emi_granade.gd" id="2_y1imw"]
+[ext_resource type="Texture2D" uid="uid://bf3r2bkt2ije3" path="res://resourses/entity/projectiles/pomegrenade/texture/boo,.png" id="3_g2rup"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y1imw"]
+bounce = 0.25
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1imw"]
+atlas = ExtResource("3_g2rup")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwmbp"]
+atlas = ExtResource("3_g2rup")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivqae"]
+atlas = ExtResource("3_g2rup")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nybju"]
+atlas = ExtResource("3_g2rup")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egu3d"]
+atlas = ExtResource("3_g2rup")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_026g4"]
+atlas = ExtResource("3_g2rup")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng6b5"]
+atlas = ExtResource("3_g2rup")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tva2m"]
+atlas = ExtResource("3_g2rup")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyvul"]
+atlas = ExtResource("3_g2rup")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvx1m"]
+atlas = ExtResource("3_g2rup")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xppdt"]
+atlas = ExtResource("3_g2rup")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad3j8"]
+atlas = ExtResource("3_g2rup")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka0vn"]
+atlas = ExtResource("3_g2rup")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g2rup"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1imw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwmbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivqae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nybju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egu3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_026g4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng6b5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tva2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cyvul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvx1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xppdt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad3j8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka0vn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RigidBody2D" instance=ExtResource("1_avve6")]
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_y1imw")
+script = ExtResource("2_y1imw")
+
+[node name="bomb" parent="." index="1"]
+position = Vector2(-9.536743e-07, 0)
+texture = ExtResource("2_l4f0h")
+
+[node name="AnimatedSprite2D" parent="." index="5"]
+sprite_frames = SubResource("SpriteFrames_g2rup")

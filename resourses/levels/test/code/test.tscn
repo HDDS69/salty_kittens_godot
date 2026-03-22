@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=4 uid="uid://cqmodp4yf6npn"]
+[gd_scene load_steps=12 format=4 uid="uid://cqmodp4yf6npn"]
 
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://resourses/entity/other/player/base/code/player.tscn" id="1_w32lr"]
 [ext_resource type="Texture2D" uid="uid://dipa2s3u318l" path="res://resourses/levels/test/res/barwood.png" id="2_ryojb"]
 [ext_resource type="PackedScene" uid="uid://drkw1gq1eictd" path="res://resourses/entity/npcs/drone/code/drone.tscn" id="3_othqp"]
 [ext_resource type="PackedScene" uid="uid://cbsdguel865kq" path="res://resourses/entity/objects/box/code/box.tscn" id="4_ijpn2"]
 [ext_resource type="PackedScene" uid="uid://dwe8uyi30jkan" path="res://resourses/entity/objects/barrel/code/barrel.tscn" id="5_5pjq2"]
+[ext_resource type="PackedScene" uid="uid://fox6ommykngf" path="res://resourses/entity/projectiles/emi_granade/code/emi_granade.tscn" id="6_xnpd7"]
+[ext_resource type="PackedScene" uid="uid://dskma481tr537" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="7_d2oo0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_w32lr"]
 
@@ -35,7 +37,7 @@ tile_map_data = PackedByteArray("AAAPABoAAAABAAAAAAAUABoAAAABAAAAAAAVABoAAAABAAA
 tile_set = SubResource("TileSet_rlrdm")
 
 [node name="drone" parent="." instance=ExtResource("3_othqp")]
-position = Vector2(990, 252)
+position = Vector2(712, 407)
 
 [node name="player" parent="." instance=ExtResource("1_w32lr")]
 position = Vector2(304, 371)
@@ -50,3 +52,21 @@ position = Vector2(471, 235)
 tile_map_data = PackedByteArray("AAAZADQAAQAAAAAAAAAYADQAAQAAAAAAAAAXADQAAQAAAAAAAAAWADQAAQAAAAAAAAAVADQAAQAAAAAAAAAUADQAAQAAAAAAAAATADQAAQAAAAAAAAASADQAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_gx8e4")
 rendering_quadrant_size = 8
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("6_xnpd7")]
+position = Vector2(241, 405)
+
+[node name="RigidBody2D3" parent="." instance=ExtResource("6_xnpd7")]
+position = Vector2(350, 380)
+
+[node name="RigidBody2D4" parent="." instance=ExtResource("6_xnpd7")]
+position = Vector2(391, 392)
+
+[node name="RigidBody2D5" parent="." instance=ExtResource("7_d2oo0")]
+position = Vector2(341, 385)
+
+[node name="RigidBody2D6" parent="." instance=ExtResource("7_d2oo0")]
+position = Vector2(269, 359)
+
+[node name="RigidBody2D7" parent="." instance=ExtResource("7_d2oo0")]
+position = Vector2(419, 354)

@@ -10,7 +10,7 @@ extends RigidBody2D
 @onready var muzzle_marker = $muzzle/Marker2D
 @onready var area = $Area2D2
 @onready var sound_shoot = $AudioStreamPlayer2D/AudioStreamPlayer2D
-enum states {idle,attack,death,recharge}
+enum states {idle,attack,death,recharge,stun}
 var state: states = states.idle
 var count = 3
 var x = 1
@@ -37,7 +37,9 @@ func _process(_delta: float) -> void:
 
 	elif state == states.death:
 		death()
-		
+	elif state == states.stun:
+		linear_velocity = Vector2(0,0)
+		anim.self_modulate = "0000ff"
 	elif state == states.attack:
 		var pos = player.position 
 		var direction =  to_local(player.global_position+Vector2(0,-35)).normalized()
@@ -53,6 +55,7 @@ func _process(_delta: float) -> void:
 		anim.self_modulate = "#ff0000"
 		if timer_recharge.is_stopped():
 			timer_recharge.start()
+
 		
 
 func death():
@@ -103,3 +106,16 @@ func _on_timer_y_timeout() -> void:
 
 func _on_timer_z_timeout() -> void:
 	z = -z
+
+func stun():
+	state = states.stun
+	gravity_scale = 1.0
+	inertia = 1.0
+	$"../Timer_stun".start()
+	
+
+func _on_timer_stun_timeout() -> void:
+	state = states.idle
+	gravity_scale = 0.0
+	inertia = 0.0
+	anim.self_modulate = "#ffffff"

@@ -209,6 +209,9 @@ autostart = true
 [node name="Timer_z" type="Timer" parent="."]
 wait_time = 2.0
 
+[node name="Timer_stun" type="Timer" parent="."]
+wait_time = 5.0
+
 [connection signal="timeout" from="RigidBody2D/recharge" to="RigidBody2D" method="_on_timer_timeout"]
 [connection signal="timeout" from="RigidBody2D/time to shot" to="RigidBody2D" method="_on_time_to_shot_timeout"]
 [connection signal="body_entered" from="RigidBody2D/Area2D2" to="RigidBody2D" method="_on_area_2d_2_body_entered"]
@@ -216,3 +219,4 @@ wait_time = 2.0
 [connection signal="timeout" from="Timer_fly" to="RigidBody2D" method="_on_timer_fly_timeout"]
 [connection signal="timeout" from="Timer_fly/Timer_y" to="RigidBody2D" method="_on_timer_y_timeout"]
 [connection signal="timeout" from="Timer_z" to="RigidBody2D" method="_on_timer_z_timeout"]
+[connection signal="timeout" from="Timer_stun" to="RigidBody2D" method="_on_timer_stun_timeout"]

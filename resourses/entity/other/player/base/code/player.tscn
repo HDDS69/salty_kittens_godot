@@ -1,7 +1,7 @@
-[gd_scene load_steps=71 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=72 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
-[ext_resource type="PackedScene" uid="uid://d1dlmmptam0ue" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="2_cv5i6"]
+[ext_resource type="PackedScene" uid="uid://dskma481tr537" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="2_cv5i6"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
 [ext_resource type="Texture2D" uid="uid://cc3t5joeasu6k" path="res://resourses/entity/other/player/base/texture/cat/land_effect.png" id="5_k71g3"]
 [ext_resource type="SpriteFrames" uid="uid://bguq4n7gblp8e" path="res://resourses/entity/npcs/TV/code/tv.tres" id="8_331ug"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://xfwt41mclny3" path="res://resourses/ui/mobile_controller/texture/button_pause_pressed.png" id="33_55vbn"]
 [ext_resource type="FontFile" uid="uid://bkyohh76x8qg6" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.otf" id="33_cv5i6"]
 [ext_resource type="Texture2D" uid="uid://dgg84t16l6o8y" path="res://resourses/entity/other/player/base/texture/dialog/dialog_background3.png" id="36_m5ng5"]
+[ext_resource type="Texture2D" uid="uid://dwgc1lkub8ift" path="res://resourses/entity/other/player/base/texture/heart/Sprite-0001.png" id="36_ma22b"]
 [ext_resource type="AudioStream" uid="uid://b6gd3p2ehsg8b" path="res://resourses/entity/other/player/base/sound/jump.mp3" id="67_v58pc"]
 [ext_resource type="AudioStream" uid="uid://c3x81i1us0cwj" path="res://resourses/entity/other/player/base/sound/land.mp3" id="68_qmmh8"]
 [ext_resource type="Script" uid="uid://cr8jo7ea12fkm" path="res://resourses/entity/other/player/blaster/code/blaster.gd" id="69_fr3kn"]
@@ -307,7 +308,7 @@ shape = SubResource("RectangleShape2D_lo2je")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 position = Vector2(0.25, -8.25)
 sprite_frames = ExtResource("3_pgbbb")
-animation = &"fall"
+animation = &"run"
 autoplay = "hidel"
 
 [node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
@@ -775,28 +776,45 @@ theme_override_fonts/font = ExtResource("91_d1y0c")
 action_mode = 0
 text = "выйти"
 
+[node name="Sprite0001" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(187.38979, 71.37501)
+scale = Vector2(7.0474896, 7.5781255)
+texture = ExtResource("36_ma22b")
+
 [node name="heal" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(67, 52.000008)
+position = Vector2(77.00001, 60.000004)
 scale = Vector2(5.1171846, 5.4438214)
 sprite_frames = SubResource("SpriteFrames_6vv36")
 animation = &"hp"
 autoplay = "hp"
 script = SubResource("GDScript_sk34d")
 
+[node name="granade_1" type="Sprite2D" parent="CanvasLayer/heal"]
+position = Vector2(15.633595, 6.9803896)
+scale = Vector2(0.9396951, 0.9396951)
+
+[node name="granade_2" type="Sprite2D" parent="CanvasLayer/heal"]
+position = Vector2(25.990852, 6.796694)
+scale = Vector2(0.7687025, 0.7687025)
+
+[node name="granade_3" type="Sprite2D" parent="CanvasLayer/heal"]
+position = Vector2(37.716053, 7.164084)
+scale = Vector2(0.89084005, 0.89084005)
+
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 120.0
-offset_top = 40.0
-offset_right = 277.0
-offset_bottom = 74.0
+offset_left = 143.0
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 64.0
 theme_override_font_sizes/font_size = 25
 text = "salt :"
 label_settings = SubResource("LabelSettings_v3gx4")
 
 [node name="fps" type="Label" parent="CanvasLayer"]
-offset_left = 120.0
-offset_top = 62.0
-offset_right = 202.0
-offset_bottom = 122.0
+offset_left = 41.0
+offset_top = 135.0
+offset_right = 123.0
+offset_bottom = 195.0
 label_settings = SubResource("LabelSettings_uf1d1")
 script = ExtResource("95_d17l8")
 

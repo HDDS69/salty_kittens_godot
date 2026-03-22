@@ -12,6 +12,7 @@ var state: states = states.walk
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export var granade : PackedScene
+var granade_img = preload("res://resourses/entity/projectiles/pomegrenade/texture/boom8.png")
 @onready var anim = $CollisionShape2D/AnimatedSprite2D
 @onready var anim1 = $CollisionShape2D/effect
 @onready var blaster_texture = $blaster
@@ -23,6 +24,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var timer_i = $Timer_invulnerability
 @onready var marker = $blaster/Marker2D
 @onready var timer_dash = $timer_dash
+@onready var grd_slots = [$CanvasLayer/heal/granade_1,$CanvasLayer/heal/granade_2,$CanvasLayer/heal/granade_3]
 
 var salt = 0
 var land = false
@@ -31,12 +33,20 @@ var direction = 0.0
 var blaster = false
 var count = 3
 var transition = false
+var inventory = []
+
+func _ready() -> void:
+	update_inv()
+	#for i in range(3):
+		#inventory.append(granade)
 
 func _process(delta: float) -> void:
 	if velocity.y > 0:
 		land = true
 	
 	if state == states.walk:
+		if Input.is_action_just_pressed("drop"):
+			drop()
 		if Input.is_action_just_pressed("boom"):
 			boom()
 		
@@ -149,10 +159,36 @@ func _on_timer_invulnerability_timeout():
 	invulnerability = false
 	
 func boom():
-	var g = granade.instantiate()
-	get_tree().root.add_child(g)
-	g.transform = marker.global_transform
-	g.apply_impulse(marker.global_transform.x.normalized() * 200)
+	if inventory.size() > 0:
+		var g = inventory[0][0].instantiate()
+		inventory.pop_front()
+		get_tree().root.add_child(g)
+		g.transform = marker.global_transform
+		g.activation = true
+		g.apply_impulse(marker.global_transform.x.normalized() * 200)
+		update_inv()
+	
+func drop():
+	if inventory.size() > 0:
+		var g = inventory[0][0].instantiate()
+		inventory.pop_front()
+		get_tree().root.add_child(g)
+		g.transform = marker.global_transform
+		g.activation = false
+		g.apply_impulse(marker.global_transform.x.normalized() * 200)
+		update_inv()
+
+func take(_grd):
+	inventory.append(_grd)
+	update_inv()
+	
+func update_inv():
+	for i in range(3):
+		if i < inventory.size():
+			grd_slots[i].texture = inventory[i][1]
+		else:
+			grd_slots[i].texture = null
+	
 
 func _on_timer_timeout():
 	count = 3
