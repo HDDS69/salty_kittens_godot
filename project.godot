@@ -11,7 +11,10 @@ config_version=5
 [application]
 
 config/name="salty kittens"
-config/version="0.0.3"
+config/name_localized={
+"ru_RU": "КОТЯТА"
+}
+config/version="0.0.4"
 run/main_scene="uid://ck5sffpajd4t5"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
@@ -156,8 +159,6 @@ common/physics_interpolation=true
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 textures/webp_compression/lossless_compression_factor=50.0
 occlusion_culling/use_occlusion_culling=true

@@ -79,9 +79,6 @@ func _on_a_6_body_entered(body: Node2D) -> void:
 func _on_a_8_body_exited(body: Node2D) -> void:
 	check(body,ed8,false)
 
-func _on_а_8_body_entered(body: Node2D) -> void:
-	check(body,ed8,true)
-
 
 func _on_st_1_body_entered(body: Node2D) -> void:
 	if body.name == 'player':

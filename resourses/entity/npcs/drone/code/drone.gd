@@ -3,6 +3,7 @@ extends RigidBody2D
 @export var bullet : PackedScene
 @export var salt : PackedScene
 @export var hp : int
+var hp_max 
 @onready var anim = $AnimatedSprite2D
 @onready var timer_shot =  $"time to shot"
 @onready var timer_recharge = $recharge
@@ -24,6 +25,7 @@ var player
 var count_d = true
 
 func _ready() -> void:
+	hp_max = hp
 	hp_bar.max_value = hp
 	hp_bar.value = hp
 
@@ -85,6 +87,8 @@ func spawn():
 func damage(dmg):
 	hp -= dmg
 	hp_bar.value = hp
+	if hp <= hp_max /2:
+		$GPUParticles2D.emitting = true
 	if hp <= 0:
 		state = states.death
 

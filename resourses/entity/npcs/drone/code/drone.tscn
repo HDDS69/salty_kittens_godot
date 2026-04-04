@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://drkw1gq1eictd"]
+[gd_scene load_steps=30 format=3 uid="uid://drkw1gq1eictd"]
 
 [ext_resource type="Script" uid="uid://dmc3ylyeniuu5" path="res://resourses/entity/npcs/drone/code/drone.gd" id="1_741hc"]
 [ext_resource type="Texture2D" uid="uid://d0lgxfixkk1xj" path="res://resourses/entity/npcs/drone/texture/dronebreak.png" id="1_ibx1y"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://co1pqjg54w1u8" path="res://resourses/entity/npcs/drone/sound/dron_fly.mp3" id="6_dsspx"]
 [ext_resource type="AudioStream" uid="uid://cvgvgjkrsm400" path="res://resourses/entity/npcs/drone/sound/dron_piu.mp3" id="7_i11h8"]
 [ext_resource type="Texture2D" uid="uid://bk3uvutdbs2dy" path="res://resourses/levels/resourses_levels/tilemap/texture/pngkey.com-white-circle-png-transparent-1709387.png" id="9_6vgt1"]
+[ext_resource type="Texture2D" uid="uid://buywougyum70u" path="res://resourses/levels/level_1/texture/tuman.png" id="10_px706"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibx1y"]
 size = Vector2(130.17783, 38.792465)
@@ -116,6 +117,28 @@ size = Vector2(37, 11.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_741hc"]
 size = Vector2(838.6465, 1432.2131)
 
+[sub_resource type="Gradient" id="Gradient_px706"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_auepb"]
+gradient = SubResource("Gradient_px706")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_auepb"]
+lifetime_randomness = 0.11
+particle_flag_disable_z = true
+angle_min = -306.19998
+angle_max = 480.00003
+inherit_velocity_ratio = 1.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, -98, 0)
+linear_accel_min = -91.96
+linear_accel_max = -14.950002
+damping_max = 1.1500001
+scale_min = 0.5
+scale_max = 1.5
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_auepb")
+turbulence_noise_strength = 0.5
+
 [node name="drone" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [11.0]
 metadata/_edit_vertical_guides_ = [309.0, -65.0, 209.0, 57.0]
@@ -127,7 +150,7 @@ gravity_scale = 0.0
 script = ExtResource("1_741hc")
 bullet = ExtResource("2_qe81u")
 salt = ExtResource("3_i11h8")
-hp = 1
+hp = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(5.4995484, -3.0010254)
@@ -217,6 +240,12 @@ scale = Vector2(0.0250838, 0.022321137)
 color = Color(0, 0.6515054, 0.65150535, 1)
 shadow_enabled = true
 texture = ExtResource("9_6vgt1")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="RigidBody2D"]
+position = Vector2(-5.00041, -4.99959)
+emitting = false
+texture = ExtResource("10_px706")
+process_material = SubResource("ParticleProcessMaterial_auepb")
 
 [node name="Timer_fly" type="Timer" parent="."]
 wait_time = 2.5

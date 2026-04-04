@@ -4,7 +4,7 @@ extends Node2D
 var yes = true
 var add = 0
 var platform = OS.get_name()
-@onready var player = $player
+@onready var player = $player_bot
 @onready var click_sound = $sound/click
 func _ready() -> void:
 	if platform == "Android":
