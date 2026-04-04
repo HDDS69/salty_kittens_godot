@@ -14,7 +14,7 @@ func _physics_process(_delta: float) -> void:
 	else :
 		blaster.flip_v = false
 		recoil_x = -1000
-	#законментировать для мобильной версии
+	# TODO законментировать для мобильной версии
 	look_at(get_global_mouse_position())
 		
 func shoot():
