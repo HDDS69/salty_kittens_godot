@@ -246,6 +246,7 @@ turbulence_noise_speed = Vector3(50, 0, 0)
 metadata/_edit_horizontal_guides_ = [646.0]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 position = Vector2(-247, 350)
 color = Color(0.17254902, 0.20392157, 0.32156864, 1)
 
@@ -387,6 +388,9 @@ tile_set = ExtResource("27_iqpsj")
 
 [node name="box2" parent="." instance=ExtResource("69_x1h0d")]
 position = Vector2(516, 615)
+
+[node name="player" parent="." instance=ExtResource("1_5u35f")]
+position = Vector2(-247, 350)
 
 [node name="education" type="Node" parent="."]
 
@@ -841,9 +845,6 @@ process_material = SubResource("ParticleProcessMaterial_1g5bl")
 
 [node name="drone" parent="." instance=ExtResource("54_75k5c")]
 position = Vector2(611, 572)
-
-[node name="player" parent="." instance=ExtResource("1_5u35f")]
-position = Vector2(-245, 347)
 
 [connection signal="body_entered" from="TileMapLayer/stairs1/st1" to="manager" method="_on_st_1_body_entered"]
 [connection signal="body_entered" from="TileMapLayer/stairs1/st2" to="manager" method="_on_st_2_body_entered"]

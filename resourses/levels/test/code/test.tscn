@@ -37,7 +37,7 @@ tile_map_data = PackedByteArray("AAAPABoAAAABAAAAAAAUABoAAAABAAAAAAAVABoAAAABAAA
 tile_set = SubResource("TileSet_rlrdm")
 
 [node name="drone" parent="." instance=ExtResource("3_othqp")]
-position = Vector2(712, 407)
+position = Vector2(635, 379)
 
 [node name="player" parent="." instance=ExtResource("1_w32lr")]
 position = Vector2(304, 371)

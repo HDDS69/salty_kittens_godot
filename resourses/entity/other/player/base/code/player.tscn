@@ -1,8 +1,9 @@
-[gd_scene load_steps=72 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=73 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="PackedScene" uid="uid://dskma481tr537" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="2_cv5i6"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
+[ext_resource type="Texture2D" uid="uid://2418k0u7vg71" path="res://resourses/levels/level_1/texture/light2.png" id="5_87bu0"]
 [ext_resource type="Texture2D" uid="uid://cc3t5joeasu6k" path="res://resourses/entity/other/player/base/texture/cat/land_effect.png" id="5_k71g3"]
 [ext_resource type="SpriteFrames" uid="uid://bguq4n7gblp8e" path="res://resourses/entity/npcs/TV/code/tv.tres" id="8_331ug"]
 [ext_resource type="Texture2D" uid="uid://cykqp8ka6tq30" path="res://resourses/ui/mobile_controller/texture/button_action.png" id="11_o4fn0"]
@@ -20,6 +21,7 @@
 [ext_resource type="FontFile" uid="uid://bkyohh76x8qg6" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.otf" id="33_cv5i6"]
 [ext_resource type="Texture2D" uid="uid://dgg84t16l6o8y" path="res://resourses/entity/other/player/base/texture/dialog/dialog_background3.png" id="36_m5ng5"]
 [ext_resource type="Texture2D" uid="uid://dwgc1lkub8ift" path="res://resourses/entity/other/player/base/texture/heart/Sprite-0001.png" id="36_ma22b"]
+[ext_resource type="Texture2D" uid="uid://sieh5wcd26g7" path="res://resourses/entity/projectiles/pomegrenade/texture/boom8.png" id="36_xilyh"]
 [ext_resource type="AudioStream" uid="uid://b6gd3p2ehsg8b" path="res://resourses/entity/other/player/base/sound/jump.mp3" id="67_v58pc"]
 [ext_resource type="AudioStream" uid="uid://c3x81i1us0cwj" path="res://resourses/entity/other/player/base/sound/land.mp3" id="68_qmmh8"]
 [ext_resource type="Script" uid="uid://cr8jo7ea12fkm" path="res://resourses/entity/other/player/blaster/code/blaster.gd" id="69_fr3kn"]
@@ -90,6 +92,9 @@ animations = [{
 radius = 106.042
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cebvf"]
+size = Vector2(100, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rljtb"]
 size = Vector2(100, 100)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dpgy2"]
@@ -174,9 +179,6 @@ animations = [{
 "name": &"recharge",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rljtb"]
-size = Vector2(100, 100)
 
 [sub_resource type="Animation" id="Animation_nyu1g"]
 length = 0.001
@@ -292,9 +294,6 @@ font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_uf1d1"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_evup4"]
-polygon = PackedVector2Array(29, 70, 51, 70, 51, 68, 29, 68)
-
 [node name="player" type="CharacterBody2D"]
 show_behind_parent = true
 top_level = true
@@ -322,13 +321,17 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="recharge" type="RichTextLabel" parent="CollisionShape2D"]
-offset_left = -11.75
-offset_top = -16.25
-offset_right = 13.449997
-offset_bottom = -9.25
+clip_contents = false
+offset_left = -17.75
+offset_top = -17.25
+offset_right = 102.25
+offset_bottom = 5.75
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
+fit_content = true
+scroll_active = false
 
 [node name="TV" type="AnimatedSprite2D" parent="CollisionShape2D"]
 visible = false
@@ -336,6 +339,13 @@ position = Vector2(2.25, -8.25)
 sprite_frames = ExtResource("8_331ug")
 animation = &"hidel"
 autoplay = "hidel"
+
+[node name="PointLight2D" type="PointLight2D" parent="CollisionShape2D/TV"]
+position = Vector2(18, 7.000001)
+rotation = -1.5727987
+scale = Vector2(0.04491817, 0.089786686)
+color = Color(1, 1, 0.22745098, 1)
+texture = ExtResource("5_87bu0")
 
 [node name="effect" type="AnimatedSprite2D" parent="CollisionShape2D"]
 position = Vector2(0.25, -1.25)
@@ -504,6 +514,16 @@ pivot_offset = Vector2(50, 50)
 texture = ExtResource("84_djclt")
 stretch_mode = 5
 
+[node name="pause" type="TouchScreenButton" parent="mobile controller"]
+process_mode = 3
+position = Vector2(1141.9999, 120.146805)
+rotation = -3.14159
+scale = Vector2(1.2038337, 1.1523882)
+texture_normal = ExtResource("32_galrp")
+texture_pressed = ExtResource("33_55vbn")
+shape = SubResource("RectangleShape2D_rljtb")
+action = "ui_cancel"
+
 [node name="Timer_invulnerability" type="Timer" parent="."]
 wait_time = 1.5
 
@@ -557,16 +577,6 @@ offset_right = -7.0
 offset_bottom = 31.0
 grow_horizontal = 0
 grow_vertical = 2
-
-[node name="pause" type="TouchScreenButton" parent="CanvasLayer/MarginContainer"]
-process_mode = 3
-position = Vector2(186.99988, 115.146805)
-rotation = -3.14159
-scale = Vector2(1.2038337, 1.1523882)
-texture_normal = ExtResource("32_galrp")
-texture_pressed = ExtResource("33_55vbn")
-shape = SubResource("RectangleShape2D_rljtb")
-action = "ui_cancel"
 
 [node name="dialog" type="Node2D" parent="CanvasLayer/MarginContainer"]
 process_mode = 3
@@ -639,10 +649,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -153.0
-offset_top = -184.0
-offset_right = 153.0
-offset_bottom = 184.0
+offset_left = -306.0
+offset_top = -143.0
+offset_right = 236.0
+offset_bottom = 270.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -653,12 +663,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.0
-offset_top = -148.0
-offset_right = 115.0
-offset_bottom = 148.0
+offset_left = -215.0
+offset_top = -167.5
+offset_right = 15.0
+offset_bottom = 128.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.9109027, 1.8645746)
 
 [node name="resume" type="Button" parent="CanvasLayer/pause/Panel/VBoxContainer"]
 layout_mode = 2
@@ -709,7 +720,7 @@ offset_bottom = 579.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/setting/Panel"]
 layout_mode = 0
-offset_left = 87.0
+offset_left = 80.0
 offset_top = 40.0
 offset_right = 781.0
 offset_bottom = 444.0
@@ -782,7 +793,7 @@ scale = Vector2(7.0474896, 7.5781255)
 texture = ExtResource("36_ma22b")
 
 [node name="heal" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(77.00001, 60.000004)
+position = Vector2(76.00001, 61.000004)
 scale = Vector2(5.1171846, 5.4438214)
 sprite_frames = SubResource("SpriteFrames_6vv36")
 animation = &"hp"
@@ -794,8 +805,9 @@ position = Vector2(15.633595, 6.9803896)
 scale = Vector2(0.9396951, 0.9396951)
 
 [node name="granade_2" type="Sprite2D" parent="CanvasLayer/heal"]
-position = Vector2(25.990852, 6.796694)
-scale = Vector2(0.7687025, 0.7687025)
+position = Vector2(26.967955, 6.7966967)
+scale = Vector2(0.9706114, 0.9706114)
+texture = ExtResource("36_xilyh")
 
 [node name="granade_3" type="Sprite2D" parent="CanvasLayer/heal"]
 position = Vector2(37.716053, 7.164084)
@@ -826,18 +838,17 @@ stream = ExtResource("67_v58pc")
 [node name="land" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource("68_qmmh8")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(-40, -43)
-occluder = SubResource("OccluderPolygon2D_evup4")
-
 [node name="timer_dash" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
 
+[node name="timer_grd" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="pressed" from="mobile controller/pause" to="." method="_on_pause_pressed"]
 [connection signal="timeout" from="Timer_invulnerability" to="." method="_on_timer_invulnerability_timeout"]
 [connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/Panel/VBoxContainer/resume" to="CanvasLayer/pause" method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/Panel/VBoxContainer/settings" to="CanvasLayer/pause" method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/Panel/VBoxContainer/quit" to="CanvasLayer/pause" method="_on_quit_pressed"]
@@ -846,3 +857,4 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/light" to="." method="_on_light_pressed"]
 [connection signal="value_changed" from="CanvasLayer/setting/Panel/VBoxContainer/HScrollBar" to="CanvasLayer/pause" method="_on_h_scroll_bar_value_changed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/quit_setting" to="CanvasLayer/pause" method="_on_quit_setting_pressed"]
+[connection signal="timeout" from="timer_grd" to="." method="_on_timer_grd_timeout"]

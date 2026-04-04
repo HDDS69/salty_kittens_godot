@@ -11,6 +11,8 @@ var death = false
 @onready var ed5 = $"../education/5"
 @onready var ed6 = $"../education/6"
 @onready var ed8 = $"../education/8"
+@onready var stairs1 = $"../TileMapLayer/stairs1"
+@onready var stairs2 = $"../TileMapLayer/stairs2"
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready() -> void:
 	if DiscordRPC.get_is_discord_working():
@@ -79,3 +81,26 @@ func _on_a_8_body_exited(body: Node2D) -> void:
 
 func _on_а_8_body_entered(body: Node2D) -> void:
 	check(body,ed8,true)
+
+
+func _on_st_1_body_entered(body: Node2D) -> void:
+	if body.name == 'player':
+		stairs1.collision_enabled = !stairs1.collision_enabled
+		if stairs1.collision_enabled == false:
+			stairs1.modulate = 'ffffff5b'
+		else:
+			stairs1.modulate = 'ffffff'
+
+
+func _on_st_2_body_entered(body: Node2D) -> void:
+	if body.name == 'player':
+		stairs2.collision_enabled = !stairs2.collision_enabled
+		stairs1.collision_enabled = !stairs1.collision_enabled
+		if stairs1.collision_enabled == false:
+			stairs1.modulate = 'ffffff5b'
+		elif stairs1.collision_enabled == true:
+			stairs1.modulate = 'ffffff'
+		if stairs2.collision_enabled == false:
+			stairs2.modulate = 'ffffff5b'
+		else:
+			stairs2.modulate = 'ffffff'

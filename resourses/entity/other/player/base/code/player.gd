@@ -25,7 +25,7 @@ var granade_img = preload("res://resourses/entity/projectiles/pomegrenade/textur
 @onready var marker = $blaster/Marker2D
 @onready var timer_dash = $timer_dash
 @onready var grd_slots = [$CanvasLayer/heal/granade_1,$CanvasLayer/heal/granade_2,$CanvasLayer/heal/granade_3]
-
+@onready var timer_grd = $timer_grd
 var salt = 0
 var land = false
 var invulnerability = false
@@ -123,11 +123,12 @@ func _process(delta: float) -> void:
 	elif state == states.death:
 		velocity = Vector2(0,0)
 		anim.play("death")
-	
+
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
-				
+	else :
+		var normal = get_floor_normal()
+		anim.rotation = normal.angle() + (PI /2)
 	move_and_slide()
 
 func death():
@@ -167,7 +168,10 @@ func boom():
 		g.activation = true
 		g.apply_impulse(marker.global_transform.x.normalized() * 200)
 		update_inv()
-	
+	else:
+		if timer.is_stopped():
+			timer_grd.start()
+			Rtext.text = "[wave = 15]  нет гранат"
 func drop():
 	if inventory.size() > 0:
 		var g = inventory[0][0].instantiate()
@@ -177,6 +181,10 @@ func drop():
 		g.activation = false
 		g.apply_impulse(marker.global_transform.x.normalized() * 200)
 		update_inv()
+	else:
+		if timer.is_stopped():
+			timer_grd.start()
+			Rtext.text = "[wave = 15]  нет гранат"
 
 func take(_grd):
 	inventory.append(_grd)
@@ -205,5 +213,9 @@ func animTV() -> void:
 	anim.visible = true
 
 func _on_hit_body_entered(body: Node2D) -> void:
-	if body.name != 'TileMapLayer' and body.name != "salty platform":
+	if body.has_method('damage'):
 		body.damage(1)
+
+
+func _on_timer_grd_timeout() -> void:
+	Rtext.text = ""
