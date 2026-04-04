@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 var broke = false
-var SPEED = 200.0
-var JUMP_VELOCITY = -450.0
+var SPEED = 100.0
+var JUMP_VELOCITY = -250.0
 var spawn_pos = Vector2(0,0)
 var health = 3
 enum states {walk, attack, sleep,death,speak}
@@ -12,6 +12,7 @@ var state: states = states.walk
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @export var granade : PackedScene
+var granade_img = preload("res://resourses/entity/projectiles/pomegrenade/texture/boom8.png")
 @onready var anim = $CollisionShape2D/AnimatedSprite2D
 @onready var anim1 = $CollisionShape2D/effect
 @onready var blaster_texture = $blaster
@@ -23,7 +24,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var timer_i = $Timer_invulnerability
 @onready var marker = $blaster/Marker2D
 @onready var timer_dash = $timer_dash
-
+@onready var grd_slots = [$CanvasLayer/heal/granade_1,$CanvasLayer/heal/granade_2,$CanvasLayer/heal/granade_3]
+@onready var timer_grd = $timer_grd
 var salt = 0
 var land = false
 var invulnerability = false
@@ -31,12 +33,20 @@ var direction = 0.0
 var blaster = false
 var count = 3
 var transition = false
+var inventory = []
+
+func _ready() -> void:
+	update_inv()
+	#for i in range(3):
+		#inventory.append(granade)
 
 func _process(delta: float) -> void:
 	if velocity.y > 0:
 		land = true
 	
 	if state == states.walk:
+		if Input.is_action_just_pressed("drop"):
+			drop()
 		if Input.is_action_just_pressed("boom"):
 			boom()
 		
@@ -74,7 +84,7 @@ func _process(delta: float) -> void:
 			if velocity.y > 0:
 				anim.play("fall")
 		if Input.is_action_just_pressed('dash') and timer_dash.is_stopped():
-			velocity.x = direction * (SPEED * 150)
+			velocity.x = direction * (SPEED * 80)
 			timer_dash.start()
 		if Input.is_action_just_pressed("ui_hit_player0"):
 			if blaster and count > 0:
@@ -96,11 +106,11 @@ func _process(delta: float) -> void:
 		
 		if direction == -1:
 			anim.flip_h = true
-			hit.position.x = -47
+			hit.position.x = -15
 			
 		elif direction == 1:
 			anim.flip_h = false
-			hit.position.x = 42
+			hit.position.x = 19
 	
 	elif state == states.sleep:
 		velocity = Vector2(0,0)
@@ -113,11 +123,12 @@ func _process(delta: float) -> void:
 	elif state == states.death:
 		velocity = Vector2(0,0)
 		anim.play("death")
-	
+
 	if not is_on_floor():
 		velocity.y += gravity * delta
-
-				
+	else :
+		var normal = get_floor_normal()
+		anim.rotation = normal.angle() + (PI /2)
 	move_and_slide()
 
 func death():
@@ -149,10 +160,43 @@ func _on_timer_invulnerability_timeout():
 	invulnerability = false
 	
 func boom():
-	var g = granade.instantiate()
-	get_tree().root.add_child(g)
-	g.transform = marker.global_transform
-	g.apply_impulse(marker.global_transform.x.normalized() * 600)
+	if inventory.size() > 0:
+		var g = inventory[0][0].instantiate()
+		inventory.pop_front()
+		get_tree().root.add_child(g)
+		g.transform = marker.global_transform
+		g.activation = true
+		g.apply_impulse(marker.global_transform.x.normalized() * 200)
+		update_inv()
+	else:
+		if timer.is_stopped():
+			timer_grd.start()
+			Rtext.text = "[wave = 15]  нет гранат"
+func drop():
+	if inventory.size() > 0:
+		var g = inventory[0][0].instantiate()
+		inventory.pop_front()
+		get_tree().root.add_child(g)
+		g.transform = marker.global_transform
+		g.activation = false
+		g.apply_impulse(marker.global_transform.x.normalized() * 200)
+		update_inv()
+	else:
+		if timer.is_stopped():
+			timer_grd.start()
+			Rtext.text = "[wave = 15]  нет гранат"
+
+func take(_grd):
+	inventory.append(_grd)
+	update_inv()
+	
+func update_inv():
+	for i in range(3):
+		if i < inventory.size():
+			grd_slots[i].texture = inventory[i][1]
+		else:
+			grd_slots[i].texture = null
+	
 
 func _on_timer_timeout():
 	count = 3
@@ -162,12 +206,16 @@ func _on_light_pressed() -> void:
 	SavePoint.light = !SavePoint.light
 
 func animTV() -> void:
-	SPEED = 100
-	JUMP_VELOCITY = -250.0
+	SPEED = 55
+	JUMP_VELOCITY = -175.0
 	anim.visible = false
 	anim = $CollisionShape2D/TV
 	anim.visible = true
 
 func _on_hit_body_entered(body: Node2D) -> void:
-	if body.name != 'TileMapLayer' and body.name != "salty platform":
+	if body.has_method('damage'):
 		body.damage(1)
+
+
+func _on_timer_grd_timeout() -> void:
+	Rtext.text = ""

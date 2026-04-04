@@ -6,8 +6,8 @@ extends RigidBody2D
 var x = 0
 
 func damage(_dmg):
-	x = randfn(-500,500)
-	apply_impulse(Vector2(x,-600))
+	x = randfn(-400,400)
+	apply_impulse(Vector2(x,-300))
 	kil_zone.monitoring = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

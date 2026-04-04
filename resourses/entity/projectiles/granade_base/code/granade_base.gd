@@ -1,23 +1,31 @@
 extends RigidBody2D
 
 var costil = false
+var activation = false
 @onready var radius = $radius
-@onready var boom = $Boom
+@onready var bomb = $bomb
 @onready var sound = $sound
 @onready var anim = $AnimatedSprite2D
 @onready var timer = $Timer
+var bomb_img
 # функция смерти
+func _ready() -> void:
+	bomb_img = $bomb.texture
 func death():
-	radius.monitoring = true
-	boom.visible = false
-	freeze = true
-	sound.play()
-	anim.play("default")
-	await anim.animation_finished
-	queue_free()
+	if activation == true:
+		radius.monitoring = true
+		bomb.visible = false
+		freeze = true
+		sound.play()
+		anim.play("default")
+		await anim.animation_finished
+		queue_free()
 
 func damage(_dmg):
+	activation = true
 	death()
+func stun():
+	pass
 # по окончанию таймера вызывается функция смерти
 func _on_timer_timeout():
 	death()
@@ -32,3 +40,10 @@ func _on_body_shape_entered(_body_rid: RID, _body: Node, _body_shape_index: int,
 	if costil == false :
 		costil = true
 		timer.start()
+
+
+func _on_take_body_entered(body: Node2D) -> void:
+	if body.name == "player" and activation == false:
+		if body.inventory.size() < 3:
+			body.take([load(scene_file_path),bomb_img])
+			queue_free()

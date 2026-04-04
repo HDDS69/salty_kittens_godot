@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfeacboek7kyq"
-path="res://.godot/imported/sleep_finaly.png-6a81f32091a4b5a706cdea4cc36d5125.ctex"
+uid="uid://buywougyum70u"
+path="res://.godot/imported/tuman.png-9b271420d6abda912a0f07f74c613a8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resourses/levels/resourses_levels/tilemap/texture/sleep_finaly.png"
-dest_files=["res://.godot/imported/sleep_finaly.png-6a81f32091a4b5a706cdea4cc36d5125.ctex"]
+source_file="res://resourses/levels/level_1/texture/tuman.png"
+dest_files=["res://.godot/imported/tuman.png-9b271420d6abda912a0f07f74c613a8b.ctex"]
 
 [params]
 

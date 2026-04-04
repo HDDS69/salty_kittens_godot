@@ -6,7 +6,6 @@ var add = 0
 var platform = OS.get_name()
 @onready var player = $player
 @onready var click_sound = $sound/click
-
 func _ready() -> void:
 	if platform == "Android":
 		SavePoint.fullscreen = true
@@ -24,7 +23,7 @@ func _ready() -> void:
 			#DiscordRPC.start_timestamp = int(Time.get_unix_time_from_system()) # "02:46 elapsed"
 			#DiscordRPC.end_timestamp = int(Time.get_unix_time_from_system()) + 3600 # +1 hour in unix time / "01:00:00 remaining"
 			#DiscordRPC.refresh() # Always refresh after changing the values!
-			
+
 func spawn():
 	var dup = player.duplicate()
 	dup.position = player.position + Vector2(50, 0)
@@ -35,6 +34,7 @@ func spawn():
 func _on_play_pressed() -> void:
 	click_sound.play()
 	get_tree().change_scene_to_file("res://resourses/levels/level_1/code/level.tscn")
+	
 
 
 func _on_quit_pressed() -> void:

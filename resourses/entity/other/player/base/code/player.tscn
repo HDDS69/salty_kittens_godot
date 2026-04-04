@@ -1,8 +1,9 @@
-[gd_scene load_steps=71 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=73 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
-[ext_resource type="PackedScene" uid="uid://d1dlmmptam0ue" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="2_cv5i6"]
+[ext_resource type="PackedScene" uid="uid://dskma481tr537" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="2_cv5i6"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
+[ext_resource type="Texture2D" uid="uid://2418k0u7vg71" path="res://resourses/levels/level_1/texture/light2.png" id="5_87bu0"]
 [ext_resource type="Texture2D" uid="uid://cc3t5joeasu6k" path="res://resourses/entity/other/player/base/texture/cat/land_effect.png" id="5_k71g3"]
 [ext_resource type="SpriteFrames" uid="uid://bguq4n7gblp8e" path="res://resourses/entity/npcs/TV/code/tv.tres" id="8_331ug"]
 [ext_resource type="Texture2D" uid="uid://cykqp8ka6tq30" path="res://resourses/ui/mobile_controller/texture/button_action.png" id="11_o4fn0"]
@@ -19,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://xfwt41mclny3" path="res://resourses/ui/mobile_controller/texture/button_pause_pressed.png" id="33_55vbn"]
 [ext_resource type="FontFile" uid="uid://bkyohh76x8qg6" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.otf" id="33_cv5i6"]
 [ext_resource type="Texture2D" uid="uid://dgg84t16l6o8y" path="res://resourses/entity/other/player/base/texture/dialog/dialog_background3.png" id="36_m5ng5"]
+[ext_resource type="Texture2D" uid="uid://dwgc1lkub8ift" path="res://resourses/entity/other/player/base/texture/heart/Sprite-0001.png" id="36_ma22b"]
+[ext_resource type="Texture2D" uid="uid://sieh5wcd26g7" path="res://resourses/entity/projectiles/pomegrenade/texture/boom8.png" id="36_xilyh"]
 [ext_resource type="AudioStream" uid="uid://b6gd3p2ehsg8b" path="res://resourses/entity/other/player/base/sound/jump.mp3" id="67_v58pc"]
 [ext_resource type="AudioStream" uid="uid://c3x81i1us0cwj" path="res://resourses/entity/other/player/base/sound/land.mp3" id="68_qmmh8"]
 [ext_resource type="Script" uid="uid://cr8jo7ea12fkm" path="res://resourses/entity/other/player/blaster/code/blaster.gd" id="69_fr3kn"]
@@ -39,38 +42,38 @@
 [ext_resource type="Script" uid="uid://dktx14jgtok82" path="res://resourses/ui/FPS/label_fps.gd" id="95_d17l8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lo2je"]
-size = Vector2(64.5, 50)
+size = Vector2(20.5, 14.5)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pew11"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cv5i6"]
 atlas = ExtResource("5_k71g3")
-region = Rect2(0, 0, 96, 96)
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w2g7f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma22b"]
 atlas = ExtResource("5_k71g3")
-region = Rect2(96, 0, 96, 96)
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y56v5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xilyh"]
 atlas = ExtResource("5_k71g3")
-region = Rect2(192, 0, 96, 96)
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o4fn0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_87bu0"]
 atlas = ExtResource("5_k71g3")
-region = Rect2(288, 0, 96, 96)
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_28d1b"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pew11")
+"texture": SubResource("AtlasTexture_cv5i6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_w2g7f")
+"texture": SubResource("AtlasTexture_ma22b")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y56v5")
+"texture": SubResource("AtlasTexture_xilyh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o4fn0")
+"texture": SubResource("AtlasTexture_87bu0")
 }],
 "loop": false,
 "name": &"land",
@@ -91,9 +94,12 @@ radius = 106.042
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cebvf"]
 size = Vector2(100, 100)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rljtb"]
+size = Vector2(100, 100)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dpgy2"]
-radius = 11.0
-height = 22.0
+radius = 6.0
+height = 12.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn4h3"]
 size = Vector2(9, 5.5)
@@ -173,9 +179,6 @@ animations = [{
 "name": &"recharge",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rljtb"]
-size = Vector2(100, 100)
 
 [sub_resource type="Animation" id="Animation_nyu1g"]
 length = 0.001
@@ -291,9 +294,6 @@ font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_uf1d1"]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_evup4"]
-polygon = PackedVector2Array(23, 70, 62, 70, 62, 68, 23, 68)
-
 [node name="player" type="CharacterBody2D"]
 show_behind_parent = true
 top_level = true
@@ -301,42 +301,54 @@ script = ExtResource("1_8m1ne")
 granade = ExtResource("2_cv5i6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.25, 2)
+position = Vector2(-0.25, 19.25)
 shape = SubResource("RectangleShape2D_lo2je")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(2.75, -23)
+position = Vector2(0.25, -8.25)
 sprite_frames = ExtResource("3_pgbbb")
-animation = &"sleep"
+animation = &"run"
 autoplay = "hidel"
 
 [node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
-position = Vector2(-47.25, -19)
-scale = Vector2(22.798, 0.913744)
-zoom = Vector2(1.5, 1.5)
+physics_interpolation_mode = 1
+position = Vector2(1.25, -10.25)
+scale = Vector2(21.797998, 0.6337439)
+zoom = Vector2(6, 6)
 process_callback = 0
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="recharge" type="RichTextLabel" parent="CollisionShape2D"]
-offset_left = -56.5
-offset_top = -71.5
-offset_right = 69.5
-offset_bottom = -36.5
+clip_contents = false
+offset_left = -17.75
+offset_top = -17.25
+offset_right = 102.25
+offset_bottom = 5.75
+scale = Vector2(0.3, 0.3)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 bbcode_enabled = true
+fit_content = true
+scroll_active = false
 
 [node name="TV" type="AnimatedSprite2D" parent="CollisionShape2D"]
 visible = false
-position = Vector2(1.75, -23)
+position = Vector2(2.25, -8.25)
 sprite_frames = ExtResource("8_331ug")
-animation = &"sleep"
+animation = &"hidel"
 autoplay = "hidel"
 
+[node name="PointLight2D" type="PointLight2D" parent="CollisionShape2D/TV"]
+position = Vector2(18, 7.000001)
+rotation = -1.5727987
+scale = Vector2(0.04491817, 0.089786686)
+color = Color(1, 1, 0.22745098, 1)
+texture = ExtResource("5_87bu0")
+
 [node name="effect" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(-5, -3.75)
+position = Vector2(0.25, -1.25)
 sprite_frames = SubResource("SpriteFrames_28d1b")
 animation = &"xex"
 autoplay = "xex"
@@ -502,20 +514,31 @@ pivot_offset = Vector2(50, 50)
 texture = ExtResource("84_djclt")
 stretch_mode = 5
 
+[node name="pause" type="TouchScreenButton" parent="mobile controller"]
+process_mode = 3
+position = Vector2(1141.9999, 120.146805)
+rotation = -3.14159
+scale = Vector2(1.2038337, 1.1523882)
+texture_normal = ExtResource("32_galrp")
+texture_pressed = ExtResource("33_55vbn")
+shape = SubResource("RectangleShape2D_rljtb")
+action = "ui_cancel"
+
 [node name="Timer_invulnerability" type="Timer" parent="."]
 wait_time = 1.5
 
 [node name="hit" type="Area2D" parent="."]
-position = Vector2(42, 15)
+position = Vector2(19, 19)
 monitoring = false
 
 [node name="hit" type="CollisionShape2D" parent="hit"]
-position = Vector2(3, 0)
+position = Vector2(-2, 2)
 shape = SubResource("CapsuleShape2D_dpgy2")
 
 [node name="blaster" type="Area2D" parent="."]
 visible = false
-position = Vector2(1, 1)
+position = Vector2(1, 20)
+scale = Vector2(0.2602426, 0.2602426)
 script = ExtResource("69_fr3kn")
 bullet = ExtResource("30_ny14h")
 
@@ -524,7 +547,7 @@ position = Vector2(63, -2)
 shape = SubResource("RectangleShape2D_bn4h3")
 
 [node name="Marker2D" type="Marker2D" parent="blaster"]
-position = Vector2(54, -2)
+position = Vector2(65.32366, -1.1920929e-06)
 
 [node name="blaster" type="AnimatedSprite2D" parent="blaster"]
 position = Vector2(16, 0.999999)
@@ -554,16 +577,6 @@ offset_right = -7.0
 offset_bottom = 31.0
 grow_horizontal = 0
 grow_vertical = 2
-
-[node name="pause" type="TouchScreenButton" parent="CanvasLayer/MarginContainer"]
-process_mode = 3
-position = Vector2(186.99988, 115.146805)
-rotation = -3.14159
-scale = Vector2(1.2038337, 1.1523882)
-texture_normal = ExtResource("32_galrp")
-texture_pressed = ExtResource("33_55vbn")
-shape = SubResource("RectangleShape2D_rljtb")
-action = "ui_cancel"
 
 [node name="dialog" type="Node2D" parent="CanvasLayer/MarginContainer"]
 process_mode = 3
@@ -636,10 +649,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -153.0
-offset_top = -184.0
-offset_right = 153.0
-offset_bottom = 184.0
+offset_left = -306.0
+offset_top = -143.0
+offset_right = 236.0
+offset_bottom = 270.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -650,12 +663,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -115.0
-offset_top = -148.0
-offset_right = 115.0
-offset_bottom = 148.0
+offset_left = -215.0
+offset_top = -167.5
+offset_right = 15.0
+offset_bottom = 128.5
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.9109027, 1.8645746)
 
 [node name="resume" type="Button" parent="CanvasLayer/pause/Panel/VBoxContainer"]
 layout_mode = 2
@@ -706,7 +720,7 @@ offset_bottom = 579.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/setting/Panel"]
 layout_mode = 0
-offset_left = 87.0
+offset_left = 80.0
 offset_top = 40.0
 offset_right = 781.0
 offset_bottom = 444.0
@@ -773,28 +787,46 @@ theme_override_fonts/font = ExtResource("91_d1y0c")
 action_mode = 0
 text = "выйти"
 
+[node name="Sprite0001" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(187.38979, 71.37501)
+scale = Vector2(7.0474896, 7.5781255)
+texture = ExtResource("36_ma22b")
+
 [node name="heal" type="AnimatedSprite2D" parent="CanvasLayer"]
-position = Vector2(54.999996, 43.000004)
-scale = Vector2(2.54687, 2.70944)
+position = Vector2(76.00001, 61.000004)
+scale = Vector2(5.1171846, 5.4438214)
 sprite_frames = SubResource("SpriteFrames_6vv36")
 animation = &"hp"
 autoplay = "hp"
 script = SubResource("GDScript_sk34d")
 
+[node name="granade_1" type="Sprite2D" parent="CanvasLayer/heal"]
+position = Vector2(15.633595, 6.9803896)
+scale = Vector2(0.9396951, 0.9396951)
+
+[node name="granade_2" type="Sprite2D" parent="CanvasLayer/heal"]
+position = Vector2(26.967955, 6.7966967)
+scale = Vector2(0.9706114, 0.9706114)
+texture = ExtResource("36_xilyh")
+
+[node name="granade_3" type="Sprite2D" parent="CanvasLayer/heal"]
+position = Vector2(37.716053, 7.164084)
+scale = Vector2(0.89084005, 0.89084005)
+
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 94.0
-offset_top = 39.0
-offset_right = 251.0
-offset_bottom = 73.0
+offset_left = 143.0
+offset_top = 30.0
+offset_right = 300.0
+offset_bottom = 64.0
 theme_override_font_sizes/font_size = 25
 text = "salt :"
 label_settings = SubResource("LabelSettings_v3gx4")
 
 [node name="fps" type="Label" parent="CanvasLayer"]
-offset_left = 94.0
-offset_top = 61.0
-offset_right = 176.0
-offset_bottom = 121.0
+offset_left = 41.0
+offset_top = 135.0
+offset_right = 123.0
+offset_bottom = 195.0
 label_settings = SubResource("LabelSettings_uf1d1")
 script = ExtResource("95_d17l8")
 
@@ -806,18 +838,17 @@ stream = ExtResource("67_v58pc")
 [node name="land" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource("68_qmmh8")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(-40, -43)
-occluder = SubResource("OccluderPolygon2D_evup4")
-
 [node name="timer_dash" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true
 
+[node name="timer_grd" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="pressed" from="mobile controller/pause" to="." method="_on_pause_pressed"]
 [connection signal="timeout" from="Timer_invulnerability" to="." method="_on_timer_invulnerability_timeout"]
 [connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/Panel/VBoxContainer/resume" to="CanvasLayer/pause" method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/Panel/VBoxContainer/settings" to="CanvasLayer/pause" method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/Panel/VBoxContainer/quit" to="CanvasLayer/pause" method="_on_quit_pressed"]
@@ -826,3 +857,4 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/light" to="." method="_on_light_pressed"]
 [connection signal="value_changed" from="CanvasLayer/setting/Panel/VBoxContainer/HScrollBar" to="CanvasLayer/pause" method="_on_h_scroll_bar_value_changed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/quit_setting" to="CanvasLayer/pause" method="_on_quit_setting_pressed"]
+[connection signal="timeout" from="timer_grd" to="." method="_on_timer_grd_timeout"]

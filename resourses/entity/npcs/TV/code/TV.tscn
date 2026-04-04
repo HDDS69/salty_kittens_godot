@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://blod5nf63ivmn" path="res://resourses/entity/npcs/TV/texture/TV-Sheet.png" id="6_75nnp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdlkc"]
-size = Vector2(90, 69)
+size = Vector2(22, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_75nnp"]
 atlas = ExtResource("5_uboxy")
@@ -233,19 +233,19 @@ dialog_key = "TV_level1"
 metadata/_edit_horizontal_guides_ = [-340.0]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(37, -24.5)
+position = Vector2(14, -8)
 shape = SubResource("RectangleShape2D_gdlkc")
 
 [node name="ui" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0, 0, 0, 1)
-position = Vector2(41, -100)
-scale = Vector2(0.726562, 0.726562)
+position = Vector2(14, -23.000002)
+scale = Vector2(0.22851552, 0.22851552)
 texture = ExtResource("3_gmtlm")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(38, -62)
-scale = Vector2(1.29167, 1.29167)
+position = Vector2(14, -17)
+scale = Vector2(0.35416666, 0.35416666)
 sprite_frames = SubResource("SpriteFrames_adl8h")
 animation = &"stand"
 autoplay = "stand"

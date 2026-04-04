@@ -8,7 +8,7 @@ var clone = false
 @onready var heart = $Heart
 @onready var icon = $Icon
 @onready var menu = $".."
-@onready var count = $"../bg/count_clicker"
+@onready var count = $"../count_clicker"
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

@@ -1,6 +1,7 @@
 extends RigidBody2D
 
 @export var bullet : PackedScene
+@export var salt : PackedScene
 @export var hp : int
 @onready var anim = $AnimatedSprite2D
 @onready var timer_shot =  $"time to shot"
@@ -10,13 +11,17 @@ extends RigidBody2D
 @onready var muzzle_marker = $muzzle/Marker2D
 @onready var area = $Area2D2
 @onready var sound_shoot = $AudioStreamPlayer2D/AudioStreamPlayer2D
-enum states {idle,attack,death,recharge}
+@onready var light1 = $PointLight2D7
+@onready var light2 = $PointLight2D8
+
+enum states {idle,attack,death,recharge,stun}
 var state: states = states.idle
 var count = 3
 var x = 1
 var y = 1
 var z = 50
 var player
+var count_d = true
 
 func _ready() -> void:
 	hp_bar.max_value = hp
@@ -25,7 +30,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	area.global_rotation = 0
 	if state == states.idle:
-		linear_velocity.x = 150 * x
+		linear_velocity.x = 90 * x
 		linear_velocity.y = 15 * y
 		
 		if linear_velocity.x > 0:
@@ -37,12 +42,16 @@ func _process(_delta: float) -> void:
 
 	elif state == states.death:
 		death()
-		
+	elif state == states.stun:
+		linear_velocity = Vector2(0,0)
+		anim.self_modulate = "0000ff"
+		light1.color = "0000ff"
+		light2.color = "0000ff"
 	elif state == states.attack:
 		var pos = player.position 
-		var direction =  to_local(player.global_position+Vector2(0,-230)).normalized()
-		linear_velocity.x = 150 * direction.x 
-		linear_velocity.y = 150 * direction.y
+		var direction =  to_local(player.global_position+Vector2(0,-35)).normalized()
+		linear_velocity.x = 90 * direction.x 
+		linear_velocity.y = 90 * direction.y
 		muzzle.look_at(pos)
 		if count == 0:
 			state = states.recharge
@@ -51,17 +60,28 @@ func _process(_delta: float) -> void:
 	elif state == states.recharge:
 		linear_velocity = Vector2(0,0)
 		anim.self_modulate = "#ff0000"
+		light1.color = "#ff0000"
+		light2.color = "#ff0000"
 		if timer_recharge.is_stopped():
 			timer_recharge.start()
+
 		
 
 func death():
 	gravity_scale = 1.0
 	inertia = 1.0
+	spawn()
 	anim.play("death")
 	await anim.animation_finished
 	queue_free()
 
+func spawn():
+	if count_d:
+		var s = salt.instantiate()
+		get_tree().root.add_child(s)
+		s.transform = muzzle_marker.global_transform
+		count_d = false
+		
 func damage(dmg):
 	hp -= dmg
 	hp_bar.value = hp
@@ -88,13 +108,15 @@ func _on_area_2d_2_body_exited(body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	anim.self_modulate = "#ffffff"
+	light1.color = "00a6a6"
+	light2.color = "00a6a6"
 	count = 3
 	if state == states.recharge:
 		state = states.attack
 		
 func _on_time_to_shot_timeout() -> void:
 	attack()
-
+	
 func _on_timer_fly_timeout() -> void:
 	x = -x
 
@@ -103,3 +125,18 @@ func _on_timer_y_timeout() -> void:
 
 func _on_timer_z_timeout() -> void:
 	z = -z
+
+func stun():
+	state = states.stun
+	gravity_scale = 1.0
+	inertia = 1.0
+	$"../Timer_stun".start()
+	
+
+func _on_timer_stun_timeout() -> void:
+	state = states.idle
+	gravity_scale = 0.0
+	inertia = 0.0
+	anim.self_modulate = "#ffffff"
+	light1.color = "00a6a6"
+	light2.color = "00a6a6"
