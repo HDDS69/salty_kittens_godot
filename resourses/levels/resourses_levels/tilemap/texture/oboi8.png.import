@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b61tndr0xgqt6"
-path="res://.godot/imported/b1g3.png-d63fc34de29aceb67f4bd49cf4256f1a.ctex"
+uid="uid://cpudkjhsvv5nt"
+path="res://.godot/imported/oboi8.png-bcd8cdfd8dcc22cbf0b53ad99dc7a165.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resourses/levels/resourses_levels/tilemap/texture/b1g3.png"
-dest_files=["res://.godot/imported/b1g3.png-d63fc34de29aceb67f4bd49cf4256f1a.ctex"]
+source_file="res://resourses/levels/resourses_levels/tilemap/texture/oboi8.png"
+dest_files=["res://.godot/imported/oboi8.png-bcd8cdfd8dcc22cbf0b53ad99dc7a165.ctex"]
 
 [params]
 
