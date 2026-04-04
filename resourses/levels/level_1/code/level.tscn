@@ -888,7 +888,7 @@ trail_lifetime = 3.93
 process_material = SubResource("ParticleProcessMaterial_1g5bl")
 
 [node name="drone" parent="." instance=ExtResource("54_75k5c")]
-position = Vector2(611, 572)
+position = Vector2(320, 579)
 
 [node name="player" parent="." instance=ExtResource("1_5u35f")]
 position = Vector2(-245, 347)
