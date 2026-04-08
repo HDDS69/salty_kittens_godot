@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=59 format=3 uid="uid://huoug6s04p7x"]
+[gd_resource type="TileSet" load_steps=57 format=3 uid="uid://huoug6s04p7x"]
 
 [ext_resource type="Texture2D" uid="uid://c54kn4wujjovx" path="res://resourses/levels/resourses_levels/tilemap/texture/cube.png" id="2_ugn2t"]
 [ext_resource type="Texture2D" uid="uid://46gqbgubmc2h" path="res://resourses/levels/resourses_levels/tilemap/texture/oboi.png" id="7_adb75"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://6y604yoy0lfl" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 01-16-2024 07-48-14.png" id="34_22rid"]
 [ext_resource type="Texture2D" uid="uid://61b5x605f0v7" path="res://resourses/levels/level_2/level2_texture/lamp_bar.png" id="34_ryyvt"]
 [ext_resource type="Texture2D" uid="uid://ba6ugb57qfljt" path="res://resourses/levels/level_2/level2_texture/bar_stool.png" id="35_fpcpr"]
-[ext_resource type="Texture2D" uid="uid://c70ftmjrmoke5" path="res://resourses/entity/objects/trash_can/texture/Untitled 01-17-2024 09-38-27.png" id="35_q3ekk"]
 [ext_resource type="Texture2D" uid="uid://bp58d3o2e7r01" path="res://resourses/levels/resourses_levels/tilemap/texture/lampa.png" id="36_04shg"]
 [ext_resource type="Texture2D" uid="uid://bu8om7db471t" path="res://resourses/levels/level_2/level2_texture/bar_table.png" id="36_iuqmm"]
 [ext_resource type="Texture2D" uid="uid://dr5p16kjx0vf0" path="res://resourses/levels/resourses_levels/tilemap/texture/brick2.png" id="37_52k7s"]
@@ -6995,10 +6994,6 @@ texture = ExtResource("40_vts0y")
 3:3/0 = 0
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evwo6"]
-texture = ExtResource("35_q3ekk")
-0:0/0 = 0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxtrv"]
 texture = ExtResource("36_04shg")
 0:0/0 = 0
@@ -7055,7 +7050,6 @@ navigation_layer_0/layers = 8
 sources/1 = SubResource("TileSetAtlasSource_dgbfs")
 sources/2 = SubResource("TileSetAtlasSource_kwh57")
 sources/4 = SubResource("TileSetAtlasSource_82jcr")
-sources/5 = SubResource("TileSetAtlasSource_evwo6")
 sources/8 = SubResource("TileSetAtlasSource_larln")
 sources/7 = SubResource("TileSetAtlasSource_worel")
 sources/3 = SubResource("TileSetAtlasSource_ali2x")

@@ -47,13 +47,13 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 					count.text = str(menu.add)
 				else :
 					count.text = "сломанная фигня"
-				if menu.add == 666 :
+				if menu.add == 69 :
 					menu.yes = false
 					for i in range(50):
 						var dup = self.duplicate()
 						dup.clone = true
 						dup.position = self.position + Vector2(50, 0)
-						menu.get_parent().add_child(dup)
+						self.get_parent().add_child(dup)
 		elif event.button_index == MOUSE_BUTTON_RIGHT and event.pressed:
 			icon.visible = false
 			angry.visible = false

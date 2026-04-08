@@ -11,8 +11,7 @@ var state: states = states.walk
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@export var granade : PackedScene
-var granade_img = preload("res://resourses/entity/projectiles/pomegrenade/texture/boom8.png")
+#засираю память для более быстрого обращения к нодам
 @onready var anim = $CollisionShape2D/AnimatedSprite2D
 @onready var anim1 = $CollisionShape2D/effect
 @onready var blaster_texture = $blaster
@@ -37,22 +36,12 @@ var inventory = []
 
 func _ready() -> void:
 	update_inv()
-	#for i in range(3):
-		#inventory.append(granade)
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if velocity.y > 0:
 		land = true
 	
 	if state == states.walk:
-		if Input.is_action_just_pressed("drop"):
-			drop()
-		if Input.is_action_just_pressed("boom"):
-			boom()
-		
-		if Input.is_action_just_pressed("2"):
-			blaster = !blaster
-			blaster_texture.visible = blaster
 			
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 			anim.play("jump")
@@ -84,7 +73,7 @@ func _process(delta: float) -> void:
 			if velocity.y > 0:
 				anim.play("fall")
 		if Input.is_action_just_pressed('dash') and timer_dash.is_stopped():
-			velocity.x = direction * (SPEED * 80)
+			velocity.x = direction * (SPEED * 40)
 			timer_dash.start()
 		if Input.is_action_just_pressed("ui_hit_player0"):
 			if blaster and count > 0:
@@ -158,27 +147,17 @@ func sleep(x, y):
 
 func _on_timer_invulnerability_timeout():
 	invulnerability = false
-	
-func boom():
+
+##функция спавна гранат. 	
+##если функция принимает true бомба взрываеться когда её скидываешь,
+## если false скидываеться как предмет
+func bomb(activ):
 	if inventory.size() > 0:
 		var g = inventory[0][0].instantiate()
 		inventory.pop_front()
 		get_tree().root.add_child(g)
 		g.transform = marker.global_transform
-		g.activation = true
-		g.apply_impulse(marker.global_transform.x.normalized() * 200)
-		update_inv()
-	else:
-		if timer.is_stopped():
-			timer_grd.start()
-			Rtext.text = "[wave = 15]  нет гранат"
-func drop():
-	if inventory.size() > 0:
-		var g = inventory[0][0].instantiate()
-		inventory.pop_front()
-		get_tree().root.add_child(g)
-		g.transform = marker.global_transform
-		g.activation = false
+		g.activation = activ
 		g.apply_impulse(marker.global_transform.x.normalized() * 200)
 		update_inv()
 	else:
@@ -186,6 +165,7 @@ func drop():
 			timer_grd.start()
 			Rtext.text = "[wave = 15]  нет гранат"
 
+## принимает гранаты в инвентарь
 func take(_grd):
 	inventory.append(_grd)
 	update_inv()
@@ -216,6 +196,15 @@ func _on_hit_body_entered(body: Node2D) -> void:
 	if body.has_method('damage'):
 		body.damage(1)
 
-
 func _on_timer_grd_timeout() -> void:
 	Rtext.text = ""
+
+func _input(_event: InputEvent) -> void:
+	if state == states.walk:
+		if Input.is_action_just_pressed("drop"):
+			bomb(false)
+		if Input.is_action_just_pressed("boom"):
+			bomb(true)
+		if Input.is_action_just_pressed("2"):
+			blaster = !blaster
+			blaster_texture.visible = blaster

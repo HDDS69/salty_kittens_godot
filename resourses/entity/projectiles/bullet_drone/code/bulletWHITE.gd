@@ -1,16 +1,6 @@
 extends Area2D
 
 var SPEED = 8
-var whitelist = [
-	'mob',
-	'mob2',
-	'mob3',
-	'mob4',
-	'mob5',
-	'mob6',
-	'TileMap',
-	'salty platform',
-]
 # Called when the node enters the scene tree for the first time.
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta: float) -> void:
@@ -20,6 +10,4 @@ func _physics_process(_delta: float) -> void:
 func _on_body_entered(body):
 	if body.name == 'player':
 		body.damage(1)
-		queue_free()
-	if body.name == 'TileMapLayer':
-		queue_free()
+	queue_free()

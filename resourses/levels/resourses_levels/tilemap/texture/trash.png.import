@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c70ftmjrmoke5"
-path="res://.godot/imported/Untitled 01-17-2024 09-38-27.png-4ca1e965ea95356ab5f36cca91893d54.ctex"
+uid="uid://blwpeftvflar1"
+path="res://.godot/imported/trash.png-781834e123ae630378a530528458d3c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resourses/entity/objects/trash_can/texture/Untitled 01-17-2024 09-38-27.png"
-dest_files=["res://.godot/imported/Untitled 01-17-2024 09-38-27.png-4ca1e965ea95356ab5f36cca91893d54.ctex"]
+source_file="res://resourses/levels/resourses_levels/tilemap/texture/trash.png"
+dest_files=["res://.godot/imported/trash.png-781834e123ae630378a530528458d3c3.ctex"]
 
 [params]
 

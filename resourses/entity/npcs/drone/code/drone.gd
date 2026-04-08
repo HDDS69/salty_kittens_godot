@@ -29,43 +29,43 @@ func _ready() -> void:
 	hp_bar.max_value = hp
 	hp_bar.value = hp
 
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	area.global_rotation = 0
-	if state == states.idle:
-		linear_velocity.x = 90 * x
-		linear_velocity.y = 15 * y
+	match state:
+		states.idle:
+				linear_velocity.x = 90 * x
+				linear_velocity.y = 15 * y
 		
-		if linear_velocity.x > 0:
-			anim.rotation = 0.1
-		elif linear_velocity.x < 0:
-			anim.rotation = -0.1
-		else:
-			anim.rotation = 0
-
-	elif state == states.death:
-		death()
-	elif state == states.stun:
-		linear_velocity = Vector2(0,0)
-		anim.self_modulate = "0000ff"
-		light1.color = "0000ff"
-		light2.color = "0000ff"
-	elif state == states.attack:
-		var pos = player.position 
-		var direction =  to_local(player.global_position+Vector2(0,-35)).normalized()
-		linear_velocity.x = 90 * direction.x 
-		linear_velocity.y = 90 * direction.y
-		muzzle.look_at(pos)
-		if count == 0:
-			state = states.recharge
-		if timer_shot.is_stopped():
-			timer_shot.start()
-	elif state == states.recharge:
-		linear_velocity = Vector2(0,0)
-		anim.self_modulate = "#ff0000"
-		light1.color = "#ff0000"
-		light2.color = "#ff0000"
-		if timer_recharge.is_stopped():
-			timer_recharge.start()
+				if linear_velocity.x > 0:
+					anim.rotation = 0.1
+				elif linear_velocity.x < 0:
+					anim.rotation = -0.1
+				else:
+					anim.rotation = 0
+		states.death:
+			death()
+		states.stun:
+			linear_velocity = Vector2(0,0)
+			anim.self_modulate = "0000ff"
+			light1.color = "0000ff"
+			light2.color = "0000ff"
+		states.attack:
+			var pos = player.position
+			var direction =  to_local(player.global_position+Vector2(0,-35)).normalized()
+			linear_velocity.x = 90 * direction.x 
+			linear_velocity.y = 90 * direction.y
+			muzzle.look_at(pos)
+			if count == 0:
+				state = states.recharge
+			if timer_shot.is_stopped():
+				timer_shot.start()
+		states.recharge:
+			linear_velocity = Vector2(0,0)
+			anim.self_modulate = "#ff0000"
+			light1.color = "#ff0000"
+			light2.color = "#ff0000"
+			if timer_recharge.is_stopped():
+				timer_recharge.start()
 
 		
 

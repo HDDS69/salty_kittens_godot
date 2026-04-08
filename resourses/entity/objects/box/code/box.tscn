@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbsdguel865kq"]
+[gd_scene load_steps=5 format=3 uid="uid://cbsdguel865kq"]
 
 [ext_resource type="Script" uid="uid://dxgu2wq3kjwxi" path="res://resourses/entity/objects/box/code/box.gd" id="1_phbp0"]
 [ext_resource type="Texture2D" uid="uid://c7nshux4e51se" path="res://resourses/entity/objects/box/texture/box.png" id="2_yu04v"]
@@ -6,9 +6,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vkov"]
 size = Vector2(13, 12)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uh52w"]
-polygon = PackedVector2Array(18.68639, 18.686396, -21.8008, 18.686396, -21.8008, 15.571997, 18.68639, 15.571997)
 
 [node name="box" type="Area2D"]
 position = Vector2(23, -21)
@@ -28,11 +25,6 @@ visible = false
 position = Vector2(-16, -1.0000008)
 scale = Vector2(0.17968751, 0.17968746)
 texture = ExtResource("3_k7t82")
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(-15.999998, 15)
-scale = Vector2(0.3210892, 0.3210892)
-occluder = SubResource("OccluderPolygon2D_uh52w")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

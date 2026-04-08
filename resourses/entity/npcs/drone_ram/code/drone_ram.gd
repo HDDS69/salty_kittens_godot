@@ -4,7 +4,7 @@ enum states {idle,attack,wait,death}
 var state: states = states.idle
 var hp = 5
 var x = 0
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if state == states.idle:
 		#self.position.x += asin(sin(x))
 		x += 0.1

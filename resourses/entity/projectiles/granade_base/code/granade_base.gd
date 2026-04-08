@@ -30,9 +30,9 @@ func stun():
 func _on_timer_timeout():
 	death()
 
-# проверяем тела которые находятся в радиусе взрыва и "убиваем" если есть в радиусе
+# проверяем тела которые находятся в радиусе взрыва и наносим урон если есть в радиусе
 func _on_radius_body_entered(body):
-	if body.name != 'TileMapLayer' and body.name != "salty platform" and body.name != "player":
+	if body.name != "player" and body.has_method('damage') :
 		body.damage(1)
 
 # при соприкосновении к любому телу начинается 1секундный таймер

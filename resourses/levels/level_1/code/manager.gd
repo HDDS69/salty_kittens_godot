@@ -9,8 +9,6 @@ var death = false
 @onready var ed3 = $"../education/3"
 @onready var ed4 = $"../education/4"
 @onready var ed5 = $"../education/5"
-@onready var ed6 = $"../education/6"
-@onready var ed8 = $"../education/8"
 @onready var stairs1 = $"../TileMapLayer/stairs1"
 @onready var stairs2 = $"../TileMapLayer/stairs2"
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,12 +17,12 @@ func _ready() -> void:
 		DiscordRPC.state = "уровень 1"
 		DiscordRPC.refresh()
 	
-func _physics_process(_delta: float) -> void:
-	if SavePoint.light == false :
-		light.visible = false
-	else :
-		light.visible = true
-		
+#func _physics_process(_delta: float) -> void:
+	#if SavePoint.light == false :
+		#light.visible = false
+	#else :
+		#light.visible = true
+		#
 
 func check(body,gide,blee):
 	if body.name == 'player':
@@ -66,18 +64,6 @@ func _on_a_5_body_exited(body: Node2D) -> void:
 
 func _on_a_5_body_entered(body: Node2D) -> void:
 	check(body,ed5,true)
-
-
-func _on_a_6_body_exited(body: Node2D) -> void:
-	check(body,ed6,false)
-
-
-func _on_a_6_body_entered(body: Node2D) -> void:
-	check(body,ed6,true)
-
-
-func _on_a_8_body_exited(body: Node2D) -> void:
-	check(body,ed8,false)
 
 
 func _on_st_1_body_entered(body: Node2D) -> void:

@@ -1,9 +1,7 @@
-[gd_scene load_steps=73 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=71 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
-[ext_resource type="PackedScene" uid="uid://dskma481tr537" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="2_cv5i6"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
-[ext_resource type="Texture2D" uid="uid://2418k0u7vg71" path="res://resourses/levels/level_1/texture/light2.png" id="5_87bu0"]
 [ext_resource type="Texture2D" uid="uid://cc3t5joeasu6k" path="res://resourses/entity/other/player/base/texture/cat/land_effect.png" id="5_k71g3"]
 [ext_resource type="SpriteFrames" uid="uid://bguq4n7gblp8e" path="res://resourses/entity/npcs/TV/code/tv.tres" id="8_331ug"]
 [ext_resource type="Texture2D" uid="uid://cykqp8ka6tq30" path="res://resourses/ui/mobile_controller/texture/button_action.png" id="11_o4fn0"]
@@ -298,7 +296,6 @@ font_size = 32
 show_behind_parent = true
 top_level = true
 script = ExtResource("1_8m1ne")
-granade = ExtResource("2_cv5i6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.25, 19.25)
@@ -339,13 +336,6 @@ position = Vector2(2.25, -8.25)
 sprite_frames = ExtResource("8_331ug")
 animation = &"hidel"
 autoplay = "hidel"
-
-[node name="PointLight2D" type="PointLight2D" parent="CollisionShape2D/TV"]
-position = Vector2(18, 7.000001)
-rotation = -1.5727987
-scale = Vector2(0.04491817, 0.089786686)
-color = Color(1, 1, 0.22745098, 1)
-texture = ExtResource("5_87bu0")
 
 [node name="effect" type="AnimatedSprite2D" parent="CollisionShape2D"]
 position = Vector2(0.25, -1.25)
