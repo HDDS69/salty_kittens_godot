@@ -12,10 +12,10 @@ var death = false
 @onready var stairs1 = $"../TileMapLayer/stairs1"
 @onready var stairs2 = $"../TileMapLayer/stairs2"
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
-func _ready() -> void:
-	if DiscordRPC.get_is_discord_working():
-		DiscordRPC.state = "уровень 1"
-		DiscordRPC.refresh()
+#func _ready() -> void:
+	#if DiscordRPC.get_is_discord_working():
+		#DiscordRPC.state = "уровень 1"
+		#DiscordRPC.refresh()
 	
 #func _physics_process(_delta: float) -> void:
 	#if SavePoint.light == false :

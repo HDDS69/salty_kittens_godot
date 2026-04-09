@@ -24,7 +24,6 @@ config/icon="uid://b3ga0q11rvecn"
 [autoload]
 
 SavePoint="*res://resourses/global_code/save_point.gd"
-DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 Signalbus="*res://resourses/entity/other/dialog/code/signalbus.gd"
 
 [display]
@@ -36,10 +35,6 @@ mouse_cursor/custom_image="uid://c84o5lhfnvnbk"
 [editor]
 
 movie_writer/disable_vsync=true
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/discord-rpc-gd/plugin.cfg")
 
 [input]
 
@@ -159,8 +154,6 @@ common/physics_interpolation=true
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 textures/webp_compression/lossless_compression_factor=50.0
 occlusion_culling/use_occlusion_culling=true

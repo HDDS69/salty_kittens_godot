@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dorfh0mss3e88" path="res://resourses/entity/objects/barrel/texture/barrel_explosion.png" id="3_2m1ee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5w15r"]
-size = Vector2(47.627144, 53.047012)
+size = Vector2(91.27201, 101.72541)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64hgw"]
 atlas = ExtResource("3_2m1ee")
@@ -82,13 +82,13 @@ mass = 123.522
 script = ExtResource("1_r87uk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.086384326, -0.64102334)
+position = Vector2(3.5, -4.6410236)
 scale = Vector2(0.16434392, 0.16434392)
 shape = SubResource("RectangleShape2D_5w15r")
 
 [node name="Barrel" type="Sprite2D" parent="."]
-position = Vector2(0.019373417, -0.6262164)
-scale = Vector2(0.2625345, 0.27336147)
+position = Vector2(3.9094105, -4.6766796)
+scale = Vector2(0.50566185, 0.5265154)
 texture = ExtResource("2_5w15r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -98,6 +98,6 @@ sprite_frames = SubResource("SpriteFrames_d68ky")
 animation = &"explosion"
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(-1, 1)
-scale = Vector2(0.2625345, 0.27336147)
+position = Vector2(2, -3)
+scale = Vector2(0.47746548, 0.49715626)
 occluder = SubResource("OccluderPolygon2D_jaouy")

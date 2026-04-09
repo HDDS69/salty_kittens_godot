@@ -14,6 +14,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 #засираю память для более быстрого обращения к нодам
 @onready var anim = $CollisionShape2D/AnimatedSprite2D
 @onready var anim1 = $CollisionShape2D/effect
+@onready var animhp = $CanvasLayer/heal
 @onready var blaster_texture = $blaster
 @onready var hit = $hit
 @onready var sound_jump = $music/jump
@@ -25,6 +26,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var timer_dash = $timer_dash
 @onready var grd_slots = [$CanvasLayer/heal/granade_1,$CanvasLayer/heal/granade_2,$CanvasLayer/heal/granade_3]
 @onready var timer_grd = $timer_grd
+@onready var label = $CanvasLayer/Label
 var salt = 0
 var land = false
 var invulnerability = false
@@ -36,6 +38,7 @@ var inventory = []
 
 func _ready() -> void:
 	update_inv()
+	update_hp()
 
 func _physics_process(delta: float) -> void:
 	if velocity.y > 0:
@@ -102,9 +105,11 @@ func _physics_process(delta: float) -> void:
 			hit.position.x = 19
 	
 	elif state == states.sleep:
+		invulnerability = true
+		update_hp()
 		velocity = Vector2(0,0)
 		anim.play("sleep")
-		await anim.animation_finished
+		#await anim.animation_finished
 	elif state == states.speak:
 		velocity = Vector2(0,0)
 	elif state == states.attack:
@@ -125,11 +130,13 @@ func death():
 	await anim.animation_finished
 	position = spawn_pos
 	health = 3
+	update_hp()
 	state = states.walk
 
 func damage(dmg):
 	if not invulnerability:
 		health -= dmg
+		update_hp()
 		timer_i.start()
 		invulnerability = true
 	if health <= 0:
@@ -139,7 +146,6 @@ func sleep(x, y):
 	if state == states.walk:
 		spawn_pos = Vector2(x, y)
 		anim.flip_h = false
-		invulnerability = true
 		state = states.sleep
 	else:
 		state = states.walk
@@ -169,7 +175,20 @@ func bomb(activ):
 func take(_grd):
 	inventory.append(_grd)
 	update_inv()
-	
+
+##функция обновления хп в ui игрока
+func update_hp():
+	label.text = "salt:" + str(salt)
+	animhp.play("hp")
+	match health: 
+		2:
+			animhp.play("1")
+		1:
+			animhp.play("2")
+		0:
+			animhp.play("3")
+
+## обновляет ui гранат
 func update_inv():
 	for i in range(3):
 		if i < inventory.size():

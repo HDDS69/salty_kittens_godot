@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=70 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
@@ -266,25 +266,6 @@ animations = [{
 "name": &"hp",
 "speed": 1.0
 }]
-
-[sub_resource type="GDScript" id="GDScript_sk34d"]
-script/source = "extends AnimatedSprite2D
-@onready var anim = self
-@onready var player = $\"../..\"
-@onready var label = $\"../Label\"
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(_delta: float) -> void:
-	#лучший скрипт всего человечества(хуйня)
-	label.text = \"salt:\" + str(player.salt)
-	anim.play(\"hp\")
-	if player.health == 2:
-		anim.play(\"1\")
-	elif player.health == 1:
-		anim.play(\"2\")
-	elif player.health == 0:
-		anim.play(\"3\")
-"
 
 [sub_resource type="LabelSettings" id="LabelSettings_v3gx4"]
 font = ExtResource("91_d1y0c")
@@ -788,7 +769,6 @@ scale = Vector2(5.1171846, 5.4438214)
 sprite_frames = SubResource("SpriteFrames_6vv36")
 animation = &"hp"
 autoplay = "hp"
-script = SubResource("GDScript_sk34d")
 
 [node name="granade_1" type="Sprite2D" parent="CanvasLayer/heal"]
 position = Vector2(15.633595, 6.9803896)
@@ -813,10 +793,10 @@ text = "salt :"
 label_settings = SubResource("LabelSettings_v3gx4")
 
 [node name="fps" type="Label" parent="CanvasLayer"]
-offset_left = 41.0
-offset_top = 135.0
-offset_right = 123.0
-offset_bottom = 195.0
+offset_left = 515.0
+offset_top = 6.0
+offset_right = 597.0
+offset_bottom = 66.0
 label_settings = SubResource("LabelSettings_uf1d1")
 script = ExtResource("95_d17l8")
 
