@@ -43,7 +43,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if velocity.y > 0:
 		land = true
-	
 	if state == states.walk:
 			
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -109,7 +108,7 @@ func _physics_process(delta: float) -> void:
 		update_hp()
 		velocity = Vector2(0,0)
 		anim.play("sleep")
-		#await anim.animation_finished
+
 	elif state == states.speak:
 		velocity = Vector2(0,0)
 	elif state == states.attack:

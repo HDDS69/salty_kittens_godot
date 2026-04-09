@@ -1,26 +1,13 @@
-[gd_resource type="TileSet" load_steps=70 format=3 uid="uid://huoug6s04p7x"]
+[gd_resource type="TileSet" load_steps=55 format=3 uid="uid://huoug6s04p7x"]
 
-[ext_resource type="Texture2D" uid="uid://bu3otia4my213" path="res://resourses/levels/resourses_levels/tilemap/texture/bg_doroga.png" id="1_gb6wh"]
 [ext_resource type="Texture2D" uid="uid://c54kn4wujjovx" path="res://resourses/levels/resourses_levels/tilemap/texture/cube.png" id="2_ugn2t"]
 [ext_resource type="Texture2D" uid="uid://46gqbgubmc2h" path="res://resourses/levels/resourses_levels/tilemap/texture/oboi.png" id="7_adb75"]
 [ext_resource type="Texture2D" uid="uid://ddin1dg31bf8b" path="res://resourses/levels/resourses_levels/tilemap/texture/zabor1.png" id="8_n65rv"]
 [ext_resource type="Texture2D" uid="uid://ktjjfbu60kra" path="res://resourses/levels/resourses_levels/tilemap/texture/oboi1.png" id="9_7uc16"]
-[ext_resource type="Texture2D" uid="uid://blajdwyfi3q3l" path="res://resourses/levels/resourses_levels/tilemap/texture/b1g2.png" id="10_3pqve"]
-[ext_resource type="Texture2D" uid="uid://b61tndr0xgqt6" path="res://resourses/levels/resourses_levels/tilemap/texture/b1g3.png" id="11_omre3"]
-[ext_resource type="Texture2D" uid="uid://0xsdnxh47uev" path="res://resourses/levels/resourses_levels/tilemap/texture/b1g.png" id="12_gh16m"]
-[ext_resource type="Texture2D" uid="uid://bu0xwo2cncyb4" path="res://resourses/levels/resourses_levels/tilemap/texture/bg.png" id="13_u16sd"]
-[ext_resource type="Texture2D" uid="uid://bi7d4ecubexgm" path="res://resourses/levels/resourses_levels/tilemap/texture/bgg.png" id="14_p20rc"]
-[ext_resource type="Texture2D" uid="uid://qleedmn7rmoe" path="res://resourses/levels/resourses_levels/tilemap/texture/bgg1.png" id="15_4db1c"]
 [ext_resource type="Texture2D" uid="uid://bjscafoxskyfx" path="res://resourses/levels/resourses_levels/tilemap/texture/bloks.png" id="16_b3p3x"]
-[ext_resource type="Texture2D" uid="uid://bbuvii0es4edn" path="res://resourses/levels/resourses_levels/tilemap/texture/bgg21.png" id="17_sva6l"]
-[ext_resource type="Texture2D" uid="uid://lgj0dmkttecy" path="res://resourses/levels/resourses_levels/tilemap/texture/dvernoi.png" id="18_mwwai"]
-[ext_resource type="Texture2D" uid="uid://b261feulqe23f" path="res://resourses/levels/resourses_levels/tilemap/texture/dverno2.png" id="19_jxlkt"]
-[ext_resource type="Texture2D" uid="uid://dn1pqm30wuln" path="res://resourses/levels/resourses_levels/tilemap/texture/dverno32.png" id="20_tosrd"]
 [ext_resource type="Texture2D" uid="uid://cue7sl0illxyb" path="res://resourses/levels/resourses_levels/tilemap/texture/ramka.png" id="21_mv542"]
 [ext_resource type="Texture2D" uid="uid://dhd07co2v0g68" path="res://resourses/levels/level_2/level2_texture/material.png" id="22_f3t3u"]
 [ext_resource type="Texture2D" uid="uid://do538puwwe00b" path="res://resourses/levels/resourses_levels/tilemap/texture/lotok.png" id="23_t5vxt"]
-[ext_resource type="Texture2D" uid="uid://crhxf6wtc3448" path="res://resourses/levels/resourses_levels/tilemap/texture/столб и фонарь.png" id="24_wihbr"]
-[ext_resource type="Texture2D" uid="uid://txiob6ctxwgj" path="res://resourses/levels/resourses_levels/tilemap/texture/фонарь.png" id="25_dtpd8"]
 [ext_resource type="Texture2D" uid="uid://d3uu7vux5c1ue" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 12-11-2023 09-42-001.png" id="26_2yvpm"]
 [ext_resource type="Texture2D" uid="uid://dil1xmrb0mnvj" path="res://resourses/levels/resourses_levels/tilemap/texture/divan.png" id="28_mjkif"]
 [ext_resource type="Texture2D" uid="uid://ddg01o73nygog" path="res://resourses/levels/resourses_levels/tilemap/texture/table.png" id="29_ann8r"]
@@ -29,16 +16,13 @@
 [ext_resource type="Texture2D" uid="uid://7kkqd0s1ejj" path="res://resourses/levels/resourses_levels/tilemap/texture/Mudri_dub.png" id="32_cj5hg"]
 [ext_resource type="Texture2D" uid="uid://c0as31ryhvpw3" path="res://resourses/levels/resourses_levels/tilemap/texture/0beer.png" id="33_y3rrk"]
 [ext_resource type="Texture2D" uid="uid://6y604yoy0lfl" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 01-16-2024 07-48-14.png" id="34_22rid"]
-[ext_resource type="Texture2D" uid="uid://c70ftmjrmoke5" path="res://resourses/entity/objects/trash_can/texture/Untitled 01-17-2024 09-38-27.png" id="35_q3ekk"]
 [ext_resource type="Texture2D" uid="uid://bp58d3o2e7r01" path="res://resourses/levels/resourses_levels/tilemap/texture/lampa.png" id="36_04shg"]
 [ext_resource type="Texture2D" uid="uid://dr5p16kjx0vf0" path="res://resourses/levels/resourses_levels/tilemap/texture/brick2.png" id="37_52k7s"]
 [ext_resource type="Texture2D" uid="uid://cw2rkeftfyt2v" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 01-09-2024 10-06-05.png" id="38_hgrmr"]
-[ext_resource type="Texture2D" uid="uid://cdm2xpfar1e0r" path="res://resourses/levels/resourses_levels/tilemap/texture/ladder.png" id="39_qf7c5"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_mfxh5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kopql"]
-texture = ExtResource("1_gb6wh")
 0:7/0 = 0
 0:7/0/z_index = 1
 0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8, -8, -8)
@@ -123,27 +107,21 @@ texture = ExtResource("9_7uc16")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ljueh"]
-texture = ExtResource("10_3pqve")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lp5us"]
-texture = ExtResource("11_omre3")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i8s5s"]
-texture = ExtResource("12_gh16m")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukq8m"]
-texture = ExtResource("13_u16sd")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0eojg"]
-texture = ExtResource("14_p20rc")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_np6dp"]
-texture = ExtResource("15_4db1c")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwh57"]
@@ -177,19 +155,15 @@ texture_region_size = Vector2i(8, 8)
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vonex"]
-texture = ExtResource("17_sva6l")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sr136"]
-texture = ExtResource("18_mwwai")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mp3yo"]
-texture = ExtResource("19_jxlkt")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lobxp"]
-texture = ExtResource("20_tosrd")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_htka1"]
@@ -236,7 +210,6 @@ texture = ExtResource("23_t5vxt")
 3:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3orw"]
-texture = ExtResource("24_wihbr")
 1:0/0 = 0
 2:0/0 = 0
 1:1/0 = 0
@@ -247,7 +220,6 @@ texture = ExtResource("24_wihbr")
 2:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x1ckt"]
-texture = ExtResource("25_dtpd8")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -6889,7 +6861,6 @@ texture = ExtResource("34_22rid")
 3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_evwo6"]
-texture = ExtResource("35_q3ekk")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nxtrv"]
@@ -6940,7 +6911,6 @@ texture = ExtResource("38_hgrmr")
 3:3/0/z_index = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f5j68"]
-texture = ExtResource("39_qf7c5")
 0:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0

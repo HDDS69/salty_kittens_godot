@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=71 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dfo3gpmlnp5h6" path="res://resourses/entity/projectiles/bullet/code/bullet.tscn" id="30_ny14h"]
 [ext_resource type="Texture2D" uid="uid://crhquqw084nub" path="res://resourses/ui/mobile_controller/texture/button_pause.png" id="32_galrp"]
 [ext_resource type="AudioStream" uid="uid://bh8nsyb3yrfic" path="res://resourses/entity/other/player/blaster/sound/blaster.mp3" id="32_ny14h"]
+[ext_resource type="Texture2D" uid="uid://q65jv3hi8ob6" path="res://resourses/ui/buttons/type4.png" id="32_xilyh"]
 [ext_resource type="Texture2D" uid="uid://xfwt41mclny3" path="res://resourses/ui/mobile_controller/texture/button_pause_pressed.png" id="33_55vbn"]
 [ext_resource type="FontFile" uid="uid://bkyohh76x8qg6" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.otf" id="33_cv5i6"]
 [ext_resource type="Texture2D" uid="uid://dgg84t16l6o8y" path="res://resourses/entity/other/player/base/texture/dialog/dialog_background3.png" id="36_m5ng5"]
@@ -605,73 +606,107 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 6.0
-offset_top = -22.0
-offset_right = 6.0
-offset_bottom = -22.0
+offset_left = -15.0
+offset_right = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("89_iraf3")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/pause"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/pause"]
+layout_mode = 0
+offset_left = -559.0
+offset_top = -321.0
+offset_right = 590.0
+offset_bottom = 320.0
+color = Color(0, 0, 0, 0.25882354)
+
+[node name="Label" type="Label" parent="CanvasLayer/pause"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -306.0
-offset_top = -143.0
-offset_right = 236.0
-offset_bottom = 270.0
+offset_left = -75.0
+offset_top = -167.0
+offset_right = 75.0
+offset_bottom = -137.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/pause/Panel"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -215.0
-offset_top = -167.5
-offset_right = 15.0
-offset_bottom = 128.5
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.9109027, 1.8645746)
-
-[node name="resume" type="Button" parent="CanvasLayer/pause/Panel/VBoxContainer"]
-layout_mode = 2
 theme_override_fonts/font = ExtResource("91_d1y0c")
+theme_override_font_sizes/font_size = 50
+text = "пауза"
+vertical_alignment = 1
+
+[node name="resume" type="Button" parent="CanvasLayer/pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -121.0
+offset_right = 158.0
+offset_bottom = -94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("91_d1y0c")
+theme_override_font_sizes/font_size = 28
 text = "вернуться"
+flat = true
 
-[node name="settings" type="Button" parent="CanvasLayer/pause/Panel/VBoxContainer"]
-layout_mode = 2
+[node name="Type4" type="Sprite2D" parent="CanvasLayer/pause"]
+position = Vector2(0, -109)
+scale = Vector2(4.062501, 4.062501)
+texture = ExtResource("32_xilyh")
+
+[node name="settings" type="Button" parent="CanvasLayer/pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = -80.0
+offset_right = 162.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("91_d1y0c")
+theme_override_font_sizes/font_size = 28
 text = "настройки"
+flat = true
 
-[node name="quit" type="Button" parent="CanvasLayer/pause/Panel/VBoxContainer"]
-layout_mode = 2
+[node name="Type5" type="Sprite2D" parent="CanvasLayer/pause"]
+position = Vector2(0, -66)
+scale = Vector2(4.062501, 4.062501)
+texture = ExtResource("32_xilyh")
+
+[node name="quit" type="Button" parent="CanvasLayer/pause"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -37.999985
+offset_right = 158.0
+offset_bottom = -10.999985
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("91_d1y0c")
+theme_override_font_sizes/font_size = 24
 text = "выход в главное меню
 "
+flat = true
 
-[node name="Label" type="Label" parent="CanvasLayer/pause/Panel"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -108.0
-offset_top = -22.0
-offset_right = 108.0
-offset_bottom = 55.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("91_d1y0c")
-theme_override_font_sizes/font_size = 25
-text = "           пауза"
-vertical_alignment = 1
+[node name="Type6" type="Sprite2D" parent="CanvasLayer/pause"]
+position = Vector2(0, -25)
+scale = Vector2(4.062501, 4.062501)
+texture = ExtResource("32_xilyh")
 
 [node name="setting" type="Control" parent="CanvasLayer"]
 process_mode = 3
@@ -819,9 +854,9 @@ one_shot = true
 [connection signal="timeout" from="Timer_invulnerability" to="." method="_on_timer_invulnerability_timeout"]
 [connection signal="body_entered" from="hit" to="." method="_on_hit_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="CanvasLayer/pause/Panel/VBoxContainer/resume" to="CanvasLayer/pause" method="_on_resume_pressed"]
-[connection signal="pressed" from="CanvasLayer/pause/Panel/VBoxContainer/settings" to="CanvasLayer/pause" method="_on_settings_pressed"]
-[connection signal="pressed" from="CanvasLayer/pause/Panel/VBoxContainer/quit" to="CanvasLayer/pause" method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/resume" to="CanvasLayer/pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/settings" to="CanvasLayer/pause" method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/quit" to="CanvasLayer/pause" method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/controll" to="CanvasLayer/pause" method="_on_controll_pressed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/full screen" to="CanvasLayer/pause" method="_on_full_screen_pressed"]
 [connection signal="pressed" from="CanvasLayer/setting/Panel/VBoxContainer/light" to="." method="_on_light_pressed"]

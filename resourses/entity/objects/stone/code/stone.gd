@@ -11,7 +11,7 @@ func damage(_dmg):
 	kil_zone.monitoring = true
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name != 'player' and body.has_method('damage'):
+	if body.name != 'player' and body.has_method('damage') and body != self:
 		body.damage(100)
 		anim.play('death')
 		await anim.animation_finished

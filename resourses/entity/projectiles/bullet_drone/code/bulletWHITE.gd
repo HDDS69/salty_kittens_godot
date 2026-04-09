@@ -11,5 +11,5 @@ func _on_body_entered(body):
 	if body.name == 'player':
 		body.damage(1)
 		queue_free()
-	if body == TileMapLayer:
+	if body is TileMapLayer:
 		queue_free()
