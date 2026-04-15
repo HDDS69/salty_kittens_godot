@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://drkw1gq1eictd"]
+[gd_scene load_steps=37 format=3 uid="uid://drkw1gq1eictd"]
 
 [ext_resource type="Script" uid="uid://dmc3ylyeniuu5" path="res://resourses/entity/npcs/drone/code/drone.gd" id="1_741hc"]
 [ext_resource type="Texture2D" uid="uid://d0lgxfixkk1xj" path="res://resourses/entity/npcs/drone/texture/dronebreak.png" id="1_ibx1y"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bys2fq87tspfr" path="res://resourses/entity/projectiles/bullet_drone/code/bullet_DRONE.tscn" id="2_qe81u"]
 [ext_resource type="PackedScene" uid="uid://c8jsbiqw2orbe" path="res://resourses/entity/other/salt/code/salt.tscn" id="3_i11h8"]
 [ext_resource type="Texture2D" uid="uid://cvnyc5d1bfy3d" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 07-22-2024 10-16-07.png" id="4_741hc"]
+[ext_resource type="Texture2D" uid="uid://bui8lqacuidum" path="res://resourses/entity/npcs/drone/texture/drone_damage.png" id="4_auepb"]
 [ext_resource type="AudioStream" uid="uid://co1pqjg54w1u8" path="res://resourses/entity/npcs/drone/sound/dron_fly.mp3" id="6_dsspx"]
 [ext_resource type="AudioStream" uid="uid://cvgvgjkrsm400" path="res://resourses/entity/npcs/drone/sound/dron_piu.mp3" id="7_i11h8"]
 [ext_resource type="Texture2D" uid="uid://bk3uvutdbs2dy" path="res://resourses/levels/resourses_levels/tilemap/texture/pngkey.com-white-circle-png-transparent-1709387.png" id="9_6vgt1"]
@@ -13,6 +14,30 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibx1y"]
 size = Vector2(130.17783, 38.792465)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y5d3"]
+atlas = ExtResource("4_auepb")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l27v"]
+atlas = ExtResource("4_auepb")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhlae"]
+atlas = ExtResource("4_auepb")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3bg3"]
+atlas = ExtResource("4_auepb")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk083"]
+atlas = ExtResource("4_auepb")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nanq"]
+atlas = ExtResource("4_auepb")
+region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxt3n"]
 atlas = ExtResource("1_ibx1y")
@@ -64,6 +89,29 @@ region = Rect2(64, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dfv57"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5y5d3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l27v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhlae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3bg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qk083")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nanq")
+}],
+"loop": true,
+"name": &"damage",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pxt3n")
@@ -150,7 +198,7 @@ gravity_scale = 0.0
 script = ExtResource("1_741hc")
 bullet = ExtResource("2_qe81u")
 salt = ExtResource("3_i11h8")
-hp = 2
+hp = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(5.4995484, -3.0010254)
@@ -161,6 +209,7 @@ shape = SubResource("RectangleShape2D_ibx1y")
 position = Vector2(5.500223, -5.15524)
 scale = Vector2(1.130901, 1.0441675)
 sprite_frames = SubResource("SpriteFrames_dfv57")
+animation = &"damage"
 autoplay = "default"
 
 [node name="muzzle" type="Area2D" parent="RigidBody2D"]

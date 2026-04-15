@@ -2,7 +2,7 @@ extends Node
 
 #var player = preload("res://player.tscn")
 #var playerTmp = player.instantiate()
-var death = false
+@onready var level = $".."
 @onready var light = $"../light"
 @onready var ed1 = $"../education/1"
 @onready var ed2 = $"../education/2"
@@ -11,6 +11,8 @@ var death = false
 @onready var ed5 = $"../education/5"
 @onready var stairs1 = $"../TileMapLayer/stairs1"
 @onready var stairs2 = $"../TileMapLayer/stairs2"
+@onready var gr1 = $gr1
+@export var granade : PackedScene
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _ready() -> void:
 	#if DiscordRPC.get_is_discord_working():
@@ -87,3 +89,20 @@ func _on_st_2_body_entered(body: Node2D) -> void:
 			stairs2.modulate = 'ffffff5b'
 		else:
 			stairs2.modulate = 'ffffff'
+
+func _on_gr_1_body_entered(body: Node2D) -> void:
+	if body.name == 'player':
+		for i in range(3):
+			var g = granade.instantiate()
+			get_tree().current_scene.call_deferred('add_child',g)
+			g.global_position = Vector2(-595,577)
+			g.activation = false
+		gr1.set_deferred('monitoring',false)
+
+
+func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	$"../light".set_deferred('visible',true)
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	$"../light".set_deferred('visible',false)

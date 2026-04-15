@@ -1,11 +1,14 @@
 [gd_scene load_steps=15 format=3 uid="uid://dwe8uyi30jkan"]
 
 [ext_resource type="Script" uid="uid://bgggys80wix26" path="res://resourses/entity/objects/barrel/code/barrel.gd" id="1_r87uk"]
-[ext_resource type="Texture2D" uid="uid://c7pqeh4e35um0" path="res://resourses/entity/objects/barrel/texture/barrel.png" id="2_5w15r"]
+[ext_resource type="Texture2D" uid="uid://wabw7rr6jet0" path="res://resourses/entity/objects/barrel/texture/barrel2.png" id="2_5w15r"]
 [ext_resource type="Texture2D" uid="uid://dorfh0mss3e88" path="res://resourses/entity/objects/barrel/texture/barrel_explosion.png" id="3_2m1ee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5w15r"]
-size = Vector2(91.27201, 101.72541)
+size = Vector2(97.35681, 73.01761)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5w15r"]
+polygon = PackedVector2Array(-8, -7, -7, -7, -7, -8, 7, -8, 7, -7, 8, -7, 8, 7, 7, 7, 7, 8, -7, 8, -7, 7, -8, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_64hgw"]
 atlas = ExtResource("3_2m1ee")
@@ -74,30 +77,29 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jaouy"]
-polygon = PackedVector2Array(-10.0158, -16.2323, -8.76386, -16.2323, -8.76386, -17.4347, -6.88589, -17.4347, -6.88589, -18.0359, -3.75594, -18.0359, -3.75594, -19.2383, 11.8938, -19.2383, 11.8938, -18.0359, 15.0238, -18.0359, 15.0238, -16.8335, 16.9017, -16.8335, 16.9017, -16.2323, 18.1537, -16.2323, 18.1537, 9.61914, 16.9017, 9.61914, 16.9017, 10.8215, -6.88589, 10.8215, -6.88589, 10.2203, -9.38985, 10.2203, -9.38985, 9.01795, -10.0158, 9.01795)
-
 [node name="RigidBody2D" type="RigidBody2D"]
-mass = 123.522
+mass = 50.0
+can_sleep = false
 script = ExtResource("1_r87uk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.5, -4.6410236)
+position = Vector2(8, -6)
 scale = Vector2(0.16434392, 0.16434392)
 shape = SubResource("RectangleShape2D_5w15r")
 
 [node name="Barrel" type="Sprite2D" parent="."]
-position = Vector2(3.9094105, -4.6766796)
-scale = Vector2(0.50566185, 0.5265154)
+position = Vector2(8, -8)
 texture = ExtResource("2_5w15r")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Barrel"]
+position = Vector2(-4.7683716e-07, 0)
+scale = Vector2(0.99999994, 1)
+occluder = SubResource("OccluderPolygon2D_5w15r")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.019373894, -0.6262164)
+position = Vector2(7.9999995, -8)
 scale = Vector2(0.4922522, 0.51255274)
 sprite_frames = SubResource("SpriteFrames_d68ky")
 animation = &"explosion"
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-position = Vector2(2, -3)
-scale = Vector2(0.47746548, 0.49715626)
-occluder = SubResource("OccluderPolygon2D_jaouy")
+frame = 8
+frame_progress = 1.0

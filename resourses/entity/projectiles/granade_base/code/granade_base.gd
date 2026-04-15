@@ -13,7 +13,7 @@ func _ready() -> void:
 	bomb_img = $bomb.texture
 func death():
 	if activation == true:
-		radius.monitoring = true
+		radius.set_deferred('monitoring',true)
 		bomb.visible = false
 		freeze = true
 		sound.play()

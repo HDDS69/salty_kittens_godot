@@ -66,9 +66,7 @@ func _physics_process(_delta: float) -> void:
 			light2.color = "#ff0000"
 			if timer_recharge.is_stopped():
 				timer_recharge.start()
-
 		
-
 func death():
 	gravity_scale = 1.0
 	inertia = 1.0
@@ -87,6 +85,8 @@ func spawn():
 func damage(dmg):
 	hp -= dmg
 	hp_bar.value = hp
+	if hp == hp_max - 1:
+		anim.play('damage')
 	if hp <= hp_max /2:
 		$GPUParticles2D.emitting = true
 	if hp <= 0:
