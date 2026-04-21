@@ -8,6 +8,10 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="salty kittens"
@@ -28,8 +32,10 @@ Signalbus="*res://resourses/entity/other/dialog/code/signalbus.gd"
 
 [display]
 
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="viewport"
+window/vsync/vsync_mode=0
 mouse_cursor/custom_image="uid://c84o5lhfnvnbk"
 
 [editor]
@@ -154,10 +160,8 @@ common/physics_interpolation=true
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
-textures/default_filters/anisotropic_filtering_level=0
-textures/basis_universal/zstd_supercompression_level=12
+textures/webp_compression/lossless_compression_factor=50.0
+textures/default_filters/anisotropic_filtering_level=1
 occlusion_culling/use_occlusion_culling=true
 textures/use_occlusion_culling=true

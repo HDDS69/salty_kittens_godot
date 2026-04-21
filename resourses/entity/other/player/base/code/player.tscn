@@ -275,7 +275,6 @@ font_size = 32
 [sub_resource type="LabelSettings" id="LabelSettings_uf1d1"]
 
 [node name="player" type="CharacterBody2D"]
-show_behind_parent = true
 top_level = true
 script = ExtResource("1_8m1ne")
 
@@ -290,14 +289,12 @@ animation = &"run"
 autoplay = "hidel"
 
 [node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
-physics_interpolation_mode = 1
 position = Vector2(1.25, -10.25)
 scale = Vector2(21.797998, 0.6337439)
 zoom = Vector2(6, 6)
-process_callback = 0
+limit_enabled = false
 position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
+position_smoothing_speed = 4.0
 
 [node name="recharge" type="RichTextLabel" parent="CollisionShape2D"]
 clip_contents = false

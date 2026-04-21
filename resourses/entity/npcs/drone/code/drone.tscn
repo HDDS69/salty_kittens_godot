@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://drkw1gq1eictd"]
+[gd_scene load_steps=44 format=3 uid="uid://drkw1gq1eictd"]
 
 [ext_resource type="Script" uid="uid://dmc3ylyeniuu5" path="res://resourses/entity/npcs/drone/code/drone.gd" id="1_741hc"]
 [ext_resource type="Texture2D" uid="uid://d0lgxfixkk1xj" path="res://resourses/entity/npcs/drone/texture/dronebreak.png" id="1_ibx1y"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cvnyc5d1bfy3d" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 07-22-2024 10-16-07.png" id="4_741hc"]
 [ext_resource type="Texture2D" uid="uid://bui8lqacuidum" path="res://resourses/entity/npcs/drone/texture/drone_damage.png" id="4_auepb"]
 [ext_resource type="AudioStream" uid="uid://co1pqjg54w1u8" path="res://resourses/entity/npcs/drone/sound/dron_fly.mp3" id="6_dsspx"]
+[ext_resource type="Texture2D" uid="uid://x8u038oo4bdh" path="res://resourses/entity/npcs/drone/texture/drone_inherible.png" id="7_5y5d3"]
 [ext_resource type="AudioStream" uid="uid://cvgvgjkrsm400" path="res://resourses/entity/npcs/drone/sound/dron_piu.mp3" id="7_i11h8"]
 [ext_resource type="Texture2D" uid="uid://bk3uvutdbs2dy" path="res://resourses/levels/resourses_levels/tilemap/texture/pngkey.com-white-circle-png-transparent-1709387.png" id="9_6vgt1"]
 [ext_resource type="Texture2D" uid="uid://buywougyum70u" path="res://resourses/levels/level_1/texture/tuman.png" id="10_px706"]
@@ -87,6 +88,30 @@ region = Rect2(32, 32, 32, 32)
 atlas = ExtResource("2_8gp32")
 region = Rect2(64, 32, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_en6ls"]
+atlas = ExtResource("7_5y5d3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_potk5"]
+atlas = ExtResource("7_5y5d3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqxpl"]
+atlas = ExtResource("7_5y5d3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42ead"]
+atlas = ExtResource("7_5y5d3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybi5t"]
+atlas = ExtResource("7_5y5d3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twmsf"]
+atlas = ExtResource("7_5y5d3")
+region = Rect2(64, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_dfv57"]
 animations = [{
 "frames": [{
@@ -157,6 +182,29 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en6ls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_potk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqxpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42ead")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ybi5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twmsf")
+}],
+"loop": false,
+"name": &"invulnerability",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qe81u"]
@@ -209,7 +257,6 @@ shape = SubResource("RectangleShape2D_ibx1y")
 position = Vector2(5.500223, -5.15524)
 scale = Vector2(1.130901, 1.0441675)
 sprite_frames = SubResource("SpriteFrames_dfv57")
-animation = &"damage"
 autoplay = "default"
 
 [node name="muzzle" type="Area2D" parent="RigidBody2D"]

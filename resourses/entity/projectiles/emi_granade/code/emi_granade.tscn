@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://fox6ommykngf"]
+[gd_scene load_steps=21 format=3 uid="uid://fox6ommykngf"]
 
 [ext_resource type="PackedScene" uid="uid://d1dlmmptam0ue" path="res://resourses/entity/projectiles/granade_base/code/granade_base.tscn" id="1_avve6"]
 [ext_resource type="Texture2D" uid="uid://bmy10rhkbtt88" path="res://resourses/entity/projectiles/emi_granade/texture/emi-bomb.png" id="2_l4f0h"]
 [ext_resource type="Script" uid="uid://mht06iqkf4kp" path="res://resourses/entity/projectiles/emi_granade/code/emi_granade.gd" id="2_y1imw"]
 [ext_resource type="Texture2D" uid="uid://bf3r2bkt2ije3" path="res://resourses/entity/projectiles/pomegrenade/texture/boo,.png" id="3_g2rup"]
+[ext_resource type="Texture2D" uid="uid://buywougyum70u" path="res://resourses/levels/level_1/texture/tuman.png" id="5_kwmbp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_y1imw"]
 bounce = 0.25
@@ -121,3 +122,19 @@ texture = ExtResource("2_l4f0h")
 
 [node name="AnimatedSprite2D" parent="." index="5"]
 sprite_frames = SubResource("SpriteFrames_g2rup")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." index="8"]
+emitting = false
+amount = 300
+texture = ExtResource("5_kwmbp")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 40.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 50.51
+initial_velocity_max = 212.13
+angle_min = -58.2
+angle_max = 58.2

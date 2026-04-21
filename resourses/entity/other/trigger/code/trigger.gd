@@ -1,6 +1,6 @@
 extends Area2D
 var entered = false
-@onready var sprite = $"Untitled06-12-202411-00-24"
+@onready var sprite = $Untitled04152026105058
 		
 func _input(event: InputEvent) -> void:
 	if entered and event.is_action_pressed("ui_action_button"):

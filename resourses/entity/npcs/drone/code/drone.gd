@@ -83,7 +83,12 @@ func spawn():
 		count_d = false
 		
 func damage(dmg):
-	hp -= dmg
+	if randi_range(1,5) == 1:
+		anim.play("invulnerability")
+		await anim.animation_finished
+		anim.play("default")
+	else:
+		hp -= dmg
 	hp_bar.value = hp
 	if hp == hp_max - 1:
 		anim.play('damage')

@@ -1,7 +1,7 @@
 [gd_scene load_steps=36 format=3 uid="uid://bmvro43qmydke"]
 
 [ext_resource type="Script" uid="uid://bcao2mjn6s4kh" path="res://resourses/entity/npcs/TV/code/TV.gd" id="1_ye00f"]
-[ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://resourses/shared_resources/texture/ui/Untitled 06-12-2024 11-00-24.png" id="3_gmtlm"]
+[ext_resource type="Texture2D" uid="uid://tqfmuogox35i" path="res://resourses/ui/mobile_controller/texture/Untitled 04-15-2026 10-50-58.png" id="2_2qof3"]
 [ext_resource type="Texture2D" uid="uid://cfeok18ypvsgi" path="res://resourses/entity/npcs/TV/texture/puf.png" id="5_uboxy"]
 [ext_resource type="Texture2D" uid="uid://blod5nf63ivmn" path="res://resourses/entity/npcs/TV/texture/TV-Sheet.png" id="6_75nnp"]
 
@@ -239,9 +239,9 @@ shape = SubResource("RectangleShape2D_gdlkc")
 [node name="ui" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0, 0, 0, 1)
-position = Vector2(14, -23.000002)
-scale = Vector2(0.22851552, 0.22851552)
-texture = ExtResource("3_gmtlm")
+position = Vector2(14.000001, -24)
+scale = Vector2(0.5441894, 0.5441894)
+texture = ExtResource("2_2qof3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(14, -17)

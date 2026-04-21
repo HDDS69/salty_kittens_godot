@@ -15,7 +15,7 @@ func death():
 	if activation == true:
 		radius.set_deferred('monitoring',true)
 		bomb.visible = false
-		freeze = true
+		set_deferred('freeze',true)
 		sound.play()
 		anim.play("default")
 		await anim.animation_finished

@@ -4,6 +4,7 @@ extends Node
 #var playerTmp = player.instantiate()
 @onready var level = $".."
 @onready var light = $"../light"
+@onready var street = $"../street"
 @onready var ed1 = $"../education/1"
 @onready var ed2 = $"../education/2"
 @onready var ed3 = $"../education/3"
@@ -101,8 +102,10 @@ func _on_gr_1_body_entered(body: Node2D) -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
-	$"../light".set_deferred('visible',true)
+	light.set_deferred('visible',true)
+	street.set_deferred('visible',true)
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	$"../light".set_deferred('visible',false)
+	light.set_deferred('visible',false)
+	street.set_deferred('visible',false)
