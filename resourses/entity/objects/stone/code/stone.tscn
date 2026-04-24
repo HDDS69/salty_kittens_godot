@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://54uwo88kkjuf" path="res://resourses/entity/objects/stone/code/stone.gd" id="1_cw1v1"]
 [ext_resource type="Texture2D" uid="uid://cw2rkeftfyt2v" path="res://resourses/levels/resourses_levels/tilemap/texture/Untitled 01-09-2024 10-06-05.png" id="1_ed23n"]
+[ext_resource type="Texture2D" uid="uid://bwup5s4baqp0m" path="res://resourses/ui/mobile_controller/texture/hit.png" id="2_72qg3"]
 [ext_resource type="Texture2D" uid="uid://rgqkd2ykxt6q" path="res://resourses/entity/objects/stone/texture/partical.png" id="4_20ini"]
-[ext_resource type="Texture2D" uid="uid://d22sxtqxknkb" path="res://resourses/shared_resources/texture/ui/ui_hit.png" id="4_muwl5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opvv7"]
 size = Vector2(8, 5)
@@ -70,10 +70,9 @@ position = Vector2(4, -2.5)
 shape = SubResource("RectangleShape2D_opvv7")
 
 [node name="ui" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(5, -20)
-scale = Vector2(0.322265, 0.322265)
-texture = ExtResource("4_muwl5")
+position = Vector2(4, -23)
+scale = Vector2(0.10799146, 0.10799146)
+texture = ExtResource("2_72qg3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(1.5229772, 1.5229772, 1.5229772, 1)

@@ -235,54 +235,50 @@ color = Color(0, 0, 0, 1)
 color_ramp = SubResource("GradientTexture1D_auepb")
 turbulence_noise_strength = 0.5
 
-[node name="drone" type="Node2D"]
-metadata/_edit_horizontal_guides_ = [11.0]
-metadata/_edit_vertical_guides_ = [309.0, -65.0, 209.0, 57.0]
-
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="RigidBody2D" type="RigidBody2D"]
 rotation = 8.201436e-05
 mass = 30.0
 gravity_scale = 0.0
 script = ExtResource("1_741hc")
 bullet = ExtResource("2_qe81u")
 salt = ExtResource("3_i11h8")
-hp = 4
+hp = 6
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(5.4995484, -3.0010254)
 scale = Vector2(0.22276905, 0.25781375)
 shape = SubResource("RectangleShape2D_ibx1y")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(5.500223, -5.15524)
 scale = Vector2(1.130901, 1.0441675)
 sprite_frames = SubResource("SpriteFrames_dfv57")
 autoplay = "default"
 
-[node name="muzzle" type="Area2D" parent="RigidBody2D"]
+[node name="muzzle" type="Area2D" parent="."]
 position = Vector2(6, -0.0004918575)
 scale = Vector2(0.22276905, 0.25781375)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/muzzle"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="muzzle"]
 position = Vector2(14.5, -2.25)
 shape = SubResource("RectangleShape2D_qe81u")
 
-[node name="Untitled07-22-202410-16-07" type="Sprite2D" parent="RigidBody2D/muzzle"]
+[node name="Untitled07-22-202410-16-07" type="Sprite2D" parent="muzzle"]
 position = Vector2(0, -21)
 scale = Vector2(4.15625, 4.15625)
 texture = ExtResource("4_741hc")
 
-[node name="Marker2D" type="Marker2D" parent="RigidBody2D/muzzle"]
+[node name="Marker2D" type="Marker2D" parent="muzzle"]
 position = Vector2(27, -1)
 
-[node name="ProgressBar" type="ProgressBar" parent="RigidBody2D"]
+[node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = 1.9986916
 offset_top = -16.000162
 offset_right = 41.549862
 offset_bottom = 10.999838
 scale = Vector2(0.19713499, 0.17210376)
 
-[node name="Label" type="Label" parent="RigidBody2D/ProgressBar"]
+[node name="Label" type="Label" parent="ProgressBar"]
 layout_mode = 0
 offset_left = 39.55117
 offset_top = 1.4980166
@@ -290,22 +286,22 @@ offset_right = 64.61324
 offset_bottom = 24.498016
 text = "HP"
 
-[node name="recharge" type="Timer" parent="RigidBody2D"]
+[node name="recharge" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 
-[node name="time to shot" type="Timer" parent="RigidBody2D"]
+[node name="time to shot" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
-[node name="Area2D2" type="Area2D" parent="RigidBody2D"]
+[node name="Area2D2" type="Area2D" parent="."]
 scale = Vector2(0.2468261, 0.2468261)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
 position = Vector2(20.256844, -4.0530963)
 shape = SubResource("RectangleShape2D_741hc")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RigidBody2D"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 rotation = -8.201436e-05
 scale = Vector2(0.2468261, 0.2468261)
 stream = ExtResource("6_dsspx")
@@ -314,14 +310,14 @@ autoplay = true
 max_distance = 350.0
 parameters/looping = true
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="RigidBody2D/AudioStreamPlayer2D"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayer2D"]
 stream = ExtResource("7_i11h8")
 volume_db = -7.0
 max_distance = 400.0
 
-[node name="AudioListener2D" type="AudioListener2D" parent="RigidBody2D/AudioStreamPlayer2D/AudioStreamPlayer2D"]
+[node name="AudioListener2D" type="AudioListener2D" parent="AudioStreamPlayer2D/AudioStreamPlayer2D"]
 
-[node name="PointLight2D7" type="PointLight2D" parent="RigidBody2D"]
+[node name="PointLight2D7" type="PointLight2D" parent="."]
 position = Vector2(-5.000328, -3.9995897)
 rotation = -8.201436e-05
 scale = Vector2(0.0250838, 0.022321137)
@@ -329,7 +325,7 @@ color = Color(0, 0.6515054, 0.65150535, 1)
 shadow_enabled = true
 texture = ExtResource("9_6vgt1")
 
-[node name="PointLight2D8" type="PointLight2D" parent="RigidBody2D"]
+[node name="PointLight2D8" type="PointLight2D" parent="."]
 position = Vector2(16.99967, -4.001394)
 rotation = -8.201436e-05
 scale = Vector2(0.0250838, 0.022321137)
@@ -337,7 +333,7 @@ color = Color(0, 0.6515054, 0.65150535, 1)
 shadow_enabled = true
 texture = ExtResource("9_6vgt1")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="RigidBody2D"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(-5.00041, -4.99959)
 emitting = false
 texture = ExtResource("10_px706")
@@ -356,11 +352,11 @@ wait_time = 2.0
 [node name="Timer_stun" type="Timer" parent="."]
 wait_time = 5.0
 
-[connection signal="timeout" from="RigidBody2D/recharge" to="RigidBody2D" method="_on_timer_timeout"]
-[connection signal="timeout" from="RigidBody2D/time to shot" to="RigidBody2D" method="_on_time_to_shot_timeout"]
-[connection signal="body_entered" from="RigidBody2D/Area2D2" to="RigidBody2D" method="_on_area_2d_2_body_entered"]
-[connection signal="body_exited" from="RigidBody2D/Area2D2" to="RigidBody2D" method="_on_area_2d_2_body_exited"]
-[connection signal="timeout" from="Timer_fly" to="RigidBody2D" method="_on_timer_fly_timeout"]
-[connection signal="timeout" from="Timer_fly/Timer_y" to="RigidBody2D" method="_on_timer_y_timeout"]
-[connection signal="timeout" from="Timer_z" to="RigidBody2D" method="_on_timer_z_timeout"]
-[connection signal="timeout" from="Timer_stun" to="RigidBody2D" method="_on_timer_stun_timeout"]
+[connection signal="timeout" from="recharge" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="time to shot" to="." method="_on_time_to_shot_timeout"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
+[connection signal="timeout" from="Timer_fly" to="." method="_on_timer_fly_timeout"]
+[connection signal="timeout" from="Timer_fly/Timer_y" to="." method="_on_timer_y_timeout"]
+[connection signal="timeout" from="Timer_z" to="." method="_on_timer_z_timeout"]
+[connection signal="timeout" from="Timer_stun" to="." method="_on_timer_stun_timeout"]

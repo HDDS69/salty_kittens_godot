@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=76 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://crgl7ytdeb2el" path="res://resourses/ui/mobile_controller/texture/button_salt.png" id="15_dj4mu"]
 [ext_resource type="Texture2D" uid="uid://e76emg6k28uw" path="res://resourses/ui/mobile_controller/texture/button_salt_pressed.png" id="16_bfcbp"]
 [ext_resource type="Texture2D" uid="uid://bwup5s4baqp0m" path="res://resourses/ui/mobile_controller/texture/hit.png" id="17_hn0t7"]
-[ext_resource type="Texture2D" uid="uid://bm0oomflca0dy" path="res://resourses/entity/other/player/blaster/texture/blaster2.png" id="28_7hjnw"]
 [ext_resource type="Script" uid="uid://vj024w5stxer" path="res://resourses/entity/other/player/base/code/dialog.gd" id="29_cv5i6"]
 [ext_resource type="PackedScene" uid="uid://dfo3gpmlnp5h6" path="res://resourses/entity/projectiles/bullet/code/bullet.tscn" id="30_ny14h"]
 [ext_resource type="Texture2D" uid="uid://crhquqw084nub" path="res://resourses/ui/mobile_controller/texture/button_pause.png" id="32_galrp"]
@@ -133,8 +132,8 @@ height = 12.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bn4h3"]
 size = Vector2(9, 5.5)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3hprq"]
-atlas = ExtResource("28_7hjnw")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i85s"]
+atlas = ExtResource("73_vihgm")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pcrkf"]
@@ -173,11 +172,11 @@ region = Rect2(32, 64, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3hprq")
+"texture": SubResource("AtlasTexture_4i85s")
 }],
 "loop": true,
 "name": &"default",
-"speed": 0.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -444,12 +443,12 @@ shape = SubResource("RectangleShape2D_cebvf")
 action = "ui_left_player"
 
 [node name="eat_salt" type="TouchScreenButton" parent="mobile controller/MarginContainer2"]
-position = Vector2(134, 118)
-scale = Vector2(0.96875006, 0.9273495)
+position = Vector2(18, 79)
+scale = Vector2(0.749132, 0.717117)
 texture_normal = ExtResource("15_dj4mu")
 texture_pressed = ExtResource("16_bfcbp")
 shape = SubResource("RectangleShape2D_cebvf")
-action = "dash"
+action = "ui_focus_next"
 
 [node name="hit" type="TouchScreenButton" parent="mobile controller/MarginContainer2"]
 position = Vector2(19, 285)
@@ -528,7 +527,7 @@ stretch_mode = 5
 
 [node name="pause" type="TouchScreenButton" parent="mobile controller"]
 process_mode = 3
-position = Vector2(1256.0001, 120.146805)
+position = Vector2(1141.9999, 120.146805)
 rotation = -3.14159
 scale = Vector2(1.2038337, 1.1523882)
 texture_normal = ExtResource("32_galrp")
@@ -562,7 +561,7 @@ shape = SubResource("RectangleShape2D_bn4h3")
 position = Vector2(65.32366, -1.1920929e-06)
 
 [node name="blaster" type="AnimatedSprite2D" parent="blaster"]
-position = Vector2(15.370274, -4.7683716e-07)
+position = Vector2(16, 0.999999)
 scale = Vector2(3.55023, 3.55023)
 sprite_frames = SubResource("SpriteFrames_2acp6")
 autoplay = "default"
@@ -696,8 +695,8 @@ theme_override_font_sizes/font_size = 28
 text = "вернуться"
 flat = true
 
-[node name="Type4" type="Sprite2D" parent="CanvasLayer/pause/resume"]
-position = Vector2(159, 12)
+[node name="Type4" type="Sprite2D" parent="CanvasLayer/pause"]
+position = Vector2(0, -109)
 scale = Vector2(4.062501, 4.062501)
 texture = ExtResource("32_xilyh")
 
@@ -719,8 +718,8 @@ theme_override_font_sizes/font_size = 28
 text = "настройки"
 flat = true
 
-[node name="Type5" type="Sprite2D" parent="CanvasLayer/pause/settings"]
-position = Vector2(159, 14)
+[node name="Type5" type="Sprite2D" parent="CanvasLayer/pause"]
+position = Vector2(0, -66)
 scale = Vector2(4.062501, 4.062501)
 texture = ExtResource("32_xilyh")
 
@@ -743,8 +742,8 @@ text = "выход в главное меню
 "
 flat = true
 
-[node name="Type6" type="Sprite2D" parent="CanvasLayer/pause/quit"]
-position = Vector2(158, 13)
+[node name="Type6" type="Sprite2D" parent="CanvasLayer/pause"]
+position = Vector2(0, -25)
 scale = Vector2(4.062501, 4.062501)
 texture = ExtResource("32_xilyh")
 

@@ -7,6 +7,7 @@ var hp_max
 @onready var anim = $AnimatedSprite2D
 @onready var timer_shot =  $"time to shot"
 @onready var timer_recharge = $recharge
+@onready var timer_stun = $Timer_stun
 @onready var hp_bar = $ProgressBar
 @onready var muzzle = $muzzle
 @onready var muzzle_marker = $muzzle/Marker2D
@@ -14,6 +15,7 @@ var hp_max
 @onready var sound_shoot = $AudioStreamPlayer2D/AudioStreamPlayer2D
 @onready var light1 = $PointLight2D7
 @onready var light2 = $PointLight2D8
+@onready var effect = $GPUParticles2D
 
 enum states {idle,attack,death,recharge,stun}
 var state: states = states.idle
@@ -93,7 +95,7 @@ func damage(dmg):
 	if hp == hp_max - 1:
 		anim.play('damage')
 	if hp <= hp_max /2:
-		$GPUParticles2D.emitting = true
+		effect.emitting = true
 	if hp <= 0:
 		state = states.death
 
@@ -137,9 +139,9 @@ func _on_timer_z_timeout() -> void:
 
 func stun():
 	state = states.stun
-	gravity_scale = 1.0
+	gravity_scale = 6.0
 	inertia = 1.0
-	$"../Timer_stun".start()
+	timer_stun.start()
 	
 
 func _on_timer_stun_timeout() -> void:

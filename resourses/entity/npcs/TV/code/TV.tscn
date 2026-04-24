@@ -165,7 +165,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"puf",
-"speed": 7.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -247,7 +247,7 @@ texture = ExtResource("2_2qof3")
 position = Vector2(14, -17)
 scale = Vector2(0.35416666, 0.35416666)
 sprite_frames = SubResource("SpriteFrames_adl8h")
-animation = &"stand"
+animation = &"puf"
 autoplay = "stand"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

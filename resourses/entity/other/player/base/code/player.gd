@@ -61,6 +61,7 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			if land and velocity.y == 0:
 				anim1.play("land")
+				$CollisionShape2D/GPUParticles2D.set_deferred('emitting', true)
 				anim.play("land")
 				sound_land.play()
 				await anim.animation_finished
@@ -200,12 +201,10 @@ func _on_timer_timeout():
 	count = 3
 	Rtext.text = ""
 	
-func _on_light_pressed() -> void:
-	SavePoint.light = !SavePoint.light
 
 func animTV() -> void:
-	SPEED = 55
-	JUMP_VELOCITY = -175.0
+	SPEED = 60
+	JUMP_VELOCITY = -190.0
 	anim.visible = false
 	anim = $CollisionShape2D/TV
 	anim.visible = true

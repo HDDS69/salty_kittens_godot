@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dxgu2wq3kjwxi" path="res://resourses/entity/objects/box/code/box.gd" id="1_phbp0"]
 [ext_resource type="Texture2D" uid="uid://c7nshux4e51se" path="res://resourses/entity/objects/box/texture/box.png" id="2_yu04v"]
-[ext_resource type="Texture2D" uid="uid://c61lejj0mf3ey" path="res://resourses/shared_resources/texture/ui/Untitled 06-12-2024 11-00-24.png" id="3_k7t82"]
+[ext_resource type="Texture2D" uid="uid://tqfmuogox35i" path="res://resourses/ui/mobile_controller/texture/Untitled 04-15-2026 10-50-58.png" id="3_oilqu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2vkov"]
 size = Vector2(13, 12)
@@ -22,9 +22,9 @@ texture = ExtResource("2_yu04v")
 
 [node name="ui" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-16, -1.0000008)
-scale = Vector2(0.17968751, 0.17968746)
-texture = ExtResource("3_k7t82")
+position = Vector2(-16, 1.0000004)
+scale = Vector2(0.40234375, 0.40234363)
+texture = ExtResource("3_oilqu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

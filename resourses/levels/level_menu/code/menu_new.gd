@@ -9,8 +9,7 @@ var platform = OS.get_name()
 func _ready() -> void:
 	if platform == "Android":
 		SavePoint.fullscreen = true
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		return
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 		
 	#if Engine.has_singleton('DiscordRPC'):
 			#DiscordRPC.app_id = 1423378584986456245 # Application ID

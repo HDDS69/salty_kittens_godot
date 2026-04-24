@@ -2,14 +2,16 @@ extends Control
 var setting = false
 var fullscreen = false
 var platform = OS.get_name()
+@onready var control = $"../../mobile controller"
+@onready var vsinc = $"../setting/grafics/Label/CheckBox"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.visible = false
 	if platform == "Android":
 		SavePoint.mobile_control = true
-		SavePoint.fullscreen = true
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		$"../../mobile controller".visible = true
+		#SavePoint.fullscreen = true
+		#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		control.visible = true
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and setting != true:
@@ -26,7 +28,7 @@ func _on_resume_pressed() -> void:
 func _on_full_screen_pressed() -> void:
 	SavePoint.fullscreen = !SavePoint.fullscreen
 	if SavePoint.fullscreen:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
@@ -46,9 +48,9 @@ func _on_quit_setting_pressed() -> void:
 func _on_controll_pressed() -> void:
 	SavePoint.mobile_control = !SavePoint.mobile_control
 	if SavePoint.mobile_control :
-		$"../../mobile controller".visible = true
+		control.visible = true
 	else :
-		$"../../mobile controller".visible = false
+		control.visible = false
 
 
 func _on_quit_pressed() -> void:
@@ -58,5 +60,12 @@ func _on_quit_pressed() -> void:
 
 
 func _on_h_scroll_bar_value_changed(value: float) -> void:
-	$"../setting/Panel/VBoxContainer/light/music_value".text  = str(int((value + 80)/80 * 100))+"%"
+	$"../setting/music/HScrollBar/music_value".text  = str(int((value + 80)/80 * 100))+"%"
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),value)
+
+
+func _on_check_box_pressed() -> void:
+	if vsinc.button_pressed == true:
+		DisplayServer.window_set_vsync_mode(1)
+	else:
+		DisplayServer.window_set_vsync_mode(0)

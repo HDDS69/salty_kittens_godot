@@ -264,7 +264,7 @@ text = "играть"
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="buttons_group/play"]
-position = Vector2(64.28562, 20)
+position = Vector2(64.28562, 71.42857)
 scale = Vector2(2.8214276, 2.8214278)
 texture = ExtResource("30_3sei6")
 
@@ -280,7 +280,7 @@ text = "настройки"
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="buttons_group/setting"]
-position = Vector2(64.28562, 19.999985)
+position = Vector2(64.28562, -31.428566)
 scale = Vector2(2.8214269, 2.821427)
 texture = ExtResource("31_jkx4a")
 

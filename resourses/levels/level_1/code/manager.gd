@@ -20,12 +20,6 @@ extends Node
 		#DiscordRPC.state = "уровень 1"
 		#DiscordRPC.refresh()
 	
-#func _physics_process(_delta: float) -> void:
-	#if SavePoint.light == false :
-		#light.visible = false
-	#else :
-		#light.visible = true
-		#
 
 func check(body,gide,blee):
 	if body.name == 'player':
@@ -59,14 +53,6 @@ func _on_a_body_entered(body: Node2D) -> void:
 
 func _on_a_body_exited(body: Node2D) -> void:
 	check(body,ed4,false)
-
-
-func _on_a_5_body_exited(body: Node2D) -> void:
-	check(body,ed5,false)
-
-
-func _on_a_5_body_entered(body: Node2D) -> void:
-	check(body,ed5,true)
 
 
 func _on_st_1_body_entered(body: Node2D) -> void:
@@ -109,3 +95,11 @@ func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	light.set_deferred('visible',false)
 	street.set_deferred('visible',false)
+
+
+func _on_а_5_body_entered(body: Node2D) -> void:
+	check(body,ed5,true)
+
+
+func _on_а_5_body_exited(body: Node2D) -> void:
+	check(body,ed5,false)

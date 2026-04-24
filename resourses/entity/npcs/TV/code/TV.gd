@@ -18,6 +18,7 @@ func on_dialog_finished(current_dialog_key):
 	if current_dialog_key == dialog_key:
 		player.animTV()
 		anim.play("puf")
+		ui.hide()
 		await anim.animation_finished
 		queue_free()
 		

@@ -34,7 +34,8 @@ Signalbus="*res://resourses/entity/other/dialog/code/signalbus.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
 mouse_cursor/custom_image="uid://c84o5lhfnvnbk"
 
@@ -154,6 +155,7 @@ drop={
 
 [physics]
 
+2d/run_on_separate_thread=true
 2d/default_gravity=664.9229999999998
 common/physics_interpolation=true
 
@@ -162,6 +164,7 @@ common/physics_interpolation=true
 textures/canvas_textures/default_texture_filter=0
 textures/vram_compression/import_etc2_astc=true
 textures/webp_compression/lossless_compression_factor=50.0
-textures/default_filters/anisotropic_filtering_level=1
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=1
+textures/default_filters/anisotropic_filtering_level=0
 occlusion_culling/use_occlusion_culling=true
 textures/use_occlusion_culling=true
