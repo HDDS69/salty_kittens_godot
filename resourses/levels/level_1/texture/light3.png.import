@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdi52hph0caun"
-path="res://.godot/imported/light1.png-2496db705cc6427074278e29afc110dc.ctex"
+uid="uid://boqutag4ai5ja"
+path="res://.godot/imported/light3.png-543e84a9179095899dc8831c7a3a75d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resourses/levels/resourses_levels/tilemap/texture/light1.png"
-dest_files=["res://.godot/imported/light1.png-2496db705cc6427074278e29afc110dc.ctex"]
+source_file="res://resourses/levels/level_1/texture/light3.png"
+dest_files=["res://.godot/imported/light3.png-543e84a9179095899dc8831c7a3a75d9.ctex"]
 
 [params]
 

@@ -155,7 +155,6 @@ drop={
 
 [physics]
 
-2d/run_on_separate_thread=true
 2d/default_gravity=664.9229999999998
 common/physics_interpolation=true
 

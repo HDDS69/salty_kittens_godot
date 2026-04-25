@@ -10,8 +10,8 @@
 [ext_resource type="AudioStream" uid="uid://co1pqjg54w1u8" path="res://resourses/entity/npcs/drone/sound/dron_fly.mp3" id="6_dsspx"]
 [ext_resource type="Texture2D" uid="uid://x8u038oo4bdh" path="res://resourses/entity/npcs/drone/texture/drone_inherible.png" id="7_5y5d3"]
 [ext_resource type="AudioStream" uid="uid://cvgvgjkrsm400" path="res://resourses/entity/npcs/drone/sound/dron_piu.mp3" id="7_i11h8"]
-[ext_resource type="Texture2D" uid="uid://bk3uvutdbs2dy" path="res://resourses/levels/resourses_levels/tilemap/texture/pngkey.com-white-circle-png-transparent-1709387.png" id="9_6vgt1"]
 [ext_resource type="Texture2D" uid="uid://buywougyum70u" path="res://resourses/levels/level_1/texture/tuman.png" id="10_px706"]
+[ext_resource type="Texture2D" uid="uid://cctqkom8hyhpo" path="res://resourses/levels/level_1/texture/light_ball.png" id="11_5y5d3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibx1y"]
 size = Vector2(130.17783, 38.792465)
@@ -318,20 +318,20 @@ max_distance = 400.0
 [node name="AudioListener2D" type="AudioListener2D" parent="AudioStreamPlayer2D/AudioStreamPlayer2D"]
 
 [node name="PointLight2D7" type="PointLight2D" parent="."]
-position = Vector2(-5.000328, -3.9995897)
+position = Vector2(-5.0004106, -4.99959)
 rotation = -8.201436e-05
-scale = Vector2(0.0250838, 0.022321137)
+scale = Vector2(0.3250419, 0.30282727)
 color = Color(0, 0.6515054, 0.65150535, 1)
 shadow_enabled = true
-texture = ExtResource("9_6vgt1")
+texture = ExtResource("11_5y5d3")
 
 [node name="PointLight2D8" type="PointLight2D" parent="."]
-position = Vector2(16.99967, -4.001394)
+position = Vector2(15.99959, -5.0013113)
 rotation = -8.201436e-05
-scale = Vector2(0.0250838, 0.022321137)
+scale = Vector2(0.23129182, 0.22991054)
 color = Color(0, 0.6515054, 0.65150535, 1)
 shadow_enabled = true
-texture = ExtResource("9_6vgt1")
+texture = ExtResource("11_5y5d3")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 position = Vector2(-5.00041, -4.99959)

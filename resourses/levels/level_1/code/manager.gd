@@ -4,6 +4,7 @@ extends Node
 #var playerTmp = player.instantiate()
 @onready var level = $".."
 @onready var light = $"../light"
+@onready var light_house = $"../light_house_trigger/lights_house"
 @onready var street = $"../street"
 @onready var ed1 = $"../education/1"
 @onready var ed2 = $"../education/2"
@@ -103,3 +104,11 @@ func _on_а_5_body_entered(body: Node2D) -> void:
 
 func _on_а_5_body_exited(body: Node2D) -> void:
 	check(body,ed5,false)
+
+
+func _on_light_house_screen_entered() -> void:
+	light_house.set_deferred('visible',true)
+
+
+func _on_light_house_screen_exited() -> void:
+	light_house.set_deferred('visible',false)

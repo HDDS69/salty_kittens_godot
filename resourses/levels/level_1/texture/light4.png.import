@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bk3uvutdbs2dy"
-path="res://.godot/imported/pngkey.com-white-circle-png-transparent-1709387.png-0c1e25d7e512831e5ad15d87026a52c5.ctex"
+uid="uid://dwn0wanhfrvxn"
+path="res://.godot/imported/light4.png-29559cd9c005e1b5247bac03cbd0e60a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resourses/levels/resourses_levels/tilemap/texture/pngkey.com-white-circle-png-transparent-1709387.png"
-dest_files=["res://.godot/imported/pngkey.com-white-circle-png-transparent-1709387.png-0c1e25d7e512831e5ad15d87026a52c5.ctex"]
+source_file="res://resourses/levels/level_1/texture/light4.png"
+dest_files=["res://.godot/imported/light4.png-29559cd9c005e1b5247bac03cbd0e60a.ctex"]
 
 [params]
 

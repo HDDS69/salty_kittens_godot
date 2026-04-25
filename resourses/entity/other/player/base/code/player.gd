@@ -123,6 +123,7 @@ func _physics_process(delta: float) -> void:
 	else :
 		var normal = get_floor_normal()
 		anim.rotation = normal.angle() + (PI /2)
+
 	move_and_slide()
 
 func death():
