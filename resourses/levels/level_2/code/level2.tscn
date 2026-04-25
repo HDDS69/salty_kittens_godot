@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://dqgnneqt0r7x2" path="res://resourses/levels/level_1/code/level8.tres" id="8_s7854"]
 [ext_resource type="PackedScene" uid="uid://bj115nqn7krxc" path="res://resourses/entity/npcs/drone_ram/code/drone_ram.tscn" id="41_b4ban"]
 [ext_resource type="PackedScene" uid="uid://drkw1gq1eictd" path="res://resourses/entity/npcs/drone/code/drone.tscn" id="42_7eakn"]
-[ext_resource type="Texture2D" uid="uid://cdi52hph0caun" path="res://resourses/levels/resourses_levels/tilemap/texture/light1.png" id="43_wpj7q"]
+[ext_resource type="Texture2D" uid="uid://bxweyni6o0re4" path="res://resourses/levels/level_1/texture/light.png" id="43_wpj7q"]
 [ext_resource type="Texture2D" uid="uid://cv4o5b6vtlmre" path="res://resourses/levels/level_2/level2_texture/background_bar.png" id="45_f871s"]
 
 [node name="Node2D" type="Node2D"]
@@ -32,8 +32,8 @@ position = Vector2(1695, -209)
 [node name="light" type="Node" parent="."]
 
 [node name="PointLight2D10" type="PointLight2D" parent="light"]
-position = Vector2(69, -2)
-scale = Vector2(0.35049877, 0.553246)
+position = Vector2(-17, 150.21284)
+scale = Vector2(0.50337434, 0.8191515)
 color = Color(1, 1, 0.509804, 0.494118)
 energy = 1.5
 shadow_enabled = true

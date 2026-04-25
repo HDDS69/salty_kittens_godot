@@ -25,12 +25,12 @@ scale = Vector2(3.20313, 2.62586)
 texture = ExtResource("2_l37s7")
 
 [node name="PointLight2D7" type="PointLight2D" parent="bullet"]
-position = Vector2(7.1855707, -3.0568595)
+position = Vector2(7.954051, -2.8689256)
 rotation = -0.00011417518
-scale = Vector2(0.041471317, 0.021027071)
+scale = Vector2(0.85363466, 0.5400097)
 skew = 5.51939e-05
 color = Color(0, 0.6515054, 0.65150535, 1)
-shadow_enabled = true
+energy = 2.0
 texture = ExtResource("3_8ee4k")
 
 [connection signal="body_entered" from="bullet" to="bullet" method="_on_body_entered"]

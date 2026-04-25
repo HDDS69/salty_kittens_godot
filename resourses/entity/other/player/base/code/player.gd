@@ -60,7 +60,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			if land and velocity.y == 0:
-				anim1.play("land")
+				anim1.play("land") 
 				$CollisionShape2D/GPUParticles2D.set_deferred('emitting', true)
 				anim.play("land")
 				sound_land.play()

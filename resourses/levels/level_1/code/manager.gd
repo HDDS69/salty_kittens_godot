@@ -16,11 +16,12 @@ extends Node
 @onready var gr1 = $gr1
 @export var granade : PackedScene
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _ready() -> void:
+func _ready() -> void:
+	$"../player".spawn_pos = Vector2(-1035,380)
 	#if DiscordRPC.get_is_discord_working():
 		#DiscordRPC.state = "уровень 1"
 		#DiscordRPC.refresh()
-	
+	#
 
 func check(body,gide,blee):
 	if body.name == 'player':
