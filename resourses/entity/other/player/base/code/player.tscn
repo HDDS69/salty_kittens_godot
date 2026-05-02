@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=75 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://q65jv3hi8ob6" path="res://resourses/ui/buttons/type4.png" id="32_xilyh"]
 [ext_resource type="Texture2D" uid="uid://xfwt41mclny3" path="res://resourses/ui/mobile_controller/texture/button_pause_pressed.png" id="33_55vbn"]
 [ext_resource type="FontFile" uid="uid://bkyohh76x8qg6" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.otf" id="33_cv5i6"]
+[ext_resource type="Texture2D" uid="uid://dfxlbje8idmd3" path="res://resourses/ui/mobile_controller/texture/zero.png" id="34_8srny"]
 [ext_resource type="Texture2D" uid="uid://tyqdr1wxq7h0" path="res://resourses/ui/buttons/type1.png" id="35_8srny"]
 [ext_resource type="Texture2D" uid="uid://dgg84t16l6o8y" path="res://resourses/entity/other/player/base/texture/dialog/dialog_background3.png" id="36_m5ng5"]
 [ext_resource type="Texture2D" uid="uid://dwgc1lkub8ift" path="res://resourses/entity/other/player/base/texture/heart/Sprite-0001.png" id="36_ma22b"]
@@ -33,8 +34,6 @@
 [ext_resource type="Texture2D" uid="uid://bideyn123tp8h" path="res://resourses/ui/mobile_controller/texture/button_two.png" id="77_tucw7"]
 [ext_resource type="Texture2D" uid="uid://doyfyso10ptm6" path="res://resourses/ui/mobile_controller/texture/grande_buttom.png" id="78_y4fi5"]
 [ext_resource type="Texture2D" uid="uid://bef43llfar5bv" path="res://resourses/ui/mobile_controller/texture/granade_buttom_pressed.png" id="79_ukxdx"]
-[ext_resource type="Script" uid="uid://ddpebavxlo2i7" path="res://resourses/ui/mobile_controller/joystick/joystick.gd" id="81_1mwr7"]
-[ext_resource type="Texture2D" uid="uid://dlx03pgoywkfw" path="res://resourses/ui/mobile_controller/joystick/texture/5f394193cd6b2173f7a82981.png" id="81_nc8c3"]
 [ext_resource type="Script" uid="uid://cqvwiesvk3vct" path="res://resourses/ui/mobile_controller/joystick/jousuck/addons/virtual_joystick/virtual_joystick.gd" id="82_qvknn"]
 [ext_resource type="Texture2D" uid="uid://bm30au8mjfc2f" path="res://resourses/ui/mobile_controller/joystick/jousuck/addons/virtual_joystick/textures/joystick_base_outline.png" id="83_xsgbm"]
 [ext_resource type="Texture2D" uid="uid://dt13r06u87fib" path="res://resourses/ui/mobile_controller/joystick/jousuck/addons/virtual_joystick/textures/joystick_tip_arrows.png" id="84_djclt"]
@@ -116,9 +115,6 @@ scale_max = 1.1999999
 color_initial_ramp = SubResource("GradientTexture1D_8srny")
 turbulence_enabled = true
 turbulence_noise_strength = 2.57
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_awmoh"]
-radius = 106.042
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cebvf"]
 size = Vector2(100, 100)
@@ -380,25 +376,6 @@ offset_right = 3.0
 offset_bottom = 324.0
 grow_horizontal = 0
 grow_vertical = 2
-
-[node name="joystick" type="Area2D" parent="mobile controller/MarginContainer"]
-visible = false
-position = Vector2(98, 385)
-scale = Vector2(0.639998, 0.64)
-script = ExtResource("81_1mwr7")
-
-[node name="big" type="Sprite2D" parent="mobile controller/MarginContainer/joystick"]
-position = Vector2(2, 2)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("81_nc8c3")
-
-[node name="small" type="Sprite2D" parent="mobile controller/MarginContainer/joystick/big"]
-scale = Vector2(0.288, 0.296)
-texture = ExtResource("81_nc8c3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="mobile controller/MarginContainer/joystick"]
-position = Vector2(1, 2)
-shape = SubResource("CircleShape2D_awmoh")
 
 [node name="action" type="TouchScreenButton" parent="mobile controller/MarginContainer"]
 position = Vector2(184, 358)
@@ -750,11 +727,17 @@ texture = ExtResource("32_xilyh")
 
 [node name="setting" type="Control" parent="CanvasLayer"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1151.0
 offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/setting"]
+layout_mode = 0
+offset_top = -10.0
+offset_right = 1271.0
+offset_bottom = 716.0
+color = Color(0, 0, 0, 0.25882354)
 
 [node name="quit_setting" type="Button" parent="CanvasLayer/setting"]
 layout_mode = 0
@@ -765,7 +748,7 @@ offset_bottom = 681.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 52
 action_mode = 0
-text = "выйти"
+text = "назад"
 flat = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/setting/quit_setting"]
@@ -773,64 +756,100 @@ position = Vector2(82.99997, 13.99998)
 scale = Vector2(4.7812486, 4.135417)
 texture = ExtResource("35_8srny")
 
-[node name="grafics" type="Button" parent="CanvasLayer/setting"]
-layout_mode = 0
+[node name="graphics" type="Control" parent="CanvasLayer/setting"]
+anchors_preset = 0
 offset_left = 69.0
 offset_top = 145.0
-offset_right = 321.0
-offset_bottom = 226.0
+offset_right = 109.0
+offset_bottom = 185.0
+
+[node name="graphics_button" type="Button" parent="CanvasLayer/setting/graphics"]
+layout_mode = 0
+offset_right = 252.0
+offset_bottom = 81.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 52
 text = "ГРАФИКА"
 flat = true
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/grafics"]
-position = Vector2(126, 41)
-scale = Vector2(5.2708335, 5.2708335)
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics/graphics_button"]
+position = Vector2(126, 37.000008)
+scale = Vector2(5.2708335, 4.3854165)
 texture = ExtResource("35_8srny")
 
-[node name="full screen" type="Button" parent="CanvasLayer/setting/grafics"]
+[node name="full_screen_label" type="Label" parent="CanvasLayer/setting/graphics/graphics_button"]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 99.0
-offset_right = 402.0
-offset_bottom = 133.0
+offset_left = 3.0
+offset_top = 91.0
+offset_right = 643.0
+offset_bottom = 117.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 42
-action_mode = 0
 text = "полный экран"
-flat = true
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/grafics/full screen"]
-position = Vector2(203, 16)
-scale = Vector2(5.125, 5.125)
-texture = ExtResource("32_xilyh")
-
-[node name="Label" type="Label" parent="CanvasLayer/setting/grafics"]
+[node name="ful_screen" type="CheckBox" parent="CanvasLayer/setting/graphics/graphics_button/full_screen_label"]
 layout_mode = 0
-offset_left = 8.0
+offset_left = 776.00006
+offset_top = -17.0
+offset_right = 800.00006
+offset_bottom = 7.0
+scale = Vector2(2.5855834, 2.5855834)
+theme_override_fonts/font = ExtResource("91_d1y0c")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics/graphics_button/full_screen_label/ful_screen"]
+position = Vector2(11.989532, 11.989555)
+scale = Vector2(1.1844522, 1.1844522)
+texture = ExtResource("34_8srny")
+
+[node name="v_sinc_label" type="Label" parent="CanvasLayer/setting/graphics/graphics_button"]
+layout_mode = 0
+offset_left = 3.0
 offset_top = 154.0
-offset_right = 648.0
+offset_right = 643.0
 offset_bottom = 180.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 42
 text = "вертикальная синхронизация"
 
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/setting/grafics/Label"]
-position = Vector2(330, 13.750004)
-scale = Vector2(8.525, 5.812502)
-texture = ExtResource("32_xilyh")
-
-[node name="CheckBox" type="CheckBox" parent="CanvasLayer/setting/grafics/Label"]
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/setting/graphics/graphics_button/v_sinc_label"]
 layout_mode = 0
-offset_left = 759.0
+offset_left = 776.00006
 offset_top = -17.0
-offset_right = 783.0
+offset_right = 800.00006
 offset_bottom = 7.0
 scale = Vector2(2.5855834, 2.5855834)
 theme_override_fonts/font = ExtResource("91_d1y0c")
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/grafics/Label/CheckBox"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics/graphics_button/v_sinc_label/CheckBox"]
+position = Vector2(11.989532, 11.989555)
+scale = Vector2(1.1844522, 1.1844522)
+texture = ExtResource("34_8srny")
+
+[node name="max_fps_label" type="Label" parent="CanvasLayer/setting/graphics/graphics_button"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 215.0
+offset_right = 642.0
+offset_bottom = 241.0
+theme_override_fonts/font = ExtResource("91_d1y0c")
+theme_override_font_sizes/font_size = 42
+text = "максильный FPS"
+
+[node name="max_fps_editor" type="LineEdit" parent="CanvasLayer/setting/graphics/graphics_button/max_fps_label"]
+layout_mode = 0
+offset_left = 785.0
+offset_top = -9.0
+offset_right = 867.0
+offset_bottom = 32.0
+placeholder_text = "144"
+emoji_menu_enabled = false
+flat = true
+select_all_on_focus = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics/graphics_button/max_fps_label/max_fps_editor"]
+position = Vector2(43.000015, 19.999996)
+scale = Vector2(2.2187505, 3.2172246)
+texture = ExtResource("35_8srny")
 
 [node name="music" type="Button" parent="CanvasLayer/setting"]
 visible = false
@@ -983,8 +1002,9 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/pause/settings" to="CanvasLayer/pause" method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/quit" to="CanvasLayer/pause" method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/setting/quit_setting" to="CanvasLayer/pause" method="_on_quit_setting_pressed"]
-[connection signal="pressed" from="CanvasLayer/setting/grafics/full screen" to="CanvasLayer/pause" method="_on_full_screen_pressed"]
-[connection signal="pressed" from="CanvasLayer/setting/grafics/Label/CheckBox" to="CanvasLayer/pause" method="_on_check_box_pressed"]
+[connection signal="pressed" from="CanvasLayer/setting/graphics/graphics_button/full_screen_label/ful_screen" to="CanvasLayer/pause" method="_on_ful_screen_pressed"]
+[connection signal="pressed" from="CanvasLayer/setting/graphics/graphics_button/v_sinc_label/CheckBox" to="CanvasLayer/pause" method="_on_check_box_pressed"]
+[connection signal="text_changed" from="CanvasLayer/setting/graphics/graphics_button/max_fps_label/max_fps_editor" to="CanvasLayer/pause" method="_on_max_fps_editor_text_changed"]
 [connection signal="value_changed" from="CanvasLayer/setting/music/HScrollBar" to="CanvasLayer/pause" method="_on_h_scroll_bar_value_changed"]
 [connection signal="pressed" from="CanvasLayer/setting/gameplay/controll" to="CanvasLayer/pause" method="_on_controll_pressed"]
 [connection signal="timeout" from="timer_grd" to="." method="_on_timer_grd_timeout"]

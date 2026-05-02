@@ -80,7 +80,7 @@ func death():
 func spawn():
 	if count_d:
 		var s = salt.instantiate()
-		get_tree().root.add_child(s)
+		get_tree().current_scene .add_child(s)
 		s.transform = muzzle_marker.global_transform
 		count_d = false
 		
@@ -103,7 +103,7 @@ func attack():
 		count -=1
 		sound_shoot.play()
 		var b = bullet.instantiate()
-		get_tree().root.add_child(b)
+		get_tree().current_scene.add_child(b)
 		b.transform = muzzle_marker.global_transform
 
 func _on_area_2d_2_body_entered(body: Node2D) -> void:

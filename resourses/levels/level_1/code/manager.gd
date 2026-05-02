@@ -11,13 +11,14 @@ extends Node
 @onready var ed3 = $"../education/3"
 @onready var ed4 = $"../education/4"
 @onready var ed5 = $"../education/5"
-@onready var stairs1 = $"../TileMapLayer/stairs1"
-@onready var stairs2 = $"../TileMapLayer/stairs2"
+@onready var stairs1 = $"../home/TileMapLayer/TileMapLayer/stairs1"
+@onready var stairs2 = $"../home/TileMapLayer/TileMapLayer/stairs2"
 @onready var gr1 = $gr1
+@onready var player =  $"../home/player"
 @export var granade : PackedScene
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready() -> void:
-	$"../player".spawn_pos = Vector2(-1035,380)
+	player.spawn_pos = Vector2(-1035,380)
 	#if DiscordRPC.get_is_discord_working():
 		#DiscordRPC.state = "уровень 1"
 		#DiscordRPC.refresh()
@@ -88,28 +89,40 @@ func _on_gr_1_body_entered(body: Node2D) -> void:
 			g.activation = false
 		gr1.set_deferred('monitoring',false)
 
+#
+#func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
+	#light.set_deferred('visible',true)
+	#street.set_deferred('visible',true)
+#
+#
+#func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	#light.set_deferred('visible',false)
+	#street.set_deferred('visible',false)
+#
+#
+#func _on_а_5_body_entered(body: Node2D) -> void:
+	#check(body,ed5,true)
+#
+#
+#func _on_а_5_body_exited(body: Node2D) -> void:
+	#check(body,ed5,false)
+#
+#
+#func _on_light_house_screen_entered() -> void:
+	#light_house.set_deferred('visible',true)
+#
+#
+#func _on_light_house_screen_exited() -> void:
+	#light_house.set_deferred('visible',false)
 
-func _on_visible_on_screen_notifier_2d_screen_entered() -> void:
-	light.set_deferred('visible',true)
-	street.set_deferred('visible',true)
+
+func _on_triger_modulate_body_entered(body: Node2D) -> void:
+	if body.name == 'player':
+		body.modulate = Color(0.173, 0.204, 0.322)
+			
+			
 
 
-func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	light.set_deferred('visible',false)
-	street.set_deferred('visible',false)
-
-
-func _on_а_5_body_entered(body: Node2D) -> void:
-	check(body,ed5,true)
-
-
-func _on_а_5_body_exited(body: Node2D) -> void:
-	check(body,ed5,false)
-
-
-func _on_light_house_screen_entered() -> void:
-	light_house.set_deferred('visible',true)
-
-
-func _on_light_house_screen_exited() -> void:
-	light_house.set_deferred('visible',false)
+func _on_triger_modulate_home_body_entered(body: Node2D) -> void:
+	if body.name == 'player':
+		body.modulate = Color(1,1,1)

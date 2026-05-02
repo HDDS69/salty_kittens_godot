@@ -18,5 +18,5 @@ func shoot():
 	sound.play()
 	pl.count -=1
 	var b = bullet.instantiate()
-	get_tree().root.add_child(b)
+	get_tree().current_scene.add_child(b)
 	b.transform = marker.global_transform
