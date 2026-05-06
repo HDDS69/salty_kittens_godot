@@ -162,7 +162,7 @@ func bomb(activ):
 	if inventory.size() > 0:
 		var g = inventory[0][0].instantiate()
 		inventory.pop_front()
-		get_tree().current_scene.add_child(g)
+		get_parent().add_child(g)
 		g.transform = marker.global_transform
 		g.activation = activ
 		g.apply_impulse(marker.global_transform.x.normalized() * 200)
@@ -226,3 +226,4 @@ func _input(_event: InputEvent) -> void:
 		if Input.is_action_just_pressed("2"):
 			blaster = !blaster
 			blaster_texture.visible = blaster
+		

@@ -109,7 +109,8 @@ animations = [{
 [node name="RigidBody2D" instance=ExtResource("1_cf4ha")]
 
 [node name="bomb" parent="." index="1"]
-position = Vector2(-9.536743e-07, 0)
+position = Vector2(0, 1.4901161e-08)
+scale = Vector2(0.9355469, 0.94874525)
 texture = ExtResource("2_wf3w8")
 
 [node name="AnimatedSprite2D" parent="." index="5"]

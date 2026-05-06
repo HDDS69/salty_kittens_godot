@@ -727,6 +727,7 @@ texture = ExtResource("32_xilyh")
 
 [node name="setting" type="Control" parent="CanvasLayer"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 1151.0
@@ -837,9 +838,9 @@ text = "максильный FPS"
 
 [node name="max_fps_editor" type="LineEdit" parent="CanvasLayer/setting/graphics/graphics_button/max_fps_label"]
 layout_mode = 0
-offset_left = 785.0
+offset_left = 793.0
 offset_top = -9.0
-offset_right = 867.0
+offset_right = 875.0
 offset_bottom = 32.0
 placeholder_text = "144"
 emoji_menu_enabled = false

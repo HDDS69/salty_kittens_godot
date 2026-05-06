@@ -17,11 +17,12 @@ shape = SubResource("RectangleShape2D_2vkov")
 
 [node name="Box" type="Sprite2D" parent="."]
 position = Vector2(-16.5, 13.75)
-scale = Vector2(0.40624994, 0.453125)
+scale = Vector2(0.81249994, 0.9062501)
 texture = ExtResource("2_yu04v")
 
 [node name="ui" type="Sprite2D" parent="."]
 visible = false
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
 position = Vector2(-16, 1.0000004)
 scale = Vector2(0.40234375, 0.40234363)
 texture = ExtResource("3_oilqu")
