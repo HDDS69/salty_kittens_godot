@@ -29,6 +29,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var label = $CanvasLayer/Label
 var salt = 0
 var land = false
+var land_velo 
 var invulnerability = false
 var direction = 0.0
 var blaster = false
@@ -43,6 +44,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if velocity.y > 0:
 		land = true
+		land_velo = velocity.y
 	if state == states.walk:
 			
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -60,7 +62,9 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			if land and velocity.y == 0:
-				anim1.play("land") 
+				if land_velo >= 500:
+					damage(1)
+				anim1.play("land")
 				$CollisionShape2D/GPUParticles2D.set_deferred('emitting', true)
 				anim.play("land")
 				sound_land.play()

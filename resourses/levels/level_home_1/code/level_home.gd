@@ -56,3 +56,8 @@ func _on__body_entered(body: Node2D) -> void:
 func _on__body_exited(body: Node2D) -> void:
 	if body.name == 'player':
 		ed2.visible = false
+
+
+func _on_to_left_body_entered(body: Node2D) -> void:
+	if body.name == 'player':
+		get_tree().change_scene_to_file("res://resourses/levels/level_left_1/code/level_left.tscn")

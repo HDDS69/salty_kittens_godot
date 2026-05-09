@@ -115,3 +115,6 @@ texture = ExtResource("2_wf3w8")
 
 [node name="AnimatedSprite2D" parent="." index="5"]
 sprite_frames = SubResource("SpriteFrames_cf4ha")
+
+[node name="sound" parent="." index="6"]
+bus = &"sound"

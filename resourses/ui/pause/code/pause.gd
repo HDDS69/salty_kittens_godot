@@ -3,9 +3,21 @@ var setting = false
 var fullscreen = false
 var platform = OS.get_name()
 @onready var control = $"../../mobile controller"
-@onready var vsinc = $"../setting/graphics/graphics_button/v_sinc_label/CheckBox"
-@onready var max_fps_editor = $"../setting/graphics/graphics_button/max_fps_label/max_fps_editor"
+@onready var vsinc = $"../setting/graphics_button/graphics/v_sinc_label/CheckBox"
+
+@onready var all_sound_value = $"../setting/music_set/music_list/all_sound/music_value"
+@onready var music_value = $"../setting/music_set/music_list/music/music_value"
+@onready var noise_value = $"../setting/music_set/music_list/noise/music_value"
+@onready var sounc_value = $"../setting/music_set/music_list/sound/music_value"
+
+@onready var grf_set = $"../setting/graphics_button/graphics"
+@onready var msc_set = $"../setting/music_set/music_list"
 # Called when the node enters the scene tree for the first time.
+
+func change_volume(txt,value,buss):
+	txt.text  = str(int((value + 80)/80 * 100))+"%"
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(buss),value)
+
 func _ready() -> void:
 	self.visible = false
 	if platform == "Android":
@@ -51,12 +63,6 @@ func _on_quit_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://resourses/levels/level_menu/code/menu_new.tscn")
 
-
-func _on_h_scroll_bar_value_changed(value: float) -> void:
-	$"../setting/music/HScrollBar/music_value".text  = str(int((value + 80)/80 * 100))+"%"
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),value)
-
-
 func _on_check_box_pressed() -> void:
 	if vsinc.button_pressed == true:
 		DisplayServer.window_set_vsync_mode(1)
@@ -72,4 +78,31 @@ func _on_ful_screen_pressed() -> void:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
 func _on_max_fps_editor_text_changed(new_text: String) -> void:
-	Engine.max_fps = type_convert(max_fps_editor.text,TYPE_INT)
+	Engine.max_fps = type_convert(new_text,TYPE_INT)
+
+
+func _on_music_value_changed(value: float) -> void:
+	change_volume(music_value,value,'music')
+
+
+func _on_noise_value_changed(value: float) -> void:
+	change_volume(noise_value,value,'noise')
+
+
+func _on_sound_value_changed(value: float) -> void:
+	change_volume(sounc_value,value,'sound')
+
+
+func _on_all_sound_value_changed(value: float) -> void:
+	change_volume(all_sound_value,value,'master')
+
+
+func _on_music_set_pressed() -> void:
+	grf_set.hide()
+	msc_set.show()
+	
+
+
+func _on_graphics_button_pressed() -> void:
+	grf_set.show()
+	msc_set.hide()

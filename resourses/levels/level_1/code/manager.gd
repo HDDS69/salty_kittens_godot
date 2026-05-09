@@ -1,8 +1,6 @@
 extends Node
 
 
-@onready var level = $".."
-@onready var light = $"../light"
 @onready var ed3 = $"../education/3"
 @onready var ed4 = $"../education/4"
 @onready var ed5 = $"../education/5"

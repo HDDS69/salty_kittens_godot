@@ -308,12 +308,14 @@ stream = ExtResource("6_dsspx")
 volume_db = -10.0
 autoplay = true
 max_distance = 350.0
+bus = &"sound"
 parameters/looping = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="AudioStreamPlayer2D"]
 stream = ExtResource("7_i11h8")
 volume_db = -7.0
 max_distance = 400.0
+bus = &"sound"
 
 [node name="AudioListener2D" type="AudioListener2D" parent="AudioStreamPlayer2D/AudioStreamPlayer2D"]
 

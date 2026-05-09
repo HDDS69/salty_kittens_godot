@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=4 uid="uid://edx064hnqy0p"]
+[gd_scene load_steps=72 format=4 uid="uid://edx064hnqy0p"]
 
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://resourses/entity/other/player/base/code/player.tscn" id="1_5u35f"]
 [ext_resource type="Script" uid="uid://dijwguluakihd" path="res://resourses/levels/level_1/code/manager.gd" id="1_h74ei"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://cwgtd0fytya83" path="res://resourses/levels/level_1/texture/atlas.png" id="41_k1ecl"]
 [ext_resource type="Texture2D" uid="uid://c8fkck5qifxbm" path="res://resourses/levels/resourses_levels/background/texture/40.png" id="41_occcm"]
 [ext_resource type="Texture2D" uid="uid://cctqkom8hyhpo" path="res://resourses/levels/level_1/texture/light_ball.png" id="41_s6oc5"]
+[ext_resource type="Texture2D" uid="uid://b1xuagaldw3hu" path="res://resourses/levels/resourses_levels/tilemap/texture/idle.png" id="42_g8ktd"]
 [ext_resource type="Texture2D" uid="uid://cyxxisjgi3s1m" path="res://resourses/levels/resourses_levels/background/texture/39.png" id="42_tnbdi"]
 [ext_resource type="Texture2D" uid="uid://2418k0u7vg71" path="res://resourses/levels/level_1/texture/light2.png" id="43_8yy6i"]
 [ext_resource type="Texture2D" uid="uid://dhpb0g4ajc7e6" path="res://resourses/levels/resourses_levels/background/texture/41.png" id="43_aqc7d"]
@@ -208,6 +209,34 @@ size = Vector2(12, 5.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_20ini"]
 size = Vector2(32.75, 34.5)
 
+[sub_resource type="Gradient" id="Gradient_g8ktd"]
+offsets = PackedFloat32Array(0.12727273, 0.6545454, 0.8545455, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.48181817, 0.48181817, 0.48181817, 1, 0.77272725, 0.77272725, 0.77272725, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l8apu"]
+gradient = SubResource("Gradient_g8ktd")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_g8ktd"]
+emission_shape_scale = Vector3(150, 60, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = -9.9999895
+angle_max = 10.0000105
+initial_velocity_min = -2.0
+initial_velocity_max = 12.0
+angular_velocity_min = -10.000016
+angular_velocity_max = 9.999984
+gravity = Vector3(0, 9, 0)
+linear_accel_min = -1.0000023
+linear_accel_max = 1.9999977
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 4.9999976
+tangential_accel_min = -5.000002
+tangential_accel_max = 4.9999976
+scale_min = 0.5
+scale_max = 2.0
+color_initial_ramp = SubResource("GradientTexture1D_l8apu")
+
 [sub_resource type="Gradient" id="Gradient_43dhv"]
 offsets = PackedFloat32Array(0.24545455, 1)
 colors = PackedColorArray(0.24545455, 0.24545455, 0.24545455, 1, 1, 1, 1, 1)
@@ -289,12 +318,12 @@ autoplay = "default"
 frame = 1
 
 [node name="background_house" type="Parallax2D" parent="street"]
-scroll_offset = Vector2(0, 305)
+scroll_offset = Vector2(869, 305)
 repeat_size = Vector2(175, 0)
-repeat_times = 25
+repeat_times = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="street/background_house"]
-position = Vector2(85, 321)
+position = Vector2(1010.99976, 321)
 scale = Vector2(1.25, 1.25)
 texture = ExtResource("3_nckfx")
 
@@ -364,7 +393,7 @@ scale = Vector2(7.74414, 7.71289)
 texture = SubResource("AtlasTexture_lrhm2")
 
 [node name="House7" type="Sprite2D" parent="street/street"]
-position = Vector2(5815.483, 427.66046)
+position = Vector2(5815.483, 413.63904)
 scale = Vector2(7.74414, 7.71289)
 texture = SubResource("AtlasTexture_4x08y")
 
@@ -394,14 +423,8 @@ scale = Vector2(8.148178, 8.148178)
 texture = SubResource("AtlasTexture_ykvq6")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="street"]
-visible = false
 position = Vector2(-364.99997, 613)
 color = Color(0.173, 0.204, 0.322, 1)
-
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="street"]
-visible = false
-position = Vector2(-137, 455)
-rect = Rect2(-10, -10, 2524, 275)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="street"]
 position = Vector2(43, 28)
@@ -465,6 +488,19 @@ shape = SubResource("RectangleShape2D_20ini")
 
 [node name="box" parent="street" instance=ExtResource("35_4x08y")]
 position = Vector2(1323, 615)
+
+[node name="player" parent="street" instance=ExtResource("1_5u35f")]
+position = Vector2(-86, 586)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="street/player"]
+position = Vector2(16, -14)
+amount = 200
+texture = ExtResource("42_g8ktd")
+lifetime = 3.0
+interp_to_end = 0.05
+preprocess = 1.0
+speed_scale = 1.4
+process_material = SubResource("ParticleProcessMaterial_g8ktd")
 
 [node name="light" type="Node" parent="street"]
 
@@ -670,9 +706,6 @@ randomness = 1.0
 trail_lifetime = 3.93
 process_material = SubResource("ParticleProcessMaterial_1g5bl")
 
-[node name="player" parent="street" instance=ExtResource("1_5u35f")]
-position = Vector2(-87, 607)
-
 [node name="education" type="CanvasLayer" parent="."]
 layer = 2
 follow_viewport_enabled = true
@@ -792,12 +825,11 @@ metadata/_edit_use_anchors_ = true
 stream = ExtResource("38_samc1")
 volume_db = -20.0
 autoplay = true
+bus = &"music"
 parameters/looping = true
 
 [connection signal="body_entered" from="manager/level_to_home" to="manager/level_to_home" method="_on_body_entered"]
 [connection signal="body_exited" from="manager/level_to_home" to="manager/level_to_home" method="_on_body_exited"]
-[connection signal="screen_entered" from="street/VisibleOnScreenNotifier2D" to="manager" method="_on_visible_on_screen_notifier_2d_screen_entered"]
-[connection signal="screen_exited" from="street/VisibleOnScreenNotifier2D" to="manager" method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="body_entered" from="street/rock/Area2D" to="street/rock" method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="street/rock/ent" to="street/rock" method="_on_ent_body_entered"]
 [connection signal="body_exited" from="street/rock/ent" to="street/rock" method="_on_ent_body_exited"]

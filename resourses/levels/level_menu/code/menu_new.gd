@@ -32,7 +32,7 @@ func spawn():
 
 func _on_play_pressed() -> void:
 	click_sound.play()
-	get_tree().change_scene_to_file("res://resourses/levels/level_1/code/level.tscn")
+	get_tree().change_scene_to_file("res://resourses/levels/level_home_1/code/level_home.tscn")
 	
 
 

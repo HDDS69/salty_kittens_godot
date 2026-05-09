@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=76 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://crhquqw084nub" path="res://resourses/ui/mobile_controller/texture/button_pause.png" id="32_galrp"]
 [ext_resource type="AudioStream" uid="uid://bh8nsyb3yrfic" path="res://resourses/entity/other/player/blaster/sound/blaster.mp3" id="32_ny14h"]
 [ext_resource type="Texture2D" uid="uid://q65jv3hi8ob6" path="res://resourses/ui/buttons/type4.png" id="32_xilyh"]
+[ext_resource type="Texture2D" uid="uid://c8q7lhpu36tyi" path="res://resourses/ui/buttons/line.png" id="33_7hjnw"]
 [ext_resource type="Texture2D" uid="uid://xfwt41mclny3" path="res://resourses/ui/mobile_controller/texture/button_pause_pressed.png" id="33_55vbn"]
 [ext_resource type="FontFile" uid="uid://bkyohh76x8qg6" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.otf" id="33_cv5i6"]
 [ext_resource type="Texture2D" uid="uid://dfxlbje8idmd3" path="res://resourses/ui/mobile_controller/texture/zero.png" id="34_8srny"]
@@ -316,7 +317,6 @@ autoplay = "hidel"
 
 [node name="Camera2D" type="Camera2D" parent="CollisionShape2D"]
 position = Vector2(1.25, -20.25)
-scale = Vector2(21.797998, 0.6337439)
 zoom = Vector2(6, 6)
 limit_enabled = false
 position_smoothing_enabled = true
@@ -547,6 +547,7 @@ autoplay = "default"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="blaster"]
 stream = ExtResource("32_ny14h")
 volume_db = -10.0
+bus = &"sound"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
@@ -729,66 +730,74 @@ texture = ExtResource("32_xilyh")
 process_mode = 3
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 1151.0
-offset_bottom = 648.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/setting"]
 layout_mode = 0
-offset_top = -10.0
-offset_right = 1271.0
-offset_bottom = 716.0
-color = Color(0, 0, 0, 0.25882354)
+offset_left = -1.0
+offset_top = -3.0
+offset_right = 1281.0
+offset_bottom = 723.0
+color = Color(0, 0, 0, 0.40392157)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting"]
+position = Vector2(549.62506, 249.7446)
+scale = Vector2(120.343735, 7.811148)
+texture = ExtResource("33_7hjnw")
 
 [node name="quit_setting" type="Button" parent="CanvasLayer/setting"]
 layout_mode = 0
-offset_left = 1071.0
-offset_top = 641.0
-offset_right = 1245.0
-offset_bottom = 681.0
+offset_left = 1061.0
+offset_top = 648.0
+offset_right = 1235.0
+offset_bottom = 688.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
-theme_override_font_sizes/font_size = 52
+theme_override_font_sizes/font_size = 40
 action_mode = 0
 text = "назад"
 flat = true
 
 [node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/setting/quit_setting"]
-position = Vector2(82.99997, 13.99998)
-scale = Vector2(4.7812486, 4.135417)
+position = Vector2(85, 18.00002)
+scale = Vector2(3.8358383, 3.317709)
 texture = ExtResource("35_8srny")
 
-[node name="graphics" type="Control" parent="CanvasLayer/setting"]
-anchors_preset = 0
+[node name="graphics_button" type="Button" parent="CanvasLayer/setting"]
+layout_mode = 0
 offset_left = 69.0
 offset_top = 145.0
-offset_right = 109.0
-offset_bottom = 185.0
-
-[node name="graphics_button" type="Button" parent="CanvasLayer/setting/graphics"]
-layout_mode = 0
-offset_right = 252.0
-offset_bottom = 81.0
+offset_right = 321.0
+offset_bottom = 226.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 52
 text = "ГРАФИКА"
 flat = true
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics/graphics_button"]
-position = Vector2(126, 37.000008)
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics_button"]
+position = Vector2(126, 37)
 scale = Vector2(5.2708335, 4.3854165)
 texture = ExtResource("35_8srny")
 
-[node name="full_screen_label" type="Label" parent="CanvasLayer/setting/graphics/graphics_button"]
+[node name="graphics" type="Control" parent="CanvasLayer/setting/graphics_button"]
+anchors_preset = 0
+offset_right = 15.0
+offset_bottom = 12.0
+
+[node name="full_screen_label" type="Label" parent="CanvasLayer/setting/graphics_button/graphics"]
 layout_mode = 0
 offset_left = 3.0
-offset_top = 91.0
+offset_top = 168.0
 offset_right = 643.0
-offset_bottom = 117.0
+offset_bottom = 194.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 42
 text = "полный экран"
 
-[node name="ful_screen" type="CheckBox" parent="CanvasLayer/setting/graphics/graphics_button/full_screen_label"]
+[node name="ful_screen" type="CheckBox" parent="CanvasLayer/setting/graphics_button/graphics/full_screen_label"]
 layout_mode = 0
 offset_left = 776.00006
 offset_top = -17.0
@@ -797,22 +806,22 @@ offset_bottom = 7.0
 scale = Vector2(2.5855834, 2.5855834)
 theme_override_fonts/font = ExtResource("91_d1y0c")
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics/graphics_button/full_screen_label/ful_screen"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics_button/graphics/full_screen_label/ful_screen"]
 position = Vector2(11.989532, 11.989555)
 scale = Vector2(1.1844522, 1.1844522)
 texture = ExtResource("34_8srny")
 
-[node name="v_sinc_label" type="Label" parent="CanvasLayer/setting/graphics/graphics_button"]
+[node name="v_sinc_label" type="Label" parent="CanvasLayer/setting/graphics_button/graphics"]
 layout_mode = 0
 offset_left = 3.0
-offset_top = 154.0
+offset_top = 231.0
 offset_right = 643.0
-offset_bottom = 180.0
+offset_bottom = 257.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 42
 text = "вертикальная синхронизация"
 
-[node name="CheckBox" type="CheckBox" parent="CanvasLayer/setting/graphics/graphics_button/v_sinc_label"]
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/setting/graphics_button/graphics/v_sinc_label"]
 layout_mode = 0
 offset_left = 776.00006
 offset_top = -17.0
@@ -821,22 +830,22 @@ offset_bottom = 7.0
 scale = Vector2(2.5855834, 2.5855834)
 theme_override_fonts/font = ExtResource("91_d1y0c")
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics/graphics_button/v_sinc_label/CheckBox"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics_button/graphics/v_sinc_label/CheckBox"]
 position = Vector2(11.989532, 11.989555)
 scale = Vector2(1.1844522, 1.1844522)
 texture = ExtResource("34_8srny")
 
-[node name="max_fps_label" type="Label" parent="CanvasLayer/setting/graphics/graphics_button"]
+[node name="max_fps_label" type="Label" parent="CanvasLayer/setting/graphics_button/graphics"]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 215.0
+offset_top = 292.0
 offset_right = 642.0
-offset_bottom = 241.0
+offset_bottom = 318.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 42
 text = "максильный FPS"
 
-[node name="max_fps_editor" type="LineEdit" parent="CanvasLayer/setting/graphics/graphics_button/max_fps_label"]
+[node name="max_fps_editor" type="LineEdit" parent="CanvasLayer/setting/graphics_button/graphics/max_fps_label"]
 layout_mode = 0
 offset_left = 793.0
 offset_top = -9.0
@@ -847,35 +856,42 @@ emoji_menu_enabled = false
 flat = true
 select_all_on_focus = true
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics/graphics_button/max_fps_label/max_fps_editor"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics_button/graphics/max_fps_label/max_fps_editor"]
 position = Vector2(43.000015, 19.999996)
 scale = Vector2(2.2187505, 3.2172246)
 texture = ExtResource("35_8srny")
 
-[node name="music" type="Button" parent="CanvasLayer/setting"]
-visible = false
+[node name="music_set" type="Button" parent="CanvasLayer/setting"]
 layout_mode = 0
-offset_left = 349.0
+offset_left = 344.0
 offset_top = 148.0
-offset_right = 591.0
-offset_bottom = 224.0
+offset_right = 561.0
+offset_bottom = 217.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 52
 text = "музыка"
 flat = true
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/music"]
-position = Vector2(120, 38)
-scale = Vector2(5.2708335, 5.2708335)
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/setting/music_set"]
+position = Vector2(108.25, 32.41667)
+scale = Vector2(4.572917, 4.572917)
 texture = ExtResource("35_8srny")
 
-[node name="HScrollBar" type="HScrollBar" parent="CanvasLayer/setting/music"]
+[node name="music_list" type="Control" parent="CanvasLayer/setting/music_set"]
+visible = false
+anchors_preset = 0
+offset_left = 5.0
+offset_right = 45.0
+offset_bottom = 40.0
+
+[node name="all_sound" type="HScrollBar" parent="CanvasLayer/setting/music_set/music_list"]
 custom_minimum_size = Vector2(200, 15)
 layout_mode = 0
-offset_left = -70.0
-offset_top = 177.0
-offset_right = 130.0
-offset_bottom = 192.0
+offset_left = 150.0
+offset_top = 155.0
+offset_right = 350.0
+offset_bottom = 170.0
+scale = Vector2(2.2634866, 2.2634866)
 size_flags_horizontal = 8
 size_flags_vertical = 1
 tooltip_text = "громкость музыки"
@@ -887,19 +903,18 @@ value = -3.0
 rounded = true
 allow_greater = true
 
-[node name="music" type="Label" parent="CanvasLayer/setting/music/HScrollBar"]
+[node name="music" type="Label" parent="CanvasLayer/setting/music_set/music_list/all_sound"]
 layout_mode = 0
 offset_left = -189.0
 offset_top = 3.0
-offset_right = -12.0
+offset_right = -6.185135
 offset_bottom = 13.0
 size_flags_horizontal = 0
 size_flags_vertical = 1
-tooltip_text = "настройки громкости"
-text = "настройки громкости"
+text = "общая громкость"
 label_settings = SubResource("LabelSettings_m5ng5")
 
-[node name="music_value" type="Label" parent="CanvasLayer/setting/music/HScrollBar"]
+[node name="music_value" type="Label" parent="CanvasLayer/setting/music_set/music_list/all_sound"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 3.0
@@ -907,16 +922,138 @@ offset_right = 182.0
 offset_bottom = 13.0
 size_flags_horizontal = 0
 size_flags_vertical = 1
-tooltip_text = "настройки громкости"
+text = "100%"
+label_settings = SubResource("LabelSettings_m5ng5")
+
+[node name="music" type="HScrollBar" parent="CanvasLayer/setting/music_set/music_list"]
+custom_minimum_size = Vector2(200, 15)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 212.0
+offset_right = 350.0
+offset_bottom = 227.0
+scale = Vector2(2.2634866, 2.2634866)
+size_flags_horizontal = 8
+size_flags_vertical = 1
+tooltip_text = "громкость музыки"
+min_value = -80.0
+max_value = 0.0
+step = 1.0
+page = 3.0
+value = -3.0
+rounded = true
+allow_greater = true
+
+[node name="music" type="Label" parent="CanvasLayer/setting/music_set/music_list/music"]
+layout_mode = 0
+offset_left = -189.0
+offset_top = 3.0
+offset_right = -6.185135
+offset_bottom = 13.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "громкость музыки"
+label_settings = SubResource("LabelSettings_m5ng5")
+
+[node name="music_value" type="Label" parent="CanvasLayer/setting/music_set/music_list/music"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 182.0
+offset_bottom = 13.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "100%"
+label_settings = SubResource("LabelSettings_m5ng5")
+
+[node name="noise" type="HScrollBar" parent="CanvasLayer/setting/music_set/music_list"]
+custom_minimum_size = Vector2(200, 15)
+layout_mode = 0
+offset_left = 146.0
+offset_top = 267.0
+offset_right = 346.0
+offset_bottom = 282.0
+scale = Vector2(2.2634866, 2.2634866)
+size_flags_horizontal = 8
+size_flags_vertical = 1
+tooltip_text = "громкость музыки"
+min_value = -80.0
+max_value = 0.0
+step = 1.0
+page = 3.0
+value = -3.0
+rounded = true
+allow_greater = true
+
+[node name="music" type="Label" parent="CanvasLayer/setting/music_set/music_list/noise"]
+layout_mode = 0
+offset_left = -189.0
+offset_top = 3.0
+offset_right = -6.185135
+offset_bottom = 13.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "громкость шумов"
+label_settings = SubResource("LabelSettings_m5ng5")
+
+[node name="music_value" type="Label" parent="CanvasLayer/setting/music_set/music_list/noise"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 182.0
+offset_bottom = 13.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "100%"
+label_settings = SubResource("LabelSettings_m5ng5")
+
+[node name="sound" type="HScrollBar" parent="CanvasLayer/setting/music_set/music_list"]
+custom_minimum_size = Vector2(200, 15)
+layout_mode = 0
+offset_left = 146.0
+offset_top = 317.0
+offset_right = 346.0
+offset_bottom = 332.0
+scale = Vector2(2.2634866, 2.2634866)
+size_flags_horizontal = 8
+size_flags_vertical = 1
+tooltip_text = "громкость музыки"
+min_value = -80.0
+max_value = 0.0
+step = 1.0
+page = 3.0
+value = -3.0
+rounded = true
+allow_greater = true
+
+[node name="music" type="Label" parent="CanvasLayer/setting/music_set/music_list/sound"]
+layout_mode = 0
+offset_left = -189.0
+offset_top = 3.0
+offset_right = -6.185135
+offset_bottom = 13.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
+text = "громкость звуков"
+label_settings = SubResource("LabelSettings_m5ng5")
+
+[node name="music_value" type="Label" parent="CanvasLayer/setting/music_set/music_list/sound"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 182.0
+offset_bottom = 13.0
+size_flags_horizontal = 0
+size_flags_vertical = 1
 text = "100%"
 label_settings = SubResource("LabelSettings_m5ng5")
 
 [node name="gameplay" type="Button" parent="CanvasLayer/setting"]
 visible = false
 layout_mode = 0
-offset_left = 629.0
+offset_left = 580.0
 offset_top = 145.0
-offset_right = 877.0
+offset_right = 828.0
 offset_bottom = 227.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 45
@@ -928,7 +1065,12 @@ position = Vector2(124, 41)
 scale = Vector2(5.2708335, 5.2708335)
 texture = ExtResource("35_8srny")
 
-[node name="controll" type="Button" parent="CanvasLayer/setting/gameplay"]
+[node name="gameplay_set" type="Control" parent="CanvasLayer/setting/gameplay"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="controll" type="Button" parent="CanvasLayer/setting/gameplay/gameplay_set"]
 layout_mode = 0
 offset_left = -550.0
 offset_top = 142.0
@@ -984,9 +1126,11 @@ script = ExtResource("95_d17l8")
 
 [node name="jump" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource("67_v58pc")
+bus = &"sound"
 
 [node name="land" type="AudioStreamPlayer" parent="music"]
 stream = ExtResource("68_qmmh8")
+bus = &"sound"
 
 [node name="timer_dash" type="Timer" parent="."]
 wait_time = 1.5
@@ -1003,9 +1147,14 @@ one_shot = true
 [connection signal="pressed" from="CanvasLayer/pause/settings" to="CanvasLayer/pause" method="_on_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/pause/quit" to="CanvasLayer/pause" method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/setting/quit_setting" to="CanvasLayer/pause" method="_on_quit_setting_pressed"]
-[connection signal="pressed" from="CanvasLayer/setting/graphics/graphics_button/full_screen_label/ful_screen" to="CanvasLayer/pause" method="_on_ful_screen_pressed"]
-[connection signal="pressed" from="CanvasLayer/setting/graphics/graphics_button/v_sinc_label/CheckBox" to="CanvasLayer/pause" method="_on_check_box_pressed"]
-[connection signal="text_changed" from="CanvasLayer/setting/graphics/graphics_button/max_fps_label/max_fps_editor" to="CanvasLayer/pause" method="_on_max_fps_editor_text_changed"]
-[connection signal="value_changed" from="CanvasLayer/setting/music/HScrollBar" to="CanvasLayer/pause" method="_on_h_scroll_bar_value_changed"]
-[connection signal="pressed" from="CanvasLayer/setting/gameplay/controll" to="CanvasLayer/pause" method="_on_controll_pressed"]
+[connection signal="pressed" from="CanvasLayer/setting/graphics_button" to="CanvasLayer/pause" method="_on_graphics_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/setting/graphics_button/graphics/full_screen_label/ful_screen" to="CanvasLayer/pause" method="_on_ful_screen_pressed"]
+[connection signal="pressed" from="CanvasLayer/setting/graphics_button/graphics/v_sinc_label/CheckBox" to="CanvasLayer/pause" method="_on_check_box_pressed"]
+[connection signal="text_changed" from="CanvasLayer/setting/graphics_button/graphics/max_fps_label/max_fps_editor" to="CanvasLayer/pause" method="_on_max_fps_editor_text_changed"]
+[connection signal="pressed" from="CanvasLayer/setting/music_set" to="CanvasLayer/pause" method="_on_music_set_pressed"]
+[connection signal="value_changed" from="CanvasLayer/setting/music_set/music_list/all_sound" to="CanvasLayer/pause" method="_on_all_sound_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/setting/music_set/music_list/music" to="CanvasLayer/pause" method="_on_music_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/setting/music_set/music_list/noise" to="CanvasLayer/pause" method="_on_noise_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/setting/music_set/music_list/sound" to="CanvasLayer/pause" method="_on_sound_value_changed"]
+[connection signal="pressed" from="CanvasLayer/setting/gameplay/gameplay_set/controll" to="CanvasLayer/pause" method="_on_controll_pressed"]
 [connection signal="timeout" from="timer_grd" to="." method="_on_timer_grd_timeout"]
