@@ -48,3 +48,7 @@ func _on_autors_pressed() -> void:
 func _on_test_pressed() -> void:
 	click_sound.play()
 	get_tree().change_scene_to_file("res://resourses/levels/test/code/test.tscn")
+
+
+func _on_setting_pressed() -> void:
+	get_tree().change_scene_to_file("res://resourses/levels/level_menu/code/setting_menu.tscn")

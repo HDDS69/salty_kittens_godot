@@ -3,7 +3,6 @@ var setting = false
 var fullscreen = false
 var platform = OS.get_name()
 @onready var control = $"../../mobile controller"
-@onready var vsinc = $"../setting/graphics_button/graphics/v_sinc_label/CheckBox"
 
 @onready var all_sound_value = $"../setting/music_set/music_list/all_sound/music_value"
 @onready var music_value = $"../setting/music_set/music_list/music/music_value"
@@ -12,7 +11,6 @@ var platform = OS.get_name()
 
 @onready var grf_set = $"../setting/graphics_button/graphics"
 @onready var msc_set = $"../setting/music_set/music_list"
-# Called when the node enters the scene tree for the first time.
 
 func change_volume(txt,value,buss):
 	txt.text  = str(int((value + 80)/80 * 100))+"%"
@@ -64,10 +62,11 @@ func _on_quit_pressed() -> void:
 	get_tree().change_scene_to_file("res://resourses/levels/level_menu/code/menu_new.tscn")
 
 func _on_check_box_pressed() -> void:
-	if vsinc.button_pressed == true:
-		DisplayServer.window_set_vsync_mode(1)
+	SavePoint.vsinc = !SavePoint.vsinc
+	if SavePoint.vsinc:
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
 	else:
-		DisplayServer.window_set_vsync_mode(0)
+		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 
 
 func _on_ful_screen_pressed() -> void:

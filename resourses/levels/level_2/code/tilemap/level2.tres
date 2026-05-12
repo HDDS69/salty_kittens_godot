@@ -6709,14 +6709,7 @@ texture = ExtResource("29_ann8r")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vgv73"]
 texture = ExtResource("30_w3ys7")
-1:0/0 = 0
-2:0/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
+0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k8fah"]
 texture = ExtResource("31_fgpkn")

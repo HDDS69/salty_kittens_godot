@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=92 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
@@ -18,11 +18,13 @@
 [ext_resource type="Texture2D" uid="uid://crhquqw084nub" path="res://resourses/ui/mobile_controller/texture/button_pause.png" id="32_galrp"]
 [ext_resource type="AudioStream" uid="uid://bh8nsyb3yrfic" path="res://resourses/entity/other/player/blaster/sound/blaster.mp3" id="32_ny14h"]
 [ext_resource type="Texture2D" uid="uid://q65jv3hi8ob6" path="res://resourses/ui/buttons/type4.png" id="32_xilyh"]
+[ext_resource type="StyleBox" uid="uid://c33arnms2uyml" path="res://resourses/ui/buttons/code/player.tres" id="33_3hprq"]
 [ext_resource type="Texture2D" uid="uid://c8q7lhpu36tyi" path="res://resourses/ui/buttons/line.png" id="33_7hjnw"]
 [ext_resource type="Texture2D" uid="uid://xfwt41mclny3" path="res://resourses/ui/mobile_controller/texture/button_pause_pressed.png" id="33_55vbn"]
 [ext_resource type="FontFile" uid="uid://bkyohh76x8qg6" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.otf" id="33_cv5i6"]
 [ext_resource type="Texture2D" uid="uid://dfxlbje8idmd3" path="res://resourses/ui/mobile_controller/texture/zero.png" id="34_8srny"]
 [ext_resource type="Texture2D" uid="uid://tyqdr1wxq7h0" path="res://resourses/ui/buttons/type1.png" id="35_8srny"]
+[ext_resource type="StyleBox" uid="uid://dirlrxko3eket" path="res://resourses/ui/buttons/code/type1.tres" id="35_re1tl"]
 [ext_resource type="Texture2D" uid="uid://dgg84t16l6o8y" path="res://resourses/entity/other/player/base/texture/dialog/dialog_background3.png" id="36_m5ng5"]
 [ext_resource type="Texture2D" uid="uid://dwgc1lkub8ift" path="res://resourses/entity/other/player/base/texture/heart/Sprite-0001.png" id="36_ma22b"]
 [ext_resource type="Texture2D" uid="uid://sieh5wcd26g7" path="res://resourses/entity/projectiles/pomegrenade/texture/boom8.png" id="36_xilyh"]
@@ -240,6 +242,47 @@ _data = {
 &"RESET": SubResource("Animation_nyu1g"),
 &"show": SubResource("Animation_k2xlx")
 }
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7hjnw"]
+texture = ExtResource("32_xilyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3hprq"]
+texture = ExtResource("32_xilyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_re1tl"]
+texture = ExtResource("32_xilyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pu4w8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7p6pa"]
+texture = ExtResource("32_xilyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nu082"]
+texture = ExtResource("32_xilyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hx2oj"]
+texture = ExtResource("32_xilyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yvkw1"]
+texture = ExtResource("32_xilyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6win"]
+texture = ExtResource("32_xilyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ji4f4"]
+texture = ExtResource("32_xilyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_412v2"]
+texture = ExtResource("32_xilyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_207gi"]
+texture = ExtResource("32_xilyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ojyho"]
+texture = ExtResource("32_xilyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qdqp6"]
+texture = ExtResource("32_xilyh")
 
 [sub_resource type="LabelSettings" id="LabelSettings_m5ng5"]
 font = ExtResource("33_cv5i6")
@@ -664,20 +707,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -159.0
-offset_top = -121.0
+offset_top = -130.0
 offset_right = 158.0
 offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_7hjnw")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3hprq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_re1tl")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_pu4w8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_7p6pa")
 text = "вернуться"
-flat = true
-
-[node name="Type4" type="Sprite2D" parent="CanvasLayer/pause/resume"]
-position = Vector2(159, 12)
-scale = Vector2(4.062501, 4.062501)
-texture = ExtResource("32_xilyh")
 
 [node name="settings" type="Button" parent="CanvasLayer/pause"]
 layout_mode = 1
@@ -687,20 +729,19 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -159.0
-offset_top = -80.0
-offset_right = 162.0
-offset_bottom = -51.0
+offset_top = -88.0
+offset_right = 158.0
+offset_bottom = -52.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxTexture_nu082")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hx2oj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_yvkw1")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_y6win")
+theme_override_styles/focus = SubResource("StyleBoxTexture_ji4f4")
 text = "настройки"
-flat = true
-
-[node name="Type5" type="Sprite2D" parent="CanvasLayer/pause/settings"]
-position = Vector2(159, 14)
-scale = Vector2(4.062501, 4.062501)
-texture = ExtResource("32_xilyh")
 
 [node name="quit" type="Button" parent="CanvasLayer/pause"]
 layout_mode = 1
@@ -710,29 +751,33 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -158.0
-offset_top = -37.999985
+offset_top = -45.999985
 offset_right = 158.0
-offset_bottom = -10.999985
+offset_bottom = -9.999985
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("33_3hprq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_412v2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_207gi")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ojyho")
+theme_override_styles/focus = SubResource("StyleBoxTexture_qdqp6")
 text = "выход в главное меню
 "
-flat = true
-
-[node name="Type6" type="Sprite2D" parent="CanvasLayer/pause/quit"]
-position = Vector2(158, 13)
-scale = Vector2(4.062501, 4.062501)
-texture = ExtResource("32_xilyh")
 
 [node name="setting" type="Control" parent="CanvasLayer"]
 process_mode = 3
-visible = false
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -642.0
+offset_top = -367.0
+offset_right = -642.0
+offset_bottom = -367.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -751,20 +796,19 @@ texture = ExtResource("33_7hjnw")
 
 [node name="quit_setting" type="Button" parent="CanvasLayer/setting"]
 layout_mode = 0
-offset_left = 1061.0
-offset_top = 648.0
-offset_right = 1235.0
-offset_bottom = 688.0
+offset_left = 1073.0
+offset_top = 644.0
+offset_right = 1238.0
+offset_bottom = 685.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("35_re1tl")
+theme_override_styles/pressed = ExtResource("35_re1tl")
+theme_override_styles/hover = ExtResource("35_re1tl")
+theme_override_styles/disabled = ExtResource("35_re1tl")
+theme_override_styles/focus = ExtResource("35_re1tl")
 action_mode = 0
 text = "назад"
-flat = true
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/setting/quit_setting"]
-position = Vector2(85, 18.00002)
-scale = Vector2(3.8358383, 3.317709)
-texture = ExtResource("35_8srny")
 
 [node name="graphics_button" type="Button" parent="CanvasLayer/setting"]
 layout_mode = 0

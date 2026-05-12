@@ -44,6 +44,6 @@ func _on_body_shape_entered(_body_rid: RID, _body: Node, _body_shape_index: int,
 
 func _on_take_body_entered(body: Node2D) -> void:
 	if body.name == "player" and activation == false:
-		if body.inventory.size() < 3:
+		if SavePoint.inventory.size() < 3:
 			body.take([load(scene_file_path),bomb_img])
 			queue_free()

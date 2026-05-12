@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=50 format=3 uid="uid://dqgnneqt0r7x2"]
+[gd_resource type="TileSet" load_steps=52 format=3 uid="uid://dqgnneqt0r7x2"]
 
 [ext_resource type="Texture2D" uid="uid://dvicwdrytung3" path="res://resourses/levels/resourses_levels/tilemap/texture/pochta.png" id="1_nvt3f"]
 [ext_resource type="Texture2D" uid="uid://b6tr6vyotqvbf" path="res://resourses/levels/resourses_levels/tilemap/texture/wood.png" id="2_7yaas"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dn0ck1mfp1w2q" path="res://resourses/levels/resourses_levels/tilemap/texture/trash_can2.png" id="15_duror"]
 [ext_resource type="Texture2D" uid="uid://dvispnxl5uhjd" path="res://resourses/levels/resourses_levels/tilemap/texture/bike.png" id="16_ewrsp"]
 [ext_resource type="Texture2D" uid="uid://bp58d3o2e7r01" path="res://resourses/levels/resourses_levels/tilemap/texture/lampa.png" id="17_nvt3f"]
+[ext_resource type="Texture2D" uid="uid://cwisg1luq6ftq" path="res://resourses/levels/resourses_levels/tilemap/texture/llampa1.png" id="18_qje7i"]
 [ext_resource type="Texture2D" uid="uid://bk28ckmirgb6d" path="res://resourses/levels/resourses_levels/tilemap/texture/trash3.png" id="20_nvt3f"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_75k5c"]
@@ -642,6 +643,14 @@ texture_region_size = Vector2i(8, 8)
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o16pf"]
+texture = ExtResource("18_qje7i")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t5t38"]
 texture = ExtResource("8_oyu1j")
@@ -4340,3 +4349,4 @@ sources/22 = SubResource("TileSetAtlasSource_qje7i")
 sources/23 = SubResource("TileSetAtlasSource_urdnb")
 sources/5 = SubResource("TileSetAtlasSource_o4x6x")
 sources/0 = SubResource("TileSetAtlasSource_ejy4j")
+sources/24 = SubResource("TileSetAtlasSource_o16pf")

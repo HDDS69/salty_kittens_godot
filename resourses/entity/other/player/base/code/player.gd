@@ -35,7 +35,7 @@ var direction = 0.0
 var blaster = false
 var count = 3
 var transition = false
-var inventory = []
+
 
 func _ready() -> void:
 	update_inv()
@@ -163,9 +163,9 @@ func _on_timer_invulnerability_timeout():
 ##если функция принимает true бомба взрываеться когда её скидываешь,
 ## если false скидываеться как предмет
 func bomb(activ):
-	if inventory.size() > 0:
-		var g = inventory[0][0].instantiate()
-		inventory.pop_front()
+	if SavePoint.inventory.size() > 0:
+		var g =  SavePoint.inventory[0][0].instantiate()
+		SavePoint.inventory.pop_front()
 		get_parent().add_child(g)
 		g.transform = marker.global_transform
 		g.activation = activ
@@ -178,7 +178,7 @@ func bomb(activ):
 
 ## принимает гранаты в инвентарь
 func take(_grd):
-	inventory.append(_grd)
+	SavePoint.inventory.append(_grd)
 	update_inv()
 
 ##функция обновления хп в ui игрока
@@ -196,8 +196,8 @@ func update_hp():
 ## обновляет ui гранат
 func update_inv():
 	for i in range(3):
-		if i < inventory.size():
-			grd_slots[i].texture = inventory[i][1]
+		if i <  SavePoint.inventory.size():
+			grd_slots[i].texture =  SavePoint.inventory[i][1]
 		else:
 			grd_slots[i].texture = null
 	

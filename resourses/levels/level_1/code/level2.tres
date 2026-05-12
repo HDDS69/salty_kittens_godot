@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=25 format=3 uid="uid://dfy0kubclk3cd"]
+[gd_resource type="TileSet" load_steps=27 format=3 uid="uid://dfy0kubclk3cd"]
 
 [ext_resource type="Texture2D" uid="uid://46gqbgubmc2h" path="res://resourses/levels/resourses_levels/tilemap/texture/oboi.png" id="1_rhqlx"]
 [ext_resource type="Texture2D" uid="uid://ktjjfbu60kra" path="res://resourses/levels/resourses_levels/tilemap/texture/oboi1.png" id="2_2yuc3"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bk28ckmirgb6d" path="res://resourses/levels/resourses_levels/tilemap/texture/trash3.png" id="9_15n44"]
 [ext_resource type="Texture2D" uid="uid://g5f43opn1dca" path="res://resourses/levels/resourses_levels/tilemap/texture/wires.png" id="10_lqous"]
 [ext_resource type="Texture2D" uid="uid://cf7pxe1la6b42" path="res://resourses/levels/resourses_levels/tilemap/texture/door.png" id="11_pa0al"]
+[ext_resource type="Texture2D" uid="uid://mh20xl5aah3y" path="res://resourses/levels/resourses_levels/tilemap/texture/door_oboi.png" id="12_vsxe6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2ld3k"]
 
@@ -531,6 +532,14 @@ texture_region_size = Vector2i(8, 8)
 1:5/0 = 0
 2:5/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yorio"]
+texture = ExtResource("12_vsxe6")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
 [resource]
 tile_size = Vector2i(8, 8)
 sources/0 = SubResource("TileSetAtlasSource_j6d5s")
@@ -544,3 +553,4 @@ sources/5 = SubResource("TileSetAtlasSource_15n44")
 sources/6 = SubResource("TileSetAtlasSource_lqous")
 sources/7 = SubResource("TileSetAtlasSource_pa0al")
 sources/8 = SubResource("TileSetAtlasSource_vsxe6")
+sources/9 = SubResource("TileSetAtlasSource_yorio")

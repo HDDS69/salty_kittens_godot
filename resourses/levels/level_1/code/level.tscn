@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://c44v1o0wb4kfs" path="res://resourses/levels/level_1/music/Cant wait for salty kittens.mp3" id="38_samc1"]
 [ext_resource type="Texture2D" uid="uid://dnn8bflaqyv6v" path="res://resourses/levels/resourses_levels/background/texture/37.png" id="39_38y4e"]
 [ext_resource type="Texture2D" uid="uid://dulg04vrml0c0" path="res://resourses/levels/resourses_levels/background/texture/38.png" id="40_05ry7"]
+[ext_resource type="Script" uid="uid://c2frrt6ab5cmw" path="res://resourses/levels/level_1/code/light.gd" id="40_g8ktd"]
 [ext_resource type="TileSet" uid="uid://huoug6s04p7x" path="res://resourses/levels/level_2/code/tilemap/level2.tres" id="40_l8apu"]
 [ext_resource type="Texture2D" uid="uid://cwgtd0fytya83" path="res://resourses/levels/level_1/texture/atlas.png" id="41_k1ecl"]
 [ext_resource type="Texture2D" uid="uid://c8fkck5qifxbm" path="res://resourses/levels/resourses_levels/background/texture/40.png" id="41_occcm"]
@@ -38,7 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://c3eaytqasr3xn" path="res://resourses/levels/resourses_levels/background/texture/44.png" id="46_24akx"]
 [ext_resource type="PackedScene" uid="uid://cq5huuu6lo0hl" path="res://resourses/entity/other/trigger/code/trigger.tscn" id="46_x0838"]
 [ext_resource type="Texture2D" uid="uid://cxbpmy6ohiox4" path="res://resourses/levels/resourses_levels/background/texture/45.png" id="47_rn18y"]
-[ext_resource type="PackedScene" uid="uid://dskma481tr537" path="res://resourses/entity/projectiles/pomegrenade/code/pomegranage.tscn" id="47_ydms5"]
 [ext_resource type="Texture2D" uid="uid://cuuxmcyh0t0jf" path="res://resourses/levels/resourses_levels/background/texture/46.png" id="48_o318s"]
 [ext_resource type="Texture2D" uid="uid://du0v6udlbn6t1" path="res://resourses/levels/resourses_levels/background/texture/47.png" id="49_rgl0s"]
 [ext_resource type="PackedScene" uid="uid://drkw1gq1eictd" path="res://resourses/entity/npcs/drone/code/drone.tscn" id="54_75k5c"]
@@ -276,7 +276,6 @@ follow_viewport_enabled = true
 [node name="manager" type="Node" parent="."]
 process_mode = 3
 script = ExtResource("1_h74ei")
-granade = ExtResource("47_ydms5")
 
 [node name="exit" parent="manager" instance=ExtResource("46_x0838")]
 position = Vector2(1919, 611)
@@ -308,7 +307,7 @@ follow_viewport_enabled = true
 [node name="background" type="Parallax2D" parent="street"]
 repeat_size = Vector2(270, 230)
 autoscroll = Vector2(1, 0)
-repeat_times = 4
+repeat_times = 6
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="street/background"]
 position = Vector2(438, 545.08405)
@@ -511,6 +510,7 @@ color = Color(0.2984087, 0.9964978, 0, 1)
 energy = 1.2
 shadow_enabled = true
 texture = ExtResource("41_s6oc5")
+script = ExtResource("40_g8ktd")
 
 [node name="PointLight2D9" type="PointLight2D" parent="street/light"]
 position = Vector2(441.99994, 614.37524)
