@@ -7,4 +7,3 @@ var fullscreen = false
 var light = true
 var vsinc = true
 var inventory = []
-
