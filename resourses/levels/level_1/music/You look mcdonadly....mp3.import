@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://seq4vd4jsb2i"
+path="res://.godot/imported/You look mcdonadly....mp3-7baaca02705a3526f4e86887c25f1e0f.mp3str"
+
+[deps]
+
+source_file="res://resourses/levels/level_1/music/You look mcdonadly....mp3"
+dest_files=["res://.godot/imported/You look mcdonadly....mp3-7baaca02705a3526f4e86887c25f1e0f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
