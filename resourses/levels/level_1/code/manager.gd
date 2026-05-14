@@ -3,13 +3,15 @@ extends Node
 
 @onready var ed3 = $"../education/3"
 @onready var player = $"../street/player"
+@onready var drone = $"../street/drone"
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready() -> void:
 	player.spawn_pos = Vector2(-90,620)
+	await get_tree().process_frame
+	drone.damage(2)
 	#if DiscordRPC.get_is_discord_working():
 		#DiscordRPC.state = "уровень 1"
 		#DiscordRPC.refresh()
-	#
 
 func check(body,gide,blee):
 	if body.name == 'player':

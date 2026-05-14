@@ -1,4 +1,4 @@
-[gd_scene load_steps=92 format=3 uid="uid://c27fe3qnrj4ms"]
+[gd_scene load_steps=93 format=3 uid="uid://c27fe3qnrj4ms"]
 
 [ext_resource type="Script" uid="uid://cq25r8g6qlw17" path="res://resourses/entity/other/player/base/code/player.gd" id="1_8m1ne"]
 [ext_resource type="SpriteFrames" uid="uid://bq2cacsi7h0bx" path="res://resourses/entity/other/player/base/code/player.tres" id="3_pgbbb"]
@@ -23,11 +23,11 @@
 [ext_resource type="Texture2D" uid="uid://xfwt41mclny3" path="res://resourses/ui/mobile_controller/texture/button_pause_pressed.png" id="33_55vbn"]
 [ext_resource type="FontFile" uid="uid://bkyohh76x8qg6" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.otf" id="33_cv5i6"]
 [ext_resource type="Texture2D" uid="uid://dfxlbje8idmd3" path="res://resourses/ui/mobile_controller/texture/zero.png" id="34_8srny"]
-[ext_resource type="Texture2D" uid="uid://tyqdr1wxq7h0" path="res://resourses/ui/buttons/type1.png" id="35_8srny"]
 [ext_resource type="StyleBox" uid="uid://dirlrxko3eket" path="res://resourses/ui/buttons/code/type1.tres" id="35_re1tl"]
 [ext_resource type="Texture2D" uid="uid://dgg84t16l6o8y" path="res://resourses/entity/other/player/base/texture/dialog/dialog_background3.png" id="36_m5ng5"]
 [ext_resource type="Texture2D" uid="uid://dwgc1lkub8ift" path="res://resourses/entity/other/player/base/texture/heart/Sprite-0001.png" id="36_ma22b"]
 [ext_resource type="Texture2D" uid="uid://sieh5wcd26g7" path="res://resourses/entity/projectiles/pomegrenade/texture/boom8.png" id="36_xilyh"]
+[ext_resource type="StyleBox" uid="uid://c564cdcddk146" path="res://resourses/ui/buttons/code/zero.tres" id="37_pu4w8"]
 [ext_resource type="AudioStream" uid="uid://b6gd3p2ehsg8b" path="res://resourses/entity/other/player/base/sound/jump.mp3" id="67_v58pc"]
 [ext_resource type="AudioStream" uid="uid://c3x81i1us0cwj" path="res://resourses/entity/other/player/base/sound/land.mp3" id="68_qmmh8"]
 [ext_resource type="Script" uid="uid://cr8jo7ea12fkm" path="res://resourses/entity/other/player/blaster/code/blaster.gd" id="69_fr3kn"]
@@ -283,6 +283,9 @@ texture = ExtResource("32_xilyh")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qdqp6"]
 texture = ExtResource("32_xilyh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gchjn"]
+texture = ExtResource("34_8srny")
 
 [sub_resource type="LabelSettings" id="LabelSettings_m5ng5"]
 font = ExtResource("33_cv5i6")
@@ -768,16 +771,17 @@ text = "выход в главное меню
 
 [node name="setting" type="Control" parent="CanvasLayer"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -642.0
-offset_top = -367.0
-offset_right = -642.0
-offset_bottom = -367.0
+offset_left = -640.0
+offset_top = -360.0
+offset_right = -640.0
+offset_bottom = -360.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -813,18 +817,17 @@ text = "назад"
 [node name="graphics_button" type="Button" parent="CanvasLayer/setting"]
 layout_mode = 0
 offset_left = 69.0
-offset_top = 145.0
+offset_top = 155.0
 offset_right = 321.0
-offset_bottom = 226.0
+offset_bottom = 236.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = ExtResource("35_re1tl")
+theme_override_styles/pressed = ExtResource("35_re1tl")
+theme_override_styles/hover = ExtResource("35_re1tl")
+theme_override_styles/disabled = ExtResource("35_re1tl")
+theme_override_styles/focus = ExtResource("35_re1tl")
 text = "ГРАФИКА"
-flat = true
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics_button"]
-position = Vector2(126, 37)
-scale = Vector2(5.2708335, 4.3854165)
-texture = ExtResource("35_8srny")
 
 [node name="graphics" type="Control" parent="CanvasLayer/setting/graphics_button"]
 anchors_preset = 0
@@ -843,83 +846,81 @@ text = "полный экран"
 
 [node name="ful_screen" type="CheckBox" parent="CanvasLayer/setting/graphics_button/graphics/full_screen_label"]
 layout_mode = 0
-offset_left = 776.00006
-offset_top = -17.0
-offset_right = 800.00006
-offset_bottom = 7.0
+offset_left = 785.0
+offset_top = -10.0
+offset_right = 801.0
+offset_bottom = 6.0
 scale = Vector2(2.5855834, 2.5855834)
 theme_override_fonts/font = ExtResource("91_d1y0c")
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics_button/graphics/full_screen_label/ful_screen"]
-position = Vector2(11.989532, 11.989555)
-scale = Vector2(1.1844522, 1.1844522)
-texture = ExtResource("34_8srny")
+theme_override_styles/normal = SubResource("StyleBoxTexture_gchjn")
+theme_override_styles/pressed = ExtResource("37_pu4w8")
+theme_override_styles/hover = ExtResource("37_pu4w8")
+theme_override_styles/hover_pressed = ExtResource("37_pu4w8")
+theme_override_styles/disabled = ExtResource("37_pu4w8")
+theme_override_styles/focus = ExtResource("37_pu4w8")
 
 [node name="v_sinc_label" type="Label" parent="CanvasLayer/setting/graphics_button/graphics"]
 layout_mode = 0
 offset_left = 3.0
-offset_top = 231.0
+offset_top = 215.0
 offset_right = 643.0
-offset_bottom = 257.0
+offset_bottom = 241.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 42
 text = "вертикальная синхронизация"
 
 [node name="CheckBox" type="CheckBox" parent="CanvasLayer/setting/graphics_button/graphics/v_sinc_label"]
 layout_mode = 0
-offset_left = 776.00006
-offset_top = -17.0
-offset_right = 800.00006
-offset_bottom = 7.0
+offset_left = 785.00006
+offset_top = -10.0
+offset_right = 801.00006
+offset_bottom = 6.0
 scale = Vector2(2.5855834, 2.5855834)
 theme_override_fonts/font = ExtResource("91_d1y0c")
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics_button/graphics/v_sinc_label/CheckBox"]
-position = Vector2(11.989532, 11.989555)
-scale = Vector2(1.1844522, 1.1844522)
-texture = ExtResource("34_8srny")
+theme_override_styles/normal = ExtResource("37_pu4w8")
+theme_override_styles/pressed = ExtResource("37_pu4w8")
+theme_override_styles/hover = ExtResource("37_pu4w8")
+theme_override_styles/hover_pressed = ExtResource("37_pu4w8")
+theme_override_styles/disabled = ExtResource("37_pu4w8")
+theme_override_styles/focus = ExtResource("37_pu4w8")
 
 [node name="max_fps_label" type="Label" parent="CanvasLayer/setting/graphics_button/graphics"]
 layout_mode = 0
 offset_left = 2.0
-offset_top = 292.0
+offset_top = 263.0
 offset_right = 642.0
-offset_bottom = 318.0
+offset_bottom = 289.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 42
 text = "максильный FPS"
 
 [node name="max_fps_editor" type="LineEdit" parent="CanvasLayer/setting/graphics_button/graphics/max_fps_label"]
 layout_mode = 0
-offset_left = 793.0
-offset_top = -9.0
-offset_right = 875.0
-offset_bottom = 32.0
+offset_left = 787.0
+offset_top = -8.0
+offset_right = 861.0
+offset_bottom = 23.0
+theme_override_styles/normal = ExtResource("35_re1tl")
+theme_override_styles/read_only = ExtResource("35_re1tl")
+theme_override_styles/focus = ExtResource("35_re1tl")
 placeholder_text = "144"
 emoji_menu_enabled = false
-flat = true
 select_all_on_focus = true
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/setting/graphics_button/graphics/max_fps_label/max_fps_editor"]
-position = Vector2(43.000015, 19.999996)
-scale = Vector2(2.2187505, 3.2172246)
-texture = ExtResource("35_8srny")
 
 [node name="music_set" type="Button" parent="CanvasLayer/setting"]
 layout_mode = 0
-offset_left = 344.0
-offset_top = 148.0
-offset_right = 561.0
-offset_bottom = 217.0
+offset_left = 347.0
+offset_top = 155.0
+offset_right = 599.0
+offset_bottom = 236.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = ExtResource("35_re1tl")
+theme_override_styles/pressed = ExtResource("35_re1tl")
+theme_override_styles/hover = ExtResource("35_re1tl")
+theme_override_styles/disabled = ExtResource("35_re1tl")
+theme_override_styles/focus = ExtResource("35_re1tl")
 text = "музыка"
-flat = true
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/setting/music_set"]
-position = Vector2(108.25, 32.41667)
-scale = Vector2(4.572917, 4.572917)
-texture = ExtResource("35_8srny")
 
 [node name="music_list" type="Control" parent="CanvasLayer/setting/music_set"]
 visible = false
@@ -973,9 +974,9 @@ label_settings = SubResource("LabelSettings_m5ng5")
 custom_minimum_size = Vector2(200, 15)
 layout_mode = 0
 offset_left = 150.0
-offset_top = 212.0
+offset_top = 192.0
 offset_right = 350.0
-offset_bottom = 227.0
+offset_bottom = 207.0
 scale = Vector2(2.2634866, 2.2634866)
 size_flags_horizontal = 8
 size_flags_vertical = 1
@@ -1013,10 +1014,10 @@ label_settings = SubResource("LabelSettings_m5ng5")
 [node name="noise" type="HScrollBar" parent="CanvasLayer/setting/music_set/music_list"]
 custom_minimum_size = Vector2(200, 15)
 layout_mode = 0
-offset_left = 146.0
-offset_top = 267.0
-offset_right = 346.0
-offset_bottom = 282.0
+offset_left = 150.0
+offset_top = 230.0
+offset_right = 350.0
+offset_bottom = 245.0
 scale = Vector2(2.2634866, 2.2634866)
 size_flags_horizontal = 8
 size_flags_vertical = 1
@@ -1054,10 +1055,10 @@ label_settings = SubResource("LabelSettings_m5ng5")
 [node name="sound" type="HScrollBar" parent="CanvasLayer/setting/music_set/music_list"]
 custom_minimum_size = Vector2(200, 15)
 layout_mode = 0
-offset_left = 146.0
-offset_top = 317.0
-offset_right = 346.0
-offset_bottom = 332.0
+offset_left = 149.0
+offset_top = 267.0
+offset_right = 349.0
+offset_bottom = 282.0
 scale = Vector2(2.2634866, 2.2634866)
 size_flags_horizontal = 8
 size_flags_vertical = 1
@@ -1095,19 +1096,18 @@ label_settings = SubResource("LabelSettings_m5ng5")
 [node name="gameplay" type="Button" parent="CanvasLayer/setting"]
 visible = false
 layout_mode = 0
-offset_left = 580.0
-offset_top = 145.0
-offset_right = 828.0
-offset_bottom = 227.0
+offset_left = 627.0
+offset_top = 154.0
+offset_right = 875.0
+offset_bottom = 236.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = ExtResource("35_re1tl")
+theme_override_styles/pressed = ExtResource("35_re1tl")
+theme_override_styles/hover = ExtResource("35_re1tl")
+theme_override_styles/disabled = ExtResource("35_re1tl")
+theme_override_styles/focus = ExtResource("35_re1tl")
 text = "геймплей"
-flat = true
-
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/setting/gameplay"]
-position = Vector2(124, 41)
-scale = Vector2(5.2708335, 5.2708335)
-texture = ExtResource("35_8srny")
 
 [node name="gameplay_set" type="Control" parent="CanvasLayer/setting/gameplay"]
 anchors_preset = 0
@@ -1117,9 +1117,9 @@ offset_bottom = 40.0
 [node name="controll" type="Button" parent="CanvasLayer/setting/gameplay/gameplay_set"]
 layout_mode = 0
 offset_left = -550.0
-offset_top = 142.0
+offset_top = 164.0
 offset_right = 151.0
-offset_bottom = 160.0
+offset_bottom = 182.0
 theme_override_fonts/font = ExtResource("91_d1y0c")
 action_mode = 0
 text = "показать управление"
@@ -1159,10 +1159,10 @@ text = "salt :"
 label_settings = SubResource("LabelSettings_v3gx4")
 
 [node name="fps" type="Label" parent="CanvasLayer"]
-offset_left = 515.0
-offset_top = 6.0
-offset_right = 597.0
-offset_bottom = 66.0
+offset_left = 316.0
+offset_top = 1.0
+offset_right = 398.0
+offset_bottom = 61.0
 label_settings = SubResource("LabelSettings_uf1d1")
 script = ExtResource("95_d17l8")
 
