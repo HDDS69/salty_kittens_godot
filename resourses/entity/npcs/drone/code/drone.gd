@@ -92,9 +92,8 @@ func damage(dmg):
 	else:
 		hp -= dmg
 	hp_bar.value = hp
-	if hp == hp_max - 1:
-		anim.play('damage')
 	if hp <= hp_max /2:
+		anim.play('damage')
 		effect.emitting = true
 	if hp <= 0:
 		state = states.death

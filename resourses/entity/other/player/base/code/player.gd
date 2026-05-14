@@ -40,6 +40,8 @@ var transition = false
 func _ready() -> void:
 	update_inv()
 	update_hp()
+	if SavePoint.TV:
+		animTV()
 
 func _physics_process(delta: float) -> void:
 	if velocity.y > 0:
@@ -208,6 +210,7 @@ func _on_timer_timeout():
 	
 
 func animTV() -> void:
+	SavePoint.TV = true
 	SPEED = 60
 	JUMP_VELOCITY = -190.0
 	anim.visible = false

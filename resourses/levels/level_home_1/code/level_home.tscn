@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://b02d308ylwn3l"]
+[gd_scene load_steps=39 format=4 uid="uid://b02d308ylwn3l"]
 
 [ext_resource type="Script" uid="uid://bpe4dbi0c88y1" path="res://resourses/levels/level_home_1/code/level_home.gd" id="1_7o1kp"]
 [ext_resource type="Texture2D" uid="uid://cctqkom8hyhpo" path="res://resourses/levels/level_1/texture/light_ball.png" id="1_fih6i"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cxbpmy6ohiox4" path="res://resourses/levels/resourses_levels/background/texture/45.png" id="30_y5lhg"]
 [ext_resource type="Texture2D" uid="uid://cuuxmcyh0t0jf" path="res://resourses/levels/resourses_levels/background/texture/46.png" id="31_ej16q"]
 [ext_resource type="Texture2D" uid="uid://du0v6udlbn6t1" path="res://resourses/levels/resourses_levels/background/texture/47.png" id="32_dojme"]
+[ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="32_gpobx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8svlb"]
 animations = [{
@@ -117,7 +118,7 @@ script = ExtResource("1_7o1kp")
 granade = ExtResource("2_7o1kp")
 
 [node name="background" type="Parallax2D" parent="."]
-scroll_offset = Vector2(-832, -146)
+scroll_offset = Vector2(-68, -63)
 repeat_size = Vector2(270, 230)
 autoscroll = Vector2(1, 0)
 repeat_times = 3
@@ -273,7 +274,6 @@ bbcode_enabled = true
 text = "Нажмите[wave] E[/wave] что бы взаимодействовать 
 с объектами."
 tab_size = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="6" type="RichTextLabel" parent="."]
 modulate = Color(2.2639842, 2.2639842, 2.2639842, 1)
@@ -288,7 +288,6 @@ text = "A - лево
 D - право
 пробел - прыгать"
 tab_size = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="1" type="RichTextLabel" parent="."]
 visible = false
@@ -377,6 +376,17 @@ visibility_layer = 3
 position = Vector2(-7.0000014, -7.999998)
 scale = Vector2(0.5937499, 0.5937499)
 texture = ExtResource("12_c4wpr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="trigers/to_street/Untitled04152026105058"]
+offset_left = -37.05265
+offset_top = -23.578966
+offset_right = 126.28066
+offset_bottom = 10.105238
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("32_gpobx")
+theme_override_font_sizes/normal_font_size = 20
+text = "
+выйти на улицу"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.84705883, 0.84705883, 0.84705883, 1)

@@ -5,7 +5,22 @@ extends Node2D
 @onready var ed1 = $"1"
 @onready var ed2 = $"2"
 @export var granade : PackedScene
+@onready var player = $player
+@onready var borrels = $borrels
+@onready var triger_granade = $trigers/gr1
+@onready var TV = $TV
 
+func _ready() -> void:
+	if SavePoint.v2 != Vector2(0,0):
+		player.position = SavePoint.v2
+		borrels.queue_free()
+		triger_granade.call_deferred('set_monitoring',false)
+		stairs2.collision_enabled = false
+		stairs2.modulate = 'ffffff5b'
+	if SavePoint.TV:
+		TV.queue_free()
+		
+		
 func _on_st_1_body_entered(body: Node2D) -> void:
 	if body.name == 'player':
 		stairs1.collision_enabled = !stairs1.collision_enabled

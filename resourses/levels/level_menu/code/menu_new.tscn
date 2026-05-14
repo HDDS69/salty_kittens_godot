@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://ck5sffpajd4t5"]
+[gd_scene load_steps=48 format=4 uid="uid://ck5sffpajd4t5"]
 
 [ext_resource type="Script" uid="uid://5ap6720avp0e" path="res://resourses/levels/level_menu/code/menu_new.gd" id="1_ato0h"]
 [ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="2_1i4p3"]
@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cxbpmy6ohiox4" path="res://resourses/levels/resourses_levels/background/texture/45.png" id="18_q1046"]
 [ext_resource type="Texture2D" uid="uid://cuuxmcyh0t0jf" path="res://resourses/levels/resourses_levels/background/texture/46.png" id="19_mkw5i"]
 [ext_resource type="Texture2D" uid="uid://du0v6udlbn6t1" path="res://resourses/levels/resourses_levels/background/texture/47.png" id="20_3xcc5"]
-[ext_resource type="Texture2D" uid="uid://tyqdr1wxq7h0" path="res://resourses/ui/buttons/type1.png" id="30_3sei6"]
+[ext_resource type="StyleBox" uid="uid://dirlrxko3eket" path="res://resourses/ui/buttons/code/type1.tres" id="31_ayaj6"]
 [ext_resource type="Texture2D" uid="uid://bdcfutpekjn8e" path="res://resourses/ui/buttons/type2.png" id="31_jkx4a"]
 [ext_resource type="Texture2D" uid="uid://op8y30oelwrj" path="res://resourses/ui/buttons/type3.png" id="32_ayaj6"]
 
@@ -107,6 +107,36 @@ animations = [{
 font_size = 25
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jkx4a"]
+texture = ExtResource("31_jkx4a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3sei6"]
+texture = ExtResource("31_jkx4a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ayaj6"]
+texture = ExtResource("31_jkx4a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n5ehq"]
+texture = ExtResource("31_jkx4a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cbjwx"]
+texture = ExtResource("31_jkx4a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fgy47"]
+texture = ExtResource("32_ayaj6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pim04"]
+texture = ExtResource("32_ayaj6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bdq60"]
+texture = ExtResource("32_ayaj6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_swrv4"]
+texture = ExtResource("32_ayaj6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lr8dl"]
+texture = ExtResource("32_ayaj6")
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_ato0h")
@@ -260,13 +290,12 @@ offset_right = 305.71423
 offset_bottom = 102.85714
 theme_override_fonts/font = ExtResource("2_1i4p3")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_jkx4a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3sei6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ayaj6")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_n5ehq")
+theme_override_styles/focus = SubResource("StyleBoxTexture_cbjwx")
 text = "играть"
-flat = true
-
-[node name="Sprite2D" type="Sprite2D" parent="buttons_group/play"]
-position = Vector2(64.28562, 71.42857)
-scale = Vector2(2.8214276, 2.8214278)
-texture = ExtResource("30_3sei6")
 
 [node name="setting" type="Button" parent="buttons_group"]
 layout_mode = 0
@@ -276,13 +305,12 @@ offset_right = 305.71423
 offset_bottom = 154.28572
 theme_override_fonts/font = ExtResource("2_1i4p3")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("31_ayaj6")
+theme_override_styles/pressed = ExtResource("31_ayaj6")
+theme_override_styles/hover = ExtResource("31_ayaj6")
+theme_override_styles/disabled = ExtResource("31_ayaj6")
+theme_override_styles/focus = ExtResource("31_ayaj6")
 text = "настройки"
-flat = true
-
-[node name="Sprite2D" type="Sprite2D" parent="buttons_group/setting"]
-position = Vector2(64.28562, -31.428566)
-scale = Vector2(2.8214269, 2.821427)
-texture = ExtResource("31_jkx4a")
 
 [node name="autors" type="Button" parent="buttons_group"]
 layout_mode = 0
@@ -292,13 +320,12 @@ offset_right = 305.71423
 offset_bottom = 205.71431
 theme_override_fonts/font = ExtResource("2_1i4p3")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_fgy47")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pim04")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bdq60")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_swrv4")
+theme_override_styles/focus = SubResource("StyleBoxTexture_lr8dl")
 text = "титры"
-flat = true
-
-[node name="Sprite2D" type="Sprite2D" parent="buttons_group/autors"]
-position = Vector2(64.28564, 20.000011)
-scale = Vector2(2.8214262, 2.8214264)
-texture = ExtResource("32_ayaj6")
 
 [node name="quit" type="Button" parent="buttons_group"]
 layout_mode = 0
@@ -308,13 +335,12 @@ offset_right = 305.71423
 offset_bottom = 257.14285
 theme_override_fonts/font = ExtResource("2_1i4p3")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("31_ayaj6")
+theme_override_styles/pressed = ExtResource("31_ayaj6")
+theme_override_styles/hover = ExtResource("31_ayaj6")
+theme_override_styles/disabled = ExtResource("31_ayaj6")
+theme_override_styles/focus = ExtResource("31_ayaj6")
 text = "выход"
-flat = true
-
-[node name="Sprite2D" type="Sprite2D" parent="buttons_group/quit"]
-position = Vector2(65.714195, 20)
-scale = Vector2(2.821426, 2.8214262)
-texture = ExtResource("30_3sei6")
 
 [node name="test" type="Button" parent="buttons_group"]
 layout_mode = 0
@@ -325,23 +351,24 @@ offset_bottom = 330.892
 scale = Vector2(0.82054657, 0.82054657)
 theme_override_fonts/font = ExtResource("2_1i4p3")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("31_ayaj6")
+theme_override_styles/pressed = ExtResource("31_ayaj6")
+theme_override_styles/hover = ExtResource("31_ayaj6")
+theme_override_styles/disabled = ExtResource("31_ayaj6")
+theme_override_styles/focus = ExtResource("31_ayaj6")
 text = "тест"
-flat = true
-
-[node name="Sprite2D" type="Sprite2D" parent="buttons_group/test"]
-position = Vector2(31.337952, 10.445953)
-scale = Vector2(1.403681, 1.4036813)
-texture = ExtResource("30_3sei6")
 
 [node name="sound" type="Node" parent="."]
 
 [node name="click" type="AudioStreamPlayer" parent="sound"]
 stream = ExtResource("6_amv3v")
+bus = &"sound"
 
 [node name="sound_menu" type="AudioStreamPlayer" parent="sound"]
 stream = ExtResource("7_0htvn")
 volume_db = -10.0
 autoplay = true
+bus = &"music"
 parameters/looping = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -1,9 +1,7 @@
 extends Control
-var setting = false
-var fullscreen = false
 var platform = OS.get_name()
 @onready var control = $"../../mobile controller"
-
+@onready var setting = $"../setting"
 @onready var all_sound_value = $"../setting/music_set/music_list/all_sound/music_value"
 @onready var music_value = $"../setting/music_set/music_list/music/music_value"
 @onready var noise_value = $"../setting/music_set/music_list/noise/music_value"
@@ -11,6 +9,9 @@ var platform = OS.get_name()
 
 @onready var grf_set = $"../setting/graphics_button/graphics"
 @onready var msc_set = $"../setting/music_set/music_list"
+@onready var vsinc_checkbox = $"../setting/graphics_button/graphics/v_sinc_label/CheckBox"
+@onready var fullscreen_checkbox = $"../setting/graphics_button/graphics/full_screen_label/ful_screen"
+@onready var max_fps = $"../setting/graphics_button/graphics/max_fps_label/max_fps_editor"
 
 func change_volume(txt,value,buss):
 	txt.text  = str(int((value + 80)/80 * 100))+"%"
@@ -20,12 +21,16 @@ func _ready() -> void:
 	self.visible = false
 	if platform == "Android":
 		SavePoint.mobile_control = true
-		#SavePoint.fullscreen = true
-		#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		control.visible = true
+	
+	max_fps.text = ' ' + type_convert(Engine.max_fps,TYPE_STRING)
+	vsinc_checkbox.button_pressed = SavePoint.vsinc
+	fullscreen_checkbox.button_pressed = SavePoint.fullscreen
+	
+	#all_sound_value.text = type_convert(AudioServer.get_bus_volume_db(AudioServer.get_bus_index('Master')),TYPE_STRING)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_cancel") and setting != true:
+	if event.is_action_pressed("ui_cancel") and setting.visible != true:
 		get_tree().paused = !get_tree().paused
 		self.visible = !self.visible
 
@@ -37,15 +42,13 @@ func _on_resume_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	$"../setting".visible = true
-	$".".visible = false
-	setting = true
-
+	setting.visible = true
+	self.visible = false
 
 func _on_quit_setting_pressed() -> void:
-	$"../setting".visible = false
-	$".".visible = true
-	setting = false
+	SavePoint.save_game()
+	setting.visible = false
+	self.visible = true
 
 
 func _on_controll_pressed() -> void:
@@ -78,6 +81,7 @@ func _on_ful_screen_pressed() -> void:
 
 func _on_max_fps_editor_text_changed(new_text: String) -> void:
 	Engine.max_fps = type_convert(new_text,TYPE_INT)
+	SavePoint.max_fps = Engine.max_fps
 
 
 func _on_music_value_changed(value: float) -> void:
@@ -93,7 +97,7 @@ func _on_sound_value_changed(value: float) -> void:
 
 
 func _on_all_sound_value_changed(value: float) -> void:
-	change_volume(all_sound_value,value,'master')
+	change_volume(all_sound_value,value,'Master')
 
 
 func _on_music_set_pressed() -> void:

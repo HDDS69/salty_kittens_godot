@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cq5huuu6lo0hl"]
+[gd_scene load_steps=5 format=3 uid="uid://cq5huuu6lo0hl"]
 
 [ext_resource type="Script" uid="uid://bor06sjiij1fl" path="res://resourses/entity/other/trigger/code/trigger.gd" id="1_4b0l7"]
 [ext_resource type="Texture2D" uid="uid://tqfmuogox35i" path="res://resourses/ui/mobile_controller/texture/Untitled 04-15-2026 10-50-58.png" id="3_iohyl"]
+[ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="3_jckqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0vr4"]
 size = Vector2(9.568386, 20)
@@ -18,6 +19,15 @@ visibility_layer = 3
 position = Vector2(-4.7683716e-07, -1.999999)
 scale = Vector2(0.3125, 0.3125)
 texture = ExtResource("3_iohyl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Untitled04152026105058"]
+offset_left = -28.799997
+offset_top = -16.000004
+offset_right = 96.19999
+offset_bottom = -1.0000057
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("3_jckqm")
+theme_override_font_sizes/normal_font_size = 20
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

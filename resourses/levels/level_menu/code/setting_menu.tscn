@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://b61mj5wfb1s3y"]
+[gd_scene load_steps=57 format=4 uid="uid://b61mj5wfb1s3y"]
 
 [ext_resource type="Script" uid="uid://dsfpuruke7ytx" path="res://resourses/levels/level_menu/code/setting_menu.gd" id="1_ob2d0"]
 [ext_resource type="Texture2D" uid="uid://dtepxmbcjl6ew" path="res://resourses/levels/resourses_levels/background/texture/0.png" id="6_g11x6"]
@@ -27,6 +27,8 @@
 [ext_resource type="Texture2D" uid="uid://dfxlbje8idmd3" path="res://resourses/ui/mobile_controller/texture/zero.png" id="25_jxixr"]
 [ext_resource type="FontFile" uid="uid://bkyohh76x8qg6" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.otf" id="26_kiich"]
 [ext_resource type="Texture2D" uid="uid://bxweyni6o0re4" path="res://resourses/levels/level_1/texture/light.png" id="26_w43hs"]
+[ext_resource type="AudioStream" uid="uid://63fg3i20okh3" path="res://resourses/shared_resources/sound/click.mp3" id="28_jxixr"]
+[ext_resource type="AudioStream" uid="uid://bc5p4nxapjq2q" path="res://resourses/levels/level_menu/sound/Pineapples in my head.mp3" id="29_kiich"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fhrlm"]
 animations = [{
@@ -551,6 +553,17 @@ theme_override_fonts/font = ExtResource("23_ob2d0")
 action_mode = 0
 text = "показать управление"
 
+[node name="sound" type="Node" parent="."]
+
+[node name="click" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("28_jxixr")
+
+[node name="sound_menu" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("29_kiich")
+autoplay = true
+bus = &"music"
+parameters/looping = true
+
 [connection signal="pressed" from="setting/quit_setting" to="." method="_on_quit_setting_pressed"]
 [connection signal="pressed" from="setting/graphics_button" to="." method="_on_graphics_button_pressed"]
 [connection signal="pressed" from="setting/graphics_button/graphics/CheckBox2" to="." method="_on_check_box_2_pressed"]
@@ -558,3 +571,6 @@ text = "показать управление"
 [connection signal="text_changed" from="setting/graphics_button/graphics/max_fps_label/max_fps_editor" to="." method="_on_max_fps_editor_text_changed"]
 [connection signal="pressed" from="setting/music_set" to="." method="_on_music_set_pressed"]
 [connection signal="value_changed" from="setting/music_set/music_list/all_sound" to="." method="_on_all_sound_value_changed"]
+[connection signal="value_changed" from="setting/music_set/music_list/music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="setting/music_set/music_list/noise" to="." method="_on_noise_value_changed"]
+[connection signal="value_changed" from="setting/music_set/music_list/sound" to="." method="_on_sound_value_changed"]

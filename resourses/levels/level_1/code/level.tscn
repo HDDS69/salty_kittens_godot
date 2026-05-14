@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://edx064hnqy0p"]
+[gd_scene load_steps=73 format=4 uid="uid://edx064hnqy0p"]
 
 [ext_resource type="PackedScene" uid="uid://c27fe3qnrj4ms" path="res://resourses/entity/other/player/base/code/player.tscn" id="1_5u35f"]
 [ext_resource type="Script" uid="uid://dijwguluakihd" path="res://resourses/levels/level_1/code/manager.gd" id="1_h74ei"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cx3vb08ixs2v8" path="res://resourses/levels/level_1/texture/bg_city.png" id="3_nckfx"]
 [ext_resource type="Texture2D" uid="uid://chr18n6fff4a6" path="res://resourses/levels/resourses_levels/background/texture/2.png" id="4_pvyrb"]
 [ext_resource type="Script" uid="uid://bor06sjiij1fl" path="res://resourses/entity/other/trigger/code/trigger.gd" id="5_3kjub"]
+[ext_resource type="FontFile" uid="uid://bmd5csjp18eov" path="res://resourses/shared_resources/fonts/upheaval-pro/Upheaval/UpheavalPro.ttf" id="5_l8apu"]
 [ext_resource type="Texture2D" uid="uid://np0yxevrqtv2" path="res://resourses/levels/resourses_levels/background/texture/3.png" id="5_v0fnv"]
 [ext_resource type="Texture2D" uid="uid://tqfmuogox35i" path="res://resourses/ui/mobile_controller/texture/Untitled 04-15-2026 10-50-58.png" id="6_ydms5"]
 [ext_resource type="VideoStream" uid="uid://bee241c0v8mbf" path="res://resourses/levels/level_1/reklama/Timeline-12.ogv" id="22_uuqa8"]
@@ -37,7 +38,6 @@
 [ext_resource type="Texture2D" uid="uid://dgw2d5eiyviby" path="res://resourses/levels/resourses_levels/background/texture/42.png" id="44_as1q7"]
 [ext_resource type="Texture2D" uid="uid://bcul2ywrbt3sr" path="res://resourses/levels/resourses_levels/background/texture/43.png" id="45_7q4rl"]
 [ext_resource type="Texture2D" uid="uid://c3eaytqasr3xn" path="res://resourses/levels/resourses_levels/background/texture/44.png" id="46_24akx"]
-[ext_resource type="PackedScene" uid="uid://cq5huuu6lo0hl" path="res://resourses/entity/other/trigger/code/trigger.tscn" id="46_x0838"]
 [ext_resource type="Texture2D" uid="uid://cxbpmy6ohiox4" path="res://resourses/levels/resourses_levels/background/texture/45.png" id="47_rn18y"]
 [ext_resource type="Texture2D" uid="uid://cuuxmcyh0t0jf" path="res://resourses/levels/resourses_levels/background/texture/46.png" id="48_o318s"]
 [ext_resource type="Texture2D" uid="uid://du0v6udlbn6t1" path="res://resourses/levels/resourses_levels/background/texture/47.png" id="49_rgl0s"]
@@ -45,6 +45,9 @@
 [ext_resource type="Texture2D" uid="uid://buywougyum70u" path="res://resourses/levels/level_1/texture/tuman.png" id="59_43dhv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0vr4"]
+size = Vector2(9.568386, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8ktd"]
 size = Vector2(9.568386, 20)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vfx2f"]
@@ -277,21 +280,44 @@ follow_viewport_enabled = true
 process_mode = 3
 script = ExtResource("1_h74ei")
 
-[node name="exit" parent="manager" instance=ExtResource("46_x0838")]
+[node name="exit" type="Area2D" parent="manager"]
 position = Vector2(1919, 611)
 scale = Vector2(2.3169, 2.5192733)
+script = ExtResource("5_3kjub")
 scene = "res://resourses/levels/level_2/code/level2.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="manager/exit"]
+shape = SubResource("RectangleShape2D_h0vr4")
+
+[node name="Untitled04152026105058" type="Sprite2D" parent="manager/exit"]
+visible = false
+visibility_layer = 3
+position = Vector2(-4.7683716e-07, -1.999999)
+scale = Vector2(0.3125, 0.3125)
+texture = ExtResource("6_ydms5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="manager/exit/Untitled04152026105058"]
+offset_left = -29.004337
+offset_top = -21.544525
+offset_right = 95.99565
+offset_bottom = 5.4725647
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("5_l8apu")
+theme_override_font_sizes/normal_font_size = 20
+text = "
+войти в бар"
 
 [node name="level_to_home" type="Area2D" parent="manager"]
 position = Vector2(-126, 611)
 scale = Vector2(2.3169, 2.5192733)
 script = ExtResource("5_3kjub")
 scene = "res://resourses/levels/level_home_1/code/level_home.tscn"
+v2 = Vector2(-170, 620)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="manager/level_to_home"]
 position = Vector2(-5.215809, 0)
 scale = Vector2(0.99999994, 0.99999994)
-shape = SubResource("RectangleShape2D_h0vr4")
+shape = SubResource("RectangleShape2D_g8ktd")
 
 [node name="Untitled04152026105058" type="Sprite2D" parent="manager/level_to_home"]
 visible = false
@@ -299,6 +325,17 @@ visibility_layer = 3
 position = Vector2(-4.7477236, -1.999999)
 scale = Vector2(0.3125, 0.3125)
 texture = ExtResource("6_ydms5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="manager/level_to_home/Untitled04152026105058"]
+offset_left = -31.766575
+offset_top = -22.814734
+offset_right = 100.82437
+offset_bottom = 5.1298466
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("5_l8apu")
+theme_override_font_sizes/normal_font_size = 20
+text = "
+зайти в дом"
 
 [node name="street" type="CanvasLayer" parent="."]
 layer = 0
@@ -447,6 +484,7 @@ navigation_enabled = false
 
 [node name="drone" parent="street" instance=ExtResource("54_75k5c")]
 position = Vector2(1767, 577)
+hp = 4
 
 [node name="rock" type="RigidBody2D" parent="street"]
 position = Vector2(74, 636)
@@ -567,8 +605,8 @@ texture = ExtResource("43_8yy6i")
 texture_scale = 0.52
 
 [node name="PointLight2D16" type="PointLight2D" parent="street/light"]
-position = Vector2(1066, 614.0001)
-scale = Vector2(0.0895252, 0.16244556)
+position = Vector2(1066, 614.1877)
+scale = Vector2(0.0895252, 0.16385452)
 color = Color(1, 1, 0.509804, 0.494118)
 energy = 2.37
 shadow_enabled = true
@@ -576,8 +614,8 @@ texture = ExtResource("43_8yy6i")
 texture_scale = 0.52
 
 [node name="PointLight2D17" type="PointLight2D" parent="street/light"]
-position = Vector2(689.99994, 615.0001)
-scale = Vector2(0.0895252, 0.16244556)
+position = Vector2(689.99994, 614.6877)
+scale = Vector2(0.0895252, 0.16009845)
 color = Color(1, 1, 0.509804, 0.494118)
 energy = 2.37
 shadow_enabled = true
@@ -828,6 +866,8 @@ autoplay = true
 bus = &"music"
 parameters/looping = true
 
+[connection signal="body_entered" from="manager/exit" to="manager/exit" method="_on_body_entered"]
+[connection signal="body_exited" from="manager/exit" to="manager/exit" method="_on_body_exited"]
 [connection signal="body_entered" from="manager/level_to_home" to="manager/level_to_home" method="_on_body_entered"]
 [connection signal="body_exited" from="manager/level_to_home" to="manager/level_to_home" method="_on_body_exited"]
 [connection signal="body_entered" from="street/rock/Area2D" to="street/rock" method="_on_area_2d_body_entered"]
