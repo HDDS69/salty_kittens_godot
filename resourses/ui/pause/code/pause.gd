@@ -5,7 +5,7 @@ var platform = OS.get_name()
 @onready var all_sound_value = $"../setting/music_set/music_list/all_sound/music_value"
 @onready var music_value = $"../setting/music_set/music_list/music/music_value"
 @onready var noise_value = $"../setting/music_set/music_list/noise/music_value"
-@onready var sounc_value = $"../setting/music_set/music_list/sound/music_value"
+@onready var sound_value = $"../setting/music_set/music_list/sound/music_value"
 
 @onready var grf_set = $"../setting/graphics_button/graphics"
 @onready var msc_set = $"../setting/music_set/music_list"
@@ -13,10 +13,16 @@ var platform = OS.get_name()
 @onready var fullscreen_checkbox = $"../setting/graphics_button/graphics/full_screen_label/ful_screen"
 @onready var max_fps = $"../setting/graphics_button/graphics/max_fps_label/max_fps_editor"
 
+@onready var al_s = $"../setting/music_set/music_list/all_sound"
+@onready var msc = $"../setting/music_set/music_list/music"
+@onready var nse = $"../setting/music_set/music_list/noise"
+@onready var snd = $"../setting/music_set/music_list/sound"
+
+var list_volume = [all_sound_value,music_value,noise_value,sound_value]
 func change_volume(txt,value,buss):
 	txt.text  = str(int((value + 80)/80 * 100))+"%"
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(buss),value)
-
+	SavePoint.volume.set(buss,value)
 func _ready() -> void:
 	self.visible = false
 	if platform == "Android":
@@ -26,8 +32,15 @@ func _ready() -> void:
 	max_fps.text = ' ' + type_convert(Engine.max_fps,TYPE_STRING)
 	vsinc_checkbox.button_pressed = SavePoint.vsinc
 	fullscreen_checkbox.button_pressed = SavePoint.fullscreen
-	
-	#all_sound_value.text = type_convert(AudioServer.get_bus_volume_db(AudioServer.get_bus_index('Master')),TYPE_STRING)
+	# потмо переделаю
+	all_sound_value.text = str(int((SavePoint.volume['Master'] + 80)/80 * 100))+"%"
+	al_s.value = SavePoint.volume['Master']
+	music_value.text = str(int((SavePoint.volume['music'] + 80)/80 * 100))+"%"
+	msc.value = SavePoint.volume['music']
+	noise_value.text = str(int((SavePoint.volume['noise'] + 80)/80 * 100))+"%"
+	nse.value = SavePoint.volume['noise']
+	sound_value.text = str(int((SavePoint.volume['sound'] + 80)/80 * 100))+"%"
+	snd.value = SavePoint.volume['sound']
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel") and setting.visible != true:
@@ -93,7 +106,7 @@ func _on_noise_value_changed(value: float) -> void:
 
 
 func _on_sound_value_changed(value: float) -> void:
-	change_volume(sounc_value,value,'sound')
+	change_volume(sound_value,value,'sound')
 
 
 func _on_all_sound_value_changed(value: float) -> void:

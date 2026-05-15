@@ -260,7 +260,6 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_yjtgf")
 text = "ГРАФИКА"
 
 [node name="graphics" type="Control" parent="setting/graphics_button"]
-visible = false
 anchors_preset = 0
 offset_bottom = 9.390747
 
@@ -353,6 +352,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_56cc8")
 text = "музыка"
 
 [node name="music_list" type="Control" parent="setting/music_set"]
+visible = false
 anchors_preset = 0
 offset_left = 5.0
 offset_right = 45.0
@@ -373,7 +373,6 @@ min_value = -80.0
 max_value = 0.0
 step = 1.0
 page = 3.0
-value = -3.0
 rounded = true
 allow_greater = true
 
@@ -414,7 +413,6 @@ min_value = -80.0
 max_value = 0.0
 step = 1.0
 page = 3.0
-value = -3.0
 rounded = true
 allow_greater = true
 
@@ -455,7 +453,6 @@ min_value = -80.0
 max_value = 0.0
 step = 1.0
 page = 3.0
-value = -3.0
 rounded = true
 allow_greater = true
 
@@ -496,7 +493,6 @@ min_value = -80.0
 max_value = 0.0
 step = 1.0
 page = 3.0
-value = -3.0
 rounded = true
 allow_greater = true
 

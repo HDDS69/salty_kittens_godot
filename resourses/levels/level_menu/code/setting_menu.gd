@@ -12,10 +12,24 @@ extends Node2D
 @onready var vsinc_checkbox = $setting/graphics_button/graphics/v_sinc_label/CheckBox
 @onready var fullscreen_checkbox = $setting/graphics_button/graphics/CheckBox2
 
+@onready var al_s = $setting/music_set/music_list/all_sound
+@onready var msc = $setting/music_set/music_list/music
+@onready var nse = $setting/music_set/music_list/noise
+@onready var snd = $setting/music_set/music_list/sound
+
 func _ready() -> void:
 	max_fps.text = ' ' + type_convert(Engine.max_fps,TYPE_STRING)
 	vsinc_checkbox.button_pressed = SavePoint.vsinc
 	fullscreen_checkbox.button_pressed = SavePoint.fullscreen
+	
+	all_sound_value.text = str(int((SavePoint.volume['Master'] + 80)/80 * 100))+"%"
+	al_s.value = SavePoint.volume['Master']
+	music_value.text = str(int((SavePoint.volume['music'] + 80)/80 * 100))+"%"
+	msc.value = SavePoint.volume['music']
+	noise_value.text = str(int((SavePoint.volume['noise'] + 80)/80 * 100))+"%"
+	nse.value = SavePoint.volume['noise']
+	sound_value.text = str(int((SavePoint.volume['sound'] + 80)/80 * 100))+"%"
+	snd.value = SavePoint.volume['sound']
 
 func _on_quit_setting_pressed() -> void:
 	SavePoint.save_game()
