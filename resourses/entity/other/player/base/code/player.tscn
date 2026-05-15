@@ -944,6 +944,7 @@ min_value = -80.0
 max_value = 0.0
 step = 1.0
 page = 3.0
+value = -3.0
 rounded = true
 allow_greater = true
 
@@ -984,6 +985,7 @@ min_value = -80.0
 max_value = 0.0
 step = 1.0
 page = 3.0
+value = -3.0
 rounded = true
 allow_greater = true
 
@@ -1024,6 +1026,7 @@ min_value = -80.0
 max_value = 0.0
 step = 1.0
 page = 3.0
+value = -3.0
 rounded = true
 allow_greater = true
 
@@ -1064,6 +1067,7 @@ min_value = -80.0
 max_value = 0.0
 step = 1.0
 page = 3.0
+value = -3.0
 rounded = true
 allow_greater = true
 

@@ -38,6 +38,7 @@ func _on_quit_setting_pressed() -> void:
 func change_volume(txt,value,buss):
 	txt.text  = str(int((value + 80)/80 * 100))+"%"
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(buss),value)
+	SavePoint.volume.set(buss,value)
 	
 func _on_graphics_button_pressed() -> void:
 	grf_set.show()
