@@ -542,7 +542,7 @@ process_material = SubResource("ParticleProcessMaterial_g8ktd")
 [node name="light" type="Node" parent="street"]
 
 [node name="PointLight2D" type="PointLight2D" parent="street/light"]
-position = Vector2(189.99994, 582.6769)
+position = Vector2(198.00002, 575)
 scale = Vector2(5.422364, 3.3951948)
 color = Color(0.2984087, 0.9964978, 0, 1)
 energy = 1.2
@@ -596,7 +596,7 @@ texture = ExtResource("43_8yy6i")
 texture_scale = 0.52
 
 [node name="PointLight2D26" type="PointLight2D" parent="street/light"]
-position = Vector2(545.99994, 614.37524)
+position = Vector2(546, 614.37524)
 scale = Vector2(0.0895252, 0.16244556)
 color = Color(1, 1, 0.509804, 0.494118)
 energy = 2.37
