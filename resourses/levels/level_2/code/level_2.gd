@@ -1,6 +1,6 @@
 extends Node2D
 
-func _ready() -> void:
+#func _ready() -> void:
 	#DiscordRPC.state = "в баре"
 	#DiscordRPC.refresh()
-	$player.animTV()
+	#$player.animTV()

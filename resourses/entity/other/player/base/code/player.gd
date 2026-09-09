@@ -70,6 +70,7 @@ func _physics_process(delta: float) -> void:
 				$CollisionShape2D/GPUParticles2D.set_deferred('emitting', true)
 				anim.play("land")
 				sound_land.play()
+				#TODO данный await ломает физику при попадании в стену 
 				await anim.animation_finished
 				land = false
 			elif velocity.y == 0:

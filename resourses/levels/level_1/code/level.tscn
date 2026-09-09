@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://ryhciba00ttg" path="res://resourses/levels/resourses_levels/background/texture/34.png" id="36_hcpty"]
 [ext_resource type="Texture2D" uid="uid://b6baq1asqhgdt" path="res://resourses/levels/resourses_levels/background/texture/35.png" id="37_floxf"]
 [ext_resource type="Texture2D" uid="uid://clu55dowosb3e" path="res://resourses/levels/resourses_levels/background/texture/36.png" id="38_04f8i"]
-[ext_resource type="AudioStream" uid="uid://c44v1o0wb4kfs" path="res://resourses/levels/level_1/music/Cant wait for salty kittens.mp3" id="38_samc1"]
 [ext_resource type="Texture2D" uid="uid://dnn8bflaqyv6v" path="res://resourses/levels/resourses_levels/background/texture/37.png" id="39_38y4e"]
 [ext_resource type="Texture2D" uid="uid://dulg04vrml0c0" path="res://resourses/levels/resourses_levels/background/texture/38.png" id="40_05ry7"]
 [ext_resource type="Script" uid="uid://c2frrt6ab5cmw" path="res://resourses/levels/level_1/code/light.gd" id="40_g8ktd"]
@@ -35,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://cyxxisjgi3s1m" path="res://resourses/levels/resourses_levels/background/texture/39.png" id="42_tnbdi"]
 [ext_resource type="Texture2D" uid="uid://2418k0u7vg71" path="res://resourses/levels/level_1/texture/light2.png" id="43_8yy6i"]
 [ext_resource type="Texture2D" uid="uid://dhpb0g4ajc7e6" path="res://resourses/levels/resourses_levels/background/texture/41.png" id="43_aqc7d"]
+[ext_resource type="AudioStream" uid="uid://seq4vd4jsb2i" path="res://resourses/levels/level_1/music/You look mcdonadly....mp3" id="43_g8ktd"]
 [ext_resource type="Texture2D" uid="uid://dgw2d5eiyviby" path="res://resourses/levels/resourses_levels/background/texture/42.png" id="44_as1q7"]
 [ext_resource type="Texture2D" uid="uid://bcul2ywrbt3sr" path="res://resourses/levels/resourses_levels/background/texture/43.png" id="45_7q4rl"]
 [ext_resource type="Texture2D" uid="uid://c3eaytqasr3xn" path="res://resourses/levels/resourses_levels/background/texture/44.png" id="46_24akx"]
@@ -281,7 +281,7 @@ process_mode = 3
 script = ExtResource("1_h74ei")
 
 [node name="exit" type="Area2D" parent="manager"]
-position = Vector2(1919, 611)
+position = Vector2(1913, 613)
 scale = Vector2(2.3169, 2.5192733)
 script = ExtResource("5_3kjub")
 scene = "res://resourses/levels/level_2/code/level2.tscn"
@@ -384,9 +384,11 @@ metadata/_edit_use_anchors_ = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="street/street/VideoStreamPlayer"]
 position = Vector2(514.909, 413.32)
 stream = ExtResource("23_uuqa8")
+volume_db = -10.0
 autoplay = true
 max_distance = 300.0
 max_polyphony = 3
+bus = &"sound"
 parameters/looping = true
 
 [node name="AudioListener2D" type="AudioListener2D" parent="street/street/VideoStreamPlayer"]
@@ -860,7 +862,7 @@ tab_size = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("38_samc1")
+stream = ExtResource("43_g8ktd")
 volume_db = -20.0
 autoplay = true
 bus = &"music"

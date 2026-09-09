@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://ceh0spras134c"]
+
+[ext_resource type="Texture2D" uid="uid://d32pt3vil7iwk" path="res://resourses/levels/level_2/level2_texture/lamp_mini.png" id="1_apko4"]
+[ext_resource type="Script" uid="uid://dot2ciwo7kfjv" path="res://resourses/levels/level_2/code/mini_lamp.gd" id="1_jq5si"]
+[ext_resource type="Texture2D" uid="uid://2418k0u7vg71" path="res://resourses/levels/level_1/texture/light2.png" id="2_jq5si"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_52dfd"]
+friction = 0.1
+bounce = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r0vg"]
+size = Vector2(4, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e02e"]
+size = Vector2(10, 15)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_52dfd")
+gravity_scale = 0.1
+inertia = 1.0
+can_sleep = false
+continuous_cd = 2
+script = ExtResource("1_jq5si")
+
+[node name="LampMini" type="Sprite2D" parent="."]
+position = Vector2(0, 6)
+texture = ExtResource("1_apko4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_2r0vg")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_7e02e")
+
+[node name="PointLight2D26" type="PointLight2D" parent="."]
+position = Vector2(-0.99998504, 36.593803)
+scale = Vector2(0.033295877, 0.19085175)
+color = Color(1, 1, 0.509804, 0.494118)
+energy = 1.68
+shadow_enabled = true
+texture = ExtResource("2_jq5si")
+texture_scale = 0.52
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(-0.5, -5)
+node_b = NodePath("..")
+disable_collision = false
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

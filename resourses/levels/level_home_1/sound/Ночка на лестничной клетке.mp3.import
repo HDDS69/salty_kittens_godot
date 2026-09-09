@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhpuqbpjg41t"
+path="res://.godot/imported/Ночка на лестничной клетке.mp3-1a856b1825140ab2be73b2c05b7c4f58.mp3str"
+
+[deps]
+
+source_file="res://resourses/levels/level_home_1/sound/Ночка на лестничной клетке.mp3"
+dest_files=["res://.godot/imported/Ночка на лестничной клетке.mp3-1a856b1825140ab2be73b2c05b7c4f58.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

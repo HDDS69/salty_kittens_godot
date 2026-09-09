@@ -11,7 +11,7 @@ bounce = 0.52
 radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m6ulc"]
-radius = 42.201897
+radius = 25.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y717b"]
 polygon = PackedVector2Array(-4, -1, -4, 2, -1, 4, 1, 4, 3, 2, 3, -1, 1, -4, -2, -4)
