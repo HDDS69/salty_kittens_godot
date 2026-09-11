@@ -14,7 +14,7 @@ size = Vector2(4, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7e02e"]
 size = Vector2(10, 15)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="mini_lamp" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_52dfd")
 gravity_scale = 0.1
 inertia = 1.0

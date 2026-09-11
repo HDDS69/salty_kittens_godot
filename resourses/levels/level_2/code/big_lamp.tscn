@@ -1,0 +1,131 @@
+[gd_scene load_steps=11 format=3 uid="uid://50giuqv6hcoq"]
+
+[ext_resource type="Texture2D" uid="uid://b7u3xhi2tfr53" path="res://resourses/levels/level_2/level2_texture/lamp.png" id="1_3o8bd"]
+[ext_resource type="Script" uid="uid://dot2ciwo7kfjv" path="res://resourses/levels/level_2/code/mini_lamp.gd" id="2_p6lxo"]
+[ext_resource type="Texture2D" uid="uid://d32pt3vil7iwk" path="res://resourses/levels/level_2/level2_texture/lamp_mini.png" id="3_ys1ya"]
+[ext_resource type="Texture2D" uid="uid://2418k0u7vg71" path="res://resourses/levels/level_1/texture/light2.png" id="4_0q8os"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o8bd"]
+size = Vector2(2, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6nm7"]
+size = Vector2(21, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6lxo"]
+size = Vector2(2, 34)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_52dfd"]
+friction = 0.1
+bounce = 0.1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r0vg"]
+size = Vector2(4, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7e02e"]
+size = Vector2(10, 15)
+
+[node name="big_lamp" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_3o8bd")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-0.5, 36)
+shape = SubResource("RectangleShape2D_m6nm7")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="RigidBody2D"]
+node_a = NodePath("../../StaticBody2D")
+node_b = NodePath("..")
+motor_enabled = true
+motor_target_velocity = 0.017453292
+
+[node name="Lamp" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(0, 20)
+texture = ExtResource("1_3o8bd")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, 18)
+shape = SubResource("RectangleShape2D_p6lxo")
+
+[node name="mini_lamp" type="RigidBody2D" parent="." node_paths=PackedStringArray("node")]
+position = Vector2(-7.5, 42)
+physics_material_override = SubResource("PhysicsMaterial_52dfd")
+gravity_scale = 0.1
+inertia = 1.0
+can_sleep = false
+continuous_cd = 2
+script = ExtResource("2_p6lxo")
+node = NodePath("../RigidBody2D")
+
+[node name="LampMini" type="Sprite2D" parent="mini_lamp"]
+position = Vector2(0, 6)
+texture = ExtResource("3_ys1ya")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mini_lamp"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_2r0vg")
+
+[node name="Area2D" type="Area2D" parent="mini_lamp"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mini_lamp/Area2D"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_7e02e")
+
+[node name="PointLight2D26" type="PointLight2D" parent="mini_lamp"]
+position = Vector2(-0.5000001, 46.29691)
+scale = Vector2(0.052584138, 0.25317827)
+color = Color(0.9882353, 0.9764706, 0.43137255, 0.6156863)
+energy = 2.3
+shadow_enabled = true
+texture = ExtResource("4_0q8os")
+texture_scale = 0.52
+
+[node name="PinJoint2D" type="PinJoint2D" parent="mini_lamp"]
+position = Vector2(-0.5, -5)
+node_b = NodePath("..")
+disable_collision = false
+
+[node name="mini_lamp2" type="RigidBody2D" parent="." node_paths=PackedStringArray("node")]
+position = Vector2(7.5, 42)
+physics_material_override = SubResource("PhysicsMaterial_52dfd")
+gravity_scale = 0.1
+inertia = 1.0
+can_sleep = false
+continuous_cd = 2
+script = ExtResource("2_p6lxo")
+node = NodePath("../RigidBody2D")
+
+[node name="LampMini" type="Sprite2D" parent="mini_lamp2"]
+position = Vector2(0, 6)
+texture = ExtResource("3_ys1ya")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mini_lamp2"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_2r0vg")
+
+[node name="Area2D" type="Area2D" parent="mini_lamp2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mini_lamp2/Area2D"]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_7e02e")
+
+[node name="PointLight2D26" type="PointLight2D" parent="mini_lamp2"]
+position = Vector2(-1.5000001, 46.796913)
+scale = Vector2(0.05634014, 0.2569343)
+color = Color(1, 1, 0.43137255, 0.49411765)
+energy = 2.0
+shadow_enabled = true
+texture = ExtResource("4_0q8os")
+texture_scale = 0.52
+
+[node name="PinJoint2D" type="PinJoint2D" parent="mini_lamp2"]
+position = Vector2(-0.5, -5)
+node_b = NodePath("..")
+disable_collision = false
+
+[connection signal="body_entered" from="mini_lamp/Area2D" to="mini_lamp" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="mini_lamp2/Area2D" to="mini_lamp2" method="_on_area_2d_body_entered"]
